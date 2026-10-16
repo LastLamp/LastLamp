@@ -593,6 +593,44 @@ export function playResult(kind) {
 
 let lastClick = 0;
 
+export function playFoeDeath() {
+  if (typeof document !== "undefined" && document.hidden) return;
+  away = false;
+  if (!ensure()) return;
+  const fire = () => {
+    if (!ctx || ctx.state !== "running") return;
+    if (typeof document !== "undefined" && document.hidden) return;
+    const now = ctx.currentTime;
+    [0, 0.07, 0.14, 0.22, 0.32, 0.43, 0.55].forEach((delay, i) => {
+      const frames = Math.max(1, Math.floor(ctx.sampleRate * 0.04));
+      const buffer = ctx.createBuffer(1, frames, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let n = 0; n < frames; n += 1) {
+        data[n] = (Math.random() * 2 - 1) * (1 - n / frames);
+      }
+      const src = ctx.createBufferSource();
+      const filter = ctx.createBiquadFilter();
+      const gain = ctx.createGain();
+      const t = now + delay;
+      src.buffer = buffer;
+      filter.type = "bandpass";
+      filter.frequency.setValueAtTime(2200 - i * 180, t);
+      filter.Q.setValueAtTime(0.8, t);
+      gain.gain.value = 0;
+      gain.gain.setValueAtTime(0.0001, t);
+      gain.gain.linearRampToValueAtTime(Math.max(0.045, 0.11 - i * 0.008), t + 0.004);
+      gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.045);
+      src.connect(filter);
+      filter.connect(gain);
+      gain.connect(ctx.destination);
+      src.start(t);
+      src.stop(t + 0.05);
+    });
+  };
+  if (ctx.state === "running") fire();
+  else ctx.resume().then(fire).catch(() => {});
+}
+
 export function playClick() {
   if (typeof document !== "undefined" && document.hidden) return;
   const stamp = performance.now();
@@ -633,9 +671,26 @@ export function playClick() {
 export function playHit(kind) {
   if (!ensure() || held) return;
   if (kind === "crit") {
-    burst(0.08, 0.2, 2100);
-    burst(0.16, 0.16, 480);
-    thump(110, 0.16, 0.24);
+    const now = ctx.currentTime;
+    const crack = (freq, delay, dur, peak, slide) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      const t = now + delay;
+      osc.type = delay === 0 ? "square" : "triangle";
+      osc.frequency.setValueAtTime(freq, t);
+      if (slide) osc.frequency.exponentialRampToValueAtTime(slide, t + dur);
+      gain.gain.value = 0;
+      gain.gain.setValueAtTime(0.0001, t);
+      gain.gain.linearRampToValueAtTime(peak, t + 0.008);
+      gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(t);
+      osc.stop(t + dur + 0.02);
+    };
+    crack(1680, 0, 0.05, 0.07, 420);
+    crack(988, 0.045, 0.14, 0.09);
+    crack(1568, 0.1, 0.18, 0.06);
     return;
   }
   if (kind === "hurt") {
@@ -649,6 +704,85 @@ export function playHit(kind) {
   }
   burst(0.07, 0.16, 2400);
   thump(174, 0.08, 0.12);
+}
+
+export function playStatus(kind, delay = 0) {
+  if (!ensure() || held) return;
+  const now = ctx.currentTime + delay;
+  const tone = (freq, dur, peak, type, slide, wait = 0) => {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    const t = now + wait;
+    osc.type = type;
+    osc.frequency.setValueAtTime(Math.max(40, freq), t);
+    if (slide) osc.frequency.exponentialRampToValueAtTime(Math.max(40, slide), t + dur * 0.85);
+    gain.gain.value = 0;
+    gain.gain.setValueAtTime(0.0001, t);
+    gain.gain.linearRampToValueAtTime(peak, t + 0.012);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(t);
+    osc.stop(t + dur + 0.02);
+  };
+  const hiss = (dur, peak, freq) => {
+    const frames = Math.max(1, Math.floor(ctx.sampleRate * dur));
+    const buffer = ctx.createBuffer(1, frames, ctx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let n = 0; n < frames; n += 1) data[n] = (Math.random() * 2 - 1) * (1 - n / frames);
+    const src = ctx.createBufferSource();
+    const filter = ctx.createBiquadFilter();
+    const gain = ctx.createGain();
+    src.buffer = buffer;
+    filter.type = "bandpass";
+    filter.frequency.setValueAtTime(freq, now);
+    filter.Q.setValueAtTime(0.7, now);
+    gain.gain.value = 0;
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.linearRampToValueAtTime(peak, now + 0.008);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+    src.connect(filter);
+    filter.connect(gain);
+    gain.connect(ctx.destination);
+    src.start(now);
+    src.stop(now + dur + 0.02);
+  };
+  const name = String(kind || "").toLowerCase();
+  if (name === "poison") {
+    tone(196, 0.12, 0.06, "square", 140);
+    tone(148, 0.16, 0.05, "triangle", 110, 0.08);
+    return;
+  }
+  if (name === "stun") {
+    tone(988, 0.07, 0.08, "square", 660);
+    tone(220, 0.14, 0.06, "sine", null, 0.06);
+    return;
+  }
+  if (name === "sleep") {
+    tone(523, 0.28, 0.05, "sine", 262);
+    return;
+  }
+  if (name === "weak") {
+    tone(130, 0.16, 0.07, "triangle", 90);
+    return;
+  }
+  if (name === "exposed") {
+    tone(440, 0.14, 0.07, "triangle", 880);
+    return;
+  }
+  if (name === "shred" || name === "open") {
+    hiss(0.12, 0.08, 2400);
+    return;
+  }
+  if (name === "brand") {
+    hiss(0.16, 0.06, 1800);
+    tone(660, 0.1, 0.04, "sawtooth", 220);
+    return;
+  }
+  if (name === "block") {
+    tone(196, 0.1, 0.08, "sine", 140);
+    tone(392, 0.12, 0.05, "triangle", null, 0.02);
+  }
 }
 
 export function playUltStamp() {

@@ -1662,7 +1662,8 @@ main {
 .skill-token.tone-flare,
 .skill-token.tone-gale,
 .skill-token.tone-tide,
-.skill-token.tone-stone {
+.skill-token.tone-stone,
+.skill-token.tone-veil {
   background: transparent;
   background-image: none;
   border: 0;
@@ -2300,10 +2301,6 @@ main {
   border: 0;
   box-shadow: none;
 }
-.battle .foe.is-down {
-  visibility: hidden;
-  pointer-events: none;
-}
 .battle .foe.selected { box-shadow: none; }
 .battle .foe-hit {
   --sprite: min(72cqi, calc((100cqh - 64px) / 1.05));
@@ -2655,6 +2652,27 @@ main {
 .foe.afflicted-sleep .foe-art { animation: sleep-bob 1.5s ease-in-out infinite; }
 .sprite.afflicted-weak img,
 .foe.afflicted-weak .foe-art { filter: grayscale(0.55) brightness(0.82); }
+.battle .foe.is-down {
+  pointer-events: none;
+  animation: foe-vanish 0.78s linear forwards;
+}
+.battle .foe.is-down .foe-art,
+.battle .foe.is-down .foe-art.is-on {
+  animation: none;
+  filter: none;
+  visibility: inherit;
+}
+@keyframes foe-vanish {
+  0% { opacity: 1; filter: brightness(1.85); }
+  9% { opacity: 0.15; filter: none; }
+  18% { opacity: 0.95; }
+  28% { opacity: 0.12; }
+  40% { opacity: 0.72; }
+  52% { opacity: 0.08; }
+  66% { opacity: 0.4; }
+  80% { opacity: 0.05; }
+  100% { opacity: 0; visibility: hidden; }
+}
 .sprite.buff-block img { filter: drop-shadow(0 0 4px #e0b15a); }
 .sprite.buff-might img { filter: saturate(1.45) brightness(1.12); }
 .status-pips { position: absolute; top: 2px; right: 2px; display: grid; gap: 3px; z-index: 2; }
@@ -4167,6 +4185,11 @@ img.status-glyph { filter: url(#knock-black); }
   *, *::before, *::after {
     animation: none !important;
     transition: none !important;
+  }
+  .battle .foe.is-down,
+  .battle .foe.is-down .foe-art.is-on {
+    opacity: 0 !important;
+    visibility: hidden !important;
   }
 }
 

@@ -65,7 +65,7 @@ import {
 } from "./logic.js";
 import { ASCEND_CAPS, COMBOS, LEVEL_CAP, ascendPrice, dailyCleared, dailyStageById, dailyStages, levelCap, skillCost, skillRank, stageXp, withGrowth, xpSteps, xpToNext } from "./growth.js";
 import { EVENT_ROADS, bondEvents, eventOpen } from "./events.js";
-import { playAscend, playBond, playBondMax, playClick, playGift, playHit, playLevel, playPull, playRank, playResult, playUltStamp, releaseMusic, resumeMusic, setTabAudible, startMusic, stopMusic } from "./music.js";
+import { playAscend, playBond, playBondMax, playClick, playFoeDeath, playGift, playHit, playLevel, playPull, playRank, playResult, playStatus, playUltStamp, releaseMusic, resumeMusic, setTabAudible, startMusic, stopMusic } from "./music.js";
 import { storyChapters, storyClearCounts, storyNode } from "./story.js";
 import { towerFor, monthId } from "./tower.js";
 import { clearLinkHash, linkFromSave, unpackLink } from "./saveLink.js";
@@ -2559,11 +2559,20 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
     );
   });
   const [target, setTarget] = useState(0);
+  const downed = useRef(null);
   useEffect(() => {
     if (battle.enemies[target]?.hp > 0) return;
     const next = battle.enemies.findIndex((enemy) => enemy.hp > 0);
     if (next >= 0) setTarget(next);
   }, [battle, target]);
+  useEffect(() => {
+    const hp = battle.enemies.map((enemy) => enemy.hp);
+    if (downed.current && save.sound) {
+      const fell = hp.some((value, i) => downed.current[i] > 0 && value <= 0);
+      if (fell) playFoeDeath();
+    }
+    downed.current = hp;
+  }, [battle.enemies, save.sound]);
   const [floats, setFloats] = useState([]);
   const [reward, setReward] = useState(null);
   const [askLeave, setAskLeave] = useState(false);
@@ -2788,10 +2797,22 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
     }
   }
 
-  function soundFor(card, events) {
-    if (events?.some((event) => event.crit)) playHit("crit");
-    else if (events?.some((event) => event.amount && (event.tone === "hit" || event.tone === "good"))) playHit();
-    else if (card?.shield) playHit("guard");
+  function soundFor(events, fromFoe) {
+    const list = events || [];
+    if (list.some((event) => event.crit)) playHit("crit");
+    else if (fromFoe && list.some((event) => event.hit)) playHit("hurt");
+    else if (list.some((event) => event.amount && (event.tone === "hit" || event.tone === "good"))) playHit();
+    const seen = new Set();
+    let lag = list.some((event) => event.crit) ? 0.1 : 0;
+    for (const event of list) {
+      if (event.resist || event.tone === "resist") continue;
+      const name = event.status || (event.tone === "shield" ? "block" : "");
+      const key = String(name).toLowerCase();
+      if (!key || seen.has(key)) continue;
+      seen.add(key);
+      playStatus(key, lag);
+      lag += 0.08;
+    }
   }
 
   function act(handIndex, targetOverride) {
@@ -2815,7 +2836,7 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
         key: Date.now(),
       });
     }
-    if (save.sound) soundFor(card, preview.events);
+    if (save.sound) soundFor(preview.events);
     commit(preview.battle, preview.events);
     return true;
   }
@@ -2839,7 +2860,7 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
         key: Date.now(),
       });
     }
-    if (save.sound) soundFor(ego, preview.events);
+    if (save.sound) soundFor(preview.events);
     commit(preview.battle, preview.events);
     return true;
   }
@@ -2886,8 +2907,7 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
         key: Date.now(),
       });
     }
-    if (save.sound && actors.some((event) => event.crit)) playHit("crit");
-    else if (save.sound && actors.some((event) => event.hit)) playHit("hurt");
+    if (save.sound) soundFor(events, true);
     commit(next, events, next.result === "lose" ? "lose" : "pass");
   }
 
@@ -2977,10 +2997,12 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
               <article
                 key={enemy.id}
                 className={`foe foe-${enemy.id}${dead ? " is-down" : ""}${i === target && !dead ? " selected" : ""}${
-                  acting?.hit && i === acting.target ? " struck" : ""
-                }${mode ? ` acting mode-${mode}` : ""}${raging ? " raging" : ""}${enemy.sleep ? " afflicted-sleep" : ""}${
-                  enemy.stun ? " afflicted-stun" : ""
-                }${enemy.poison ? " afflicted-poison" : ""}${enemy.weak ? " afflicted-weak" : ""}${enemy.shield ? " buff-block" : ""}`}
+                  !dead && acting?.hit && i === acting.target ? " struck" : ""
+                }${!dead && mode ? ` acting mode-${mode}` : ""}${raging ? " raging" : ""}${
+                  !dead && enemy.sleep ? " afflicted-sleep" : ""
+                }${!dead && enemy.stun ? " afflicted-stun" : ""}${!dead && enemy.poison ? " afflicted-poison" : ""}${
+                  !dead && enemy.weak ? " afflicted-weak" : ""
+                }${!dead && enemy.shield ? " buff-block" : ""}`}
               >
                 <button
                   className="foe-hit"

@@ -242,6 +242,7 @@ function landDebuff(battle, defender, kind, events, apply, foeId, intent) {
     return false;
   }
   apply();
+  events.push({ text: kind, tone: "status", status: kind, foeId, intent });
   return true;
 }
 
@@ -1203,7 +1204,7 @@ export function endTurn(battle) {
       }
     } else if (info.intent === "defend") {
       foe.shield += info.amount;
-      events.push({ text: `${foe.name} guards`, tone: "bad", foeId: foe.id, intent: "defend" });
+      events.push({ text: `${foe.name} guards`, tone: "bad", foeId: foe.id, intent: "defend", status: "Block" });
       pushLog(next, `${foe.name} guards for ${info.amount}.`);
     } else if (info.intent === "mend") {
       const hurt = next.enemies
@@ -1224,7 +1225,7 @@ export function endTurn(battle) {
         else next.poison = (next.poison || 0) + 1;
         next.stress = Math.min(100, next.stress + HEX_STRESS);
         events.push({ text: `Stress +${HEX_STRESS}`, tone: "stress", amount: HEX_STRESS, foeId: foe.id, intent: "hex" });
-        events.push({ text: label, tone: effect === "poison" ? "poison" : "bad", amount: 1, foeId: foe.id });
+        events.push({ text: label, tone: effect === "poison" ? "poison" : "bad", amount: 1, foeId: foe.id, status: label });
         pushLog(next, `${foe.name} hexes you. ${move?.line || label}`);
       }
     }
