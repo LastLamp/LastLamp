@@ -65,7 +65,7 @@ import {
 } from "./logic.js";
 import { ASCEND_CAPS, COMBOS, LEVEL_CAP, ascendPrice, dailyCleared, dailyStageById, dailyStages, levelCap, skillCost, skillRank, stageXp, withGrowth, xpSteps, xpToNext } from "./growth.js";
 import { EVENT_ROADS, bondEvents, eventOpen } from "./events.js";
-import { playAscend, playBond, playBondMax, playClick, playFoeDeath, playGift, playHit, playLevel, playPull, playRank, playResult, playStatus, playUltStamp, releaseMusic, resumeMusic, setTabAudible, startMusic, stopMusic } from "./music.js";
+import { playAscend, playBond, playBondMax, playCardBurn, playClick, playFill, playFoeDeath, playGift, playHit, playLevel, playPull, playRank, playResult, playStatus, playUltStamp, releaseMusic, resumeMusic, setTabAudible, startMusic, stopMusic } from "./music.js";
 import { storyChapters, storyClearCounts, storyNode } from "./story.js";
 import { towerFor, monthId } from "./tower.js";
 import { clearLinkHash, linkFromSave, unpackLink } from "./saveLink.js";
@@ -1417,6 +1417,7 @@ function BondPop({ who, giftName, from, gain, roomsBefore, sound, held, canAgain
       timers.push(window.setTimeout(resolve, ms));
     });
     const fill = (start, end) => new Promise((resolve) => {
+      if (sound && end > start) playFill("bond");
       const begun = performance.now();
       const step = (now) => {
         if (dead) {
@@ -2334,12 +2335,14 @@ function SweepBox({ stageId, save, dispatch }) {
   const [note, setNote] = useState("");
   const [result, setResult] = useState(null);
   const chime = useRef(0);
+  const rise = useRef(0);
   const hold = useRef(0);
   const showing = useRef(false);
   showing.current = Boolean(result);
   useEffect(
     () => () => {
       window.clearTimeout(chime.current);
+      window.clearTimeout(rise.current);
       window.clearInterval(hold.current);
       if (showing.current) releaseMusic();
     },
@@ -2347,6 +2350,7 @@ function SweepBox({ stageId, save, dispatch }) {
   );
   function closeSweep() {
     window.clearTimeout(chime.current);
+    window.clearTimeout(rise.current);
     releaseMusic();
     if (save.sound) startMusic();
     setResult(null);
@@ -2387,7 +2391,13 @@ function SweepBox({ stageId, save, dispatch }) {
     if (save.sound) {
       playResult("win");
       window.clearTimeout(chime.current);
-      if (outcome.reward.levels?.length) chime.current = window.setTimeout(() => playLevel(), 720);
+      window.clearTimeout(rise.current);
+      const snap = outcome.reward.snap || {};
+      const xp = outcome.reward.xp || 0;
+      if (xp && Object.values(snap).some((owned) => !xpSteps(owned, xp).start.capped)) {
+        rise.current = window.setTimeout(() => playFill("xp"), 140);
+      }
+      if (outcome.reward.levels?.length) chime.current = window.setTimeout(() => playLevel(), 860);
     }
   }
   return (
@@ -2674,10 +2684,15 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
   useEffect(() => {
     if (!showResult || !battle.result || !save.sound) return undefined;
     playResult(battle.result);
-    const timer =
-      battle.result === "win" && rewardRef.current?.levels?.length ? window.setTimeout(() => playLevel(), 720) : 0;
+    const timers = [];
+    const reward = rewardRef.current;
+    const xp = reward?.xp || 0;
+    if (battle.result === "win" && xp && Object.values(reward?.snap || {}).some((owned) => !xpSteps(owned, xp).start.capped)) {
+      timers.push(window.setTimeout(() => playFill("xp"), 140));
+    }
+    if (battle.result === "win" && reward?.levels?.length) timers.push(window.setTimeout(() => playLevel(), 860));
     return () => {
-      if (timer) window.clearTimeout(timer);
+      timers.forEach((id) => window.clearTimeout(id));
       releaseMusic();
     };
   }, [showResult, battle.result, save.sound]);
@@ -2836,7 +2851,10 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
         key: Date.now(),
       });
     }
-    if (save.sound) soundFor(preview.events);
+    if (save.sound) {
+      playCardBurn();
+      soundFor(preview.events);
+    }
     commit(preview.battle, preview.events);
     return true;
   }

@@ -709,80 +709,98 @@ export function playHit(kind) {
 export function playStatus(kind, delay = 0) {
   if (!ensure() || held) return;
   const now = ctx.currentTime + delay;
-  const tone = (freq, dur, peak, type, slide, wait = 0) => {
+  const tone = (freq, dur, peak, type, wait = 0) => {
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
     const t = now + wait;
     osc.type = type;
     osc.frequency.setValueAtTime(Math.max(40, freq), t);
-    if (slide) osc.frequency.exponentialRampToValueAtTime(Math.max(40, slide), t + dur * 0.85);
     gain.gain.value = 0;
     gain.gain.setValueAtTime(0.0001, t);
-    gain.gain.linearRampToValueAtTime(peak, t + 0.012);
+    gain.gain.linearRampToValueAtTime(peak, t + 0.01);
     gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
     osc.connect(gain);
     gain.connect(ctx.destination);
     osc.start(t);
     osc.stop(t + dur + 0.02);
   };
-  const hiss = (dur, peak, freq) => {
-    const frames = Math.max(1, Math.floor(ctx.sampleRate * dur));
-    const buffer = ctx.createBuffer(1, frames, ctx.sampleRate);
-    const data = buffer.getChannelData(0);
-    for (let n = 0; n < frames; n += 1) data[n] = (Math.random() * 2 - 1) * (1 - n / frames);
-    const src = ctx.createBufferSource();
-    const filter = ctx.createBiquadFilter();
-    const gain = ctx.createGain();
-    src.buffer = buffer;
-    filter.type = "bandpass";
-    filter.frequency.setValueAtTime(freq, now);
-    filter.Q.setValueAtTime(0.7, now);
-    gain.gain.value = 0;
-    gain.gain.setValueAtTime(0.0001, now);
-    gain.gain.linearRampToValueAtTime(peak, now + 0.008);
-    gain.gain.exponentialRampToValueAtTime(0.0001, now + dur);
-    src.connect(filter);
-    filter.connect(gain);
-    gain.connect(ctx.destination);
-    src.start(now);
-    src.stop(now + dur + 0.02);
-  };
   const name = String(kind || "").toLowerCase();
-  if (name === "poison") {
-    tone(196, 0.12, 0.06, "square", 140);
-    tone(148, 0.16, 0.05, "triangle", 110, 0.08);
+  const buffs = { block: 1, might: 1.12, crit: 1.22, critdmg: 1.08, def: 0.9, res: 0.96 };
+  const debuffs = { poison: 0.78, stun: 1.16, sleep: 0.68, weak: 0.84, exposed: 1, shred: 1.08, open: 1.08, brand: 0.92 };
+  const steps = [1, 1.26, 1.5, 2];
+  if (Object.prototype.hasOwnProperty.call(buffs, name)) {
+    const root = 392 * buffs[name];
+    steps.forEach((mul, i) => tone(root * mul, 0.08, 0.055, "triangle", i * 0.055));
     return;
   }
-  if (name === "stun") {
-    tone(988, 0.07, 0.08, "square", 660);
-    tone(220, 0.14, 0.06, "sine", null, 0.06);
-    return;
+  if (Object.prototype.hasOwnProperty.call(debuffs, name)) {
+    const root = 784 * debuffs[name];
+    const wave = name === "poison" || name === "stun" || name === "brand" ? "square" : "triangle";
+    steps.forEach((mul, i) => tone(root / mul, 0.08, 0.05, wave, i * 0.055));
   }
-  if (name === "sleep") {
-    tone(523, 0.28, 0.05, "sine", 262);
-    return;
+}
+
+export function playFill(kind) {
+  if (!ensure() || held) return;
+  const now = ctx.currentTime;
+  const base = kind === "bond" ? 392 : 494;
+  for (let i = 0; i < 7; i += 1) {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    const t = now + i * 0.09;
+    osc.type = "triangle";
+    osc.frequency.setValueAtTime(base * 1.08 ** i, t);
+    gain.gain.value = 0;
+    gain.gain.setValueAtTime(0.0001, t);
+    gain.gain.linearRampToValueAtTime(0.045, t + 0.012);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.07);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(t);
+    osc.stop(t + 0.08);
   }
-  if (name === "weak") {
-    tone(130, 0.16, 0.07, "triangle", 90);
-    return;
-  }
-  if (name === "exposed") {
-    tone(440, 0.14, 0.07, "triangle", 880);
-    return;
-  }
-  if (name === "shred" || name === "open") {
-    hiss(0.12, 0.08, 2400);
-    return;
-  }
-  if (name === "brand") {
-    hiss(0.16, 0.06, 1800);
-    tone(660, 0.1, 0.04, "sawtooth", 220);
-    return;
-  }
-  if (name === "block") {
-    tone(196, 0.1, 0.08, "sine", 140);
-    tone(392, 0.12, 0.05, "triangle", null, 0.02);
-  }
+}
+
+export function playCardBurn() {
+  if (typeof document !== "undefined" && document.hidden) return;
+  away = false;
+  if (!ensure()) return;
+  const fire = () => {
+    if (!ctx || ctx.state !== "running") return;
+    if (typeof document !== "undefined" && document.hidden) return;
+    const now = ctx.currentTime;
+    const noise = (delay, dur, freq, peak) => {
+      const frames = Math.max(1, Math.floor(ctx.sampleRate * dur));
+      const buffer = ctx.createBuffer(1, frames, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let n = 0; n < frames; n += 1) {
+        const env = 1 - n / frames;
+        data[n] = (Math.random() * 2 - 1) * env * env;
+      }
+      const src = ctx.createBufferSource();
+      const filter = ctx.createBiquadFilter();
+      const gain = ctx.createGain();
+      const t = now + delay;
+      src.buffer = buffer;
+      filter.type = "bandpass";
+      filter.frequency.setValueAtTime(freq, t);
+      filter.frequency.exponentialRampToValueAtTime(Math.max(180, freq * 0.4), t + dur);
+      filter.Q.setValueAtTime(0.7, t);
+      gain.gain.value = 0;
+      gain.gain.setValueAtTime(0.0001, t);
+      gain.gain.linearRampToValueAtTime(peak, t + Math.min(0.03, dur * 0.25));
+      gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      src.connect(filter);
+      filter.connect(gain);
+      gain.connect(ctx.destination);
+      src.start(t);
+      src.stop(t + dur + 0.02);
+    };
+    [0, 0.045, 0.09, 0.15].forEach((delay, i) => noise(delay, 0.055, 1600 - i * 140, 0.09 - i * 0.012));
+    noise(0.12, 0.4, 2400, 0.05);
+  };
+  if (ctx.state === "running") fire();
+  else ctx.resume().then(fire).catch(() => {});
 }
 
 export function playUltStamp() {

@@ -608,32 +608,35 @@ function stampDebuffs(battle, foe, played, events) {
 }
 
 function grantBuffs(battle, played, events) {
-  if (played.might) battle.might = Math.max(battle.might || 0, played.might);
+  if (played.might) {
+    battle.might = Math.max(battle.might || 0, played.might);
+    events.push({ text: "Might", tone: "status", status: "might" });
+  }
   const notes = [];
   const from = played.ownerName ? `${played.ownerName}'s ${played.name}` : played.name;
   if (played.crit) {
     battle.critUp = Math.max(battle.critUp || 0, played.crit);
     battle.critSrc = from;
-    notes.push(`${from}: CRIT Rate +${Math.round(PARTY_BUFFS.crit * 100)}% for ${played.crit} turn${played.crit === 1 ? "" : "s"}`);
+    notes.push({ status: "crit", text: `${from}: CRIT Rate +${Math.round(PARTY_BUFFS.crit * 100)}% for ${played.crit} turn${played.crit === 1 ? "" : "s"}` });
   }
   if (played.critDmg) {
     battle.critDmgUp = Math.max(battle.critDmgUp || 0, played.critDmg);
     battle.critDmgSrc = from;
-    notes.push(`${from}: CRIT DMG +${Math.round(PARTY_BUFFS.critDmg * 100)}% for ${played.critDmg} turn${played.critDmg === 1 ? "" : "s"}`);
+    notes.push({ status: "critdmg", text: `${from}: CRIT DMG +${Math.round(PARTY_BUFFS.critDmg * 100)}% for ${played.critDmg} turn${played.critDmg === 1 ? "" : "s"}` });
   }
   if (played.defUp) {
     battle.defUp = Math.max(battle.defUp || 0, played.defUp);
     battle.defSrc = from;
-    notes.push(`${from}: DEF +${Math.round(PARTY_BUFFS.def * 100)}% for ${played.defUp} turn${played.defUp === 1 ? "" : "s"}`);
+    notes.push({ status: "def", text: `${from}: DEF +${Math.round(PARTY_BUFFS.def * 100)}% for ${played.defUp} turn${played.defUp === 1 ? "" : "s"}` });
   }
   if (played.res) {
     battle.resUp = Math.max(battle.resUp || 0, played.res);
     battle.resSrc = from;
-    notes.push(`${from}: Resistance +${Math.round(PARTY_BUFFS.res * 100)}% for ${played.res} turn${played.res === 1 ? "" : "s"}`);
+    notes.push({ status: "res", text: `${from}: Resistance +${Math.round(PARTY_BUFFS.res * 100)}% for ${played.res} turn${played.res === 1 ? "" : "s"}` });
   }
   for (const note of notes) {
-    events.push({ text: note, tone: "good" });
-    pushLog(battle, `${note}.`);
+    events.push({ text: note.text, tone: "good", status: note.status });
+    pushLog(battle, `${note.text}.`);
   }
 }
 
