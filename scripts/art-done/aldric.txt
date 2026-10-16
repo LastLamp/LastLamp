@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/aldric.png
+/Users/antho/Documents/gachagame/public/sprites/aldric-attack.png
+/Users/antho/Documents/gachagame/public/sprites/aldric-win.png
+/Users/antho/Documents/gachagame/public/sprites/aldric-lose.png
+/Users/antho/Documents/gachagame/public/sprites/aldric-ult.png
+/Users/antho/Documents/gachagame/public/sprites/aldric-stress.png
+/Users/antho/Documents/gachagame/public/skills/aldric-twin.png
+/Users/antho/Documents/gachagame/public/skills/aldric-flurry.png
+/Users/antho/Documents/gachagame/public/skills/aldric-ult.png

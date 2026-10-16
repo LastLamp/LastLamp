@@ -1,0 +1,9 @@
+public/sprites/briony.png
+public/sprites/briony-attack.png
+public/sprites/briony-win.png
+public/sprites/briony-lose.png
+public/sprites/briony-ult.png
+public/sprites/briony-stress.png
+public/skills/briony-needle.png
+public/skills/briony-stop.png
+public/skills/briony-ult.png

@@ -1,0 +1,9 @@
+public/sprites/col.png
+public/sprites/col-attack.png
+public/sprites/col-win.png
+public/sprites/col-lose.png
+public/sprites/col-ult.png
+public/sprites/col-stress.png
+public/skills/col-needle.png
+public/skills/col-stop.png
+public/skills/col-ult.png

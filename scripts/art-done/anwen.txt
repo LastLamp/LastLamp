@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/anwen.png
+/Users/antho/Documents/gachagame/public/sprites/anwen-attack.png
+/Users/antho/Documents/gachagame/public/sprites/anwen-win.png
+/Users/antho/Documents/gachagame/public/sprites/anwen-lose.png
+/Users/antho/Documents/gachagame/public/sprites/anwen-ult.png
+/Users/antho/Documents/gachagame/public/sprites/anwen-stress.png
+/Users/antho/Documents/gachagame/public/skills/anwen-bash.png
+/Users/antho/Documents/gachagame/public/skills/anwen-wall.png
+/Users/antho/Documents/gachagame/public/skills/anwen-ult.png

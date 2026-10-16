@@ -1,0 +1,5 @@
+/Users/antho/Documents/gachagame/public/sprites/nico-attack.png 792814
+/Users/antho/Documents/gachagame/public/sprites/nico-win.png 693947
+/Users/antho/Documents/gachagame/public/sprites/nico-lose.png 717708
+/Users/antho/Documents/gachagame/public/sprites/nico-ult.png 773858
+/Users/antho/Documents/gachagame/public/sprites/nico-stress.png 727897

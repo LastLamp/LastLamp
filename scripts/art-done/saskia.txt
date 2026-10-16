@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/saskia.png
+/Users/antho/Documents/gachagame/public/sprites/saskia-attack.png
+/Users/antho/Documents/gachagame/public/sprites/saskia-win.png
+/Users/antho/Documents/gachagame/public/sprites/saskia-lose.png
+/Users/antho/Documents/gachagame/public/sprites/saskia-ult.png
+/Users/antho/Documents/gachagame/public/sprites/saskia-stress.png
+/Users/antho/Documents/gachagame/public/skills/saskia-bash.png
+/Users/antho/Documents/gachagame/public/skills/saskia-wall.png
+/Users/antho/Documents/gachagame/public/skills/saskia-ult.png

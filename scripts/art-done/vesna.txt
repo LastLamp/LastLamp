@@ -1,0 +1,9 @@
+public/sprites/vesna.png
+public/sprites/vesna-attack.png
+public/sprites/vesna-win.png
+public/sprites/vesna-lose.png
+public/sprites/vesna-ult.png
+public/sprites/vesna-stress.png
+public/skills/vesna-salve.png
+public/skills/vesna-bind.png
+public/skills/vesna-ult.png

@@ -1,0 +1,9 @@
+public/sprites/mael.png
+public/sprites/mael-attack.png
+public/sprites/mael-win.png
+public/sprites/mael-lose.png
+public/sprites/mael-ult.png
+public/sprites/mael-stress.png
+public/skills/mael-shear.png
+public/skills/mael-still.png
+public/skills/mael-gale.png

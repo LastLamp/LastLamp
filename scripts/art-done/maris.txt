@@ -1,0 +1,3 @@
+/Users/antho/Documents/gachagame/public/skills/keel.png
+/Users/antho/Documents/gachagame/public/skills/bail.png
+/Users/antho/Documents/gachagame/public/skills/high-tide.png

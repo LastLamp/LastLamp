@@ -1,0 +1,7 @@
+/Users/antho/Documents/gachagame/public/sprites/bram-attack.png
+/Users/antho/Documents/gachagame/public/sprites/bram-win.png
+/Users/antho/Documents/gachagame/public/sprites/bram-lose.png
+/Users/antho/Documents/gachagame/public/sprites/bram-ult.png
+/Users/antho/Documents/gachagame/public/sprites/bram-stress.png
+/Users/antho/Documents/gachagame/public/skills/bram-wave.png
+/Users/antho/Documents/gachagame/public/skills/bram-ult.png

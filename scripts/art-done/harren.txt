@@ -1,0 +1,9 @@
+public/sprites/harren.png
+public/sprites/harren-attack.png
+public/sprites/harren-win.png
+public/sprites/harren-lose.png
+public/sprites/harren-ult.png
+public/sprites/harren-stress.png
+public/skills/harren-bastion.png
+public/skills/harren-hold.png
+public/skills/harren-unbroken.png

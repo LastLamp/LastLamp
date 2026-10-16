@@ -1,0 +1,9 @@
+public/sprites/keir.png
+public/sprites/keir-attack.png
+public/sprites/keir-win.png
+public/sprites/keir-lose.png
+public/sprites/keir-ult.png
+public/sprites/keir-stress.png
+public/skills/keir-twin.png
+public/skills/keir-flurry.png
+public/skills/keir-ult.png

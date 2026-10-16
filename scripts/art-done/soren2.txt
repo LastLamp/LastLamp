@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/soren2.png
+/Users/antho/Documents/gachagame/public/sprites/soren2-attack.png
+/Users/antho/Documents/gachagame/public/sprites/soren2-win.png
+/Users/antho/Documents/gachagame/public/sprites/soren2-lose.png
+/Users/antho/Documents/gachagame/public/sprites/soren2-ult.png
+/Users/antho/Documents/gachagame/public/sprites/soren2-stress.png
+/Users/antho/Documents/gachagame/public/skills/soren2-open.png
+/Users/antho/Documents/gachagame/public/skills/soren2-wave.png
+/Users/antho/Documents/gachagame/public/skills/soren2-ult.png

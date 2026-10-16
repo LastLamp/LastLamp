@@ -1,0 +1,9 @@
+public/sprites/drust.png
+public/sprites/drust-attack.png
+public/sprites/drust-win.png
+public/sprites/drust-lose.png
+public/sprites/drust-ult.png
+public/sprites/drust-stress.png
+public/skills/drust-salve.png
+public/skills/drust-bind.png
+public/skills/drust-ult.png

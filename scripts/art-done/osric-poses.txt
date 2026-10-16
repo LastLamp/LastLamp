@@ -1,0 +1,5 @@
+/Users/antho/Documents/gachagame/public/sprites/osric-attack.png 814756
+/Users/antho/Documents/gachagame/public/sprites/osric-win.png 729280
+/Users/antho/Documents/gachagame/public/sprites/osric-lose.png 658611
+/Users/antho/Documents/gachagame/public/sprites/osric-ult.png 885020
+/Users/antho/Documents/gachagame/public/sprites/osric-stress.png 839540

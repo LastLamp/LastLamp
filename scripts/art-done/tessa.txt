@@ -1,0 +1,3 @@
+/Users/antho/Documents/gachagame/public/skills/tessa-cauter.png
+/Users/antho/Documents/gachagame/public/skills/tessa-dress.png
+/Users/antho/Documents/gachagame/public/skills/tessa-stay.png

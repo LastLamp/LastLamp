@@ -1,0 +1,5 @@
+/Users/antho/Documents/gachagame/public/sprites/silas-attack.png 794328
+/Users/antho/Documents/gachagame/public/sprites/silas-win.png 701567
+/Users/antho/Documents/gachagame/public/sprites/silas-lose.png 766696
+/Users/antho/Documents/gachagame/public/sprites/silas-ult.png 828175
+/Users/antho/Documents/gachagame/public/sprites/silas-stress.png 660740

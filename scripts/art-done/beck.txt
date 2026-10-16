@@ -1,0 +1,9 @@
+public/sprites/beck.png
+public/sprites/beck-attack.png
+public/sprites/beck-win.png
+public/sprites/beck-lose.png
+public/sprites/beck-ult.png
+public/sprites/beck-stress.png
+public/skills/beck-open.png
+public/skills/beck-wave.png
+public/skills/beck-ult.png

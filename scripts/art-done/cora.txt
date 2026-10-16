@@ -1,0 +1,9 @@
+public/sprites/cora.png
+public/sprites/cora-attack.png
+public/sprites/cora-win.png
+public/sprites/cora-lose.png
+public/sprites/cora-ult.png
+public/sprites/cora-stress.png
+public/skills/cora-open.png
+public/skills/cora-wave.png
+public/skills/cora-ult.png

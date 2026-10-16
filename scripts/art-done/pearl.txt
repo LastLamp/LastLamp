@@ -1,0 +1,9 @@
+public/sprites/pearl.png
+public/sprites/pearl-attack.png
+public/sprites/pearl-win.png
+public/sprites/pearl-lose.png
+public/sprites/pearl-ult.png
+public/sprites/pearl-stress.png
+public/skills/pearl-tap.png
+public/skills/pearl-banner.png
+public/skills/pearl-ult.png

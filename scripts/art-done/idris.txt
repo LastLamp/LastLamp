@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/idris.png
+/Users/antho/Documents/gachagame/public/sprites/idris-attack.png
+/Users/antho/Documents/gachagame/public/sprites/idris-win.png
+/Users/antho/Documents/gachagame/public/sprites/idris-lose.png
+/Users/antho/Documents/gachagame/public/sprites/idris-ult.png
+/Users/antho/Documents/gachagame/public/sprites/idris-stress.png
+/Users/antho/Documents/gachagame/public/skills/idris-bash.png
+/Users/antho/Documents/gachagame/public/skills/idris-wall.png
+/Users/antho/Documents/gachagame/public/skills/idris-ult.png

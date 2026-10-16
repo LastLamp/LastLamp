@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/hestia.png
+/Users/antho/Documents/gachagame/public/sprites/hestia-attack.png
+/Users/antho/Documents/gachagame/public/sprites/hestia-win.png
+/Users/antho/Documents/gachagame/public/sprites/hestia-lose.png
+/Users/antho/Documents/gachagame/public/sprites/hestia-ult.png
+/Users/antho/Documents/gachagame/public/sprites/hestia-stress.png
+/Users/antho/Documents/gachagame/public/skills/hestia-step.png
+/Users/antho/Documents/gachagame/public/skills/hestia-again.png
+/Users/antho/Documents/gachagame/public/skills/hestia-ult.png

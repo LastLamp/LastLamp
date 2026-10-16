@@ -1,0 +1,5 @@
+/Users/antho/Documents/gachagame/public/sprites/harrow-attack.png 1027650
+/Users/antho/Documents/gachagame/public/sprites/harrow-win.png 683056
+/Users/antho/Documents/gachagame/public/sprites/harrow-lose.png 899079
+/Users/antho/Documents/gachagame/public/sprites/harrow-ult.png 877333
+/Users/antho/Documents/gachagame/public/sprites/harrow-stress.png 800270

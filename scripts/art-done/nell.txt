@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/nell.png
+/Users/antho/Documents/gachagame/public/sprites/nell-attack.png
+/Users/antho/Documents/gachagame/public/sprites/nell-win.png
+/Users/antho/Documents/gachagame/public/sprites/nell-lose.png
+/Users/antho/Documents/gachagame/public/sprites/nell-ult.png
+/Users/antho/Documents/gachagame/public/sprites/nell-stress.png
+/Users/antho/Documents/gachagame/public/skills/nell-tap.png
+/Users/antho/Documents/gachagame/public/skills/nell-banner.png
+/Users/antho/Documents/gachagame/public/skills/nell-ult.png

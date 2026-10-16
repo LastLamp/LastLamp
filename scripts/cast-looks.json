@@ -1,0 +1,726 @@
+{
+  "bram": {
+    "name": "Vaelor Ashkyn",
+    "look": "Adult man, 32, broad shoulders, short dark copper hair, light stubble, thin scar through the left eyebrow, brown eyes. Weathered rust-red long coat, soot on the hem, charcoal shirt, dark trousers, scuffed brown boots. Heavy single-edged road sword.",
+    "skills": {
+      "bram-open": "One heavy single-edged road sword, vertical, nicked rust on the steel, dark leather grip, brass crossguard.",
+      "bram-wave": "Three separate crescent blades of steel fanned in a wide arc with ember sparks between them. No handle. A volley of cuts, not one sword.",
+      "bram-ult": "A sword breaking apart at the moment of impact, shards around a white-hot core, cracks of fire. Not a whole sword."
+    }
+  },
+  "nessa": {
+    "name": "Nessira Veyne",
+    "look": "Adult woman, 28, athletic, olive skin, black hair in one long braid over the right shoulder, green-gray eyes, small nick on the chin. Sage short jacket, cream shirt, dark trousers, wrapped boots, loose green scarf. Two short curved blades. A small gale hawk sits on her left shoulder, feathers edged in pale green.",
+    "skills": {
+      "nessa-mark": "A single curved short blade with a green cord tied at the guard and a red brand-mark burned into the steel.",
+      "nessa-chase": "The same curved blade caught mid-follow, a second faint afterimage blade just behind it. Two strokes, one chase.",
+      "nessa-ult": "Both curved blades crossed in an X with a gale-green flash at the crossing. Not a single straight sword."
+    },
+    "familiar": "A small gale hawk sits on her left shoulder, feathers edged in pale green."
+  },
+  "corin": {
+    "name": "Corivane Mere",
+    "look": "Adult man, 41, narrow face, salt-and-pepper hair tied back, kind tired eyes, light skin. Blue-gray oilskin coat to the knee, cream shirt, dark boots. A short staff with a hanging tide-blue ribbon. A ribbon-eel of tidewater circles his staff, no bigger than a forearm.",
+    "skills": {
+      "corin-tap": "A short wooden staff with a blue ribbon, angled, simple and worn.",
+      "corin-banner": "A small rectangular tide-blue war banner on a short pole, cloth folds, a gold hem. No person.",
+      "corin-ult": "The same banner snapping open, a bright gold shock along the cloth edge, larger and more dramatic than the skill banner."
+    },
+    "familiar": "A ribbon-eel of tidewater circles his staff, no bigger than a forearm."
+  },
+  "idris": {
+    "name": "Idrisul Karn",
+    "look": "Adult man, 48, short and very broad, shaved head, thick gray beard, heavy brow. Quilted clay-brown coat, iron buckles, heavy boots. Tower shield on the left arm and a short hammer in the right.",
+    "skills": {
+      "idris-bash": "A short iron hammer beside the corner of a tower shield. Both objects, shield dominant.",
+      "idris-wall": "A tall tower shield alone, clay and iron, rivets, a horizontal brace. Fills the frame.",
+      "idris-ult": "The same tower shield with a crack of gold light sealing across it, heavier and brighter than the plain shield."
+    }
+  },
+  "willa": {
+    "name": "Willoweft Quill",
+    "look": "Adult woman, 35, pale, sharp cheekbones, silver bob with one black streak, violet eyes. Plum high-collar coat, black gloves, slim boots. A thin needle rapier. A violet moth spirit rests in her hair.",
+    "skills": {
+      "willa-needle": "A needle-thin rapier with a drop of green poison beading at the tip. Elegant, not a broadsword.",
+      "willa-stop": "A stopped pocket watch cracked, violet glass, the hands frozen. No sword.",
+      "willa-ult": "A rapier point-down through a broken violet seal, a ring of stun-light. Different from the plain needle."
+    },
+    "familiar": "A violet moth spirit rests in her hair."
+  },
+  "torin": {
+    "name": "Torivel Ember",
+    "look": "Adult man, 26, warm brown skin, curly black hair, open expression. Short ember-orange vest, rolled white sleeves, dark trousers, a brass horn on his belt. Empty hands in idle, horn visible. A thumb-sized ember wisp hovers over the horn at his belt.",
+    "skills": {
+      "torin-call": "A brass signal horn, flared bell, leather strap, warm metal.",
+      "torin-pair": "Two brass horns crossed, different sizes, a shared strap. Clearly a pair.",
+      "torin-ult": "One large horn with a burst of sound shown as gold rings leaving the bell. No person."
+    },
+    "familiar": "A thumb-sized ember wisp hovers over the horn at his belt."
+  },
+  "sela": {
+    "name": "Selavyn Wren",
+    "look": "Adult woman, 24, freckles, short windswept sandy hair, green eyes, light skin. Light linen coat, soft green sash, tall boots. A coiled rope at the hip and a slim baton. A wind sparrow of pale air perches on her hand.",
+    "skills": {
+      "sela-step": "A slim wooden baton, pale, worn at the grip.",
+      "sela-again": "A circular rope loop with an arrow of cloth pointing back into the loop. A return, not a weapon.",
+      "sela-ult": "The rope loop opened into a bright ring of gold thread, larger, with a spark at the top."
+    },
+    "familiar": "A wind sparrow of pale air perches on her hand."
+  },
+  "garrick": {
+    "name": "Garric Well",
+    "look": "Adult man, 45, softer build, receding dark hair, round glasses, light skin, gentle face. Teal apron over a white shirt, brown trousers, a satchel of glass vials. A glass frog familiar sits on his satchel, belly full of blue light.",
+    "skills": {
+      "garrick-salve": "A corked glass vial of pale blue salve, half full, paper label with no readable text.",
+      "garrick-bind": "A rolled linen bandage tied with blue thread, beside a small corked bottle. Healing kit, not a sword.",
+      "garrick-ult": "A wide glass bowl of glowing tide-blue water with a gold rim. Renewal, not a vial."
+    },
+    "familiar": "A glass frog familiar sits on his satchel, belly full of blue light."
+  },
+  "maeve": {
+    "name": "Maevara Dusk",
+    "look": "Adult woman, 30, muscular arms, tan freckled skin, auburn hair in a tight bun. Ochre sleeveless coat, leather bracers, brown trousers. Twin handaxes. A dust-moth of stone-gold circles one axe.",
+    "skills": {
+      "maeve-twin": "Two matching handaxes crossed, ochre-wrapped grips.",
+      "maeve-flurry": "Three handaxes in a staggered fan, motion, not crossed.",
+      "maeve-ult": "A ring of axe heads around a bright stone-gold core. Many strikes, no full bodies of axes only heads and flashes."
+    },
+    "familiar": "A dust-moth of stone-gold circles one axe."
+  },
+  "holt": {
+    "name": "Holthis Veil",
+    "look": "Adult man, 38, pale, long black hair half tied, gray eyes, long face. Charcoal asymmetrical coat, one shoulder longer, plum lining. A curved saber with a violet edge.",
+    "skills": {
+      "holt-open": "One curved saber with a violet cutting edge and a black wrapped grip. Different silhouette from a straight sword.",
+      "holt-wave": "A wide crescent of violet-edged steel, a single sweeping arc, no grip.",
+      "holt-ult": "The crescent shattering into ash and violet light. Cataclysm, not an intact blade."
+    }
+  },
+  "lira": {
+    "name": "Liravel Sunn",
+    "look": "Adult woman, 22, dark skin, cropped red-dyed hair, gold stud, focused eyes. One brass shoulder guard, rust short coat, dark leggings. A short spear with a heated tip.",
+    "skills": {
+      "lira-mark": "A short spearhead with a glowing brand burned into the metal.",
+      "lira-chase": "The spearhead plus a second smaller spearhead trailing it, a chase.",
+      "lira-ult": "The spear planted and the head bursting into a clean flare of fire. Finish, not a sword."
+    }
+  },
+  "cedric": {
+    "name": "Cedrion Whisp",
+    "look": "Adult man, 33, round face, messy blond hair, blue eyes, fair skin. Moss-green cloak over a brown tunic, tall boots. A wooden banner pole held upright.",
+    "skills": {
+      "cedric-tap": "A plain wooden polearm butt and short blade, humble, moss-green wrap.",
+      "cedric-banner": "A moss-green swallowtail banner, gold fringe, wind in the cloth.",
+      "cedric-ult": "The banner fully unfurled and edged in bright gold light, larger than the skill banner."
+    }
+  },
+  "anwen": {
+    "name": "Anweth Tide",
+    "look": "Adult woman, 40, deep brown skin, black hair in a crown braid, calm eyes. Navy coat with a scale pattern, silver clasp. Round shield and a short spear.",
+    "skills": {
+      "anwen-bash": "A round navy shield with a spear resting across it.",
+      "anwen-wall": "The round shield alone, face-on, tide-blue boss, rivets in a circle.",
+      "anwen-ult": "The round shield with a wave of gold sealing a crack. Bulwark."
+    }
+  },
+  "brock": {
+    "name": "Brovarn Kest",
+    "look": "Adult man, 50, heavy jowls, gray buzz cut, ruddy skin. Dusty brown duster, thick gloves stained green at the fingers. A stone-handled dagger.",
+    "skills": {
+      "brock-needle": "A thick stone-handled dagger with green venom along the groove.",
+      "brock-stop": "A heavy stone palm striking a cracked bell. Halt, no dagger.",
+      "brock-ult": "The dagger driven into a round stone seal that is splitting, green and gold. Verdict."
+    }
+  },
+  "ysolde": {
+    "name": "Ysolthe Mir",
+    "look": "Adult woman, 29, East Asian features, long straight black hair, light skin, calm. Lavender wrap jacket, black sash, white trousers. Two folded paper fans with metal ribs. A paper fox spirit hovers at her sleeve.",
+    "skills": {
+      "ysolde-call": "One open metal-ribbed fan, lavender paper, no text.",
+      "ysolde-pair": "Two open fans overlapping, one lavender, one cream.",
+      "ysolde-ult": "A fan of many blades of light spreading from a single pivot, a volley."
+    },
+    "familiar": "A paper fox spirit hovers at her sleeve."
+  },
+  "fen": {
+    "name": "Fenral Wick",
+    "look": "Adult man, 27, lean, red-brown undercut, burn scar on the jaw, fair skin. Short orange scarf, dark sleeveless layer, wrapped forearms. A slim sword and a drummer stick at the belt.",
+    "skills": {
+      "fen-step": "A slim straight sword with an orange cord on the grip.",
+      "fen-again": "A circular orange charm with an arrow chasing its own tail. Not a sword.",
+      "fen-ult": "The charm shattered into a bright encore ring of sparks."
+    }
+  },
+  "mira": {
+    "name": "Mirathen Flint",
+    "look": "Adult woman, 36, medium skin, curly dark hair, warm smile, green eyes. Sage coat with many pockets, cream blouse, brown boots. A bundle of herbs and a ceramic cup. A tiny leafy herb sprite peeks from her coat pocket.",
+    "skills": {
+      "mira-salve": "A ceramic cup of green salve with a sprig of herb across the rim.",
+      "mira-bind": "A neat stack of folded green bandages bound with twine.",
+      "mira-ult": "A shallow bowl of glowing green-gold water, herbs floating. Renewal."
+    },
+    "familiar": "A tiny leafy herb sprite peeks from her coat pocket."
+  },
+  "aldric": {
+    "name": "Aldrec Vorne",
+    "look": "Adult man, 34, dark wet-look hair, blue eyes, light olive skin. Sea-gray long vest, white shirt, dark trousers, bare forearms. Twin daggers with tide-blue hilts.",
+    "skills": {
+      "aldric-twin": "Two matching tide-blue daggers side by side.",
+      "aldric-flurry": "Three of those daggers in a rapid stagger, overlapping.",
+      "aldric-ult": "A circle of blue dagger flashes around a bright core."
+    }
+  },
+  "petra": {
+    "name": "Petraya Vale",
+    "look": "Adult woman, 44, square jaw, silver-streaked brown hair in a tail, tan skin. Clay-red short coat, heavy belt, tall boots. A broad cleaver.",
+    "skills": {
+      "petra-open": "One broad cleaver, thick spine, clay-wrapped handle. Not a slim sword.",
+      "petra-wave": "A wide horizontal cleaver stroke shown as a thick steel arc with stone dust.",
+      "petra-ult": "The cleaver buried in cracked stone, a burst of gold dust. Cataclysm."
+    }
+  },
+  "jorah": {
+    "name": "Jorathen Arden",
+    "look": "Adult man, 31, pale, almost-white blond hair, long face, gray eyes. Ink-purple coat, black shirt, slim build. A rapier with a brand mark on the blade.",
+    "skills": {
+      "jorah-mark": "A slim rapier with a red brand sigil etched on the blade. No readable letters.",
+      "jorah-chase": "The rapier with a second ghost blade trailing the point.",
+      "jorah-ult": "The rapier tip touching a violet seal that flares white. Finish."
+    }
+  },
+  "quill": {
+    "name": "Quillen Ash",
+    "look": "Adult man, 23, slight build, messy brown hair, ink-stained fingers, fair skin. Rust scarf, cream shirt, dark vest. A large quill and a small rolled banner.",
+    "skills": {
+      "quill-tap": "A large iron-nib pen, ornate, rust and gold. A tool, not a sword.",
+      "quill-banner": "A small rust-red square banner with a gold edge, cloth folds.",
+      "quill-ult": "The banner torn open by a bright gold flare. Warcry."
+    }
+  },
+  "saskia": {
+    "name": "Saskireth Blake",
+    "look": "Adult woman, 33, tall, platinum braid, fair skin, stern. Olive cloak over visible mail, dark trousers, steel boots. A kite shield.",
+    "skills": {
+      "saskia-bash": "A kite shield with a short mace beside it.",
+      "saskia-wall": "The kite shield alone, olive paint, steel boss, tall.",
+      "saskia-ult": "The kite shield braced, a gold line of light across it like a wall."
+    }
+  },
+  "brennan": {
+    "name": "Brennvar North",
+    "look": "Adult man, 39, bald, dark skin, sharp eyes. Teal high-collar coat, silver ear cuff. A glass needle and a small tide charm.",
+    "skills": {
+      "brennan-needle": "A glass needle syringe of green liquid, delicate, no text.",
+      "brennan-stop": "A frozen splash of tide water held in a glass disc. Halt.",
+      "brennan-ult": "The glass disc shattered, green and blue light. Verdict."
+    }
+  },
+  "odette": {
+    "name": "Odettalune",
+    "look": "Adult woman, 46, gray hair in a bun, warm face, fair skin, sturdy build. Beige wool coat, brown belt, practical boots. A short mace and a whistle on a cord.",
+    "skills": {
+      "odette-call": "A brass whistle on a leather cord.",
+      "odette-pair": "Two whistles bound together with beige cord.",
+      "odette-ult": "A whistle with thick gold rings of sound pouring out."
+    }
+  },
+  "harlan": {
+    "name": "Harlaven Reed",
+    "look": "Adult man, 28, slender, wavy black hair, light brown skin. Violet short cape, gray tunic, soft boots. An hourglass charm on a chain.",
+    "skills": {
+      "harlan-step": "A slender violet-hilted dagger, small.",
+      "harlan-again": "An hourglass lying on its side, sand in a loop, silver and violet.",
+      "harlan-ult": "The hourglass upright and blazing, sand turned to gold light. Encore."
+    }
+  },
+  "vesna": {
+    "name": "Vesnyra Glen",
+    "look": "Adult woman, 37, fair freckles, loose red hair, green eyes. Ember-colored shawl over a cream dress-coat and trousers. A small lamp and a roll of bandages. A lamp-moth of warm firelight rests on the lamp she carries.",
+    "skills": {
+      "vesna-salve": "A clay pot of warm salve with a copper lid ajar.",
+      "vesna-bind": "Bandages wrapped around a small lamp glass, healing and light together.",
+      "vesna-ult": "A full lamp with a tall gold flame and a ring of soft light. Renewal."
+    },
+    "familiar": "A lamp-moth of warm firelight rests on the lamp she carries."
+  },
+  "mick": {
+    "name": "Mickar Gale",
+    "look": "Adult man, 25, shaggy brown hair, a gap in one eyebrow, fair skin, cocky. Green short jacket, dark shirt, scuffed boots. Twin short hatchets.",
+    "skills": {
+      "mick-twin": "Two short hatchets, green wraps, side by side.",
+      "mick-flurry": "Three hatchet heads in a tumbling diagonal.",
+      "mick-ult": "A spinning ring of hatchet blades, gale-green sparks."
+    }
+  },
+  "cora": {
+    "name": "Coralyth Stone",
+    "look": "Adult woman, 32, tan skin, blue-black hair shaved on one side, long on the other, sharp eyes. Oilskin cape, dark fitted clothes, sea boots. A cutlass.",
+    "skills": {
+      "cora-open": "One tide cutlass, curved, dark steel, blue wrap on the grip.",
+      "cora-wave": "A broad horizontal wave of steel, spray along the edge. No person.",
+      "cora-ult": "The cutlass splitting a wave, white water and gold light. Cataclysm."
+    }
+  },
+  "leif": {
+    "name": "Leivar Wells",
+    "look": "Adult man, 42, blond beard, sun-lined fair skin, sturdy. Ochre coat, canvas trousers, heavy boots. A warhammer with a brand on the head.",
+    "skills": {
+      "leif-mark": "A warhammer head with a red brand burned into the striking face.",
+      "leif-chase": "The hammer with a second impact flash just ahead of the head.",
+      "leif-ult": "The hammer cracking a stone block, gold in the fissure. Finish."
+    }
+  },
+  "thalia": {
+    "name": "Thaliune Carr",
+    "look": "Adult woman, 27, medium skin, curly plum hair, brown eyes. Pale lilac coat, white shirt, dark boots. A small standard on a slim pole.",
+    "skills": {
+      "thalia-tap": "A slim pole with a lilac ribbon, a light tap weapon.",
+      "thalia-banner": "A lilac swallowtail banner with a silver hem.",
+      "thalia-ult": "That banner blazing at the edges, gold on lilac. Warcry."
+    }
+  },
+  "oswin": {
+    "name": "Oswiren Hale",
+    "look": "Adult man, 55, white hair, neat mustache, fair weathered skin, tall. Red fire-warden coat with brass buttons, dark trousers. A large rectangular shield.",
+    "skills": {
+      "oswin-bash": "A rectangular red shield and a short brass mace.",
+      "oswin-wall": "The rectangular shield alone, red paint, brass rim, tall.",
+      "oswin-ult": "The shield planted, a wall of gold fire along its top edge."
+    }
+  },
+  "briony": {
+    "name": "Brioneth Marr",
+    "look": "Adult woman, 34, black pixie cut, green eyes, fair skin. Sage hooded short cloak, dark clothes, fingerless gloves. A poison dart and a short blade. A green wasp-spirit hovers near her hood.",
+    "skills": {
+      "briony-needle": "Three green-tipped darts fanned, small and sharp.",
+      "briony-stop": "A dart frozen in a pane of green glass.",
+      "briony-ult": "A burst of darts around a violet-green seal. Verdict."
+    },
+    "familiar": "A green wasp-spirit hovers near her hood."
+  },
+  "cassian": {
+    "name": "Cassivar Voss",
+    "look": "Adult man, 29, fair skin, curly navy-blue hair, clean shaven, NOT blond and NOT wearing a long blue greatcoat. Short teal jacket, white shirt, brown trousers. A conch horn.",
+    "skills": {
+      "cassian-call": "A spiral conch horn, cream and teal, held by nothing, object only.",
+      "cassian-pair": "Two conch shells, one large and one small, bound with teal cord.",
+      "cassian-ult": "The conch with a spiral of gold sound. Volley."
+    }
+  },
+  "elowen": {
+    "name": "Elowynne Keel",
+    "look": "Adult woman, 43, round face, chestnut hair with gray, fair skin. Clay-colored wrap coat, soft boots. A looped cord at her wrist like a promise. A clay beetle with a gold crack sits on her shoulder.",
+    "skills": {
+      "elowen-step": "A smooth stone-headed cane, clay grip.",
+      "elowen-again": "A looped clay-red cord tied in a circle with a gold bead.",
+      "elowen-ult": "The loop opened into a bright ring standing upright. Encore."
+    },
+    "familiar": "A clay beetle with a gold crack sits on her shoulder."
+  },
+  "drust": {
+    "name": "Drustavar Quinn",
+    "look": "Adult man, 52, long gray hair, lined face, pale. Plum robe-coat over dark trousers, simple sandals visible as boots. A crystal vial on a chain. A violet wisp curls around his crystal vial.",
+    "skills": {
+      "drust-salve": "A faceted crystal vial of pale purple liquid.",
+      "drust-bind": "Purple silk bandage rolled, a crystal stopper beside it.",
+      "drust-ult": "A crystal bowl of violet-gold light. Renewal."
+    },
+    "familiar": "A violet wisp curls around his crystal vial."
+  },
+  "nin": {
+    "name": "Ninrael Bell",
+    "look": "Adult woman, 21, East Asian features, black hair in two short tails with red ribbons, athletic, warm skin. Short red jacket, black trousers, light boots. Twin short swords.",
+    "skills": {
+      "nin-twin": "Two short red-wrapped swords parallel.",
+      "nin-flurry": "Three short swords in a fast diagonal spray.",
+      "nin-ult": "A red-gold burst with many short blade flashes in a circle."
+    }
+  },
+  "peregrine": {
+    "name": "Perivar Hawk",
+    "look": "Adult man, 36, hawk nose, swept brown hair, fair skin, keen eyes. Feather-trim hunter cloak, green-brown, tall boots. A long curved hunting blade.",
+    "skills": {
+      "peregrine-open": "A long curved hunting blade, feather charm on the pommel.",
+      "peregrine-wave": "A single huge hawk-wing arc of steel. Sweep, not three copies.",
+      "peregrine-ult": "The blade and a burst of feathers and gold light. Cataclysm."
+    }
+  },
+  "isola": {
+    "name": "Isolune Brook",
+    "look": "Adult woman, 26, dark skin, long locs with blue beads, focused. Tide-blue cropped jacket, white shirt, dark trousers. A marking knife.",
+    "skills": {
+      "isola-mark": "A small marking knife with a blue bead on the pommel and a red brand on the blade.",
+      "isola-chase": "The knife and a bead-trail of blue light following the tip.",
+      "isola-ult": "The knife striking a blue seal that flares. Finish."
+    }
+  },
+  "tam": {
+    "name": "Tamaros Crowe",
+    "look": "Adult man, 47, stocky, bald, clay-colored cap, ruddy skin, broad smile. Brown work coat, heavy boots. A banner spear.",
+    "skills": {
+      "tam-tap": "A banner spear tip, clay and iron, short.",
+      "tam-banner": "A square clay-brown banner with a pale hem, heavy cloth.",
+      "tam-ult": "The banner struck and shining, gold dust off the cloth. Warcry."
+    }
+  },
+  "rheya": {
+    "name": "Rheyalis Ash",
+    "look": "Adult woman, 38, long white hair, pale, tall. Black coat with plum panels, armored shoulders. A tall narrow shield.",
+    "skills": {
+      "rheya-bash": "A tall narrow black shield with a plum stripe and a short blade at its edge.",
+      "rheya-wall": "The tall shield alone, full height in the frame.",
+      "rheya-ult": "The shield with a vertical seam of gold light. Bulwark."
+    }
+  },
+  "col": {
+    "name": "Colvyn Pike",
+    "look": "Adult man, 24, ginger, freckles, soot on the cheeks, fair skin, wiry. Short red jacket, dark neck cloth. A thorn dagger with a heated tip.",
+    "skills": {
+      "col-needle": "A thorn-shaped dagger, green drop at the tip, ember at the base.",
+      "col-stop": "A cracked ember coal frozen mid-spark.",
+      "col-ult": "The thorn pinning a round red seal. Verdict."
+    }
+  },
+  "maren": {
+    "name": "Marenya Moss",
+    "look": "Adult woman, 31, brown skin, afro with a green ribbon, bright eyes. Short sage jacket, cream top, dark trousers. Two slim signal blades.",
+    "skills": {
+      "maren-call": "One slim signal blade with a green ribbon on the guard.",
+      "maren-pair": "Two slim blades crossed, green ribbons.",
+      "maren-ult": "A fan of many slim blades of light. Volley."
+    }
+  },
+  "uthred": {
+    "name": "Uthrael Cole",
+    "look": "Adult man, 44, long brown hair, full beard, fair weathered skin. Sea-cloak of deep blue, heavy boots. A thick tide-knot rope in one hand.",
+    "skills": {
+      "uthred-step": "A sailor's knife with a blue cord wrap.",
+      "uthred-again": "A heavy sailor knot tied in a circle, blue rope, gold pin.",
+      "uthred-ult": "The knot blazing, rope turned to a ring of light. Encore."
+    }
+  },
+  "sylvie": {
+    "name": "Sylvara Dunn",
+    "look": "Adult woman, 40, blonde bob, fair skin, soft eyes. Ochre apron over a gray dress and trousers, practical shoes. A stone mortar.",
+    "skills": {
+      "sylvie-salve": "A stone mortar with pale salve and a pestle.",
+      "sylvie-bind": "Ochre linen rolls stacked, a stone bead on the tie.",
+      "sylvie-ult": "The mortar full of gold-white light. Renewal."
+    }
+  },
+  "keir": {
+    "name": "Keirith Sato",
+    "look": "Adult man, 33, pale, black hair shaved on the sides with a long top, lean. Dark violet coat, black shirt. Twin violet daggers.",
+    "skills": {
+      "keir-twin": "Two violet-edged daggers parallel.",
+      "keir-flurry": "Three violet daggers in a tight spiral.",
+      "keir-ult": "A spiral of violet blade-light. Barrage."
+    }
+  },
+  "daph": {
+    "name": "Daphira Lark",
+    "look": "Adult woman, 28, brown skin, dark curly hair with ember-colored pins. Asymmetric rust coat, one long side. A heavy cleaver with a hot edge.",
+    "skills": {
+      "daph-open": "A heavy cleaver with a heated orange edge. Distinct from Petra's by the ember pins motif as a small coal on the pommel.",
+      "daph-wave": "A low wide arc of heated steel, thicker than a saber wave.",
+      "daph-ult": "The cleaver breaking a bar of iron, fire in the break. Cataclysm."
+    }
+  },
+  "rowan2": {
+    "name": "Rowevar Flint",
+    "look": "Adult man, 30, chestnut wavy hair, green eyes, light stubble, fair skin. Short hunter coat of olive, not a long coat. A shortbow in one hand and a branded knife at the belt.",
+    "skills": {
+      "rowan2-mark": "A hunting knife with a brand on the blade and a green wrap.",
+      "rowan2-chase": "An arrow in flight with a second ghost arrow behind it.",
+      "rowan2-ult": "The arrow striking and blooming into gold light. Finish."
+    }
+  },
+  "astra": {
+    "name": "Astralya Holt",
+    "look": "Adult woman, 25, fair, silver-blue hair in a bun, gray eyes. A SHORT pale-blue peacoat, not a long greatcoat, white shirt, navy trousers. A small tide banner.",
+    "skills": {
+      "astra-tap": "A short pale-blue baton with a silver cap.",
+      "astra-banner": "A small pale-blue pennant, silver stars suggested as dots, no letters.",
+      "astra-ult": "The pennant exploding into a clean gold flare. Warcry."
+    }
+  },
+  "pike": {
+    "name": "Dorvhal Vale",
+    "look": "Adult man, 49, huge build, gray braided beard, bald crown, ruddy skin. Stone-gray plate coat, heavy. A tower shield nearly as tall as his torso.",
+    "skills": {
+      "pike-bash": "A massive tower shield and a thick spear butt.",
+      "pike-wall": "The tower shield alone, stone-gray, iron cross brace.",
+      "pike-ult": "The shield with a horizontal gold beam, a wall of light."
+    }
+  },
+  "lumen": {
+    "name": "Lumenya Arden",
+    "look": "Adult woman, 23, very pale, lavender hair to the chin, luminous gray eyes. Dark plum coat, black gloves. A glass needle. A luminous moon moth rests on her collar.",
+    "skills": {
+      "lumen-needle": "A glass needle of pale poison, glowing faintly.",
+      "lumen-stop": "A moth frozen in violet resin. Halt, no blade.",
+      "lumen-ult": "The resin disc cracking with white-violet light. Verdict."
+    },
+    "familiar": "A luminous moon moth rests on her collar."
+  },
+  "bard": {
+    "name": "Calivar Shaw",
+    "look": "Adult man, 35, warm brown skin, mustache, short black hair. Rust minstrel coat with a high collar, cream shirt. A hand drum under one arm.",
+    "skills": {
+      "bard-call": "A small hand drum, skin head, rust-stained rim.",
+      "bard-pair": "Two drums, one large and one small, leather laces.",
+      "bard-ult": "The drum with a shockwave ring of gold leaving the skin. Volley."
+    }
+  },
+  "hestia": {
+    "name": "Hestalyne Blake",
+    "look": "Adult woman, 39, olive skin, dark hair in a low knot, steady eyes. Green wrap tunic, brown belt, tall boots. A circular bronze charm.",
+    "skills": {
+      "hestia-step": "A bronze-capped walking staff.",
+      "hestia-again": "A circular bronze charm with a spiral, no letters.",
+      "hestia-ult": "The charm lifted in light, a full gold ring. Encore. Object only."
+    }
+  },
+  "grim": {
+    "name": "Grimorath North",
+    "look": "Adult man, 58, gaunt, white beard, deep-set kind eyes, pale. Deep blue coat, worn at the cuffs. A tide flask and a cloth. A small tide eel looks out of the flask in his hand.",
+    "skills": {
+      "grim-salve": "A dark blue flask of pale salve, cork and twine.",
+      "grim-bind": "A folded blue cloth and a flask. Bind.",
+      "grim-ult": "An open well of blue-gold water in a stone cup. Renewal."
+    },
+    "familiar": "A small tide eel looks out of the flask in his hand."
+  },
+  "opal": {
+    "name": "Opalis West",
+    "look": "Adult woman, 27, medium skin, black hair, an opal ear stud, strong arms. Ochre vest, white shirt, brown trousers. Twin stone hammers.",
+    "skills": {
+      "opal-twin": "Two short stone hammers, pale heads, leather grips.",
+      "opal-flurry": "Three hammer heads in a cascade.",
+      "opal-ult": "A ring of hammer sparks and stone chips. Barrage."
+    }
+  },
+  "soren2": {
+    "name": "Sylthea Reed",
+    "look": "Adult woman, 31, deep brown skin, short coily hair, gold hoop earring, dark eyes. Veil-purple long vest over black, NOT a blond man and NOT a blue coat. A slender saber with a pale edge.",
+    "skills": {
+      "soren2-open": "A slender saber, purple wrap, pale cutting edge.",
+      "soren2-wave": "A thin crescent of pale steel, elegant and wide.",
+      "soren2-ult": "The crescent breaking into petals of violet light. Cataclysm."
+    }
+  },
+  "vance": {
+    "name": "Vancelor Glen",
+    "look": "Adult man, 37, tan skin, black hair slicked back, a burn line on the neck. Rust hunting coat, dark gloves. A spear with a branded head.",
+    "skills": {
+      "vance-mark": "A spearhead with a clear brand scar in the steel.",
+      "vance-chase": "Two spearheads in sequence, the rear one fading.",
+      "vance-ult": "The spearhead bursting, a controlled flare. Finish."
+    }
+  },
+  "nell": {
+    "name": "Nellixa Marsh",
+    "look": "Adult woman, 45, gray-green hair in a braided crown, fair skin, lined smile. Moss cloak, brown dress-coat and trousers. A small war banner.",
+    "skills": {
+      "nell-tap": "A short moss-wrapped cudgel.",
+      "nell-banner": "A moss-green banner, square, pale stitching, no letters.",
+      "nell-ult": "The banner rimmed in gold fire. Warcry."
+    }
+  },
+  "orko": {
+    "name": "Orvath Mere",
+    "look": "Adult human man, 40, broad, black beard, warm brown skin, human features, not an orc. Navy quilted armor with round rivets. A round shield and a hooked axe.",
+    "skills": {
+      "orko-bash": "A round navy shield and a hooked axe.",
+      "orko-wall": "The round shield alone, rivets in two rings, tide-dark paint.",
+      "orko-ult": "The shield with a crest of gold water along the rim. Bulwark."
+    }
+  },
+  "faye": {
+    "name": "Fayelin Wells",
+    "look": "Adult woman, 33, sandy bob, hazel eyes, fair skin. Clay hood and short cloak, gray dress, boots. A stone thorn dagger.",
+    "skills": {
+      "faye-needle": "A stone thorn, gray, with a bead of dark poison.",
+      "faye-stop": "A clay tablet cracked down the middle. Halt.",
+      "faye-ult": "The tablet broken open, gold in the crack. Verdict."
+    }
+  },
+  "jasper": {
+    "name": "Jaspelune Carr",
+    "look": "Adult man, 26, pale, messy ink-black hair, round glasses. Pale violet coat, cream shirt. Two slim calling blades.",
+    "skills": {
+      "jasper-call": "One slim calling blade, violet tassel.",
+      "jasper-pair": "Two slim blades with violet tassels, parallel.",
+      "jasper-ult": "A spread of tasseled blades like a hand of cards made of steel. Volley. No text."
+    }
+  },
+  "rune": {
+    "name": "Runethar Hale",
+    "look": "Adult man, 46, shaved head, scarred hands, fair skin, solemn. Short rust cape, dark tunic, boots. A circular ember charm.",
+    "skills": {
+      "rune-step": "A short rust-red blade with a circular pommel.",
+      "rune-again": "A circular ember charm, carved spiral, no letters.",
+      "rune-ult": "The charm open, a ring of fire. Encore."
+    }
+  },
+  "cress": {
+    "name": "Cressalyth Marr",
+    "look": "Adult woman, 29, light brown hair, green eyes, fair skin. Sage coat with many pockets, white cuffs. Herb shears and a sprig. A leaf-spirit the size of a hand clings to her shears.",
+    "skills": {
+      "cress-salve": "Herb shears resting on a leaf-wrapped salve pot.",
+      "cress-bind": "A braid of herbs used as a bandage, green and cream.",
+      "cress-ult": "A wreath of herbs around a bowl of gold-green light. Renewal."
+    },
+    "familiar": "A leaf-spirit the size of a hand clings to her shears."
+  },
+  "hal": {
+    "name": "Halveric Voss",
+    "look": "Adult man, 22, young adult, curly black hair, athletic, warm brown skin. Open blue vest, white shirt, dark trousers. Twin tide cutlasses.",
+    "skills": {
+      "hal-twin": "Two tide cutlasses, blue grips, crossed.",
+      "hal-flurry": "Three cutlass arcs in a row, steel only.",
+      "hal-ult": "A spinning wheel of cutlass light, blue and gold."
+    }
+  },
+  "io": {
+    "name": "Iovara Keel",
+    "look": "Adult woman, 41, sharp copper bob, tan skin, cool expression. Stone-gray long coat, black shirt, tall boots. A heavy cleaver.",
+    "skills": {
+      "io-open": "A heavy gray cleaver, black handle, thick rectangular blade.",
+      "io-wave": "A flat rectangular slash of steel, blunt and wide, stone dust.",
+      "io-ult": "The cleaver cracking a pillar, gold dust. Cataclysm."
+    }
+  },
+  "mattis": {
+    "name": "Matthos Quinn",
+    "look": "Adult man, 36, medium skin, dark hair, neat goatee. Purple-black coat, silver buttons. A rapier and a round brand-seal at his belt.",
+    "skills": {
+      "mattis-mark": "A rapier with a round brand-seal hanging from the guard.",
+      "mattis-chase": "The rapier and a floating seal chasing the point.",
+      "mattis-ult": "The seal stamped in light, the rapier through it. Finish."
+    }
+  },
+  "pearl": {
+    "name": "Pearlith Bell",
+    "look": "Adult woman, 34, warm brown skin, black hair in an updo with a pearl pin. Short ember coat, cream blouse, dark skirt over trousers. A small banner.",
+    "skills": {
+      "pearl-tap": "A pearl-capped baton, short, cream and gold.",
+      "pearl-banner": "A small ember banner with a pearl-colored hem.",
+      "pearl-ult": "The banner bright as a flare, pearl highlights. Warcry."
+    }
+  },
+  "stark": {
+    "name": "Starkev Wren",
+    "look": "Adult man, 51, stern, iron-gray hair, tall, fair skin, lined. Olive greatcoat, mail at the collar. A kite shield.",
+    "skills": {
+      "stark-bash": "An olive kite shield and a long knife.",
+      "stark-wall": "The kite shield, iron boss, olive field, no emblem text.",
+      "stark-ult": "The kite shield with a gold chevron of light. Bulwark."
+    }
+  },
+  "una": {
+    "name": "Unavelle Brook",
+    "look": "Adult woman, 30, deep skin, wet-look bob, sharp eyeliner. Teal long gloves, dark coat, silver choker. A glass stinger.",
+    "skills": {
+      "una-needle": "A glass stinger, curved, teal liquid inside.",
+      "una-stop": "A sphere of still water with a crack. Halt.",
+      "una-ult": "The sphere bursting into teal and gold. Verdict."
+    }
+  },
+  "wystan": {
+    "name": "Wystavar Crowe",
+    "look": "Adult man, 43, kind face, brown beard, fair skin. Clay cloak, cream shirt, sturdy boots. A paired horn of wood and clay.",
+    "skills": {
+      "wystan-call": "One curved wooden horn, clay mouthpiece.",
+      "wystan-pair": "Two horns bound with clay-red cord, a pair.",
+      "wystan-ult": "Both horns suggested as one large horn pouring gold sound. Volley."
+    }
+  },
+  "yara": {
+    "name": "Yaralith Ash",
+    "look": "Adult woman, 24, fair, long wavy plum hair, slight build. Lilac short coat over trousers, black boots. A silver encore ring on a chain, and a slim wand.",
+    "skills": {
+      "yara-step": "A slim lilac wand, silver tip.",
+      "yara-again": "A silver ring on a chain, set with a plum stone. The ring is the subject, large in frame.",
+      "yara-ult": "The ring standing upright, filled with dawn-gold light. Encore."
+    }
+  },
+  "zeno": {
+    "name": "Zenovar Pike",
+    "look": "Adult man, 48, bald, dark skin, gold earring, calm. Ember shawl over a cream tunic, dark trousers. A travel lamp and bandages. A coal sprite with ember eyes sits on his travel lamp.",
+    "skills": {
+      "zeno-salve": "A copper salve tin, open, warm paste inside.",
+      "zeno-bind": "Bandages coiled around a small unlit lamp.",
+      "zeno-ult": "The lamp fully lit, a tall careful flame, gold. Renewal."
+    },
+    "familiar": "A coal sprite with ember eyes sits on his travel lamp."
+  },
+  "amber": {
+    "name": "Amberis Moss",
+    "look": "Adult woman, 32, honey-brown hair half up, amber eyes, fair skin. Olive jacket, cream shirt, brown trousers. Twin sickles.",
+    "skills": {
+      "amber-twin": "Two sickles, crescent blades, olive wraps.",
+      "amber-flurry": "Three sickle crescents tumbling.",
+      "amber-ult": "A wreath of sickle blades and gold leaves. Barrage."
+    }
+  },
+  "beck": {
+    "name": "Beckoran Cole",
+    "look": "Adult man, 27, freckles, auburn side part, fair skin, narrow build. Blue-gray coat to mid-thigh, white shirt. A wide cutlass.",
+    "skills": {
+      "beck-open": "A wide cutlass, blue-gray wrap, freckled rust on the steel.",
+      "beck-wave": "One very wide tide arc, spray, thicker than Cora's wave.",
+      "beck-ult": "The cutlass and a collapsing wave of gold-blue light. Cataclysm."
+    }
+  },
+  "solenne": {
+    "name": "Solenya Vaer",
+    "look": "Legendary adult woman, 38, dark skin, gold-lit brown eyes, black hair with a white streak, noble and tired. A long coat the color of banked coals, gold lining, tall boots. A real oil lamp in the left hand and a straight sun-bright sword in the right. Not a copy of Bram. The flame in her lamp is a tiny fire spirit with a living face.",
+    "skills": {
+      "solenne-cut": "A straight sword with a lamp-gold edge and a small flame motif on the crossguard. Not rust-covered.",
+      "solenne-gauge": "An oil lamp whose glass is a rising gauge of fire, half full of flame. Object only.",
+      "solenne-sun": "A sun falling as a gold disc cracked with white fire, rays short and thick. Sunfall. No person."
+    },
+    "familiar": "The flame in her lamp is a tiny fire spirit with a living face."
+  },
+  "harren": {
+    "name": "Harreth Karn",
+    "look": "Legendary adult man, 54, huge, gray hair, a scar across the nose, calm. Stone-gray bridge cloak, mended mail, heavy boots. A tall shield that has been cracked and mended with gold. A small stone gargoyle crouches on the top edge of his shield.",
+    "skills": {
+      "harren-bastion": "A tall mended shield, gold in the crack, and a short spear.",
+      "harren-hold": "The shield alone, the gold mend brighter, a wall.",
+      "harren-unbroken": "The shield whole, the crack sealed in solid gold light. Unbroken."
+    },
+    "familiar": "A small stone gargoyle crouches on the top edge of his shield."
+  },
+  "ilyra": {
+    "name": "Ilythra Quenn",
+    "look": "Legendary adult woman, 36, deep brown skin, tide-blue braids with silver rings, generous expression. Indigo linen coat, cream wrap, sandals over foot wraps. A staff topped with a small well-bucket that shines. A glass koi swims in the air around her staff.",
+    "skills": {
+      "ilyra-step": "A staff with a tiny silver bucket at the top, a drop of water falling.",
+      "ilyra-well": "An open stone well mouth seen from above, dark water with a gold glint. No person.",
+      "ilyra-court": "A ring of water standing up like a court, silver and gold, a spring."
+    },
+    "familiar": "A glass koi swims in the air around her staff."
+  },
+  "mael": {
+    "name": "Maelor Veyne",
+    "look": "Legendary adult man, 40, lean, long wind-gray hair, pale, sharp quiet face. A coat the color of cut wind, green-gray, asymmetrical hem. A shearing blade, thin and bright. A hare made of pale wind stands at his heel.",
+    "skills": {
+      "mael-shear": "A thin shearing blade, crescent, pale steel, green-gray wrap.",
+      "mael-still": "A frozen ribbon of wind, a still spiral of pale air. No blade.",
+      "mael-gale": "A white gale disc, horizontal, debris of leaves and light. White Gale."
+    },
+    "familiar": "A hare made of pale wind stands at his heel."
+  },
+  "seraphine": {
+    "name": "Seraphel Veyn",
+    "look": "Legendary adult woman, 33, warm brown skin, veil-silver hair in a loose knot, elegant. Plum and cream coat, long gloves, one hand extended as if offering a turn back. A slim sword at her side. A translucent second hand of veil-light floats beside her own.",
+    "skills": {
+      "seraphine-call": "An extended empty glove of plum leather, palm up, inviting a second strike. Object only.",
+      "seraphine-again": "A plum ribbon tied in a loop with a gold arrow returning. Not Finished.",
+      "seraphine-dawn": "A second sunrise, a small gold sun over a plum horizon line. Second Dawn. No person, no text."
+    },
+    "familiar": "A translucent second hand of veil-light floats beside her own."
+  }
+}

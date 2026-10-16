@@ -1,0 +1,9 @@
+public/sprites/mick.png
+public/sprites/mick-attack.png
+public/sprites/mick-win.png
+public/sprites/mick-lose.png
+public/sprites/mick-ult.png
+public/sprites/mick-stress.png
+public/skills/mick-twin.png
+public/skills/mick-flurry.png
+public/skills/mick-ult.png

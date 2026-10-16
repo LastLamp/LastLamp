@@ -1,0 +1,3 @@
+/Users/antho/Documents/gachagame/public/skills/brynn-cross.png
+/Users/antho/Documents/gachagame/public/skills/brynn-gust.png
+/Users/antho/Documents/gachagame/public/skills/brynn-line.png

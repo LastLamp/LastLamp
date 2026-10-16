@@ -1,0 +1,9 @@
+public/sprites/harlan.png
+public/sprites/harlan-attack.png
+public/sprites/harlan-win.png
+public/sprites/harlan-lose.png
+public/sprites/harlan-ult.png
+public/sprites/harlan-stress.png
+public/skills/harlan-step.png
+public/skills/harlan-again.png
+public/skills/harlan-ult.png

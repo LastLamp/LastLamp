@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/holt.png
+/Users/antho/Documents/gachagame/public/sprites/holt-attack.png
+/Users/antho/Documents/gachagame/public/sprites/holt-win.png
+/Users/antho/Documents/gachagame/public/sprites/holt-lose.png
+/Users/antho/Documents/gachagame/public/sprites/holt-ult.png
+/Users/antho/Documents/gachagame/public/sprites/holt-stress.png
+/Users/antho/Documents/gachagame/public/skills/holt-open.png
+/Users/antho/Documents/gachagame/public/skills/holt-wave.png
+/Users/antho/Documents/gachagame/public/skills/holt-ult.png

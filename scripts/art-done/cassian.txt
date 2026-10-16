@@ -1,0 +1,9 @@
+public/sprites/cassian.png
+public/sprites/cassian-attack.png
+public/sprites/cassian-win.png
+public/sprites/cassian-lose.png
+public/sprites/cassian-ult.png
+public/sprites/cassian-stress.png
+public/skills/cassian-call.png
+public/skills/cassian-pair.png
+public/skills/cassian-ult.png

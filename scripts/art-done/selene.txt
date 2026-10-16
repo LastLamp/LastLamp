@@ -1,0 +1,3 @@
+/Users/antho/Documents/gachagame/public/skills/selene-spring.png
+/Users/antho/Documents/gachagame/public/skills/selene-well.png
+/Users/antho/Documents/gachagame/public/skills/selene-tide.png

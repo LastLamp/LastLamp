@@ -1,0 +1,9 @@
+public/sprites/stark.png
+public/sprites/stark-attack.png
+public/sprites/stark-win.png
+public/sprites/stark-lose.png
+public/sprites/stark-ult.png
+public/sprites/stark-stress.png
+public/skills/stark-bash.png
+public/skills/stark-wall.png
+public/skills/stark-ult.png

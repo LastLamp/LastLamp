@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/opal.png
+/Users/antho/Documents/gachagame/public/sprites/opal-attack.png
+/Users/antho/Documents/gachagame/public/sprites/opal-win.png
+/Users/antho/Documents/gachagame/public/sprites/opal-lose.png
+/Users/antho/Documents/gachagame/public/sprites/opal-ult.png
+/Users/antho/Documents/gachagame/public/sprites/opal-stress.png
+/Users/antho/Documents/gachagame/public/skills/opal-twin.png
+/Users/antho/Documents/gachagame/public/skills/opal-flurry.png
+/Users/antho/Documents/gachagame/public/skills/opal-ult.png

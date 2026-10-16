@@ -1,0 +1,9 @@
+public/sprites/io.png
+public/sprites/io-attack.png
+public/sprites/io-win.png
+public/sprites/io-lose.png
+public/sprites/io-ult.png
+public/sprites/io-stress.png
+public/skills/io-open.png
+public/skills/io-wave.png
+public/skills/io-ult.png

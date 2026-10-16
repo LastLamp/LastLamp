@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/mira.png
+/Users/antho/Documents/gachagame/public/sprites/mira-attack.png
+/Users/antho/Documents/gachagame/public/sprites/mira-win.png
+/Users/antho/Documents/gachagame/public/sprites/mira-lose.png
+/Users/antho/Documents/gachagame/public/sprites/mira-ult.png
+/Users/antho/Documents/gachagame/public/sprites/mira-stress.png
+/Users/antho/Documents/gachagame/public/skills/mira-salve.png
+/Users/antho/Documents/gachagame/public/skills/mira-bind.png
+/Users/antho/Documents/gachagame/public/skills/mira-ult.png

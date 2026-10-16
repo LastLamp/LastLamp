@@ -1,0 +1,9 @@
+public/sprites/astra.png
+public/sprites/astra-attack.png
+public/sprites/astra-win.png
+public/sprites/astra-lose.png
+public/sprites/astra-ult.png
+public/sprites/astra-stress.png
+public/skills/astra-tap.png
+public/skills/astra-banner.png
+public/skills/astra-ult.png

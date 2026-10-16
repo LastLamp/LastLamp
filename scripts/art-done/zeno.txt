@@ -1,0 +1,9 @@
+public/sprites/zeno.png
+public/sprites/zeno-attack.png
+public/sprites/zeno-win.png
+public/sprites/zeno-lose.png
+public/sprites/zeno-ult.png
+public/sprites/zeno-stress.png
+public/skills/zeno-salve.png
+public/skills/zeno-bind.png
+public/skills/zeno-ult.png

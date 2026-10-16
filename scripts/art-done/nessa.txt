@@ -1,0 +1,8 @@
+/Users/antho/Documents/gachagame/public/sprites/nessa-attack.png
+/Users/antho/Documents/gachagame/public/sprites/nessa-win.png
+/Users/antho/Documents/gachagame/public/sprites/nessa-lose.png
+/Users/antho/Documents/gachagame/public/sprites/nessa-ult.png
+/Users/antho/Documents/gachagame/public/sprites/nessa-stress.png
+/Users/antho/Documents/gachagame/public/skills/nessa-mark.png
+/Users/antho/Documents/gachagame/public/skills/nessa-chase.png
+/Users/antho/Documents/gachagame/public/skills/nessa-ult.png

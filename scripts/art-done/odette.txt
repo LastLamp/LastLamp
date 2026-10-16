@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/odette.png
+/Users/antho/Documents/gachagame/public/sprites/odette-attack.png
+/Users/antho/Documents/gachagame/public/sprites/odette-win.png
+/Users/antho/Documents/gachagame/public/sprites/odette-lose.png
+/Users/antho/Documents/gachagame/public/sprites/odette-ult.png
+/Users/antho/Documents/gachagame/public/sprites/odette-stress.png
+/Users/antho/Documents/gachagame/public/skills/odette-call.png
+/Users/antho/Documents/gachagame/public/skills/odette-pair.png
+/Users/antho/Documents/gachagame/public/skills/odette-ult.png

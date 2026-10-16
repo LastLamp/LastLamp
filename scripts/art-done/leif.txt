@@ -1,0 +1,9 @@
+public/sprites/leif.png
+public/sprites/leif-attack.png
+public/sprites/leif-win.png
+public/sprites/leif-lose.png
+public/sprites/leif-ult.png
+public/sprites/leif-stress.png
+public/skills/leif-mark.png
+public/skills/leif-chase.png
+public/skills/leif-ult.png

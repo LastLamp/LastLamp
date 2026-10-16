@@ -1,0 +1,8 @@
+public/sprites/solenne-attack.png
+public/sprites/solenne-win.png
+public/sprites/solenne-lose.png
+public/sprites/solenne-ult.png
+public/sprites/solenne-stress.png
+public/skills/solenne-cut.png
+public/skills/solenne-gauge.png
+public/skills/solenne-sun.png

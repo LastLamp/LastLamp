@@ -1,0 +1,9 @@
+public/sprites/elowen.png
+public/sprites/elowen-attack.png
+public/sprites/elowen-win.png
+public/sprites/elowen-lose.png
+public/sprites/elowen-ult.png
+public/sprites/elowen-stress.png
+public/skills/elowen-step.png
+public/skills/elowen-again.png
+public/skills/elowen-ult.png

@@ -1,0 +1,9 @@
+public/sprites/thalia.png
+public/sprites/thalia-attack.png
+public/sprites/thalia-win.png
+public/sprites/thalia-lose.png
+public/sprites/thalia-ult.png
+public/sprites/thalia-stress.png
+public/skills/thalia-tap.png
+public/skills/thalia-banner.png
+public/skills/thalia-ult.png

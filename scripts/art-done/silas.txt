@@ -1,0 +1,3 @@
+/Users/antho/Documents/gachagame/public/skills/quiet-step.png
+/Users/antho/Documents/gachagame/public/skills/smoke.png
+/Users/antho/Documents/gachagame/public/skills/blackout.png

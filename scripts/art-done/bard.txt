@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/bard.png
+/Users/antho/Documents/gachagame/public/sprites/bard-attack.png
+/Users/antho/Documents/gachagame/public/sprites/bard-win.png
+/Users/antho/Documents/gachagame/public/sprites/bard-lose.png
+/Users/antho/Documents/gachagame/public/sprites/bard-ult.png
+/Users/antho/Documents/gachagame/public/sprites/bard-stress.png
+/Users/antho/Documents/gachagame/public/skills/bard-call.png
+/Users/antho/Documents/gachagame/public/skills/bard-pair.png
+/Users/antho/Documents/gachagame/public/skills/bard-ult.png

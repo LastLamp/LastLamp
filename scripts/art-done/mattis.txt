@@ -1,0 +1,9 @@
+public/sprites/mattis.png
+public/sprites/mattis-attack.png
+public/sprites/mattis-win.png
+public/sprites/mattis-lose.png
+public/sprites/mattis-ult.png
+public/sprites/mattis-stress.png
+public/skills/mattis-mark.png
+public/skills/mattis-chase.png
+public/skills/mattis-ult.png

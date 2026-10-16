@@ -1,0 +1,8 @@
+/Users/antho/Documents/gachagame/public/sprites/willa-attack.png
+/Users/antho/Documents/gachagame/public/sprites/willa-win.png
+/Users/antho/Documents/gachagame/public/sprites/willa-lose.png
+/Users/antho/Documents/gachagame/public/sprites/willa-ult.png
+/Users/antho/Documents/gachagame/public/sprites/willa-stress.png
+/Users/antho/Documents/gachagame/public/skills/willa-needle.png
+/Users/antho/Documents/gachagame/public/skills/willa-stop.png
+/Users/antho/Documents/gachagame/public/skills/willa-ult.png

@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/fen.png
+/Users/antho/Documents/gachagame/public/sprites/fen-attack.png
+/Users/antho/Documents/gachagame/public/sprites/fen-win.png
+/Users/antho/Documents/gachagame/public/sprites/fen-lose.png
+/Users/antho/Documents/gachagame/public/sprites/fen-ult.png
+/Users/antho/Documents/gachagame/public/sprites/fen-stress.png
+/Users/antho/Documents/gachagame/public/skills/fen-step.png
+/Users/antho/Documents/gachagame/public/skills/fen-again.png
+/Users/antho/Documents/gachagame/public/skills/fen-ult.png

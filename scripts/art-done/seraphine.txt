@@ -1,0 +1,9 @@
+public/sprites/seraphine.png
+public/sprites/seraphine-attack.png
+public/sprites/seraphine-win.png
+public/sprites/seraphine-lose.png
+public/sprites/seraphine-ult.png
+public/sprites/seraphine-stress.png
+public/skills/seraphine-call.png
+public/skills/seraphine-again.png
+public/skills/seraphine-dawn.png

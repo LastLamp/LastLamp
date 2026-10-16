@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/ysolde.png
+/Users/antho/Documents/gachagame/public/sprites/ysolde-attack.png
+/Users/antho/Documents/gachagame/public/sprites/ysolde-win.png
+/Users/antho/Documents/gachagame/public/sprites/ysolde-lose.png
+/Users/antho/Documents/gachagame/public/sprites/ysolde-ult.png
+/Users/antho/Documents/gachagame/public/sprites/ysolde-stress.png
+/Users/antho/Documents/gachagame/public/skills/ysolde-call.png
+/Users/antho/Documents/gachagame/public/skills/ysolde-pair.png
+/Users/antho/Documents/gachagame/public/skills/ysolde-ult.png

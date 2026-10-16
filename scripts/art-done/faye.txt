@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/faye.png
+/Users/antho/Documents/gachagame/public/sprites/faye-attack.png
+/Users/antho/Documents/gachagame/public/sprites/faye-win.png
+/Users/antho/Documents/gachagame/public/sprites/faye-lose.png
+/Users/antho/Documents/gachagame/public/sprites/faye-ult.png
+/Users/antho/Documents/gachagame/public/sprites/faye-stress.png
+/Users/antho/Documents/gachagame/public/skills/faye-needle.png
+/Users/antho/Documents/gachagame/public/skills/faye-stop.png
+/Users/antho/Documents/gachagame/public/skills/faye-ult.png

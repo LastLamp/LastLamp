@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/pike.png
+/Users/antho/Documents/gachagame/public/sprites/pike-attack.png
+/Users/antho/Documents/gachagame/public/sprites/pike-win.png
+/Users/antho/Documents/gachagame/public/sprites/pike-lose.png
+/Users/antho/Documents/gachagame/public/sprites/pike-ult.png
+/Users/antho/Documents/gachagame/public/sprites/pike-stress.png
+/Users/antho/Documents/gachagame/public/skills/pike-bash.png
+/Users/antho/Documents/gachagame/public/skills/pike-wall.png
+/Users/antho/Documents/gachagame/public/skills/pike-ult.png

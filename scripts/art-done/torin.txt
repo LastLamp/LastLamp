@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/torin.png
+/Users/antho/Documents/gachagame/public/sprites/torin-attack.png
+/Users/antho/Documents/gachagame/public/sprites/torin-win.png
+/Users/antho/Documents/gachagame/public/sprites/torin-lose.png
+/Users/antho/Documents/gachagame/public/sprites/torin-ult.png
+/Users/antho/Documents/gachagame/public/sprites/torin-stress.png
+/Users/antho/Documents/gachagame/public/skills/torin-call.png
+/Users/antho/Documents/gachagame/public/skills/torin-pair.png
+/Users/antho/Documents/gachagame/public/skills/torin-ult.png
