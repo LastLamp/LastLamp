@@ -4277,10 +4277,11 @@ function NavIcon({ name }) {
 function ArtIcon({ file, className }) {
   const [ext, setExt] = useState("png");
   const stem = file.replace(/\.jpg$/, "");
+  const bust = stem.endsWith("/jobs") ? "?v=3" : "";
   return (
     <img
       className={className || "nav-icon"}
-      src={`${artBase()}${stem}.${ext}`}
+      src={`${artBase()}${stem}.${ext}${bust}`}
       alt=""
       onError={() => {
         if (ext === "png") setExt("jpg");
