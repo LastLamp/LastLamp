@@ -65,7 +65,7 @@ import {
 } from "./logic.js";
 import { ASCEND_CAPS, COMBOS, LEVEL_CAP, ascendPrice, dailyCleared, dailyStageById, dailyStages, levelCap, skillCost, skillRank, stageXp, withGrowth, xpSteps, xpToNext } from "./growth.js";
 import { EVENT_ROADS, bondEvents, eventOpen } from "./events.js";
-import { playAscend, playBond, playBondMax, playGift, playHit, playLevel, playPull, playRank, playResult, playUltStamp, releaseMusic, resumeMusic, startMusic, stopMusic } from "./music.js";
+import { playAscend, playBond, playBondMax, playGift, playHit, playLevel, playPull, playRank, playResult, playUltStamp, releaseMusic, resumeMusic, setTabAudible, startMusic, stopMusic } from "./music.js";
 import { storyChapters, storyClearCounts, storyNode } from "./story.js";
 import { towerFor, monthId } from "./tower.js";
 import { clearLinkHash, linkFromSave, unpackLink } from "./saveLink.js";
@@ -172,12 +172,21 @@ export default function App() {
       stopMusic();
       return undefined;
     }
+    if (document.hidden) setTabAudible(false);
     startMusic(next);
     function arm() {
-      resumeMusic();
+      if (!document.hidden) resumeMusic();
+    }
+    function onVis() {
+      if (document.hidden) setTabAudible(false);
+      else setTabAudible(true);
     }
     window.addEventListener("pointerdown", arm);
-    return () => window.removeEventListener("pointerdown", arm);
+    document.addEventListener("visibilitychange", onVis);
+    return () => {
+      window.removeEventListener("pointerdown", arm);
+      document.removeEventListener("visibilitychange", onVis);
+    };
   }, [save.sound, screen, stageId]);
 
   useEffect(() => {

@@ -2,6 +2,7 @@ let ctx = null;
 let master = null;
 let playing = false;
 let held = false;
+let away = false;
 let scene = "home";
 let wanted = "home";
 let step = 0;
@@ -213,6 +214,7 @@ const SCENES = {
 };
 
 function ensure() {
+  if (away) return null;
   const AudioCtx = window.AudioContext || window.webkitAudioContext;
   if (!AudioCtx) return null;
   if (!ctx) {
@@ -478,9 +480,33 @@ export function musicNow() {
   return wanted;
 }
 
+export function setTabAudible(visible) {
+  away = !visible;
+  if (!visible) {
+    loop += 1;
+    clearPending();
+    if (ctx) hush();
+    if (ctx && ctx.state === "running") ctx.suspend().catch(() => {});
+    return;
+  }
+  if (!playing || held) return;
+  if (ctx && ctx.state === "suspended") ctx.resume().catch(() => {});
+  loop += 1;
+  const gen = loop;
+  later(() => tick(gen), 40);
+}
+
 export function startMusic(next) {
   if (next && SCENES[next]) wanted = next;
   if (held) return;
+  if (away) {
+    if (wanted !== scene) {
+      scene = wanted;
+      step = 0;
+    }
+    playing = true;
+    return;
+  }
   const changed = wanted !== scene || !playing;
   if (wanted !== scene) {
     scene = wanted;

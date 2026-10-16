@@ -18,9 +18,15 @@
 
 * { box-sizing: border-box; }
 
+html, body, #root {
+  height: 100%;
+  background: var(--bg);
+}
 body {
   margin: 0;
   min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
   background:
     radial-gradient(900px 420px at 0% -10%, rgba(196, 122, 44, 0.18), transparent 55%),
     radial-gradient(700px 380px at 100% 0%, rgba(47, 107, 90, 0.12), transparent 50%),
@@ -50,14 +56,19 @@ section > h2 + p,
 p { margin: 0; }
 
 .shell {
-  min-height: 100vh;
-  min-height: 100dvh;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  max-height: 100dvh;
+  min-height: 0;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   background-color: var(--bg);
   background-position: center top;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 .shell.is-fight {
   display: flex;
@@ -106,6 +117,8 @@ main {
   position: relative;
   z-index: 2;
   flex: 1;
+  min-height: 0;
+  overflow: auto;
   container-type: inline-size;
   container-name: page;
 }
@@ -182,15 +195,15 @@ main {
 }
 
 main {
-  padding: 12px 20px calc(120px + env(safe-area-inset-bottom));
+  padding: 12px 20px 16px;
   max-width: 1100px;
   width: 100%;
 }
 
 .rail {
   order: 2;
-  position: sticky;
-  bottom: 0;
+  position: static;
+  flex: none;
   padding: 8px 8px calc(8px + env(safe-area-inset-bottom));
   gap: 4px;
   background: rgba(244, 231, 210, 0.96);
@@ -1532,9 +1545,11 @@ main {
 .intent-hex { background: #e6dcf3; color: var(--violet); }
 .hand { grid-auto-flow: column; grid-auto-columns: 136px; justify-content: start; overflow-x: auto; padding-bottom: 4px; }
 .hand.skill-row {
-  display: flex;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
   justify-content: center;
+  justify-items: center;
   align-items: center;
   grid-auto-flow: unset;
   grid-auto-columns: unset;
@@ -1542,7 +1557,19 @@ main {
   width: 100%;
   max-width: 100%;
   min-width: 0;
-  height: 72px;
+  height: auto;
+}
+.hand.skill-row .skill-token,
+.hand.skill-row .skill-gap {
+  width: 100%;
+  max-width: 64px;
+  height: auto;
+  aspect-ratio: 1;
+}
+.hand.skill-row .skill-face,
+.hand.skill-row .skill-token .skill-art {
+  width: 100%;
+  height: 100%;
 }
 .skill-token,
 .ult-token {
@@ -2029,17 +2056,25 @@ main {
   max-width: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: auto 72px auto;
+  grid-template-columns: 60px minmax(0, 1fr);
+  grid-template-rows: auto auto auto;
   align-content: end;
-  justify-items: center;
-  gap: 10px;
+  align-items: end;
+  justify-items: stretch;
+  column-gap: 12px;
+  row-gap: 8px;
   position: relative;
-  padding-left: 68px;
+  padding-left: 0;
 }
+.ap-readout { grid-column: 2; grid-row: 1; }
+.skill-line { grid-column: 2; grid-row: 2; width: 100%; min-width: 0; }
+.tray-actions { grid-column: 2; grid-row: 3; }
 .ult-stack {
-  position: absolute;
-  left: 4px;
-  bottom: 0;
+  position: static;
+  grid-column: 1;
+  grid-row: 1 / -1;
+  align-self: end;
+  justify-self: start;
   z-index: 5;
   display: flex;
   flex-direction: column;
@@ -4196,6 +4231,7 @@ img.status-glyph { filter: url(#knock-black); }
     align-items: center;
     width: 100%;
     display: grid;
+    grid-template-columns: 60px minmax(0, 1fr);
     grid-template-rows: auto 64px auto;
     justify-content: center;
     justify-items: center;
@@ -4203,7 +4239,11 @@ img.status-glyph { filter: url(#knock-black); }
     min-width: 0;
   }
   .skill-token, .skill-face, .skill-token .skill-art, .skill-gap { width: 56px; height: 56px; }
-  .hand.skill-row { height: 64px; gap: 6px; flex-wrap: nowrap; overflow: visible; max-width: 100%; }
+  .hand.skill-row { height: auto; gap: 6px; flex-wrap: nowrap; overflow: visible; max-width: 100%; }
+  .hand.skill-row .skill-token,
+  .hand.skill-row .skill-face,
+  .hand.skill-row .skill-token .skill-art,
+  .hand.skill-row .skill-gap { width: 100%; height: auto; max-width: 56px; max-height: 56px; }
   .ap-dial, .ult-dial { width: 68px; height: 68px; }
   .ult-row { grid-template-columns: repeat(3, 76px); min-height: 100px; }
   .ult-token { width: 76px; }
@@ -4241,10 +4281,14 @@ html:has(.shell.is-fight) body {
 @media (max-height: 460px) {
   .shell.is-fight main { padding: 4px 8px; }
   .battle { gap: 4px; }
-  .battle-tray { gap: 6px; }
+  .battle-tray { gap: 6px; grid-template-columns: 60px minmax(0, 1fr); }
   .ap-dial, .ult-dial { width: 68px; height: 68px; }
   .skill-token, .skill-face, .skill-token .skill-art, .skill-gap { width: 56px; height: 56px; }
-  .hand.skill-row { height: 64px; }
+  .hand.skill-row { height: auto; }
+  .hand.skill-row .skill-token,
+  .hand.skill-row .skill-face,
+  .hand.skill-row .skill-token .skill-art,
+  .hand.skill-row .skill-gap { width: 100%; height: auto; max-width: 56px; max-height: 56px; }
   .battle .foe-hit {
     --sprite: min(64cqi, calc((100cqh - 56px) / 1.05));
     --sprite-h: calc(var(--sprite) * 1.05);
@@ -4339,16 +4383,23 @@ html:has(.shell.is-fight) body {
   .battle-vitals .vbar { width: 100%; }
   .battle .foe-figure { margin-top: 8px; }
   .battle-tray {
+    grid-template-columns: 60px minmax(0, 1fr);
     grid-template-rows: auto 60px auto;
     gap: 6px;
   }
   .skill-token, .skill-face, .skill-token .skill-art, .skill-gap { width: 56px; height: 56px; }
-  .hand.skill-row { height: 60px; }
+  .hand.skill-row { height: auto; }
+  .hand.skill-row .skill-token,
+  .hand.skill-row .skill-face,
+  .hand.skill-row .skill-token .skill-art,
+  .hand.skill-row .skill-gap { width: 100%; height: auto; max-width: 56px; max-height: 56px; }
   .ult-row { min-height: 96px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .ap-dial, .ult-dial { width: 64px; height: 64px; }
   .sheet { padding: 14px; }
-  .skill-token, .skill-face, .skill-token .skill-art, .skill-gap { width: 56px; height: 56px; }
-  .hand.skill-row { height: 64px; }
+  .hand.skill-row .skill-token,
+  .hand.skill-row .skill-face,
+  .hand.skill-row .skill-token .skill-art,
+  .hand.skill-row .skill-gap { width: 100%; height: auto; max-width: 56px; max-height: 56px; }
   .battle .foe-hit {
     --sprite: min(156px, 48cqi);
     --sprite-h: min(176px, calc(var(--sprite) * 1.12));
