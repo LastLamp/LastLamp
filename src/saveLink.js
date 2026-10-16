@@ -17,6 +17,7 @@ const FIELDS = [
   "insight",
   "shards",
   "autoStart",
+  "fastPlay",
   "dailyRun",
   "trial",
   "sound",

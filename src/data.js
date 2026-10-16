@@ -1172,6 +1172,7 @@ export function freshSave() {
     insight: 6,
     shards: 0,
     autoStart: false,
+    fastPlay: false,
     dailyRun: null,
     trial: null,
     history: [],

@@ -488,6 +488,9 @@ function Settings({ onClose, onRetreat }) {
             <button className={save.autoStart ? "primary" : "ghost"} onClick={() => dispatch({ type: "AUTO_START", on: !save.autoStart })}>
               Auto at the start of a fight: {save.autoStart ? "on" : "off"}
             </button>
+            <button className={save.fastPlay ? "primary" : "ghost"} onClick={() => dispatch({ type: "FAST_PLAY", on: !save.fastPlay })}>
+              Fight speed: {save.fastPlay ? "2×" : "1×"}
+            </button>
           </div>
         )}
         {tab === "fight" && (
@@ -2593,6 +2596,8 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
   const [inspect, setInspect] = useState(null);
   const [strain, setStrain] = useState(null);
   const [auto, setAuto] = useState(() => Boolean(save.autoStart));
+  const fast = Boolean(save.fastPlay);
+  const pace = (ms) => (fast ? Math.round(ms / 2) : ms);
   const wasPaused = useRef(paused);
   useEffect(() => {
     if (wasPaused.current && !paused && save.autoStart) setAuto(true);
@@ -2621,9 +2626,9 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
     const timer = setTimeout(() => {
       setActing(null);
       setAsh(null);
-    }, acting.kind === "ego" ? 1200 : 820);
+    }, pace(acting.kind === "ego" ? 1200 : 820));
     return () => clearTimeout(timer);
-  }, [acting]);
+  }, [acting, fast]);
 
   useEffect(() => {
     const ratio = battle.hp / Math.max(1, battle.maxHp);
@@ -2644,15 +2649,15 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
       setShowResult(false);
       return undefined;
     }
-    const timer = window.setTimeout(() => setShowResult(true), 480);
+    const timer = window.setTimeout(() => setShowResult(true), pace(480));
     return () => window.clearTimeout(timer);
-  }, [battle.result, acting, enemySwing, ultShow]);
+  }, [battle.result, acting, enemySwing, ultShow, fast]);
 
   useEffect(() => {
     if (!enemySwing) return undefined;
-    const timer = setTimeout(() => setEnemySwing(null), 560);
+    const timer = setTimeout(() => setEnemySwing(null), pace(560));
     return () => clearTimeout(timer);
-  }, [enemySwing]);
+  }, [enemySwing, fast]);
 
   useEffect(() => {
     if (!auto || paused || showLog || inspect || askLeave || askEnd || cardRead || battle.result || acting || enemySwing || ultShow) return undefined;
@@ -2666,9 +2671,9 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
         if (!played) setAuto(false);
       } else if (choice.type === "end") pass();
       else setAuto(false);
-    }, 720);
+    }, pace(720));
     return () => clearTimeout(timer);
-  }, [auto, paused, showLog, inspect, askLeave, askEnd, cardRead, battle, acting, enemySwing, ultShow]);
+  }, [auto, paused, showLog, inspect, askLeave, askEnd, cardRead, battle, acting, enemySwing, ultShow, fast]);
 
   useEffect(() => {
     setDealt(0);
@@ -2790,14 +2795,14 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
       if (playerCrit) {
         setCritMark(playerCrit.target || true);
         window.clearTimeout(critTimer.current);
-        critTimer.current = window.setTimeout(() => setCritMark(null), 900);
+        critTimer.current = window.setTimeout(() => setCritMark(null), pace(900));
       }
       if (events.some((event) => event.crit && event.attack)) {
         setHpCrit(true);
         window.clearTimeout(hpTimer.current);
-        hpTimer.current = window.setTimeout(() => setHpCrit(false), 720);
+        hpTimer.current = window.setTimeout(() => setHpCrit(false), pace(720));
       }
-      const hold = born.some((event) => event.crit || event.resist) ? 2400 : 1400;
+      const hold = pace(born.some((event) => event.crit || event.resist) ? 2400 : 1400);
       setTimeout(() => {
         setFloats((prev) => prev.filter((item) => !born.includes(item)));
       }, hold);
@@ -2908,7 +2913,7 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
       ultLock.current = false;
       setUltShow(null);
       castUlt(memberId, targetOverride);
-    }, 1000);
+    }, pace(1000));
     return true;
   }
 
@@ -2973,7 +2978,7 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
   const ahead = battle.result === "win" ? nextFight(save, stageId) : null;
 
   return (
-    <section className={`battle${strain ? ` strain-${strain}` : ""}`}>
+    <section className={`battle${strain ? ` strain-${strain}` : ""}${fast ? " is-fast" : ""}`}>
       {acting && acting.kind !== "ego" && acting.fx?.length > 0 && (
         <CastLayer key={acting.key} fx={acting.fx} />
       )}
@@ -2983,6 +2988,16 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
           {!battle.result && (
             <button className={auto ? "primary auto-on" : "ghost"} onClick={() => setAuto((on) => !on)}>
               {auto ? "Auto on" : "Auto"}
+            </button>
+          )}
+          {!battle.result && (
+            <button
+              className={fast ? "primary auto-on" : "ghost"}
+              aria-pressed={fast}
+              aria-label={fast ? "Fight speed 2×" : "Fight speed 1×"}
+              onClick={() => dispatch({ type: "FAST_PLAY", on: !save.fastPlay })}
+            >
+              2×
             </button>
           )}
           <button className="ghost" onClick={onSettings}>Settings</button>

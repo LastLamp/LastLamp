@@ -1927,6 +1927,8 @@ export function reducer(state, action) {
     }
     case "AUTO_START":
       return { ...state, autoStart: Boolean(action.on) };
+    case "FAST_PLAY":
+      return { ...state, fastPlay: Boolean(action.on) };
     case "TRAIN": {
       const owned = state.roster[action.id];
       if (!owned) return state;
