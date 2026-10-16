@@ -9,11 +9,11 @@ import {
   stageById,
   STAGES,
 } from "./data.js";
-import { storyNode, nodeOpen, repairStoryClears } from "./story.js";
-import { floorById, monthId } from "./tower.js";
-import { ASCEND_CAPS, COMBOS, ascendPrice, dailyStageById, growRoster, levelCap, skillRank, stageXp, withGrowth } from "./growth.js";
+import { storyNode, storyNodes, nodeOpen, repairStoryClears } from "./story.js";
+import { floorById, floorByNumber, monthId } from "./tower.js";
+import { ASCEND_CAPS, COMBOS, ascendPrice, dailyStageById, dailyStages, growRoster, levelCap, skillRank, stageXp, withGrowth } from "./growth.js";
 import { PASSIVES } from "./passives.js";
-import { bondEventById } from "./events.js";
+import { bondEventById, bondEvents, eventOpen } from "./events.js";
 
 export const PULL_COST = 160;
 export const HARD_PITY = 90;
@@ -447,6 +447,33 @@ export function partyMembers(save) {
 
 export function resolveStage(save, stageId) {
   return storyNode(stageId) || floorById(save?.towerWeek || monthId(), stageId) || stageById(stageId) || dailyStageById(stageId) || bondEventById(stageId);
+}
+
+export function nextFight(save, stageId) {
+  const story = storyNode(stageId);
+  if (story) {
+    const nodes = storyNodes();
+    const index = nodes.findIndex((node) => node.id === stageId);
+    const next = index >= 0 ? nodes[index + 1] : null;
+    return next && nodeOpen(save, next) ? next : null;
+  }
+  const daily = dailyStageById(stageId);
+  if (daily) {
+    const next = dailyStages().find((stage) => stage.tier === daily.tier + 1) || null;
+    return next && next.tier <= (save?.dailyRun?.cleared || 0) + 1 ? next : null;
+  }
+  const week = save?.towerWeek || monthId();
+  const floor = floorById(week, stageId);
+  if (floor) {
+    const next = floorByNumber(week, floor.number + 1);
+    return next && next.number <= (save?.towerFloor || 0) + 1 ? next : null;
+  }
+  const event = bondEventById(stageId);
+  if (event) {
+    const next = bondEvents().find((stage) => stage.lane === event.lane && stage.tier === event.tier + 1) || null;
+    return next && eventOpen(save, next) ? next : null;
+  }
+  return null;
 }
 
 const STAR_SCALE = {

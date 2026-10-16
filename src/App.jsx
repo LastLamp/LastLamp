@@ -39,6 +39,7 @@ import {
   readBattle,
   resolveStage,
   stageUnlocked,
+  nextFight,
   nextStoryNode,
   STAR_STEPS,
   BOND_NEED,
@@ -332,6 +333,7 @@ export default function App() {
         <main>
           {stageId ? (
             <Battle
+              key={stageId}
               stageId={stageId}
               paused={settingsOpen}
               onSettings={() => setSettingsOpen(true)}
@@ -2529,7 +2531,7 @@ function SkillToken({ playable, onPlay, onRead, onLocked, children, className = 
 }
 
 function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
-  const { save, dispatch, goal, setGoal, setHuntOpen, setStocked } = useGame();
+  const { save, dispatch, setStageId, goal, setGoal, setHuntOpen, setStocked } = useGame();
   const stage = resolveStage(save, stageId);
   const [battle, setBattle] = useState(() => {
     const saved = readBattle();
@@ -2914,6 +2916,8 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
     );
   }
 
+  const ahead = battle.result === "win" ? nextFight(save, stageId) : null;
+
   return (
     <section className={`battle${strain ? ` strain-${strain}` : ""}`}>
       {acting && acting.kind !== "ego" && acting.fx?.length > 0 && (
@@ -3252,6 +3256,11 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
               <ResultSweep stageId={stageId} save={save} dispatch={dispatch} />
             )}
             <div className="hero-actions">
+              {ahead && (
+                <button className="primary next-stage" onClick={() => setStageId(ahead.id)}>
+                  Next stage
+                </button>
+              )}
               <button className="primary" onClick={rematch}>
                 Run it back
               </button>

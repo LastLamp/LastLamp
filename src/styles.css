@@ -1195,6 +1195,7 @@ main {
 }
 .result-sheet .pay { justify-content: center; margin: 0; }
 .result-sheet .hero-actions { width: 100%; margin: 0; display: grid; grid-template-columns: 1fr 1fr; }
+.result-sheet .hero-actions .next-stage { grid-column: 1 / -1; }
 .result-sheet .sweep-row { width: 100%; justify-content: center; flex-wrap: wrap; margin: 0; }
 .result-lose .result-stage { color: #f0e2d2; }
 .result-sheet .confetti { position: absolute; }
