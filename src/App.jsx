@@ -3819,7 +3819,7 @@ function SkillArt({ card }) {
     <span className="skill-art">
       {!photo && <SkillGlyph id={card.id} />}
       <img
-        src={`${artBase()}skills/${card.id}.${ext}?v=2`}
+        src={`${artBase()}skills/${card.id}.${ext}?v=3`}
         alt=""
         hidden={!photo}
         onLoad={() => setPhoto(true)}

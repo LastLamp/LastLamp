@@ -586,8 +586,8 @@ export const PASSIVES = {
   },
   "nymira": {
     "name": "Night Margin",
-    "line": "At 3 stars, Poison, Stun, and Sleep last 1 turn longer.",
-    "extendDebuff": true
+    "line": "At 3 stars, Sleep also inflicts Exposed.",
+    "hexVuln": true
   },
   "ostara": {
     "name": "First Light",
@@ -624,47 +624,44 @@ export const PASSIVES = {
   },
   "kestrel": {
     "name": "All of It",
-    "line": "At 3 stars, All of It inflicts Exposed before it hits. This unit's CRIT Rate increases by 20%.",
-    "leadVuln": "ego",
-    "crit": 0.2
+    "line": "At 3 stars, this unit's CRIT Rate increases by 15%. An attack against an enemy with Weak strikes again for 20% of this unit's attack.",
+    "crit": 0.15,
+    "weakFollow": 0.2
   },
   "mirinel": {
     "name": "Close",
-    "line": "At 3 stars, a basic attack against a Branded enemy strikes again for 35% of this unit's attack. This unit's CRIT Rate increases by 15%.",
-    "followBrand": 0.35,
-    "crit": 0.15
+    "line": "At 3 stars, a card that inflicts Brand fills this unit's ult gauge by 8.",
+    "debuffCharge": 8
   },
   "quillan": {
     "name": "Footnote",
-    "line": "At 3 stars, Stun lasts 1 turn longer and also inflicts Exposed.",
-    "extendDebuff": true,
-    "hexVuln": true
+    "line": "At 3 stars, a card that draws reduces Stress by 8.",
+    "onDrawCalm": 8
   },
   "linnet": {
     "name": "Stay",
-    "line": "At 3 stars, a heal reduces Stress by 6.",
-    "healCalm": 6
+    "line": "At 3 stars, a heal fills every ult gauge by 12.",
+    "healCharge": 12
   },
   "selka": {
     "name": "Through",
-    "line": "At 3 stars, an attack against an enemy with Weak strikes again for 25% of this unit's attack.",
-    "weakFollow": 0.25
+    "line": "At 3 stars, Poison cards apply 1 extra stack.",
+    "poisonBonus": 1
   },
   "tamsin": {
     "name": "The Line",
-    "line": "At 3 stars, an assist inflicts Brand.",
-    "assistBrand": true
+    "line": "At 3 stars, a card that grants Might fills every ult gauge by 8.",
+    "mightCharge": 8
   },
   "joryn": {
     "name": "The Turn",
-    "line": "At 3 stars, refunding AP fills every ult gauge by 8.",
-    "refundCharge": 8
+    "line": "At 3 stars, a skill fills this unit's ult gauge by 10.",
+    "skillCharge": 10
   },
   "tessara": {
     "name": "Stay Back",
-    "line": "At 3 stars, the battle starts with 10 Block. The first time Block breaks, 6 Block returns, and a card that grants Block inflicts Weak.",
-    "openShield": 10,
-    "rebound": 6,
-    "blockWeaken": true
+    "line": "At 3 stars, the first time Block breaks, 8 Block returns. This unit's Resistance increases by 20%.",
+    "rebound": 8,
+    "res": 0.2
   }
 };

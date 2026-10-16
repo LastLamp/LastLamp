@@ -13,11 +13,11 @@ export const EXTRA_UNITS = [
     maxHp: 98,
     atk: 17,
     quote: "Say the name once. I will keep it from moving.",
-    blurb: "Nymira is an elf. She writes a name in the margin and the person stops where they are. She does not raise her voice to do it.",
+    blurb: "Nymira is an elf. She writes a name in the margin and the person sleeps where they stand. She does not raise her voice to do it.",
     cards: [
-      { kind: "attack", id: "nymira-ink", name: "Ink Needle", ratio: 0.85, poison: 2 },
-      { kind: "skill", id: "nymira-still", name: "Still the Name", stun: 1, shred: true, stress: -6 },
-      { kind: "ego", cost: 2, once: true, id: "nymira-margin", name: "Night Margin", ratio: 1.6, vuln: true, stun: 1 },
+      { kind: "attack", id: "nymira-ink", name: "Still Ink", ratio: 0.8, weaken: true },
+      { kind: "skill", id: "nymira-still", name: "Still the Name", sleep: 2, stress: -6 },
+      { kind: "ego", cost: 2, once: true, id: "nymira-margin", name: "Night Margin", sleep: 2, draw: 1, shred: true },
     ],
     rooms: [
       { title: "The margin", body: "She writes the name small, in the margin, so the page can still be read. The person stops. She lets them finish the sentence they had started." },
@@ -197,9 +197,9 @@ export const EXTRA_UNITS = [
     quote: "Save it. Then spend all of it.",
     blurb: "Kestrel is a demon with a lion's mane. He holds the small cuts until the last one. The last one is the fight.",
     cards: [
-      { kind: "attack", id: "kestrel-cut", name: "First Cut", ratio: 0.9 },
-      { kind: "attack", id: "kestrel-wide", name: "Wide", ratio: 0.5, aoe: true, critDmg: 2 },
-      { kind: "ego", cost: 2, once: true, id: "kestrel-all", name: "All of It", ratio: 3 },
+      { kind: "attack", id: "kestrel-cut", name: "First Cut", ratio: 0.75, weaken: true },
+      { kind: "attack", id: "kestrel-wide", name: "Two Cuts", ratio: 0.55, hits: 2, crit: 2 },
+      { kind: "ego", cost: 2, once: true, id: "kestrel-all", name: "All of It", ratio: 2.7, brand: true },
     ],
     rooms: [
       { title: "Held back", body: "He takes a small cut and does not answer it. People think he is slow. He is counting what he still has." },
@@ -223,9 +223,9 @@ export const EXTRA_UNITS = [
     quote: "I mark them. The second swing is the one I meant.",
     blurb: "Mirinel is a demon. She puts a mark on and arrives for the second strike. She does not explain the first one.",
     cards: [
-      { kind: "attack", id: "mirinel-pin", name: "Pin", ratio: 0.85, brand: true },
-      { kind: "attack", id: "mirinel-follow", name: "The Second", ratio: 0.65, follow: 0.55, crit: 2 },
-      { kind: "ego", cost: 2, once: true, id: "mirinel-close", name: "Close", ratio: 1.55, follow: 0.75 },
+      { kind: "attack", id: "mirinel-pin", name: "Pin", ratio: 0.45, brand: true, shred: true },
+      { kind: "attack", id: "mirinel-follow", name: "The Second", ratio: 1.15, follow: 0.45 },
+      { kind: "ego", cost: 2, once: true, id: "mirinel-close", name: "Close", ratio: 1.85, critDmg: 2 },
     ],
     rooms: [
       { title: "The pin", body: "She marks the coat, not the skin, when she can. The second swing finds the mark. She says the coat can be mended. She is less sure about the person." },
@@ -246,12 +246,12 @@ export const EXTRA_UNITS = [
     favorite: "fanmail",
     maxHp: 90,
     atk: 16,
-    quote: "Hold still. I am not finished with the line.",
-    blurb: "Quillan is a wizard. He fights like a correction in the margin. The line stops, and then he decides whether it continues.",
+    quote: "The line is wrong. I will fix the margin.",
+    blurb: "Quillan is a wizard. He corrects the line and leaves it open. The next note is already in his hand.",
     cards: [
-      { kind: "attack", id: "quillan-margin", name: "Margin", ratio: 0.8, poison: 1 },
-      { kind: "skill", id: "quillan-pause", name: "Pause", stun: 1, weaken: true },
-      { kind: "ego", cost: 2, once: true, id: "quillan-note", name: "Footnote", ratio: 1.25, stun: 1, shred: true },
+      { kind: "attack", id: "quillan-margin", name: "Margin", ratio: 0.7, shred: true },
+      { kind: "skill", id: "quillan-pause", name: "The Correction", draw: 1, weaken: true, stress: -6 },
+      { kind: "ego", cost: 2, once: true, id: "quillan-note", name: "Footnote", ratio: 1, shred: true, draw: 1 },
     ],
     rooms: [
       { title: "The pause", body: "He lifts a hand and the charge stops being a charge. He uses the quiet to see who is actually angry and who is only loud." },
@@ -275,9 +275,9 @@ export const EXTRA_UNITS = [
     quote: "Breathe. Then I will look at the cut.",
     blurb: "Linnet is a mermaid. She makes them breathe before she treats the wound. The cut can wait on a person who is still panicking.",
     cards: [
-      { kind: "attack", id: "linnet-cloth", name: "Cool Cloth", ratio: 0.65, heal: 10 },
-      { kind: "skill", id: "linnet-breathe", name: "Breathe", heal: 14, stress: -12 },
-      { kind: "ego", cost: 2, once: true, id: "linnet-stay", name: "Stay", heal: 18, stress: -8, shield: 10 },
+      { kind: "attack", id: "linnet-cloth", name: "Cool Cloth", ratio: 0.55, heal: 8, res: 2 },
+      { kind: "skill", id: "linnet-breathe", name: "Breathe", draw: 1, stress: -16 },
+      { kind: "ego", cost: 2, once: true, id: "linnet-stay", name: "Stay", heal: 16, shield: 8, sleep: 1 },
     ],
     rooms: [
       { title: "The breath", body: "She counts four breaths with them before she opens the kit. The fourth one is usually the true one. She starts there." },
@@ -299,11 +299,11 @@ export const EXTRA_UNITS = [
     maxHp: 86,
     atk: 18,
     quote: "Three steps, and the ground keeps the rest.",
-    blurb: "Selka is a demon with small horns. She drives the spear in a count of three and lets the ground finish what she started.",
+    blurb: "Selka is a demon with small horns. She drives the spear in a count of three, plants it, and leaves poison in the ground where it stood.",
     cards: [
-      { kind: "attack", id: "selka-steps", name: "Three Steps", ratio: 0.5, hits: 3 },
-      { kind: "attack", id: "selka-plant", name: "Plant", ratio: 1, weaken: true },
-      { kind: "ego", cost: 2, once: true, id: "selka-through", name: "Through", ratio: 0.7, hits: 3 },
+      { kind: "attack", id: "selka-steps", name: "Three Steps", ratio: 0.48, hits: 3, poison: 1 },
+      { kind: "attack", id: "selka-plant", name: "Plant", ratio: 0.9, shield: 12 },
+      { kind: "ego", cost: 2, once: true, id: "selka-through", name: "Through", ratio: 0.8, hits: 2, shred: true },
     ],
     rooms: [
       { title: "The plant", body: "She sets the butt of the spear in the dirt between counts. It is not a rest. It is how she knows the next step will be true." },
@@ -327,9 +327,9 @@ export const EXTRA_UNITS = [
     quote: "I will call you in. Be where I said.",
     blurb: "Tamsin is a sea elf. She signals, then the person beside her takes the shot with her. She keeps the signal plain.",
     cards: [
-      { kind: "attack", id: "tamsin-signal", name: "Signal", ratio: 0.8, assist: true },
-      { kind: "skill", id: "tamsin-with", name: "With Me", assist: true, charge: 10 },
-      { kind: "ego", cost: 2, once: true, id: "tamsin-line", name: "The Line", ratio: 1.05, aoe: true, assist: true },
+      { kind: "attack", id: "tamsin-signal", name: "Signal", ratio: 0.9, assist: true, might: 2 },
+      { kind: "skill", id: "tamsin-with", name: "With Me", charge: 12, stress: -8 },
+      { kind: "ego", cost: 2, once: true, id: "tamsin-line", name: "The Line", ratio: 1.15, assist: true, crit: 2 },
     ],
     rooms: [
       { title: "The signal", body: "Two fingers, then the shot. She teaches the fingers before she teaches the bow. A person who knows the signal can be useful before they can aim." },
@@ -353,9 +353,9 @@ export const EXTRA_UNITS = [
     quote: "That was the first one. I am still going.",
     blurb: "Joryn is wolf-eared. He treats a finished swing as a suggestion and takes the next step before the dust settles.",
     cards: [
-      { kind: "attack", id: "joryn-lean", name: "Lean", ratio: 1.05 },
-      { kind: "skill", id: "joryn-keep", name: "Keep Going", again: true },
-      { kind: "ego", cost: 2, once: true, id: "joryn-turn", name: "The Turn", ratio: 1.55, again: true },
+      { kind: "attack", id: "joryn-lean", name: "Lean", ratio: 0.95, weaken: true },
+      { kind: "skill", id: "joryn-keep", name: "Keep Going", again: true, shield: 8 },
+      { kind: "ego", cost: 2, once: true, id: "joryn-turn", name: "The Turn", ratio: 1.4, again: true, crit: 2 },
     ],
     rooms: [
       { title: "Still moving", body: "He hits and is already on the next foot. People tell him to settle. He says settling is what the other person wanted." },
@@ -379,9 +379,9 @@ export const EXTRA_UNITS = [
     quote: "Stay back. I have the front of this.",
     blurb: "Tessara is a demon. She takes the front and means it. The people behind her are not a story she is willing to spend.",
     cards: [
-      { kind: "attack", id: "tessara-cover", name: "Cover", ratio: 0.65, shield: 14 },
-      { kind: "skill", id: "tessara-dont", name: "Don't", shield: 20, stress: -8 },
-      { kind: "ego", cost: 2, once: true, id: "tessara-back", name: "Stay Back", ratio: 0.7, shield: 26, weaken: true },
+      { kind: "attack", id: "tessara-cover", name: "Cover", ratio: 0.6, shield: 12, brand: true },
+      { kind: "skill", id: "tessara-dont", name: "Don't", shield: 16, sleep: 1 },
+      { kind: "ego", cost: 2, once: true, id: "tessara-back", name: "Stay Back", ratio: 0.55, shield: 20, stress: -10 },
     ],
     rooms: [
       { title: "The front", body: "She steps in front without announcing it. The announcement would waste the step. They notice when the blow does not reach them." },
