@@ -317,7 +317,19 @@ main {
   box-shadow: 3px 3px 0 #2c241b;
 }
 .stage .primary, .home .hero-actions { width: 100%; }
-.home .hero-actions { display: grid; grid-template-columns: repeat(3, 1fr); }
+.home .hero-actions button { position: relative; }
+.job-ping {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #d4272b;
+  border: 2px solid #fffaf3;
+  box-shadow: 0 0 0 1px #2c241b;
+  pointer-events: none;
+}
 .primary:active, .ghost:active, .settings-btn:active, .end-turn:active {
   transform: translate(2px, 2px);
   box-shadow: 1px 1px 0 #2c241b;
@@ -770,6 +782,23 @@ main {
 
 .fineprint { color: var(--muted); max-width: 40rem; }
 .fineprint summary { cursor: pointer; }
+.sheet-scrim.is-front { z-index: 50; }
+.settings-account { display: grid; gap: 8px; margin-top: 8px; }
+.settings-account h3 { margin: 0; font-size: 1rem; }
+.settings-account p { margin: 0; }
+.settings-wipe {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.settings-wipe .textish {
+  width: auto;
+  min-height: 0;
+  padding: 2px 2px;
+  color: #2c241b;
+  font-weight: 700;
+}
 
 .portrait {
   width: 92px;
@@ -3547,6 +3576,7 @@ html.tips-off .icon-pop { display: none !important; }
   box-shadow: 3px 3px 0 rgba(44, 36, 27, 0.35);
 }
 .page-intro h1 { margin: 0 0 4px; }
+.job-collect { display: block; width: 100%; margin: 10px 0 4px; }
 .page-intro .lede { margin: 0; color: #2c241b; }
 .page-intro .kicker { color: #6d5b4a; }
 .party-slots .slot:not(.filled) {
@@ -4456,7 +4486,7 @@ html:has(.shell.is-fight) body {
   .topbar { padding: 12px 20px 8px; gap: 8px; }
   .rail {
     display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(7, minmax(0, 1fr));
     gap: 2px;
     padding: 8px 8px 10px;
   }

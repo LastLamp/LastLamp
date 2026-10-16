@@ -1849,6 +1849,31 @@ export function sweepStage(state, stageId, count) {
   };
 }
 
+function collectJobs(state, onlyIndex) {
+  const errand = state.errand;
+  if (!errand?.jobs) return state;
+  const now = Date.now();
+  let applause = state.applause;
+  const gifts = { ...state.gifts };
+  let changed = false;
+  const jobs = errand.jobs.map((job, index) => {
+    if (onlyIndex != null && index !== onlyIndex) return job;
+    if (!job || job.collected || job.restUntil || !(job.endsAt <= now)) return job;
+    changed = true;
+    applause += job.marks || 0;
+    if (job.gift && GIFTS[job.gift]) gifts[job.gift] = (gifts[job.gift] || 0) + 1;
+    return { restUntil: now + (job.minutes || 10) * 60 * 1000, minutes: job.minutes };
+  });
+  if (!changed) return state;
+  const stillBusy = jobs.some((item) => item && (item.endsAt || (item.restUntil && item.restUntil > now)));
+  return {
+    ...state,
+    applause,
+    gifts,
+    errand: stillBusy ? { ...errand, jobs } : null,
+  };
+}
+
 export function reducer(state, action) {
   switch (action.type) {
     case "PULL":
@@ -1972,24 +1997,10 @@ export function reducer(state, action) {
       if (jobs.some((job) => !job?.id || !character(job.id))) return state;
       return { ...state, errand: { jobs } };
     }
-    case "COLLECT_JOB": {
-      const errand = state.errand;
-      if (!errand?.jobs) return state;
-      const job = errand.jobs[action.index];
-      if (!job || job.collected || job.endsAt > Date.now()) return state;
-      const gifts = { ...state.gifts };
-      if (job.gift && GIFTS[job.gift]) gifts[job.gift] = (gifts[job.gift] || 0) + 1;
-      const jobs = errand.jobs.map((item, i) =>
-        i === action.index ? { restUntil: Date.now() + (job.minutes || 10) * 60 * 1000, minutes: job.minutes } : item
-      );
-      const stillBusy = jobs.some((item) => item && (item.endsAt || (item.restUntil && item.restUntil > Date.now())));
-      return {
-        ...state,
-        applause: state.applause + (job.marks || 0),
-        gifts,
-        errand: stillBusy ? { ...errand, jobs } : null,
-      };
-    }
+    case "COLLECT_JOB":
+      return collectJobs(state, action.index);
+    case "COLLECT_JOBS":
+      return collectJobs(state);
     case "TICK_JOBS": {
       const errand = state.errand;
       if (!errand?.jobs) return state;

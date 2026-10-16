@@ -128,6 +128,7 @@ const NAV = [
   ["home", "Home"],
   ["stages", "Fight"],
   ["call", "Summon"],
+  ["air", "Jobs"],
   ["lineup", "Party"],
   ["green", "Camp"],
 ];
@@ -149,6 +150,16 @@ export default function App() {
   const [goal, setGoal] = useState(null);
   const [huntOpen, setHuntOpen] = useState(false);
   const [stocked, setStocked] = useState(null);
+  const [now, setNow] = useState(() => Date.now());
+  const jobsReady = (save.errand?.jobs || []).some(
+    (job) => job && !job.collected && !job.restUntil && job.endsAt && job.endsAt <= now
+  );
+
+  useEffect(() => {
+    if (!save.errand) return undefined;
+    const id = window.setInterval(() => setNow(Date.now()), 1000);
+    return () => window.clearInterval(id);
+  }, [save.errand]);
 
   useEffect(() => {
     let timer = 0;
@@ -346,11 +357,12 @@ export default function App() {
             <button
               key={id}
               className={screen === id && !stageId ? "on" : ""}
-              aria-label={label}
+              aria-label={id === "air" && jobsReady ? "Jobs, one is ready" : label}
               aria-current={screen === id && !stageId ? "page" : undefined}
               onClick={() => go(id)}
             >
               <NavIcon name={id} />
+              {id === "air" && jobsReady ? <span className="job-ping" aria-hidden="true" /> : null}
               <span className="icon-pop" role="tooltip">{label}</span>
             </button>
           ))}
@@ -457,9 +469,12 @@ export default function App() {
 }
 
 function Settings({ onClose, onRetreat }) {
-  const { save, dispatch } = useGame();
+  const { save, dispatch, copyLink, setStageId } = useGame();
   const [tab, setTab] = useState("play");
   const [leaving, setLeaving] = useState(false);
+  const [askReset, setAskReset] = useState(false);
+  const [askCopy, setAskCopy] = useState(false);
+  const [copyState, setCopyState] = useState(null);
   const tabs = [
     ["play", "Options"],
     ["fight", "Fight"],
@@ -496,6 +511,56 @@ function Settings({ onClose, onRetreat }) {
             <button className={save.fastPlay ? "primary" : "ghost"} onClick={() => dispatch({ type: "FAST_PLAY", on: !save.fastPlay })}>
               Fight speed: {save.fastPlay ? "2×" : "1×"}
             </button>
+            <div className="settings-account">
+              <h3>Transfer progress to another device</h3>
+              <p>Copy a link and open it on the other phone or computer. It will ask before replacing the save there.</p>
+              {askCopy ? (
+                <div className="confirm-copy">
+                  <p>Copy a link to this save? The other device will ask before it replaces the save there.</p>
+                  <span className="confirm">
+                    <button
+                      className="primary"
+                      type="button"
+                      onClick={async () => {
+                        setCopyState(await copyLink());
+                        setAskCopy(false);
+                      }}
+                    >
+                      Copy it
+                    </button>
+                    <button className="ghost" type="button" onClick={() => setAskCopy(false)}>
+                      Cancel
+                    </button>
+                  </span>
+                </div>
+              ) : (
+                <button
+                  className="ghost"
+                  type="button"
+                  onClick={() => {
+                    setCopyState(null);
+                    setAskCopy(true);
+                  }}
+                >
+                  Copy link
+                </button>
+              )}
+              {copyState?.copied && <p className="quiet copy-follow">Copied. Open it on the other device.</p>}
+              {copyState && !copyState.copied && (
+                <div className="copy-follow">
+                  <p className="quiet">The clipboard is blocked. Select this link and copy it.</p>
+                  <input className="link-box" readOnly value={copyState.url} onFocus={(event) => event.target.select()} />
+                </div>
+              )}
+            </div>
+            <span className="settings-wipe">
+              <button className="textish" type="button" onClick={() => setAskReset(true)}>
+                Wipe data
+              </button>
+              <Tip label="?">
+                Wipes the party, marks, summons, and story in this browser, then starts over. A link you already copied stays until you open it.
+              </Tip>
+            </span>
           </div>
         )}
         {tab === "fight" && (
@@ -561,6 +626,37 @@ function Settings({ onClose, onRetreat }) {
         <button className="ghost" onClick={onClose}>
           Close
         </button>
+        {askReset &&
+          createPortal(
+            <div className="sheet-scrim is-front" onClick={() => setAskReset(false)}>
+              <article className="sheet" role="dialog" aria-modal="true" onClick={(event) => event.stopPropagation()}>
+                <h2>Erase this save?</h2>
+                <p>This deletes the party, marks, summons, and story on this browser. You cannot get them back from here.</p>
+                <div className="hero-actions sheet-actions">
+                  <button
+                    className="primary"
+                    type="button"
+                    onClick={() => {
+                      const next = freshSave();
+                      writeSave(next);
+                      writeBattle(null);
+                      clearLinkHash();
+                      dispatch({ type: "REPLACE", state: next });
+                      setStageId(null);
+                      setAskReset(false);
+                      onClose();
+                    }}
+                  >
+                    Erase it
+                  </button>
+                  <button className="ghost" type="button" onClick={() => setAskReset(false)}>
+                    Keep my save
+                  </button>
+                </div>
+              </article>
+            </div>,
+            document.body
+          )}
       </article>
     </div>
   );
@@ -675,11 +771,8 @@ function KitSheet({ id, save, onClose }) {
 }
 
 function Home() {
-  const { save, dispatch, go, copyLink, setStageId } = useGame();
+  const { save, dispatch, go, setStageId } = useGame();
   const [kitId, setKitId] = useState(null);
-  const [askReset, setAskReset] = useState(false);
-  const [askCopy, setAskCopy] = useState(false);
-  const [copyState, setCopyState] = useState(null);
   const [now, setNow] = useState(() => Date.now());
   useEffect(() => {
     const id = window.setInterval(() => setNow(Date.now()), 1000);
@@ -798,108 +891,6 @@ function Home() {
         </div>
       </article>
       {kitId && <KitSheet id={kitId} save={save} onClose={() => setKitId(null)} />}
-      <div className="hero-actions">
-        <button className="ghost" onClick={() => go("call")}>
-          Summon
-        </button>
-        <button className="ghost" onClick={() => go("air")}>
-          Jobs
-        </button>
-        <button className="ghost" onClick={() => go("green")}>
-          Camp
-        </button>
-      </div>
-      <details className="fineprint">
-        <summary>How a day goes</summary>
-        <ol>
-          <li>Summon costs 160 marks. The rates are on that screen.</li>
-          <li>A fight needs at least one person and one shared health bar. Block if a hit is coming.</li>
-          <li>Jobs take time. Collect them when people get back. A matching element pays more.</li>
-          <li>Camp gifts raise bond. A full bond rank raises health, attack, and defense.</li>
-          <li>Drills stay open. Marks and experience stay the same when you run one again.</li>
-        </ol>
-        <p>Marks only come from playing.</p>
-      </details>
-      <article className="panel transfer-card">
-        <h2>Transfer progress to another device</h2>
-        <p>Copy a link and open it on the other phone or computer. It will ask before replacing the save there.</p>
-        {askCopy ? (
-          <div className="confirm-copy">
-            <p>Copy a link to this save? The other device will ask before it replaces the save there.</p>
-            <span className="confirm">
-              <button
-                className="primary"
-                type="button"
-                onClick={async () => {
-                  setCopyState(await copyLink());
-                  setAskCopy(false);
-                }}
-              >
-                Copy it
-              </button>
-              <button className="ghost" type="button" onClick={() => setAskCopy(false)}>
-                Cancel
-              </button>
-            </span>
-          </div>
-        ) : (
-          <button
-            className="ghost"
-            type="button"
-            onClick={() => {
-              setCopyState(null);
-              setAskCopy(true);
-            }}
-          >
-            Copy link
-          </button>
-        )}
-        {copyState?.copied && <p className="quiet copy-follow">Copied. Open it on the other device.</p>}
-        {copyState && !copyState.copied && (
-          <div className="copy-follow">
-            <p className="quiet">The clipboard is blocked. Select this link and copy it.</p>
-            <input className="link-box" readOnly value={copyState.url} onFocus={(event) => event.target.select()} />
-          </div>
-        )}
-      </article>
-      <div className="footer-row">
-        <span className="reset-row">
-          <button className="textish" onClick={() => setAskReset(true)}>
-            Reset save
-          </button>
-          <Tip label="?">
-            Wipes the party, marks, summons, and story in this browser, then starts over. A link you already copied stays until you open it.
-          </Tip>
-        </span>
-      </div>
-      {askReset && (
-        <div className="sheet-scrim" onClick={() => setAskReset(false)}>
-          <article className="sheet" role="dialog" aria-modal="true" onClick={(event) => event.stopPropagation()}>
-            <h2>Erase this save?</h2>
-            <p>This deletes the party, marks, summons, and story on this browser. You cannot get them back from here.</p>
-            <div className="hero-actions sheet-actions">
-              <button
-                className="primary"
-                type="button"
-                onClick={() => {
-                  const next = freshSave();
-                  writeSave(next);
-                  writeBattle(null);
-                  clearLinkHash();
-                  dispatch({ type: "REPLACE", state: next });
-                  setAskReset(false);
-                  setStageId(null);
-                }}
-              >
-                Erase it
-              </button>
-              <button className="ghost" onClick={() => setAskReset(false)}>
-                Keep my save
-              </button>
-            </div>
-          </article>
-        </div>
-      )}
     </section>
   );
 }
@@ -1922,6 +1913,9 @@ function OnAir() {
   const now = Date.now() + tick * 0;
   const jobs = errand?.jobs || planErrand(picks, cues).jobs.map((job) => ({ ...job, endsAt: null }));
   const allBack = Boolean(errand && jobs.every((job) => !job || job.collected));
+  const readyCount = errand
+    ? jobs.filter((job) => job && !job.collected && !job.restUntil && job.endsAt && job.endsAt - now <= 0).length
+    : 0;
   const chosen = picks.filter(Boolean);
   const readyToSend = !errand && chosen.length === 3 && new Set(chosen).size === 3;
 
@@ -1950,6 +1944,11 @@ function OnAir() {
       <header className="page-intro">
         <p className="kicker">Three jobs</p>
         <h1>Jobs</h1>
+        {errand && (
+          <button className="primary job-collect" type="button" disabled={readyCount === 0} onClick={() => dispatch({ type: "COLLECT_JOBS" })}>
+            Collect all
+          </button>
+        )}
         <p className="lede">
           {errand
             ? "Collect a job when its timer ends. That slot then rests for the same amount of time. New jobs appear once every slot is ready."
@@ -4268,6 +4267,7 @@ function NavIcon({ name }) {
     home: "icons/home.jpg",
     stages: "icons/fight.jpg",
     call: "icons/summon.jpg",
+    air: "icons/jobs.jpg",
     lineup: "icons/party.jpg",
     green: "icons/camp.jpg",
   }[name];
