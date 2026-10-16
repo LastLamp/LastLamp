@@ -591,32 +591,43 @@ export function playResult(kind) {
   beginScene("defeat");
 }
 
+let lastClick = 0;
+
 export function playClick() {
   if (typeof document !== "undefined" && document.hidden) return;
+  const stamp = performance.now();
+  if (stamp - lastClick < 45) return;
+  lastClick = stamp;
   away = false;
   if (!ensure()) return;
-  if (ctx.state === "suspended") ctx.resume().catch(() => {});
-  const now = ctx.currentTime;
-  const tone = (freq, delay, dur, peak) => {
-    const osc = ctx.createOscillator();
-    const filter = ctx.createBiquadFilter();
-    const gain = ctx.createGain();
-    const t = now + delay;
-    osc.type = "square";
-    osc.frequency.setValueAtTime(freq, t);
-    filter.type = "lowpass";
-    filter.frequency.setValueAtTime(1800, t);
-    gain.gain.setValueAtTime(0.0001, t);
-    gain.gain.linearRampToValueAtTime(peak, t + 0.008);
-    gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
-    osc.connect(filter);
-    filter.connect(gain);
-    gain.connect(ctx.destination);
-    osc.start(t);
-    osc.stop(t + dur + 0.02);
+  const fire = () => {
+    if (!ctx || ctx.state !== "running") return;
+    if (typeof document !== "undefined" && document.hidden) return;
+    const now = ctx.currentTime;
+    const tone = (freq, delay, dur, peak) => {
+      const osc = ctx.createOscillator();
+      const filter = ctx.createBiquadFilter();
+      const gain = ctx.createGain();
+      const t = now + delay;
+      osc.type = "square";
+      osc.frequency.setValueAtTime(freq, t);
+      filter.type = "lowpass";
+      filter.frequency.setValueAtTime(1800, t);
+      gain.gain.value = 0;
+      gain.gain.setValueAtTime(0.0001, t);
+      gain.gain.linearRampToValueAtTime(peak, t + 0.008);
+      gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      osc.connect(filter);
+      filter.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(t);
+      osc.stop(t + dur + 0.02);
+    };
+    tone(784, 0, 0.06, 0.08);
+    tone(1174, 0.045, 0.09, 0.07);
   };
-  tone(784, 0, 0.06, 0.08);
-  tone(1174, 0.045, 0.09, 0.07);
+  if (ctx.state === "running") fire();
+  else ctx.resume().then(fire).catch(() => {});
 }
 
 export function playHit(kind) {

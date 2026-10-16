@@ -2459,7 +2459,7 @@ function ResultSweep({ stageId, save, dispatch }) {
 
 function ApReadout({ ap }) {
   return (
-    <div className={`ap-readout${ap > 0 ? " is-live" : ""}`} aria-label={`${ap} AP`}>
+    <div className="ap-readout is-live" aria-label={`${ap} AP`}>
       <b key={ap}>{ap}</b>
     </div>
   );
@@ -2559,6 +2559,11 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
     );
   });
   const [target, setTarget] = useState(0);
+  useEffect(() => {
+    if (battle.enemies[target]?.hp > 0) return;
+    const next = battle.enemies.findIndex((enemy) => enemy.hp > 0);
+    if (next >= 0) setTarget(next);
+  }, [battle, target]);
   const [floats, setFloats] = useState([]);
   const [reward, setReward] = useState(null);
   const [askLeave, setAskLeave] = useState(false);
@@ -2980,6 +2985,8 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
                 <button
                   className="foe-hit"
                   disabled={dead}
+                  tabIndex={dead ? -1 : undefined}
+                  aria-hidden={dead || undefined}
                   aria-label={`Target ${enemy.name}`}
                   onPointerDown={() => {
                     foeHeld.current = false;
