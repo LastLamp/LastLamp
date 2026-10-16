@@ -2987,21 +2987,12 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
           )}
           <button className="ghost" onClick={onSettings}>Settings</button>
         </span>
-        {dealt > 0 && <span className="dmg-tally">{dealt} DMG</span>}
       </span>
       <div className="battle-top">
         <div className="battle-vitals">
           <HealthBar label="HP" hp={battle.hp} maxHp={battle.maxHp} shield={battle.shield} crit={hpCrit} />
           <StressBar label="Stress" stress={battle.stress} />
-          <BattleBuffs battle={battle} />
-          {((battle.poison || 0) > 0 || (battle.stun || 0) > 0 || (battle.sleep || 0) > 0) && (
-            <p className="vital-line">
-              {(battle.poison || 0) > 0 && <span className="pill pill-poison">Poison {battle.poison}</span>}
-              {(battle.stun || 0) > 0 && <span className="pill pill-stun">Stunned · skips the next action</span>}
-              {(battle.sleep || 0) > 0 && <span className="pill">Sleep</span>}
-            </p>
-          )}
-          {battle.breakdown && <p className="quiet">Locked up. Softer hits, no ults.</p>}
+          <PartyStatus battle={battle} dealt={dealt} />
         </div>
       </div>
 
@@ -3485,62 +3476,47 @@ function buffFrom(battle, flag, stored) {
   return last;
 }
 
-function BattleBuffs({ battle }) {
-  const chips = [];
-  const turns = (n) => `${n} turn${n === 1 ? "" : "s"}`;
-  if (battle.critUp > 0) {
-    chips.push({
-      id: "crit",
-      text: `Party crit chance +20% · ${turns(battle.critUp)}`,
-      title: "The whole party crits more often, not only the unit who played the skill.",
-    });
-  }
-  if (battle.critDmgUp > 0) {
-    chips.push({
-      id: "critdmg",
-      text: `Party crit damage +50% · ${turns(battle.critDmgUp)}`,
-      title: "The whole party's critical hits deal more damage. Crit chance stays the same.",
-    });
-  }
-  if (battle.defUp > 0) {
-    chips.push({
-      id: "def",
-      text: `Party defense +30% · ${turns(battle.defUp)}`,
-      title: "The whole party's defense is higher, so incoming hits are softer.",
-    });
-  }
-  if (battle.resUp > 0) {
-    chips.push({
-      id: "res",
-      text: `Party resistance +15% · ${turns(battle.resUp)}`,
-      title: "The whole party is more likely to resist a debuff.",
-    });
-  }
-  if (battle.might > 0) {
-    chips.push({ id: "might", text: `Party might · ${turns(battle.might)}`, title: "The whole party's hits deal 30% more damage." });
-  }
+function PartyStatus({ battle, dealt }) {
+  const marks = partyMarks(battle);
+  const [open, setOpen] = useState(null);
+  const current = marks.find((mark) => mark.id === open);
+  if (!marks.length && !dealt) return null;
   return (
-    <p className="battle-buffs">
-      {chips.map((chip) => (
-        <span key={chip.id} className={`pill pill-${chip.id}`} title={chip.title}>
-          {chip.text}
-        </span>
-      ))}
-    </p>
+    <div className="status-row">
+      <div className="party-status">
+        {marks.map((mark) => (
+          <button
+            key={mark.id}
+            type="button"
+            className={`status-ico status-${mark.id}${open === mark.id ? " is-open" : ""}`}
+            aria-expanded={open === mark.id}
+            aria-label={mark.detail}
+            onClick={() => setOpen((id) => (id === mark.id ? null : mark.id))}
+          >
+            <StatusGlyph id={mark.id} />
+            {mark.n ? <b>{mark.n}</b> : null}
+          </button>
+        ))}
+        {current && <p className="status-read" role="status">{current.detail}</p>}
+      </div>
+      {dealt > 0 && <span className="dmg-tally">{dealt} DMG</span>}
+    </div>
   );
 }
 
 function partyMarks(battle) {
   const marks = [];
-  if (battle.shield > 0) marks.push({ id: "block", label: "Block", n: battle.shield, hint: "Spent before health" });
-  if ((battle.poison || 0) > 0) marks.push({ id: "poison", label: "Poison", n: battle.poison, kind: "debuff", hint: "Ticks at the start of the turn" });
-  if ((battle.stun || 0) > 0) marks.push({ id: "stun", label: "Stun", n: battle.stun, kind: "debuff", hint: "Skips the next action" });
-  if ((battle.sleep || 0) > 0) marks.push({ id: "sleep", label: "Sleep", n: battle.sleep, kind: "debuff", hint: "Skips until hit or it ends" });
-  if (battle.breakdown) marks.push({ id: "break", label: "Lockup", kind: "debuff", hint: "Hits soften and ults stay shut" });
-  if (battle.critUp > 0) marks.push({ id: "crit", label: "Party crit chance +20%", hint: `The whole party, for ${battle.critUp} turn${battle.critUp === 1 ? "" : "s"}.` });
-  if (battle.critDmgUp > 0) marks.push({ id: "critdmg", label: "Party crit damage +50%", hint: `The whole party, for ${battle.critDmgUp} turn${battle.critDmgUp === 1 ? "" : "s"}. Critical hits deal more damage.` });
-  if (battle.defUp > 0) marks.push({ id: "def", label: "Party defense +30%", hint: `The whole party, for ${battle.defUp} turn${battle.defUp === 1 ? "" : "s"}.` });
-  if (battle.resUp > 0) marks.push({ id: "res", label: "Party resistance +15%", hint: `The whole party, for ${battle.resUp} turn${battle.resUp === 1 ? "" : "s"}.` });
+  const turns = (n) => `${n} turn${n === 1 ? "" : "s"}`;
+  if (battle.shield > 0) marks.push({ id: "block", label: "Block", n: battle.shield, hint: "Spent before health", detail: `Block ${battle.shield}. Spent before health.` });
+  if ((battle.poison || 0) > 0) marks.push({ id: "poison", label: "Poison", n: battle.poison, kind: "debuff", hint: "Ticks at the start of the turn", detail: `Party poisoned for ${turns(battle.poison)}. It ticks at the start of the turn.` });
+  if ((battle.stun || 0) > 0) marks.push({ id: "stun", label: "Stun", n: battle.stun, kind: "debuff", hint: "The party skips the next action", detail: `Party stunned for ${turns(battle.stun)}. The next action is skipped.` });
+  if ((battle.sleep || 0) > 0) marks.push({ id: "sleep", label: "Sleep", n: battle.sleep, kind: "debuff", hint: "The party skips until hit or it ends", detail: `Party asleep for ${turns(battle.sleep)}. It skips until hit or it ends.` });
+  if (battle.breakdown) marks.push({ id: "break", label: "Lockup", kind: "debuff", hint: "Hits soften and ults stay shut", detail: "Locked up. Hits are softer and ults stay shut." });
+  if (battle.critUp > 0) marks.push({ id: "crit", label: "Crit chance", n: battle.critUp, hint: "The whole party crits 20% more often", detail: `Party crit chance +20% for ${turns(battle.critUp)}.` });
+  if (battle.critDmgUp > 0) marks.push({ id: "critdmg", label: "Crit damage", n: battle.critDmgUp, hint: "Critical hits deal 50% more", detail: `Party crit damage +50% for ${turns(battle.critDmgUp)}.` });
+  if (battle.defUp > 0) marks.push({ id: "def", label: "Defense", n: battle.defUp, hint: "Incoming hits are softer", detail: `Party defense +30% for ${turns(battle.defUp)}.` });
+  if (battle.resUp > 0) marks.push({ id: "res", label: "Resistance", n: battle.resUp, hint: "Debuffs are more likely to miss", detail: `Party resistance +15% for ${turns(battle.resUp)}.` });
+  if (battle.might > 0) marks.push({ id: "might", label: "Might", n: battle.might, hint: "Hits deal 30% more", detail: `Party might for ${turns(battle.might)}. Hits deal 30% more.` });
   return marks;
 }
 
@@ -3563,6 +3539,42 @@ function StatusGlyph({ id }) {
       <svg className="status-glyph" viewBox="0 0 16 16" aria-hidden="true">
         <circle cx="8" cy="8" r="5.2" fill="none" stroke="#e07a58" strokeWidth="2.2" />
         <path d="M3.2 10.6 12.4 5.2" stroke="#e07a58" strokeWidth="2.2" strokeLinecap="square" />
+      </svg>
+    );
+  }
+  if (id === "crit") {
+    return (
+      <svg className="status-glyph" viewBox="0 0 16 16" aria-hidden="true">
+        <path d="M8 1.2 9.6 6h4.8L10.5 8.9l1.5 4.9L8 11.1 4 13.8l1.5-4.9L1.6 6h4.8L8 1.2z" fill="#e0a23a" />
+      </svg>
+    );
+  }
+  if (id === "critdmg") {
+    return (
+      <svg className="status-glyph" viewBox="0 0 16 16" aria-hidden="true">
+        <path d="M8 1.4 9.4 5.4h4.2L10.2 8l1.3 4.2L8 9.8 4.5 12.2 5.8 8 2.4 5.4h4.2L8 1.4z" fill="#e23b2f" />
+      </svg>
+    );
+  }
+  if (id === "def") {
+    return (
+      <svg className="status-glyph" viewBox="0 0 16 16" aria-hidden="true">
+        <path d="M8 1.4 13.2 3.4v4.3c0 3.2-2.2 5.4-5.2 6.9-3-1.5-5.2-3.7-5.2-6.9V3.4L8 1.4z" fill="#3d7ec4" />
+      </svg>
+    );
+  }
+  if (id === "res") {
+    return (
+      <svg className="status-glyph" viewBox="0 0 16 16" aria-hidden="true">
+        <circle cx="8" cy="8" r="5.4" fill="none" stroke="#6d4e96" strokeWidth="2" />
+        <path d="M5.2 10.6 10.8 5.2" stroke="#6d4e96" strokeWidth="2" />
+      </svg>
+    );
+  }
+  if (id === "might") {
+    return (
+      <svg className="status-glyph" viewBox="0 0 16 16" aria-hidden="true">
+        <path d="M8 1.2 14.2 13.6H1.8L8 1.2z" fill="#c4562a" />
       </svg>
     );
   }
