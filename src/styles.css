@@ -2070,7 +2070,10 @@ main {
   gap: 16px;
   position: relative;
   z-index: 2;
-  transform: translateY(-72px);
+  transform: none;
+}
+@media (min-height: 880px) and (orientation: portrait) {
+  .battle-tray { transform: translateY(-72px); }
 }
 .ap-readout,
 .skill-line,
@@ -2307,26 +2310,43 @@ main {
   100% { box-shadow: 0 0 0 2px #ff5a4a, 0 0 8px rgba(226, 59, 47, 0.35); }
 }
 .battle .foe {
+  flex: 1 1 0;
+  width: 0;
+  min-width: 0;
+  max-width: 100%;
   padding: 0;
   justify-items: center;
   background: transparent;
   border: 0;
   box-shadow: none;
 }
+.battle .foes-1 .foe {
+  flex: 0 1 auto;
+  width: min(260px, 100%);
+}
 .battle .foe.selected { box-shadow: none; }
 .battle .foe-hit {
-  --sprite: min(72cqi, calc((100cqh - 64px) / 1.05));
-  --sprite-h: calc(var(--sprite) * 1.05);
-  --mark: max(20px, calc(var(--sprite) * 0.14));
+  --sprite: min(100%, calc((100cqh - 80px) / 1.05));
+  --mark: max(18px, 14%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 6px;
   grid-template-columns: none;
-  width: max-content;
+  width: 100%;
   max-width: 100%;
 }
-.foe-figure { position: relative; display: block; width: var(--sprite); height: var(--sprite-h); flex: none; min-height: var(--sprite-h); }
+.foe-figure {
+  position: relative;
+  display: block;
+  width: var(--sprite);
+  max-width: 100%;
+  aspect-ratio: 20 / 21;
+  height: auto;
+  flex: none;
+  min-height: 0;
+  margin-inline: auto;
+}
 .foe-idle { position: relative; display: block; width: 100%; height: 100%; }
 .foe-idle .foe-art { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; visibility: hidden; }
 .foe-idle .foe-art.is-on { opacity: 1; visibility: visible; }
@@ -2338,8 +2358,8 @@ main {
   background: transparent;
 }
 .foe-mini {
-  width: calc(var(--sprite) + 16px);
-  max-width: calc(var(--sprite) + 16px);
+  width: 100%;
+  max-width: 100%;
   display: grid;
   grid-template-rows: auto auto;
   gap: 4px;
@@ -2347,9 +2367,13 @@ main {
   flex: none;
 }
 .foe-marks {
-  height: auto;
-  min-height: 28px;
-  max-height: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 4px);
+  width: auto;
+  min-height: 0;
+  margin: 0;
   overflow: visible;
 }
 .foe-mini-hp {
@@ -2367,14 +2391,21 @@ main {
 }
 .foe-mini .vbar { height: var(--mark); }
 .foe-mini .vbar span { font-size: 0.62rem; }
-.foe-mini .marks { position: static; transform: none; width: auto; height: auto; min-height: 22px; flex-wrap: nowrap; align-items: center; justify-content: flex-start; overflow: visible; padding-bottom: 6px; }
-.battle .foes-2 .foe-hit {
-  --sprite: min(calc((100cqi - 20px) / 2), calc((100cqh - 64px) / 1.05));
+.foe-mini .marks {
+  position: static;
+  transform: none;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 22px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+  overflow: visible;
+  padding: 0 0 6px;
 }
-.battle .foes-3 .foe-hit,
-.battle .enemies:not(.foes-1):not(.foes-2) .foe-hit {
-  --sprite: min(calc((100cqi - 28px) / 3), calc((100cqh - 64px) / 1.05));
-}
+.foe-mini .status-ico { flex: none; }
 .foe-figure .stun-badge { left: -4px; top: 4px; }
 .foe-name { display: flex; align-items: center; gap: 8px; }
 .foe-name .mark-img { width: 26px; height: 26px; flex: none; }
@@ -2441,13 +2472,13 @@ main {
   gap: 8px;
   width: 100%;
   max-width: 100%;
-  overflow: hidden;
+  overflow: visible;
   padding-bottom: 8px;
   box-sizing: border-box;
 }
 .skill-gap { flex: none; width: 64px; height: 64px; }
-.battle .foe { flex: 0 1 auto; max-width: none; min-width: 0; width: auto; }
-.battle .foes-1 .foe { flex-basis: auto; }
+.battle .foe-figure { z-index: 1; }
+.battle .foe-mini { position: relative; z-index: 2; }
 .battle-scene {
   position: absolute;
   left: 0;
@@ -2524,11 +2555,18 @@ main {
 .battle-tools { display: flex; flex-direction: column; align-items: flex-end; gap: 0; }
 .tool-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
 .status-row {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 4px);
+  z-index: 3;
   display: flex;
   align-items: center;
   gap: 8px;
   min-width: 0;
-  margin-top: 4px;
+  height: 22px;
+  margin: 0;
+  pointer-events: none;
 }
 .party-status {
   position: relative;
@@ -2537,6 +2575,7 @@ main {
   align-items: center;
   gap: 6px;
   min-width: 0;
+  pointer-events: auto;
 }
 .party-status .status-ico {
   width: 22px;
@@ -2570,8 +2609,10 @@ main {
   pointer-events: none;
 }
 .dmg-tally {
-  position: static;
-  margin: 0 0 0 auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 0;
   font-size: 1.35rem;
   font-weight: 800;
   line-height: 1;
@@ -4361,18 +4402,13 @@ html:has(.shell.is-fight) body {
 @media (max-height: 460px) {
   .shell.is-fight main { padding: 4px 8px; }
   .battle { gap: 4px; }
-  .battle-tray { gap: 6px; grid-template-columns: 60px minmax(0, 1fr); }
+  .battle-tray { gap: 6px; transform: none; }
   .ap-dial, .ult-dial { width: 68px; height: 68px; }
-  .battle .foe-hit {
-    --sprite: min(64cqi, calc((100cqh - 56px) / 1.05));
-    --sprite-h: calc(var(--sprite) * 1.05);
-  }
-  .battle .foes-2 .foe-hit {
-    --sprite: min(calc((100cqi - 16px) / 2), calc((100cqh - 56px) / 1.05));
-  }
+  .battle .foe-hit,
+  .battle .foes-2 .foe-hit,
   .battle .foes-3 .foe-hit,
   .battle .enemies:not(.foes-1):not(.foes-2) .foe-hit {
-    --sprite: min(calc((100cqi - 24px) / 3), calc((100cqh - 56px) / 1.05));
+    --sprite: min(100%, calc((100cqh - 56px) / 1.05));
   }
   .battle-vitals .vbar { height: 22px; }
   .battle-buffs { height: auto; min-height: 22px; max-height: none; overflow: visible; }
@@ -4465,18 +4501,11 @@ html:has(.shell.is-fight) body {
   .ult-row { min-height: 96px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .ap-dial, .ult-dial { width: 64px; height: 64px; }
   .sheet { padding: 14px; }
-  .battle .foe-hit {
-    --sprite: min(72cqi, 62cqh, 280px);
-    --sprite-h: calc(var(--sprite) * 1.05);
-  }
-  .battle .foes-2 .foe-hit {
-    --sprite: min(calc((100cqi - 16px) / 2), 56cqh, 240px);
-    --sprite-h: calc(var(--sprite) * 1.05);
-  }
+  .battle .foe-hit,
+  .battle .foes-2 .foe-hit,
   .battle .foes-3 .foe-hit,
   .battle .enemies:not(.foes-1):not(.foes-2) .foe-hit {
-    --sprite: min(calc((100cqi - 16px) / 3), 48cqh, 200px);
-    --sprite-h: calc(var(--sprite) * 1.05);
+    --sprite: min(100%, 48cqh, 220px);
   }
   .battle-vitals .vbar { height: 22px; }
   .battle-buffs { height: auto; min-height: 22px; max-height: none; overflow: visible; }
