@@ -591,6 +591,34 @@ export function playResult(kind) {
   beginScene("defeat");
 }
 
+export function playClick() {
+  if (typeof document !== "undefined" && document.hidden) return;
+  away = false;
+  if (!ensure()) return;
+  if (ctx.state === "suspended") ctx.resume().catch(() => {});
+  const now = ctx.currentTime;
+  const tone = (freq, delay, dur, peak) => {
+    const osc = ctx.createOscillator();
+    const filter = ctx.createBiquadFilter();
+    const gain = ctx.createGain();
+    const t = now + delay;
+    osc.type = "square";
+    osc.frequency.setValueAtTime(freq, t);
+    filter.type = "lowpass";
+    filter.frequency.setValueAtTime(1800, t);
+    gain.gain.setValueAtTime(0.0001, t);
+    gain.gain.linearRampToValueAtTime(peak, t + 0.008);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(t);
+    osc.stop(t + dur + 0.02);
+  };
+  tone(784, 0, 0.06, 0.08);
+  tone(1174, 0.045, 0.09, 0.07);
+}
+
 export function playHit(kind) {
   if (!ensure() || held) return;
   if (kind === "crit") {

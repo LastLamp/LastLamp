@@ -65,7 +65,7 @@ import {
 } from "./logic.js";
 import { ASCEND_CAPS, COMBOS, LEVEL_CAP, ascendPrice, dailyCleared, dailyStageById, dailyStages, levelCap, skillCost, skillRank, stageXp, withGrowth, xpSteps, xpToNext } from "./growth.js";
 import { EVENT_ROADS, bondEvents, eventOpen } from "./events.js";
-import { playAscend, playBond, playBondMax, playGift, playHit, playLevel, playPull, playRank, playResult, playUltStamp, releaseMusic, resumeMusic, setTabAudible, startMusic, stopMusic } from "./music.js";
+import { playAscend, playBond, playBondMax, playClick, playGift, playHit, playLevel, playPull, playRank, playResult, playUltStamp, releaseMusic, resumeMusic, setTabAudible, startMusic, stopMusic } from "./music.js";
 import { storyChapters, storyClearCounts, storyNode } from "./story.js";
 import { towerFor, monthId } from "./tower.js";
 import { clearLinkHash, linkFromSave, unpackLink } from "./saveLink.js";
@@ -111,6 +111,15 @@ const MUSIC_SCENE = {
   green: "camp",
   air: "road",
 };
+
+const SPARK_BITS = [
+  { id: "a", x: 0, y: 0, size: 22, delay: 0, fill: "#fffaf3" },
+  { id: "b", x: -18, y: -16, size: 13, delay: 30, fill: "#f0c27a" },
+  { id: "c", x: 20, y: -12, size: 11, delay: 10, fill: "#fff6d8" },
+  { id: "d", x: -14, y: 18, size: 10, delay: 50, fill: "#fffaf3" },
+  { id: "e", x: 16, y: 16, size: 14, delay: 20, fill: "#f0c27a" },
+  { id: "f", x: 2, y: -22, size: 8, delay: 40, fill: "#fffaf3" },
+];
 
 const Game = createContext(null);
 const useGame = () => useContext(Game);
@@ -174,17 +183,19 @@ export default function App() {
     }
     if (document.hidden) setTabAudible(false);
     startMusic(next);
-    function arm() {
+    function onPress(event) {
+      if (event.pointerType === "mouse" && event.button !== 0) return;
       if (!document.hidden) resumeMusic();
+      playClick();
     }
     function onVis() {
       if (document.hidden) setTabAudible(false);
       else setTabAudible(true);
     }
-    window.addEventListener("pointerdown", arm);
+    window.addEventListener("pointerdown", onPress);
     document.addEventListener("visibilitychange", onVis);
     return () => {
-      window.removeEventListener("pointerdown", arm);
+      window.removeEventListener("pointerdown", onPress);
       document.removeEventListener("visibilitychange", onVis);
     };
   }, [save.sound, screen, stageId]);
@@ -285,11 +296,10 @@ export default function App() {
       <div
         className={`shell${stageId ? " is-fight" : ""}`}
         onPointerDown={(event) => {
-          const button = event.target.closest("button");
-          if (!button || button.disabled) return;
+          if (event.button > 0) return;
           const id = `${Date.now()}-${Math.random()}`;
           setSparks((list) => [...list, { id, x: event.clientX, y: event.clientY }].slice(-12));
-          window.setTimeout(() => setSparks((list) => list.filter((spark) => spark.id !== id)), 480);
+          window.setTimeout(() => setSparks((list) => list.filter((spark) => spark.id !== id)), 720);
         }}
         style={
           stageId
@@ -414,7 +424,24 @@ export default function App() {
           createPortal(
             <div className="sparks" aria-hidden="true">
               {sparks.map((spark) => (
-                <i key={spark.id} className="spark" style={{ left: spark.x, top: spark.y }} />
+                <span key={spark.id} className="spark" style={{ left: spark.x, top: spark.y }}>
+                  {SPARK_BITS.map((bit) => (
+                    <svg
+                      key={bit.id}
+                      className="spark-star"
+                      viewBox="0 0 16 16"
+                      style={{
+                        left: bit.x,
+                        top: bit.y,
+                        width: bit.size,
+                        height: bit.size,
+                        animationDelay: `${bit.delay}ms`,
+                      }}
+                    >
+                      <path d="M8 0 L9.7 6.3 L16 8 L9.7 9.7 L8 16 L6.3 9.7 L0 8 L6.3 6.3 Z" fill={bit.fill} />
+                    </svg>
+                  ))}
+                </span>
               ))}
             </div>,
             document.body

@@ -1562,14 +1562,18 @@ main {
 .hand.skill-row .skill-token,
 .hand.skill-row .skill-gap {
   width: 100%;
-  max-width: 64px;
+  max-width: 4.5rem;
   height: auto;
   aspect-ratio: 1;
+  min-width: 0;
 }
 .hand.skill-row .skill-face,
 .hand.skill-row .skill-token .skill-art {
   width: 100%;
-  height: 100%;
+  max-width: none;
+  height: auto;
+  aspect-ratio: 1;
+  min-width: 0;
 }
 .skill-token,
 .ult-token {
@@ -2481,29 +2485,19 @@ main {
 }
 .replay-note, .sweep-note { margin: 8px 0 0; color: #5c4636; font-size: 0.88rem; }
 .sweep-note { background: #f6ead7; border-radius: 8px; padding: 8px 10px; }
-.sparks { position: fixed; inset: 0; pointer-events: none; z-index: 40; }
-.spark {
-  position: fixed;
-  width: 8px;
-  height: 8px;
-  margin: -4px 0 0 -4px;
-  border-radius: 99px;
-  background: #c47a2c;
-  box-shadow:
-    0 0 0 2px #2c241b,
-    12px 0 0 #f0c27a,
-    -12px 0 0 #f0c27a,
-    0 12px 0 #f0c27a,
-    0 -12px 0 #f0c27a,
-    8px 8px 0 #fffaf3,
-    -8px -8px 0 #fffaf3,
-    8px -8px 0 #fffaf3,
-    -8px 8px 0 #fffaf3;
-  animation: spark-pop 0.48s ease forwards;
+.sparks { position: fixed; inset: 0; pointer-events: none; z-index: 80; }
+.spark { position: fixed; width: 0; height: 0; }
+.spark-star {
+  position: absolute;
+  overflow: visible;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 3px rgba(240, 194, 122, 0.9));
+  animation: spark-pop 0.68s ease forwards;
 }
 @keyframes spark-pop {
-  from { transform: scale(0.4); opacity: 1; }
-  to { transform: scale(1.4); opacity: 0; }
+  0% { transform: translate(-50%, -50%) scale(0.15) rotate(0deg); opacity: 0; }
+  22% { transform: translate(-50%, -50%) scale(1) rotate(16deg); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(0.35) rotate(32deg); opacity: 0; }
 }
 .battle-tools { display: flex; flex-direction: column; align-items: flex-end; gap: 0; }
 .tool-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
@@ -4232,18 +4226,13 @@ img.status-glyph { filter: url(#knock-black); }
     width: 100%;
     display: grid;
     grid-template-columns: 60px minmax(0, 1fr);
-    grid-template-rows: auto 64px auto;
+    grid-template-rows: auto auto auto;
     justify-content: center;
     justify-items: center;
     gap: 8px;
     min-width: 0;
   }
-  .skill-token, .skill-face, .skill-token .skill-art, .skill-gap { width: 56px; height: 56px; }
   .hand.skill-row { height: auto; gap: 6px; flex-wrap: nowrap; overflow: visible; max-width: 100%; }
-  .hand.skill-row .skill-token,
-  .hand.skill-row .skill-face,
-  .hand.skill-row .skill-token .skill-art,
-  .hand.skill-row .skill-gap { width: 100%; height: auto; max-width: 56px; max-height: 56px; }
   .ap-dial, .ult-dial { width: 68px; height: 68px; }
   .ult-row { grid-template-columns: repeat(3, 76px); min-height: 100px; }
   .ult-token { width: 76px; }
@@ -4283,12 +4272,6 @@ html:has(.shell.is-fight) body {
   .battle { gap: 4px; }
   .battle-tray { gap: 6px; grid-template-columns: 60px minmax(0, 1fr); }
   .ap-dial, .ult-dial { width: 68px; height: 68px; }
-  .skill-token, .skill-face, .skill-token .skill-art, .skill-gap { width: 56px; height: 56px; }
-  .hand.skill-row { height: auto; }
-  .hand.skill-row .skill-token,
-  .hand.skill-row .skill-face,
-  .hand.skill-row .skill-token .skill-art,
-  .hand.skill-row .skill-gap { width: 100%; height: auto; max-width: 56px; max-height: 56px; }
   .battle .foe-hit {
     --sprite: min(64cqi, calc((100cqh - 56px) / 1.05));
     --sprite-h: calc(var(--sprite) * 1.05);
@@ -4384,22 +4367,12 @@ html:has(.shell.is-fight) body {
   .battle .foe-figure { margin-top: 8px; }
   .battle-tray {
     grid-template-columns: 60px minmax(0, 1fr);
-    grid-template-rows: auto 60px auto;
+    grid-template-rows: auto auto auto;
     gap: 6px;
   }
-  .skill-token, .skill-face, .skill-token .skill-art, .skill-gap { width: 56px; height: 56px; }
-  .hand.skill-row { height: auto; }
-  .hand.skill-row .skill-token,
-  .hand.skill-row .skill-face,
-  .hand.skill-row .skill-token .skill-art,
-  .hand.skill-row .skill-gap { width: 100%; height: auto; max-width: 56px; max-height: 56px; }
   .ult-row { min-height: 96px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .ap-dial, .ult-dial { width: 64px; height: 64px; }
   .sheet { padding: 14px; }
-  .hand.skill-row .skill-token,
-  .hand.skill-row .skill-face,
-  .hand.skill-row .skill-token .skill-art,
-  .hand.skill-row .skill-gap { width: 100%; height: auto; max-width: 56px; max-height: 56px; }
   .battle .foe-hit {
     --sprite: min(156px, 48cqi);
     --sprite-h: min(176px, calc(var(--sprite) * 1.12));
