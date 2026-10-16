@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/orko.png
+/Users/antho/Documents/gachagame/public/sprites/orko-attack.png
+/Users/antho/Documents/gachagame/public/sprites/orko-win.png
+/Users/antho/Documents/gachagame/public/sprites/orko-lose.png
+/Users/antho/Documents/gachagame/public/sprites/orko-ult.png
+/Users/antho/Documents/gachagame/public/sprites/orko-stress.png
+/Users/antho/Documents/gachagame/public/skills/orko-bash.png
+/Users/antho/Documents/gachagame/public/skills/orko-wall.png
+/Users/antho/Documents/gachagame/public/skills/orko-ult.png

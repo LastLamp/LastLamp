@@ -1,0 +1,2232 @@
+{
+  "styleMin": 72,
+  "anchors": [
+    "soren",
+    "marek"
+  ],
+  "anchor": {
+    "form": 0.491,
+    "flat": 0.351,
+    "faceDetail": 41.8,
+    "faceShade": [
+      0.099,
+      0.252,
+      0.166,
+      0.166,
+      0.159,
+      0.104,
+      0.055
+    ]
+  },
+  "rows": [
+    {
+      "id": "cael",
+      "anchor": false,
+      "shade": 38.4,
+      "form": 61.7,
+      "depth": 92.8,
+      "faceDetail": 38.8,
+      "faceShade": [
+        0.349,
+        0.192,
+        0.119,
+        0.11,
+        0.074,
+        0.072,
+        0.084
+      ],
+      "fill": 0.668,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "rune",
+      "anchor": false,
+      "shade": 44.5,
+      "form": 56.3,
+      "depth": 107.5,
+      "faceDetail": 44.94,
+      "faceShade": [
+        0.258,
+        0.298,
+        0.098,
+        0.09,
+        0.089,
+        0.066,
+        0.102
+      ],
+      "fill": 0.54,
+      "frame": [
+        "zoomed out"
+      ],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "orien",
+      "anchor": false,
+      "shade": 45.9,
+      "form": 74.5,
+      "depth": 113.5,
+      "faceDetail": 47.45,
+      "faceShade": [
+        0.291,
+        0.173,
+        0.133,
+        0.145,
+        0.087,
+        0.063,
+        0.108
+      ],
+      "fill": 0.609,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "seraphine",
+      "anchor": false,
+      "shade": 52.2,
+      "form": 91.6,
+      "depth": 174.6,
+      "faceDetail": 72.96,
+      "faceShade": [
+        0.088,
+        0.129,
+        0.104,
+        0.144,
+        0.202,
+        0.182,
+        0.151
+      ],
+      "fill": 0.557,
+      "frame": [],
+      "differ": [
+        "busier face shading"
+      ]
+    },
+    {
+      "id": "harrow",
+      "anchor": false,
+      "shade": 52.5,
+      "form": 75,
+      "depth": 104,
+      "faceDetail": 43.47,
+      "faceShade": [
+        0.28,
+        0.192,
+        0.127,
+        0.135,
+        0.106,
+        0.07,
+        0.09
+      ],
+      "fill": 0.687,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "len",
+      "anchor": false,
+      "shade": 52.5,
+      "form": 62.7,
+      "depth": 104,
+      "faceDetail": 43.46,
+      "faceShade": [
+        0.269,
+        0.25,
+        0.13,
+        0.099,
+        0.078,
+        0.073,
+        0.1
+      ],
+      "fill": 0.658,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "brennan",
+      "anchor": false,
+      "shade": 53.5,
+      "form": 66.3,
+      "depth": 68.7,
+      "faceDetail": 28.7,
+      "faceShade": [
+        0.195,
+        0.367,
+        0.148,
+        0.092,
+        0.085,
+        0.067,
+        0.045
+      ],
+      "fill": 0.63,
+      "frame": [],
+      "differ": [
+        "flatter face shading",
+        "shallower shadows"
+      ]
+    },
+    {
+      "id": "torin",
+      "anchor": false,
+      "shade": 53.5,
+      "form": 67.7,
+      "depth": 106.4,
+      "faceDetail": 44.49,
+      "faceShade": [
+        0.266,
+        0.23,
+        0.152,
+        0.11,
+        0.07,
+        0.073,
+        0.099
+      ],
+      "fill": 0.683,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "keir",
+      "anchor": false,
+      "shade": 53.7,
+      "form": 63.7,
+      "depth": 87.2,
+      "faceDetail": 36.46,
+      "faceShade": [
+        0.218,
+        0.318,
+        0.115,
+        0.11,
+        0.087,
+        0.072,
+        0.08
+      ],
+      "fill": 0.634,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "nico",
+      "anchor": false,
+      "shade": 53.8,
+      "form": 74.1,
+      "depth": 95.8,
+      "faceDetail": 40.06,
+      "faceShade": [
+        0.287,
+        0.189,
+        0.133,
+        0.139,
+        0.091,
+        0.084,
+        0.077
+      ],
+      "fill": 0.622,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "ivo",
+      "anchor": false,
+      "shade": 57.1,
+      "form": 81.5,
+      "depth": 138.1,
+      "faceDetail": 57.72,
+      "faceShade": [
+        0.217,
+        0.196,
+        0.17,
+        0.142,
+        0.087,
+        0.06,
+        0.127
+      ],
+      "fill": 0.691,
+      "frame": [],
+      "differ": [
+        "flatter face shading",
+        "busier face shading"
+      ]
+    },
+    {
+      "id": "soren2",
+      "anchor": false,
+      "shade": 58,
+      "form": 75.1,
+      "depth": 67.4,
+      "faceDetail": 28.16,
+      "faceShade": [
+        0.238,
+        0.304,
+        0.151,
+        0.12,
+        0.098,
+        0.055,
+        0.035
+      ],
+      "fill": 0.648,
+      "frame": [],
+      "differ": [
+        "flatter face shading",
+        "shallower shadows"
+      ]
+    },
+    {
+      "id": "cress",
+      "anchor": false,
+      "shade": 58.4,
+      "form": 78,
+      "depth": 145,
+      "faceDetail": 60.59,
+      "faceShade": [
+        0.201,
+        0.171,
+        0.108,
+        0.131,
+        0.144,
+        0.112,
+        0.133
+      ],
+      "fill": 0.598,
+      "frame": [],
+      "differ": [
+        "flatter face shading",
+        "busier face shading"
+      ]
+    },
+    {
+      "id": "holt",
+      "anchor": false,
+      "shade": 58.9,
+      "form": 78.7,
+      "depth": 89.3,
+      "faceDetail": 37.33,
+      "faceShade": [
+        0.261,
+        0.204,
+        0.156,
+        0.147,
+        0.083,
+        0.07,
+        0.079
+      ],
+      "fill": 0.697,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "vesna",
+      "anchor": false,
+      "shade": 61.4,
+      "form": 111,
+      "depth": 162.9,
+      "faceDetail": 68.1,
+      "faceShade": [
+        0.06,
+        0.141,
+        0.14,
+        0.191,
+        0.214,
+        0.148,
+        0.106
+      ],
+      "fill": 0.644,
+      "frame": [],
+      "differ": [
+        "busier face shading"
+      ]
+    },
+    {
+      "id": "harren",
+      "anchor": false,
+      "shade": 61.9,
+      "form": 124.2,
+      "depth": 135.7,
+      "faceDetail": 56.71,
+      "faceShade": [
+        0.032,
+        0.146,
+        0.178,
+        0.213,
+        0.218,
+        0.134,
+        0.079
+      ],
+      "fill": 0.676,
+      "frame": [],
+      "differ": [
+        "more modeled than the anchors",
+        "busier face shading"
+      ]
+    },
+    {
+      "id": "cora",
+      "anchor": false,
+      "shade": 63.2,
+      "form": 79,
+      "depth": 67.4,
+      "faceDetail": 28.16,
+      "faceShade": [
+        0.191,
+        0.327,
+        0.156,
+        0.135,
+        0.097,
+        0.052,
+        0.043
+      ],
+      "fill": 0.666,
+      "frame": [],
+      "differ": [
+        "flatter face shading",
+        "shallower shadows"
+      ]
+    },
+    {
+      "id": "vance",
+      "anchor": false,
+      "shade": 63.3,
+      "form": 69.9,
+      "depth": 76,
+      "faceDetail": 31.79,
+      "faceShade": [
+        0.177,
+        0.335,
+        0.13,
+        0.111,
+        0.102,
+        0.085,
+        0.06
+      ],
+      "fill": 0.763,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "una",
+      "anchor": false,
+      "shade": 63.9,
+      "form": 78.2,
+      "depth": 81,
+      "faceDetail": 33.87,
+      "faceShade": [
+        0.263,
+        0.246,
+        0.145,
+        0.131,
+        0.107,
+        0.063,
+        0.045
+      ],
+      "fill": 0.634,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "bard",
+      "anchor": false,
+      "shade": 64,
+      "form": 68,
+      "depth": 92.5,
+      "faceDetail": 38.67,
+      "faceShade": [
+        0.178,
+        0.316,
+        0.136,
+        0.115,
+        0.083,
+        0.097,
+        0.075
+      ],
+      "fill": 0.624,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "dorian",
+      "anchor": false,
+      "shade": 64,
+      "form": 75.8,
+      "depth": 96.3,
+      "faceDetail": 40.26,
+      "faceShade": [
+        0.217,
+        0.255,
+        0.176,
+        0.125,
+        0.07,
+        0.069,
+        0.087
+      ],
+      "fill": 0.682,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "adel",
+      "anchor": false,
+      "shade": 64.1,
+      "form": 75.6,
+      "depth": 82.9,
+      "faceDetail": 34.67,
+      "faceShade": [
+        0.181,
+        0.314,
+        0.168,
+        0.129,
+        0.074,
+        0.062,
+        0.072
+      ],
+      "fill": 0.783,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "hestia",
+      "anchor": false,
+      "shade": 64.2,
+      "form": 73.4,
+      "depth": 89.3,
+      "faceDetail": 37.34,
+      "faceShade": [
+        0.163,
+        0.325,
+        0.156,
+        0.124,
+        0.08,
+        0.072,
+        0.081
+      ],
+      "fill": 0.648,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "nin",
+      "anchor": false,
+      "shade": 64.2,
+      "form": 78,
+      "depth": 96.8,
+      "faceDetail": 40.46,
+      "faceShade": [
+        0.142,
+        0.319,
+        0.187,
+        0.117,
+        0.078,
+        0.07,
+        0.086
+      ],
+      "fill": 0.751,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "drust",
+      "anchor": false,
+      "shade": 66.5,
+      "form": 123.2,
+      "depth": 119.1,
+      "faceDetail": 49.8,
+      "faceShade": [
+        0.047,
+        0.155,
+        0.173,
+        0.217,
+        0.214,
+        0.142,
+        0.051
+      ],
+      "fill": 0.739,
+      "frame": [],
+      "differ": [
+        "more modeled than the anchors"
+      ]
+    },
+    {
+      "id": "isola",
+      "anchor": false,
+      "shade": 66.6,
+      "form": 94.6,
+      "depth": 57.9,
+      "faceDetail": 24.22,
+      "faceShade": [
+        0.183,
+        0.291,
+        0.192,
+        0.168,
+        0.104,
+        0.048,
+        0.013
+      ],
+      "fill": 0.811,
+      "frame": [
+        "cropped tighter than the anchors"
+      ],
+      "differ": [
+        "flatter face shading",
+        "shallower shadows"
+      ]
+    },
+    {
+      "id": "ilyra",
+      "anchor": false,
+      "shade": 67,
+      "form": 84.1,
+      "depth": 101.3,
+      "faceDetail": 42.35,
+      "faceShade": [
+        0.221,
+        0.192,
+        0.106,
+        0.14,
+        0.167,
+        0.123,
+        0.051
+      ],
+      "fill": 0.738,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "elowen",
+      "anchor": false,
+      "shade": 67.2,
+      "form": 117.5,
+      "depth": 132.3,
+      "faceDetail": 55.32,
+      "faceShade": [
+        0.031,
+        0.171,
+        0.188,
+        0.199,
+        0.189,
+        0.131,
+        0.091
+      ],
+      "fill": 0.498,
+      "frame": [
+        "empty space at the side",
+        "zoomed out"
+      ],
+      "differ": [
+        "more modeled than the anchors"
+      ]
+    },
+    {
+      "id": "daph",
+      "anchor": false,
+      "shade": 67.3,
+      "form": 100.3,
+      "depth": 85.9,
+      "faceDetail": 35.91,
+      "faceShade": [
+        0.203,
+        0.206,
+        0.184,
+        0.191,
+        0.117,
+        0.058,
+        0.041
+      ],
+      "fill": 0.665,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "lumen",
+      "anchor": false,
+      "shade": 67.4,
+      "form": 95.1,
+      "depth": 118.3,
+      "faceDetail": 49.43,
+      "faceShade": [
+        0.188,
+        0.149,
+        0.126,
+        0.161,
+        0.18,
+        0.12,
+        0.076
+      ],
+      "fill": 0.698,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "kit",
+      "anchor": false,
+      "shade": 67.8,
+      "form": 78.9,
+      "depth": 100.3,
+      "faceDetail": 41.94,
+      "faceShade": [
+        0.192,
+        0.257,
+        0.182,
+        0.129,
+        0.076,
+        0.077,
+        0.088
+      ],
+      "fill": 0.643,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "ysolde",
+      "anchor": false,
+      "shade": 67.8,
+      "form": 85.2,
+      "depth": 72.2,
+      "faceDetail": 30.17,
+      "faceShade": [
+        0.13,
+        0.324,
+        0.209,
+        0.123,
+        0.086,
+        0.077,
+        0.051
+      ],
+      "fill": 0.746,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "maris",
+      "anchor": false,
+      "shade": 68,
+      "form": 72.9,
+      "depth": 89.1,
+      "faceDetail": 37.26,
+      "faceShade": [
+        0.181,
+        0.308,
+        0.138,
+        0.107,
+        0.113,
+        0.092,
+        0.062
+      ],
+      "fill": 0.654,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "tessa",
+      "anchor": false,
+      "shade": 68,
+      "form": 87.1,
+      "depth": 95.5,
+      "faceDetail": 39.91,
+      "faceShade": [
+        0.244,
+        0.178,
+        0.118,
+        0.153,
+        0.156,
+        0.096,
+        0.055
+      ],
+      "fill": 0.634,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "vesper",
+      "anchor": false,
+      "shade": 68.3,
+      "form": 90.8,
+      "depth": 98.2,
+      "faceDetail": 41.05,
+      "faceShade": [
+        0.19,
+        0.223,
+        0.192,
+        0.161,
+        0.092,
+        0.06,
+        0.081
+      ],
+      "fill": 0.765,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "amber",
+      "anchor": false,
+      "shade": 69.8,
+      "form": 95.1,
+      "depth": 120.4,
+      "faceDetail": 50.32,
+      "faceShade": [
+        0.153,
+        0.17,
+        0.124,
+        0.152,
+        0.19,
+        0.132,
+        0.079
+      ],
+      "fill": 0.659,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "zeno",
+      "anchor": false,
+      "shade": 69.8,
+      "form": 94.6,
+      "depth": 67.4,
+      "faceDetail": 28.16,
+      "faceShade": [
+        0.127,
+        0.333,
+        0.194,
+        0.15,
+        0.12,
+        0.047,
+        0.029
+      ],
+      "fill": 0.622,
+      "frame": [],
+      "differ": [
+        "flatter face shading",
+        "shallower shadows"
+      ]
+    },
+    {
+      "id": "solenne",
+      "anchor": false,
+      "shade": 70,
+      "form": 79.8,
+      "depth": 93.6,
+      "faceDetail": 39.14,
+      "faceShade": [
+        0.234,
+        0.221,
+        0.131,
+        0.142,
+        0.119,
+        0.098,
+        0.056
+      ],
+      "fill": 0.812,
+      "frame": [
+        "cropped tighter than the anchors"
+      ],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "grim",
+      "anchor": false,
+      "shade": 70.4,
+      "form": 121.1,
+      "depth": 117,
+      "faceDetail": 48.91,
+      "faceShade": [
+        0.063,
+        0.16,
+        0.159,
+        0.221,
+        0.215,
+        0.126,
+        0.056
+      ],
+      "fill": 0.691,
+      "frame": [],
+      "differ": [
+        "more modeled than the anchors"
+      ]
+    },
+    {
+      "id": "sylvie",
+      "anchor": false,
+      "shade": 71.9,
+      "form": 81.9,
+      "depth": 109.2,
+      "faceDetail": 45.64,
+      "faceShade": [
+        0.203,
+        0.214,
+        0.111,
+        0.149,
+        0.141,
+        0.103,
+        0.078
+      ],
+      "fill": 0.633,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "maren",
+      "anchor": false,
+      "shade": 72.3,
+      "form": 91.7,
+      "depth": 76.7,
+      "faceDetail": 32.05,
+      "faceShade": [
+        0.142,
+        0.3,
+        0.201,
+        0.154,
+        0.095,
+        0.065,
+        0.042
+      ],
+      "fill": 0.713,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "rheya",
+      "anchor": false,
+      "shade": 72.9,
+      "form": 91.1,
+      "depth": 80.5,
+      "faceDetail": 33.64,
+      "faceShade": [
+        0.222,
+        0.204,
+        0.14,
+        0.16,
+        0.147,
+        0.085,
+        0.042
+      ],
+      "fill": 0.804,
+      "frame": [
+        "cropped tighter than the anchors"
+      ],
+      "differ": []
+    },
+    {
+      "id": "mick",
+      "anchor": false,
+      "shade": 73.1,
+      "form": 88.3,
+      "depth": 92.1,
+      "faceDetail": 38.48,
+      "faceShade": [
+        0.215,
+        0.206,
+        0.133,
+        0.168,
+        0.132,
+        0.087,
+        0.058
+      ],
+      "fill": 0.693,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "quill",
+      "anchor": false,
+      "shade": 73.5,
+      "form": 90.3,
+      "depth": 97.9,
+      "faceDetail": 40.91,
+      "faceShade": [
+        0.213,
+        0.188,
+        0.133,
+        0.16,
+        0.15,
+        0.096,
+        0.06
+      ],
+      "fill": 0.665,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "hal",
+      "anchor": false,
+      "shade": 73.6,
+      "form": 82.1,
+      "depth": 86.5,
+      "faceDetail": 36.14,
+      "faceShade": [
+        0.18,
+        0.279,
+        0.178,
+        0.138,
+        0.087,
+        0.085,
+        0.054
+      ],
+      "fill": 0.67,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "mattis",
+      "anchor": false,
+      "shade": 73.7,
+      "form": 75.7,
+      "depth": 100.4,
+      "faceDetail": 41.96,
+      "faceShade": [
+        0.177,
+        0.258,
+        0.122,
+        0.138,
+        0.112,
+        0.104,
+        0.089
+      ],
+      "fill": 0.648,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "nera",
+      "anchor": false,
+      "shade": 73.7,
+      "form": 88.4,
+      "depth": 105.1,
+      "faceDetail": 43.93,
+      "faceShade": [
+        0.17,
+        0.241,
+        0.183,
+        0.153,
+        0.098,
+        0.069,
+        0.087
+      ],
+      "fill": 0.673,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "remy",
+      "anchor": false,
+      "shade": 74.3,
+      "form": 88.4,
+      "depth": 98.7,
+      "faceDetail": 41.26,
+      "faceShade": [
+        0.157,
+        0.267,
+        0.194,
+        0.151,
+        0.088,
+        0.072,
+        0.07
+      ],
+      "fill": 0.64,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "jasper",
+      "anchor": false,
+      "shade": 74.6,
+      "form": 84.2,
+      "depth": 122,
+      "faceDetail": 51,
+      "faceShade": [
+        0.152,
+        0.236,
+        0.154,
+        0.156,
+        0.103,
+        0.082,
+        0.117
+      ],
+      "fill": 0.661,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "juniper",
+      "anchor": false,
+      "shade": 74.8,
+      "form": 98.4,
+      "depth": 80.1,
+      "faceDetail": 33.5,
+      "faceShade": [
+        0.158,
+        0.25,
+        0.219,
+        0.168,
+        0.095,
+        0.07,
+        0.04
+      ],
+      "fill": 0.693,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "briony",
+      "anchor": false,
+      "shade": 74.9,
+      "form": 89.6,
+      "depth": 101.6,
+      "faceDetail": 42.48,
+      "faceShade": [
+        0.139,
+        0.264,
+        0.194,
+        0.146,
+        0.099,
+        0.068,
+        0.088
+      ],
+      "fill": 0.774,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "mael",
+      "anchor": false,
+      "shade": 75.7,
+      "form": 97.3,
+      "depth": 139.9,
+      "faceDetail": 58.49,
+      "faceShade": [
+        0.097,
+        0.179,
+        0.135,
+        0.161,
+        0.181,
+        0.159,
+        0.089
+      ],
+      "fill": 0.753,
+      "frame": [],
+      "differ": [
+        "busier face shading"
+      ]
+    },
+    {
+      "id": "harlan",
+      "anchor": false,
+      "shade": 75.8,
+      "form": 89.4,
+      "depth": 86.7,
+      "faceDetail": 36.25,
+      "faceShade": [
+        0.134,
+        0.289,
+        0.193,
+        0.145,
+        0.101,
+        0.073,
+        0.067
+      ],
+      "fill": 0.715,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "wystan",
+      "anchor": false,
+      "shade": 75.8,
+      "form": 102.1,
+      "depth": 102.2,
+      "faceDetail": 42.73,
+      "faceShade": [
+        0.152,
+        0.185,
+        0.124,
+        0.182,
+        0.195,
+        0.106,
+        0.057
+      ],
+      "fill": 0.666,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "thalia",
+      "anchor": false,
+      "shade": 76.4,
+      "form": 92.4,
+      "depth": 76.1,
+      "faceDetail": 31.83,
+      "faceShade": [
+        0.171,
+        0.279,
+        0.136,
+        0.174,
+        0.143,
+        0.068,
+        0.029
+      ],
+      "fill": 0.789,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "rowan2",
+      "anchor": false,
+      "shade": 77.2,
+      "form": 95.1,
+      "depth": 104.3,
+      "faceDetail": 43.6,
+      "faceShade": [
+        0.185,
+        0.188,
+        0.136,
+        0.172,
+        0.158,
+        0.095,
+        0.065
+      ],
+      "fill": 0.632,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "peregrine",
+      "anchor": false,
+      "shade": 77.4,
+      "form": 100.1,
+      "depth": 90.9,
+      "faceDetail": 38.01,
+      "faceShade": [
+        0.17,
+        0.203,
+        0.136,
+        0.171,
+        0.185,
+        0.096,
+        0.04
+      ],
+      "fill": 0.713,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "opal",
+      "anchor": false,
+      "shade": 77.5,
+      "form": 91.8,
+      "depth": 109.7,
+      "faceDetail": 45.85,
+      "faceShade": [
+        0.161,
+        0.228,
+        0.173,
+        0.166,
+        0.111,
+        0.073,
+        0.087
+      ],
+      "fill": 0.618,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "saskia",
+      "anchor": false,
+      "shade": 77.6,
+      "form": 96.4,
+      "depth": 99.7,
+      "faceDetail": 41.66,
+      "faceShade": [
+        0.177,
+        0.205,
+        0.125,
+        0.168,
+        0.18,
+        0.092,
+        0.053
+      ],
+      "fill": 0.666,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "uthred",
+      "anchor": false,
+      "shade": 79,
+      "form": 109.7,
+      "depth": 103.9,
+      "faceDetail": 43.42,
+      "faceShade": [
+        0.129,
+        0.165,
+        0.16,
+        0.196,
+        0.182,
+        0.115,
+        0.052
+      ],
+      "fill": 0.706,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "idris",
+      "anchor": false,
+      "shade": 79.1,
+      "form": 111.9,
+      "depth": 117.1,
+      "faceDetail": 48.95,
+      "faceShade": [
+        0.078,
+        0.193,
+        0.151,
+        0.184,
+        0.214,
+        0.121,
+        0.059
+      ],
+      "fill": 0.717,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "pearl",
+      "anchor": false,
+      "shade": 79.4,
+      "form": 94.4,
+      "depth": 91.1,
+      "faceDetail": 38.09,
+      "faceShade": [
+        0.123,
+        0.293,
+        0.194,
+        0.153,
+        0.115,
+        0.069,
+        0.052
+      ],
+      "fill": 0.593,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "io",
+      "anchor": false,
+      "shade": 79.7,
+      "form": 92.5,
+      "depth": 94.4,
+      "faceDetail": 39.48,
+      "faceShade": [
+        0.185,
+        0.217,
+        0.148,
+        0.159,
+        0.146,
+        0.084,
+        0.061
+      ],
+      "fill": 0.662,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "aldric",
+      "anchor": false,
+      "shade": 79.8,
+      "form": 85.3,
+      "depth": 91.2,
+      "faceDetail": 38.12,
+      "faceShade": [
+        0.127,
+        0.295,
+        0.158,
+        0.156,
+        0.104,
+        0.084,
+        0.075
+      ],
+      "fill": 0.684,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "jorah",
+      "anchor": false,
+      "shade": 79.9,
+      "form": 85.1,
+      "depth": 90.5,
+      "faceDetail": 37.84,
+      "faceShade": [
+        0.186,
+        0.241,
+        0.107,
+        0.153,
+        0.158,
+        0.108,
+        0.048
+      ],
+      "fill": 0.771,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "mira",
+      "anchor": false,
+      "shade": 79.9,
+      "form": 111.6,
+      "depth": 120.3,
+      "faceDetail": 50.28,
+      "faceShade": [
+        0.071,
+        0.213,
+        0.204,
+        0.196,
+        0.147,
+        0.091,
+        0.077
+      ],
+      "fill": 0.661,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "astra",
+      "anchor": false,
+      "shade": 80,
+      "form": 100.2,
+      "depth": 107,
+      "faceDetail": 44.73,
+      "faceShade": [
+        0.143,
+        0.188,
+        0.139,
+        0.167,
+        0.186,
+        0.114,
+        0.064
+      ],
+      "fill": 0.572,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "nell",
+      "anchor": false,
+      "shade": 80.3,
+      "form": 106.8,
+      "depth": 122.5,
+      "faceDetail": 51.21,
+      "faceShade": [
+        0.059,
+        0.206,
+        0.183,
+        0.161,
+        0.179,
+        0.125,
+        0.086
+      ],
+      "fill": 0.705,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "pavel",
+      "anchor": false,
+      "shade": 80.3,
+      "form": 102.6,
+      "depth": 116.6,
+      "faceDetail": 48.74,
+      "faceShade": [
+        0.118,
+        0.195,
+        0.186,
+        0.184,
+        0.133,
+        0.098,
+        0.087
+      ],
+      "fill": 0.633,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "fen",
+      "anchor": false,
+      "shade": 80.4,
+      "form": 83.1,
+      "depth": 99.7,
+      "faceDetail": 41.65,
+      "faceShade": [
+        0.145,
+        0.273,
+        0.139,
+        0.138,
+        0.131,
+        0.098,
+        0.076
+      ],
+      "fill": 0.618,
+      "frame": [],
+      "differ": [
+        "flatter face shading"
+      ]
+    },
+    {
+      "id": "nessa",
+      "anchor": false,
+      "shade": 80.4,
+      "form": 93.3,
+      "depth": 110,
+      "faceDetail": 46,
+      "faceShade": [
+        0.117,
+        0.267,
+        0.182,
+        0.169,
+        0.106,
+        0.068,
+        0.091
+      ],
+      "fill": 0.685,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "anwen",
+      "anchor": false,
+      "shade": 80.5,
+      "form": 105.9,
+      "depth": 103.8,
+      "faceDetail": 43.4,
+      "faceShade": [
+        0.06,
+        0.289,
+        0.208,
+        0.175,
+        0.137,
+        0.08,
+        0.052
+      ],
+      "fill": 0.537,
+      "frame": [
+        "zoomed out"
+      ],
+      "differ": []
+    },
+    {
+      "id": "lira",
+      "anchor": false,
+      "shade": 80.5,
+      "form": 98.4,
+      "depth": 78.7,
+      "faceDetail": 32.89,
+      "faceShade": [
+        0.14,
+        0.276,
+        0.185,
+        0.17,
+        0.128,
+        0.068,
+        0.033
+      ],
+      "fill": 0.63,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "leif",
+      "anchor": false,
+      "shade": 81.3,
+      "form": 113.5,
+      "depth": 94.6,
+      "faceDetail": 39.55,
+      "faceShade": [
+        0.1,
+        0.219,
+        0.149,
+        0.19,
+        0.218,
+        0.095,
+        0.029
+      ],
+      "fill": 0.72,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "brynn",
+      "anchor": false,
+      "shade": 81.6,
+      "form": 94,
+      "depth": 95.6,
+      "faceDetail": 39.98,
+      "faceShade": [
+        0.171,
+        0.224,
+        0.16,
+        0.167,
+        0.134,
+        0.079,
+        0.065
+      ],
+      "fill": 0.687,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "col",
+      "anchor": false,
+      "shade": 81.9,
+      "form": 105,
+      "depth": 105.5,
+      "faceDetail": 44.1,
+      "faceShade": [
+        0.129,
+        0.197,
+        0.139,
+        0.196,
+        0.18,
+        0.103,
+        0.056
+      ],
+      "fill": 0.653,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "rhys",
+      "anchor": false,
+      "shade": 82,
+      "form": 89.1,
+      "depth": 123.3,
+      "faceDetail": 51.55,
+      "faceShade": [
+        0.123,
+        0.244,
+        0.167,
+        0.157,
+        0.113,
+        0.084,
+        0.112
+      ],
+      "fill": 0.672,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "sela",
+      "anchor": false,
+      "shade": 82,
+      "form": 96.7,
+      "depth": 105.7,
+      "faceDetail": 44.18,
+      "faceShade": [
+        0.142,
+        0.2,
+        0.136,
+        0.166,
+        0.171,
+        0.122,
+        0.061
+      ],
+      "fill": 0.685,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "niles",
+      "anchor": false,
+      "shade": 82.1,
+      "form": 109.9,
+      "depth": 93.1,
+      "faceDetail": 38.93,
+      "faceShade": [
+        0.111,
+        0.224,
+        0.146,
+        0.186,
+        0.207,
+        0.091,
+        0.035
+      ],
+      "fill": 0.685,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "beck",
+      "anchor": false,
+      "shade": 82.4,
+      "form": 95.3,
+      "depth": 88.8,
+      "faceDetail": 37.14,
+      "faceShade": [
+        0.169,
+        0.228,
+        0.134,
+        0.165,
+        0.168,
+        0.091,
+        0.044
+      ],
+      "fill": 0.677,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "selene",
+      "anchor": false,
+      "shade": 82.6,
+      "form": 96.5,
+      "depth": 87.7,
+      "faceDetail": 36.66,
+      "faceShade": [
+        0.127,
+        0.266,
+        0.196,
+        0.171,
+        0.105,
+        0.078,
+        0.056
+      ],
+      "fill": 0.746,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "cassian",
+      "anchor": false,
+      "shade": 82.7,
+      "form": 93,
+      "depth": 115.3,
+      "faceDetail": 48.2,
+      "faceShade": [
+        0.135,
+        0.216,
+        0.136,
+        0.169,
+        0.152,
+        0.098,
+        0.095
+      ],
+      "fill": 0.634,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "garrick",
+      "anchor": false,
+      "shade": 82.8,
+      "form": 91.8,
+      "depth": 121,
+      "faceDetail": 50.58,
+      "faceShade": [
+        0.098,
+        0.26,
+        0.179,
+        0.154,
+        0.117,
+        0.08,
+        0.112
+      ],
+      "fill": 0.625,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "orko",
+      "anchor": false,
+      "shade": 82.8,
+      "form": 104.6,
+      "depth": 105.6,
+      "faceDetail": 44.16,
+      "faceShade": [
+        0.087,
+        0.241,
+        0.204,
+        0.186,
+        0.123,
+        0.084,
+        0.075
+      ],
+      "fill": 0.62,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "petra",
+      "anchor": false,
+      "shade": 82.8,
+      "form": 88.8,
+      "depth": 91.2,
+      "faceDetail": 38.14,
+      "faceShade": [
+        0.158,
+        0.259,
+        0.113,
+        0.152,
+        0.171,
+        0.097,
+        0.05
+      ],
+      "fill": 0.646,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "bastion",
+      "anchor": false,
+      "shade": 83.1,
+      "form": 88,
+      "depth": 115.5,
+      "faceDetail": 48.29,
+      "faceShade": [
+        0.137,
+        0.234,
+        0.15,
+        0.154,
+        0.128,
+        0.107,
+        0.091
+      ],
+      "fill": 0.629,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "faye",
+      "anchor": false,
+      "shade": 83.2,
+      "form": 98,
+      "depth": 97.5,
+      "faceDetail": 40.75,
+      "faceShade": [
+        0.147,
+        0.22,
+        0.133,
+        0.168,
+        0.18,
+        0.109,
+        0.043
+      ],
+      "fill": 0.685,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "silas",
+      "anchor": false,
+      "shade": 85.1,
+      "form": 89.9,
+      "depth": 103.3,
+      "faceDetail": 43.19,
+      "faceShade": [
+        0.13,
+        0.257,
+        0.167,
+        0.161,
+        0.112,
+        0.087,
+        0.085
+      ],
+      "fill": 0.664,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "bram",
+      "anchor": false,
+      "shade": 85.3,
+      "form": 105.5,
+      "depth": 93.9,
+      "faceDetail": 39.24,
+      "faceShade": [
+        0.134,
+        0.21,
+        0.162,
+        0.186,
+        0.169,
+        0.093,
+        0.046
+      ],
+      "fill": 0.665,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "theo",
+      "anchor": false,
+      "shade": 85.9,
+      "form": 87.6,
+      "depth": 117.5,
+      "faceDetail": 49.1,
+      "faceShade": [
+        0.131,
+        0.249,
+        0.152,
+        0.151,
+        0.127,
+        0.106,
+        0.084
+      ],
+      "fill": 0.618,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "osric",
+      "anchor": false,
+      "shade": 86,
+      "form": 93.7,
+      "depth": 85.5,
+      "faceDetail": 35.73,
+      "faceShade": [
+        0.132,
+        0.28,
+        0.149,
+        0.168,
+        0.143,
+        0.08,
+        0.049
+      ],
+      "fill": 0.69,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "yara",
+      "anchor": false,
+      "shade": 86,
+      "form": 97.7,
+      "depth": 78.7,
+      "faceDetail": 32.9,
+      "faceShade": [
+        0.156,
+        0.256,
+        0.167,
+        0.168,
+        0.145,
+        0.071,
+        0.038
+      ],
+      "fill": 0.772,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "rowan",
+      "anchor": false,
+      "shade": 87.5,
+      "form": 98.2,
+      "depth": 94.7,
+      "faceDetail": 39.58,
+      "faceShade": [
+        0.118,
+        0.244,
+        0.128,
+        0.165,
+        0.189,
+        0.111,
+        0.046
+      ],
+      "fill": 0.685,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "cedric",
+      "anchor": false,
+      "shade": 87.6,
+      "form": 97.2,
+      "depth": 90.9,
+      "faceDetail": 37.99,
+      "faceShade": [
+        0.129,
+        0.255,
+        0.131,
+        0.164,
+        0.182,
+        0.092,
+        0.047
+      ],
+      "fill": 0.714,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "willa",
+      "anchor": false,
+      "shade": 87.7,
+      "form": 93.7,
+      "depth": 98,
+      "faceDetail": 40.95,
+      "faceShade": [
+        0.134,
+        0.232,
+        0.171,
+        0.154,
+        0.135,
+        0.105,
+        0.069
+      ],
+      "fill": 0.618,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "pike",
+      "anchor": false,
+      "shade": 89,
+      "form": 108.1,
+      "depth": 101.4,
+      "faceDetail": 42.36,
+      "faceShade": [
+        0.075,
+        0.25,
+        0.156,
+        0.179,
+        0.196,
+        0.096,
+        0.048
+      ],
+      "fill": 0.707,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "marek",
+      "anchor": true,
+      "shade": 91,
+      "form": 99.3,
+      "depth": 105.4,
+      "faceDetail": 44.07,
+      "faceShade": [
+        0.101,
+        0.25,
+        0.192,
+        0.167,
+        0.129,
+        0.095,
+        0.066
+      ],
+      "fill": 0.638,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "soren",
+      "anchor": true,
+      "shade": 91,
+      "form": 100.7,
+      "depth": 94.6,
+      "faceDetail": 39.53,
+      "faceShade": [
+        0.096,
+        0.254,
+        0.141,
+        0.164,
+        0.189,
+        0.112,
+        0.044
+      ],
+      "fill": 0.687,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "maeve",
+      "anchor": false,
+      "shade": 91.3,
+      "form": 100.6,
+      "depth": 105.3,
+      "faceDetail": 44.02,
+      "faceShade": [
+        0.083,
+        0.267,
+        0.17,
+        0.172,
+        0.151,
+        0.088,
+        0.069
+      ],
+      "fill": 0.637,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "tam",
+      "anchor": false,
+      "shade": 91.4,
+      "form": 101,
+      "depth": 120.9,
+      "faceDetail": 50.53,
+      "faceShade": [
+        0.066,
+        0.252,
+        0.177,
+        0.163,
+        0.156,
+        0.103,
+        0.084
+      ],
+      "fill": 0.737,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "brock",
+      "anchor": false,
+      "shade": 92,
+      "form": 107.4,
+      "depth": 97.6,
+      "faceDetail": 40.8,
+      "faceShade": [
+        0.089,
+        0.25,
+        0.184,
+        0.169,
+        0.174,
+        0.086,
+        0.048
+      ],
+      "fill": 0.647,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "oswin",
+      "anchor": false,
+      "shade": 92.8,
+      "form": 103.1,
+      "depth": 97.8,
+      "faceDetail": 40.87,
+      "faceShade": [
+        0.099,
+        0.244,
+        0.159,
+        0.163,
+        0.184,
+        0.111,
+        0.041
+      ],
+      "fill": 0.703,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "stark",
+      "anchor": false,
+      "shade": 93.8,
+      "form": 105,
+      "depth": 97.9,
+      "faceDetail": 40.93,
+      "faceShade": [
+        0.098,
+        0.232,
+        0.18,
+        0.174,
+        0.161,
+        0.108,
+        0.047
+      ],
+      "fill": 0.683,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "corin",
+      "anchor": false,
+      "shade": 94.8,
+      "form": 96.3,
+      "depth": 98.9,
+      "faceDetail": 41.33,
+      "faceShade": [
+        0.101,
+        0.259,
+        0.15,
+        0.159,
+        0.164,
+        0.114,
+        0.054
+      ],
+      "fill": 0.693,
+      "frame": [],
+      "differ": []
+    },
+    {
+      "id": "odette",
+      "anchor": false,
+      "shade": 95.9,
+      "form": 102.8,
+      "depth": 105.2,
+      "faceDetail": 43.96,
+      "faceShade": [
+        0.09,
+        0.243,
+        0.168,
+        0.166,
+        0.17,
+        0.103,
+        0.06
+      ],
+      "fill": 0.568,
+      "frame": [],
+      "differ": []
+    }
+  ]
+}

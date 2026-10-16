@@ -1,0 +1,9 @@
+public/sprites/ilyra.png
+public/sprites/ilyra-attack.png
+public/sprites/ilyra-win.png
+public/sprites/ilyra-lose.png
+public/sprites/ilyra-ult.png
+public/sprites/ilyra-stress.png
+public/skills/ilyra-step.png
+public/skills/ilyra-well.png
+public/skills/ilyra-court.png

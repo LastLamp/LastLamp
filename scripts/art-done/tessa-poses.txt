@@ -1,0 +1,5 @@
+/Users/antho/Documents/gachagame/public/sprites/tessa-attack.png 837005
+/Users/antho/Documents/gachagame/public/sprites/tessa-win.png 672209
+/Users/antho/Documents/gachagame/public/sprites/tessa-lose.png 856714
+/Users/antho/Documents/gachagame/public/sprites/tessa-ult.png 974478
+/Users/antho/Documents/gachagame/public/sprites/tessa-stress.png 671748

@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/jasper.png
+/Users/antho/Documents/gachagame/public/sprites/jasper-attack.png
+/Users/antho/Documents/gachagame/public/sprites/jasper-win.png
+/Users/antho/Documents/gachagame/public/sprites/jasper-lose.png
+/Users/antho/Documents/gachagame/public/sprites/jasper-ult.png
+/Users/antho/Documents/gachagame/public/sprites/jasper-stress.png
+/Users/antho/Documents/gachagame/public/skills/jasper-call.png
+/Users/antho/Documents/gachagame/public/skills/jasper-pair.png
+/Users/antho/Documents/gachagame/public/skills/jasper-ult.png

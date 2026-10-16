@@ -1,0 +1,9 @@
+public/sprites/isola.png
+public/sprites/isola-attack.png
+public/sprites/isola-win.png
+public/sprites/isola-lose.png
+public/sprites/isola-ult.png
+public/sprites/isola-stress.png
+public/skills/isola-mark.png
+public/skills/isola-chase.png
+public/skills/isola-ult.png

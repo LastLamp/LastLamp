@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/vance.png
+/Users/antho/Documents/gachagame/public/sprites/vance-attack.png
+/Users/antho/Documents/gachagame/public/sprites/vance-win.png
+/Users/antho/Documents/gachagame/public/sprites/vance-lose.png
+/Users/antho/Documents/gachagame/public/sprites/vance-ult.png
+/Users/antho/Documents/gachagame/public/sprites/vance-stress.png
+/Users/antho/Documents/gachagame/public/skills/vance-mark.png
+/Users/antho/Documents/gachagame/public/skills/vance-chase.png
+/Users/antho/Documents/gachagame/public/skills/vance-ult.png

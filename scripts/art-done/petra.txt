@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/petra.png
+/Users/antho/Documents/gachagame/public/sprites/petra-attack.png
+/Users/antho/Documents/gachagame/public/sprites/petra-win.png
+/Users/antho/Documents/gachagame/public/sprites/petra-lose.png
+/Users/antho/Documents/gachagame/public/sprites/petra-ult.png
+/Users/antho/Documents/gachagame/public/sprites/petra-stress.png
+/Users/antho/Documents/gachagame/public/skills/petra-open.png
+/Users/antho/Documents/gachagame/public/skills/petra-wave.png
+/Users/antho/Documents/gachagame/public/skills/petra-ult.png

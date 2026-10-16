@@ -1,0 +1,9 @@
+public/sprites/peregrine.png
+public/sprites/peregrine-attack.png
+public/sprites/peregrine-win.png
+public/sprites/peregrine-lose.png
+public/sprites/peregrine-ult.png
+public/sprites/peregrine-stress.png
+public/skills/peregrine-open.png
+public/skills/peregrine-wave.png
+public/skills/peregrine-ult.png

@@ -1,0 +1,44 @@
+Produce original art for Last Lamp. Workspace: /Users/antho/Documents/gachagame
+
+Read scripts/art-queue.json. Process only the ids you were assigned, in order. Finish every assigned id. Do not stop after a sample.
+
+For each id, the queue entry has: idle (boolean), cards (array of "cardId|Card Name"), look (appearance), familiar (optional), skills (object of cardId to icon description).
+
+PEOPLE
+If idle is true AND public/sprites/{id}.jpg does not exist:
+- Generate a full-body idle with the GenerateImage tool.
+- aspect_ratio "1:1"
+- reference_image_paths: ["/Users/antho/Documents/gachagame/public/sprites/soren.jpg"]
+- Prompt must include the look text and the familiar sentence if familiar is non-empty. The familiar must be a separate living creature, clearly visible.
+- Medium: premium HD pixel art, same pixel craft and flat cream background #F6EAD7 as the reference image. Not a smooth painting, not chibi, not 3D.
+- Design energy may take inspiration from fantasy anime casts such as Mushoku Tensei and One Piece: one strong silhouette, memorable hair, detailed clothing, a signature prop. Do not copy any character from those series or from the reference.
+- Full body including hair and feet, centered, generous margin. No text, no border, no scenery, no watermark.
+- Install with: sips -s format png SOURCE --out /Users/antho/Documents/gachagame/public/sprites/{id}.png
+- If that png already exists and is larger than 80000 bytes, skip it.
+
+If public/sprites/{id}.jpg exists, do not write any file in public/sprites for that id. The painted portrait must stay.
+
+POSES
+Only when public/sprites/{id}.jpg does not exist, after the idle png exists:
+Generate five more images of the SAME person. reference_image_paths must include the idle png you installed and soren.jpg. Keep face, hair, clothes, colors, and familiar. Change only the pose.
+- {id}-attack.png : lunging, weapon extended
+- {id}-win.png : one arm raised, pleased
+- {id}-lose.png : down on one knee, still fully in frame
+- {id}-ult.png : shouting, weapon high, a lamp-gold light behind them that does not hide the body
+- {id}-stress.png : standing, one hand pressed to the forehead
+Same pixel style, cream background, no text.
+Skip a pose file if it already exists and is larger than 80000 bytes.
+Install with sips -s format png to public/sprites/{id}-{pose}.png
+
+SKILLS
+For every card in cards:
+- If public/skills/{cardId}.jpg exists, skip.
+- If public/skills/{cardId}.png exists and is larger than 80000 bytes, skip.
+- Otherwise GenerateImage, aspect_ratio 1:1, reference_image_paths ["/Users/antho/Documents/gachagame/public/skills/block.png"]
+- A single object centered and filling most of the square. Same pixel craft and cream #F6EAD7 as the reference. No person, no letters, no numbers, no border.
+- Use the text in the entry skills[cardId] if present, otherwise invent a distinct object from the card name. The three skills for one person must be three different objects.
+- Install with sips -s format png to public/skills/{cardId}.png
+
+Do not edit game source. Do not run scripts/paint-cast.mjs or scripts/paint-skills.mjs. Do not overwrite any .jpg.
+
+When finished, write scripts/art-done/{id}.txt listing the png paths you installed, one per line. Create the folder if needed.

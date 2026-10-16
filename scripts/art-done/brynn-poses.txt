@@ -1,0 +1,5 @@
+/Users/antho/Documents/gachagame/public/sprites/brynn-attack.png 984732
+/Users/antho/Documents/gachagame/public/sprites/brynn-win.png 865494
+/Users/antho/Documents/gachagame/public/sprites/brynn-lose.png 946607
+/Users/antho/Documents/gachagame/public/sprites/brynn-ult.png 1005781
+/Users/antho/Documents/gachagame/public/sprites/brynn-stress.png 804219

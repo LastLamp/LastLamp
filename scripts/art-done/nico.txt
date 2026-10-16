@@ -1,0 +1,3 @@
+/Users/antho/Documents/gachagame/public/skills/nico-spear.png
+/Users/antho/Documents/gachagame/public/skills/nico-ripple.png
+/Users/antho/Documents/gachagame/public/skills/nico-tow.png

@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/maeve.png
+/Users/antho/Documents/gachagame/public/sprites/maeve-attack.png
+/Users/antho/Documents/gachagame/public/sprites/maeve-win.png
+/Users/antho/Documents/gachagame/public/sprites/maeve-lose.png
+/Users/antho/Documents/gachagame/public/sprites/maeve-ult.png
+/Users/antho/Documents/gachagame/public/sprites/maeve-stress.png
+/Users/antho/Documents/gachagame/public/skills/maeve-twin.png
+/Users/antho/Documents/gachagame/public/skills/maeve-flurry.png
+/Users/antho/Documents/gachagame/public/skills/maeve-ult.png

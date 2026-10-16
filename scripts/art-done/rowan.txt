@@ -1,0 +1,3 @@
+/Users/antho/Documents/gachagame/public/skills/rowan-granite.png
+/Users/antho/Documents/gachagame/public/skills/rowan-wall.png
+/Users/antho/Documents/gachagame/public/skills/rowan-mountain.png

@@ -1,0 +1,9 @@
+public/sprites/nin.png
+public/sprites/nin-attack.png
+public/sprites/nin-win.png
+public/sprites/nin-lose.png
+public/sprites/nin-ult.png
+public/sprites/nin-stress.png
+public/skills/nin-twin.png
+public/skills/nin-flurry.png
+public/skills/nin-ult.png

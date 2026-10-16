@@ -1,0 +1,9 @@
+public/sprites/una.png
+public/sprites/una-attack.png
+public/sprites/una-win.png
+public/sprites/una-lose.png
+public/sprites/una-ult.png
+public/sprites/una-stress.png
+public/skills/una-needle.png
+public/skills/una-stop.png
+public/skills/una-ult.png

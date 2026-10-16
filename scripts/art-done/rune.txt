@@ -1,0 +1,9 @@
+public/sprites/rune.png
+public/sprites/rune-attack.png
+public/sprites/rune-win.png
+public/sprites/rune-lose.png
+public/sprites/rune-ult.png
+public/sprites/rune-stress.png
+public/skills/rune-step.png
+public/skills/rune-again.png
+public/skills/rune-ult.png

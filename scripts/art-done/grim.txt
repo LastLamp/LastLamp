@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/grim.png
+/Users/antho/Documents/gachagame/public/sprites/grim-attack.png
+/Users/antho/Documents/gachagame/public/sprites/grim-win.png
+/Users/antho/Documents/gachagame/public/sprites/grim-lose.png
+/Users/antho/Documents/gachagame/public/sprites/grim-ult.png
+/Users/antho/Documents/gachagame/public/sprites/grim-stress.png
+/Users/antho/Documents/gachagame/public/skills/grim-salve.png
+/Users/antho/Documents/gachagame/public/skills/grim-bind.png
+/Users/antho/Documents/gachagame/public/skills/grim-ult.png

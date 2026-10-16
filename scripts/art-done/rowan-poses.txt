@@ -1,0 +1,5 @@
+/Users/antho/Documents/gachagame/public/sprites/rowan-attack.png 937315
+/Users/antho/Documents/gachagame/public/sprites/rowan-win.png 847965
+/Users/antho/Documents/gachagame/public/sprites/rowan-lose.png 904654
+/Users/antho/Documents/gachagame/public/sprites/rowan-ult.png 794446
+/Users/antho/Documents/gachagame/public/sprites/rowan-stress.png 793815

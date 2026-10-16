@@ -1,0 +1,5 @@
+/Users/antho/Documents/gachagame/public/sprites/maris-attack.png 759503
+/Users/antho/Documents/gachagame/public/sprites/maris-win.png 806038
+/Users/antho/Documents/gachagame/public/sprites/maris-lose.png 709888
+/Users/antho/Documents/gachagame/public/sprites/maris-ult.png 737383
+/Users/antho/Documents/gachagame/public/sprites/maris-stress.png 665597

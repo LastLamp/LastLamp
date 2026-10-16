@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/lira.png
+/Users/antho/Documents/gachagame/public/sprites/lira-attack.png
+/Users/antho/Documents/gachagame/public/sprites/lira-win.png
+/Users/antho/Documents/gachagame/public/sprites/lira-lose.png
+/Users/antho/Documents/gachagame/public/sprites/lira-ult.png
+/Users/antho/Documents/gachagame/public/sprites/lira-stress.png
+/Users/antho/Documents/gachagame/public/skills/lira-mark.png
+/Users/antho/Documents/gachagame/public/skills/lira-chase.png
+/Users/antho/Documents/gachagame/public/skills/lira-ult.png

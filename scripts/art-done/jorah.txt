@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/jorah.png
+/Users/antho/Documents/gachagame/public/sprites/jorah-attack.png
+/Users/antho/Documents/gachagame/public/sprites/jorah-win.png
+/Users/antho/Documents/gachagame/public/sprites/jorah-lose.png
+/Users/antho/Documents/gachagame/public/sprites/jorah-ult.png
+/Users/antho/Documents/gachagame/public/sprites/jorah-stress.png
+/Users/antho/Documents/gachagame/public/skills/jorah-mark.png
+/Users/antho/Documents/gachagame/public/skills/jorah-chase.png
+/Users/antho/Documents/gachagame/public/skills/jorah-ult.png

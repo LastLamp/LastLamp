@@ -1,0 +1,9 @@
+public/sprites/yara.png
+public/sprites/yara-attack.png
+public/sprites/yara-win.png
+public/sprites/yara-lose.png
+public/sprites/yara-ult.png
+public/sprites/yara-stress.png
+public/skills/yara-step.png
+public/skills/yara-again.png
+public/skills/yara-ult.png

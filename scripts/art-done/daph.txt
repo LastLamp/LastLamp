@@ -1,0 +1,9 @@
+public/sprites/daph.png
+public/sprites/daph-attack.png
+public/sprites/daph-win.png
+public/sprites/daph-lose.png
+public/sprites/daph-ult.png
+public/sprites/daph-stress.png
+public/skills/daph-open.png
+public/skills/daph-wave.png
+public/skills/daph-ult.png

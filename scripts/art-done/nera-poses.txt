@@ -1,0 +1,5 @@
+/Users/antho/Documents/gachagame/public/sprites/nera-attack.png 791615
+/Users/antho/Documents/gachagame/public/sprites/nera-win.png 771879
+/Users/antho/Documents/gachagame/public/sprites/nera-lose.png 927254
+/Users/antho/Documents/gachagame/public/sprites/nera-ult.png 879844
+/Users/antho/Documents/gachagame/public/sprites/nera-stress.png 752547

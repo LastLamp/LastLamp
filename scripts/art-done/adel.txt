@@ -1,0 +1,3 @@
+/Users/antho/Documents/gachagame/public/skills/adel-glass.png
+/Users/antho/Documents/gachagame/public/skills/adel-mirror.png
+/Users/antho/Documents/gachagame/public/skills/adel-face.png

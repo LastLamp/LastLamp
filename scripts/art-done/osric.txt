@@ -1,0 +1,3 @@
+/Users/antho/Documents/gachagame/public/skills/osric-tap.png
+/Users/antho/Documents/gachagame/public/skills/osric-share.png
+/Users/antho/Documents/gachagame/public/skills/osric-beacon.png

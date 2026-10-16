@@ -1,0 +1,9 @@
+public/sprites/oswin.png
+public/sprites/oswin-attack.png
+public/sprites/oswin-win.png
+public/sprites/oswin-lose.png
+public/sprites/oswin-ult.png
+public/sprites/oswin-stress.png
+public/skills/oswin-bash.png
+public/skills/oswin-wall.png
+public/skills/oswin-ult.png

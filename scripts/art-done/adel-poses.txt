@@ -1,0 +1,5 @@
+/Users/antho/Documents/gachagame/public/sprites/adel-attack.png 810450
+/Users/antho/Documents/gachagame/public/sprites/adel-win.png 622066
+/Users/antho/Documents/gachagame/public/sprites/adel-lose.png 770063
+/Users/antho/Documents/gachagame/public/sprites/adel-ult.png 915715
+/Users/antho/Documents/gachagame/public/sprites/adel-stress.png 734781

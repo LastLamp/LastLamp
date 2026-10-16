@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/sela.png
+/Users/antho/Documents/gachagame/public/sprites/sela-attack.png
+/Users/antho/Documents/gachagame/public/sprites/sela-win.png
+/Users/antho/Documents/gachagame/public/sprites/sela-lose.png
+/Users/antho/Documents/gachagame/public/sprites/sela-ult.png
+/Users/antho/Documents/gachagame/public/sprites/sela-stress.png
+/Users/antho/Documents/gachagame/public/skills/sela-step.png
+/Users/antho/Documents/gachagame/public/skills/sela-again.png
+/Users/antho/Documents/gachagame/public/skills/sela-ult.png

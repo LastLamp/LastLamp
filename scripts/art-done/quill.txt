@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/quill.png
+/Users/antho/Documents/gachagame/public/sprites/quill-attack.png
+/Users/antho/Documents/gachagame/public/sprites/quill-win.png
+/Users/antho/Documents/gachagame/public/sprites/quill-lose.png
+/Users/antho/Documents/gachagame/public/sprites/quill-ult.png
+/Users/antho/Documents/gachagame/public/sprites/quill-stress.png
+/Users/antho/Documents/gachagame/public/skills/quill-tap.png
+/Users/antho/Documents/gachagame/public/skills/quill-banner.png
+/Users/antho/Documents/gachagame/public/skills/quill-ult.png

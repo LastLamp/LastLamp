@@ -1,0 +1,2938 @@
+{
+  "poses": [
+    "attack",
+    "win",
+    "lose",
+    "ult",
+    "stress"
+  ],
+  "checked": "public/sprites",
+  "units": {
+    "vesper": {
+      "attack": {
+        "pass": true,
+        "score": 0.885,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.911,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.912,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.783,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.798,
+        "reasons": []
+      },
+      "ascend": {
+        "pass": true,
+        "score": 0.881,
+        "reasons": []
+      }
+    },
+    "cael": {
+      "attack": {
+        "pass": true,
+        "score": 0.834,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.929,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.896,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.853,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.9,
+        "reasons": []
+      },
+      "ascend": {
+        "pass": true,
+        "score": 0.857,
+        "reasons": []
+      }
+    },
+    "ivo": {
+      "attack": {
+        "pass": true,
+        "score": 0.84,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.926,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.76,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.837,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.928,
+        "reasons": []
+      },
+      "ascend": {
+        "pass": true,
+        "score": 0.882,
+        "reasons": []
+      }
+    },
+    "rhys": {
+      "attack": {
+        "pass": true,
+        "score": 0.923,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.915,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.84,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.926,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.946,
+        "reasons": []
+      },
+      "ascend": {
+        "pass": true,
+        "score": 0.94,
+        "reasons": []
+      }
+    },
+    "soren": {
+      "attack": {
+        "pass": true,
+        "score": 0.802,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.816,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.758,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.752,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.752,
+        "reasons": []
+      },
+      "ascend": {
+        "pass": false,
+        "score": 0.915,
+        "reasons": []
+      }
+    },
+    "juniper": {
+      "attack": {
+        "pass": true,
+        "score": 0.925,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.946,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.864,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.923,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.967,
+        "reasons": []
+      },
+      "ascend": {
+        "pass": true,
+        "score": 0.874,
+        "reasons": []
+      }
+    },
+    "marek": {
+      "attack": {
+        "pass": true,
+        "score": 0.898,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.901,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.837,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.869,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.877,
+        "reasons": []
+      },
+      "ascend": {
+        "pass": false,
+        "score": 0.88,
+        "reasons": []
+      }
+    },
+    "theo": {
+      "attack": {
+        "pass": true,
+        "score": 0.947,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.966,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.769,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.936,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.942,
+        "reasons": []
+      },
+      "ascend": {
+        "pass": true,
+        "score": 0.906,
+        "reasons": []
+      }
+    },
+    "bastion": {
+      "attack": {
+        "pass": true,
+        "score": 0.853,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.94,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.792,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.945,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.916,
+        "reasons": []
+      },
+      "ascend": {
+        "pass": true,
+        "score": 0.915,
+        "reasons": []
+      }
+    },
+    "niles": {
+      "attack": {
+        "pass": true,
+        "score": 0.898,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.924,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.751,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.903,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.917,
+        "reasons": []
+      },
+      "ascend": {
+        "pass": true,
+        "score": 0.881,
+        "reasons": []
+      }
+    },
+    "orien": {
+      "attack": {
+        "pass": true,
+        "score": 0.83,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.909,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.925,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.862,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.849,
+        "reasons": []
+      },
+      "ascend": {
+        "pass": true,
+        "score": 0.845,
+        "reasons": []
+      }
+    },
+    "kit": {
+      "attack": {
+        "pass": true,
+        "score": 0.929,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.942,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.955,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.931,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.962,
+        "reasons": []
+      },
+      "ascend": {
+        "pass": true,
+        "score": 0.901,
+        "reasons": []
+      }
+    },
+    "pavel": {
+      "attack": {
+        "pass": true,
+        "score": 0.905,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.922,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.832,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.75,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.896,
+        "reasons": []
+      },
+      "ascend": {
+        "pass": true,
+        "score": 0.933,
+        "reasons": []
+      }
+    },
+    "len": {
+      "attack": {
+        "pass": true,
+        "score": 0.868,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.952,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.941,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.936,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.947,
+        "reasons": []
+      },
+      "ascend": {
+        "pass": true,
+        "score": 0.944,
+        "reasons": []
+      }
+    },
+    "remy": {
+      "attack": {
+        "pass": true,
+        "score": 0.878,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.931,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.936,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.744,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.927,
+        "reasons": []
+      },
+      "ascend": {
+        "pass": true,
+        "score": 0.835,
+        "reasons": []
+      }
+    },
+    "nera": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "silas": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "maris": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "rowan": {
+      "attack": {
+        "pass": true,
+        "score": 0.858,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.906,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.861,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.899,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.861,
+        "reasons": []
+      }
+    },
+    "selene": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "dorian": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "brynn": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "harrow": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "osric": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "tessa": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "nico": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "adel": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "bram": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "nessa": {
+      "attack": {
+        "pass": true,
+        "score": 0.871,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.863,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.854,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.798,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.812,
+        "reasons": []
+      }
+    },
+    "corin": {
+      "attack": {
+        "pass": true,
+        "score": 0.784,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.765,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.759,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.767,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.763,
+        "reasons": []
+      }
+    },
+    "idris": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "willa": {
+      "attack": {
+        "pass": true,
+        "score": 0.749,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.753,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.775,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.784,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.799,
+        "reasons": []
+      }
+    },
+    "torin": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "sela": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "garrick": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "maeve": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "holt": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "lira": {
+      "attack": {
+        "pass": true,
+        "score": 0.825,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.753,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.774,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.768,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.751,
+        "reasons": []
+      }
+    },
+    "cedric": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "anwen": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "brock": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "ysolde": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "fen": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "mira": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "aldric": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "petra": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "jorah": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "quill": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "saskia": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "brennan": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "odette": {
+      "attack": {
+        "pass": true,
+        "score": 0.827,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.767,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.822,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.765,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.819,
+        "reasons": []
+      }
+    },
+    "harlan": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "vesna": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "mick": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "cora": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "leif": {
+      "attack": {
+        "pass": false,
+        "score": 0.547,
+        "reasons": [
+          "palette overlap 0.55 is too low"
+        ]
+      },
+      "win": {
+        "pass": true,
+        "score": 0.742,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.79,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.774,
+        "reasons": []
+      },
+      "stress": {
+        "pass": false,
+        "score": 0.571,
+        "reasons": [
+          "palette overlap 0.57 is too low"
+        ]
+      }
+    },
+    "thalia": {
+      "attack": {
+        "pass": true,
+        "score": 0.755,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.827,
+        "reasons": []
+      },
+      "lose": {
+        "pass": false,
+        "score": 0.351,
+        "reasons": [
+          "palette overlap 0.35 is too low"
+        ]
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.778,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.76,
+        "reasons": []
+      }
+    },
+    "oswin": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "briony": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "cassian": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "elowen": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "drust": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "nin": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "peregrine": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "isola": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "tam": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "rheya": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "col": {
+      "attack": {
+        "pass": true,
+        "score": 0.774,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.82,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.816,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.776,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.756,
+        "reasons": []
+      }
+    },
+    "maren": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "uthred": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "sylvie": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "keir": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "daph": {
+      "attack": {
+        "pass": true,
+        "score": 0.766,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.821,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.798,
+        "reasons": []
+      },
+      "ult": {
+        "pass": false,
+        "score": 0.617,
+        "reasons": [
+          "palette overlap 0.62 is too low"
+        ]
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.795,
+        "reasons": []
+      }
+    },
+    "rowan2": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "astra": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "pike": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "lumen": {
+      "attack": {
+        "pass": true,
+        "score": 0.837,
+        "reasons": []
+      },
+      "win": {
+        "pass": false,
+        "score": 0.592,
+        "reasons": [
+          "palette overlap 0.59 is too low"
+        ]
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.753,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.822,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.758,
+        "reasons": []
+      }
+    },
+    "bard": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "hestia": {
+      "attack": {
+        "pass": true,
+        "score": 0.841,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.802,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.77,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.775,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.857,
+        "reasons": []
+      }
+    },
+    "grim": {
+      "attack": {
+        "pass": true,
+        "score": 0.826,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.786,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.746,
+        "reasons": []
+      },
+      "ult": {
+        "pass": false,
+        "score": 0.536,
+        "reasons": [
+          "palette overlap 0.54 is too low"
+        ]
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.774,
+        "reasons": []
+      }
+    },
+    "opal": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "soren2": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "vance": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "nell": {
+      "attack": {
+        "pass": true,
+        "score": 0.744,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.802,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.764,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.777,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.759,
+        "reasons": []
+      }
+    },
+    "orko": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "faye": {
+      "attack": {
+        "pass": true,
+        "score": 0.796,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.747,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.777,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.761,
+        "reasons": []
+      },
+      "stress": {
+        "pass": false,
+        "score": 0.65,
+        "reasons": [
+          "palette overlap 0.65 is too low"
+        ]
+      }
+    },
+    "jasper": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "rune": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "cress": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "hal": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "io": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "mattis": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "pearl": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "stark": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "una": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "wystan": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "yara": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "zeno": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    },
+    "amber": {
+      "attack": {
+        "pass": true,
+        "score": 0.749,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.79,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.817,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.823,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.845,
+        "reasons": []
+      }
+    },
+    "beck": {
+      "attack": {
+        "pass": true,
+        "score": 0.822,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.773,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.774,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.814,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.795,
+        "reasons": []
+      }
+    },
+    "solenne": {
+      "attack": {
+        "pass": true,
+        "score": 0.762,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.783,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.75,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.769,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.831,
+        "reasons": []
+      }
+    },
+    "ilyra": {
+      "attack": {
+        "pass": true,
+        "score": 0.797,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.804,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.771,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.759,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.75,
+        "reasons": []
+      }
+    },
+    "seraphine": {
+      "attack": {
+        "pass": true,
+        "score": 0.762,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.758,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.764,
+        "reasons": []
+      },
+      "ult": {
+        "pass": false,
+        "score": 0.094,
+        "reasons": [
+          "palette overlap 0.09 is too low"
+        ]
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.888,
+        "reasons": []
+      }
+    },
+    "harren": {
+      "attack": {
+        "pass": true,
+        "score": 0.826,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 0.797,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 0.846,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 0.76,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 0.768,
+        "reasons": []
+      }
+    },
+    "mael": {
+      "attack": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "win": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "lose": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "ult": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      },
+      "stress": {
+        "pass": true,
+        "score": 1,
+        "reasons": []
+      }
+    }
+  }
+}

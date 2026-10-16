@@ -1,0 +1,374 @@
+{
+  "updatedAt": "2026-10-15T23:22:18.946Z",
+  "rule": {
+    "eyeT": 0.41,
+    "colorT": 0.7
+  },
+  "styleRule": {
+    "pixelAxis": 0.34,
+    "softInk": 0.008,
+    "cropGap": 0.02,
+    "bar": 0.04
+  },
+  "faces": [
+    {
+      "id": "amber",
+      "name": "Amberis",
+      "degree": 0,
+      "protected": false,
+      "style": []
+    },
+    {
+      "id": "beck",
+      "name": "Beckoran",
+      "degree": 0,
+      "protected": false,
+      "style": []
+    },
+    {
+      "id": "col",
+      "name": "Colvyn",
+      "degree": 0,
+      "protected": false,
+      "style": [
+        "soft"
+      ]
+    },
+    {
+      "id": "corin",
+      "name": "Corivane",
+      "degree": 0,
+      "protected": true,
+      "style": [
+        "soft"
+      ]
+    },
+    {
+      "id": "daph",
+      "name": "Daphira",
+      "degree": 0,
+      "protected": false,
+      "style": [
+        "soft"
+      ]
+    },
+    {
+      "id": "faye",
+      "name": "Fayelin",
+      "degree": 0,
+      "protected": false,
+      "style": [
+        "soft"
+      ]
+    },
+    {
+      "id": "grim",
+      "name": "Grimorath",
+      "degree": 0,
+      "protected": false,
+      "style": [
+        "soft"
+      ]
+    },
+    {
+      "id": "harren",
+      "name": "harren",
+      "degree": 0,
+      "protected": false,
+      "style": []
+    },
+    {
+      "id": "hestia",
+      "name": "Hestalyne",
+      "degree": 0,
+      "protected": false,
+      "style": [
+        "soft"
+      ]
+    },
+    {
+      "id": "ilyra",
+      "name": "ilyra",
+      "degree": 0,
+      "protected": false,
+      "style": [
+        "soft"
+      ]
+    },
+    {
+      "id": "leif",
+      "name": "Leivar",
+      "degree": 0,
+      "protected": false,
+      "style": []
+    },
+    {
+      "id": "lira",
+      "name": "Liravel",
+      "degree": 0,
+      "protected": false,
+      "style": []
+    },
+    {
+      "id": "lumen",
+      "name": "Lumenya",
+      "degree": 0,
+      "protected": false,
+      "style": [
+        "soft"
+      ]
+    },
+    {
+      "id": "marek",
+      "name": "marek",
+      "degree": 0,
+      "protected": true,
+      "style": [
+        "soft"
+      ]
+    },
+    {
+      "id": "nell",
+      "name": "Nellixa",
+      "degree": 0,
+      "protected": false,
+      "style": [
+        "soft"
+      ]
+    },
+    {
+      "id": "nessa",
+      "name": "Nessira",
+      "degree": 0,
+      "protected": true,
+      "style": []
+    },
+    {
+      "id": "odette",
+      "name": "Odettalune",
+      "degree": 0,
+      "protected": false,
+      "style": [
+        "soft"
+      ]
+    },
+    {
+      "id": "rowan",
+      "name": "rowan",
+      "degree": 0,
+      "protected": false,
+      "style": []
+    },
+    {
+      "id": "seraphine",
+      "name": "seraphine",
+      "degree": 0,
+      "protected": false,
+      "style": [
+        "soft"
+      ]
+    },
+    {
+      "id": "solenne",
+      "name": "solenne",
+      "degree": 0,
+      "protected": false,
+      "style": []
+    },
+    {
+      "id": "soren",
+      "name": "soren",
+      "degree": 0,
+      "protected": false,
+      "style": [
+        "soft"
+      ]
+    },
+    {
+      "id": "thalia",
+      "name": "Thaliune",
+      "degree": 0,
+      "protected": false,
+      "style": [
+        "soft"
+      ]
+    },
+    {
+      "id": "willa",
+      "name": "Willoweft",
+      "degree": 0,
+      "protected": true,
+      "style": [
+        "soft"
+      ]
+    }
+  ],
+  "pairs": [],
+  "style": [
+    {
+      "id": "col",
+      "name": "Colvyn",
+      "reasons": [
+        "soft"
+      ],
+      "axis": 0.19,
+      "ink": 0.003,
+      "gap": 0,
+      "bar": 0
+    },
+    {
+      "id": "corin",
+      "name": "Corivane",
+      "reasons": [
+        "soft"
+      ],
+      "axis": 0.206,
+      "ink": 0.0065,
+      "gap": 0,
+      "bar": 0
+    },
+    {
+      "id": "daph",
+      "name": "Daphira",
+      "reasons": [
+        "soft"
+      ],
+      "axis": 0.214,
+      "ink": 0.0046,
+      "gap": 0,
+      "bar": 0
+    },
+    {
+      "id": "faye",
+      "name": "Fayelin",
+      "reasons": [
+        "soft"
+      ],
+      "axis": 0.206,
+      "ink": 0.006,
+      "gap": 0,
+      "bar": 0
+    },
+    {
+      "id": "grim",
+      "name": "Grimorath",
+      "reasons": [
+        "soft"
+      ],
+      "axis": 0.213,
+      "ink": 0.0039,
+      "gap": 0,
+      "bar": 0
+    },
+    {
+      "id": "hestia",
+      "name": "Hestalyne",
+      "reasons": [
+        "soft"
+      ],
+      "axis": 0.265,
+      "ink": 0.0057,
+      "gap": 0,
+      "bar": 0
+    },
+    {
+      "id": "ilyra",
+      "name": "ilyra",
+      "reasons": [
+        "soft"
+      ],
+      "axis": 0.204,
+      "ink": 0.0025,
+      "gap": 0,
+      "bar": 0
+    },
+    {
+      "id": "lumen",
+      "name": "Lumenya",
+      "reasons": [
+        "soft"
+      ],
+      "axis": 0.219,
+      "ink": 0.0064,
+      "gap": 0,
+      "bar": 0
+    },
+    {
+      "id": "marek",
+      "name": "marek",
+      "reasons": [
+        "soft"
+      ],
+      "axis": 0.188,
+      "ink": 0.0069,
+      "gap": 0,
+      "bar": 0
+    },
+    {
+      "id": "nell",
+      "name": "Nellixa",
+      "reasons": [
+        "soft"
+      ],
+      "axis": 0.216,
+      "ink": 0.0018,
+      "gap": 0,
+      "bar": 0
+    },
+    {
+      "id": "odette",
+      "name": "Odettalune",
+      "reasons": [
+        "soft"
+      ],
+      "axis": 0.229,
+      "ink": 0.0026,
+      "gap": 0,
+      "bar": 0
+    },
+    {
+      "id": "seraphine",
+      "name": "seraphine",
+      "reasons": [
+        "soft"
+      ],
+      "axis": 0.198,
+      "ink": 0.002,
+      "gap": 0,
+      "bar": 0
+    },
+    {
+      "id": "soren",
+      "name": "soren",
+      "reasons": [
+        "soft"
+      ],
+      "axis": 0.214,
+      "ink": 0.0042,
+      "gap": 0,
+      "bar": 0
+    },
+    {
+      "id": "thalia",
+      "name": "Thaliune",
+      "reasons": [
+        "soft"
+      ],
+      "axis": 0.219,
+      "ink": 0.004,
+      "gap": 0,
+      "bar": 0
+    },
+    {
+      "id": "willa",
+      "name": "Willoweft",
+      "reasons": [
+        "soft"
+      ],
+      "axis": 0.195,
+      "ink": 0.0018,
+      "gap": 0,
+      "bar": 0
+    }
+  ]
+}

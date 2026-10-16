@@ -1,0 +1,5 @@
+/Users/antho/Documents/gachagame/public/sprites/dorian-attack.png 763969
+/Users/antho/Documents/gachagame/public/sprites/dorian-win.png 547127
+/Users/antho/Documents/gachagame/public/sprites/dorian-lose.png 625659
+/Users/antho/Documents/gachagame/public/sprites/dorian-ult.png 844423
+/Users/antho/Documents/gachagame/public/sprites/dorian-stress.png 557972

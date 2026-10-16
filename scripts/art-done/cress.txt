@@ -1,0 +1,9 @@
+public/sprites/cress.png
+public/sprites/cress-attack.png
+public/sprites/cress-win.png
+public/sprites/cress-lose.png
+public/sprites/cress-ult.png
+public/sprites/cress-stress.png
+public/skills/cress-salve.png
+public/skills/cress-bind.png
+public/skills/cress-ult.png

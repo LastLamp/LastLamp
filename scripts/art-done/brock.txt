@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/brock.png
+/Users/antho/Documents/gachagame/public/sprites/brock-attack.png
+/Users/antho/Documents/gachagame/public/sprites/brock-win.png
+/Users/antho/Documents/gachagame/public/sprites/brock-lose.png
+/Users/antho/Documents/gachagame/public/sprites/brock-ult.png
+/Users/antho/Documents/gachagame/public/sprites/brock-stress.png
+/Users/antho/Documents/gachagame/public/skills/brock-needle.png
+/Users/antho/Documents/gachagame/public/skills/brock-stop.png
+/Users/antho/Documents/gachagame/public/skills/brock-ult.png

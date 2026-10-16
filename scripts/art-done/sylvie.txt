@@ -1,0 +1,9 @@
+public/sprites/sylvie.png
+public/sprites/sylvie-attack.png
+public/sprites/sylvie-win.png
+public/sprites/sylvie-lose.png
+public/sprites/sylvie-ult.png
+public/sprites/sylvie-stress.png
+public/skills/sylvie-salve.png
+public/skills/sylvie-bind.png
+public/skills/sylvie-ult.png

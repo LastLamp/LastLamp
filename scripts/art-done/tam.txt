@@ -1,0 +1,9 @@
+public/sprites/tam.png
+public/sprites/tam-attack.png
+public/sprites/tam-win.png
+public/sprites/tam-lose.png
+public/sprites/tam-ult.png
+public/sprites/tam-stress.png
+public/skills/tam-tap.png
+public/skills/tam-banner.png
+public/skills/tam-ult.png

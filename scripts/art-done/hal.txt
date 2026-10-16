@@ -1,0 +1,9 @@
+public/sprites/hal.png
+public/sprites/hal-attack.png
+public/sprites/hal-win.png
+public/sprites/hal-lose.png
+public/sprites/hal-ult.png
+public/sprites/hal-stress.png
+public/skills/hal-twin.png
+public/skills/hal-flurry.png
+public/skills/hal-ult.png

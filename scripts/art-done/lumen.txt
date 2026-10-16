@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/lumen.png
+/Users/antho/Documents/gachagame/public/sprites/lumen-attack.png
+/Users/antho/Documents/gachagame/public/sprites/lumen-win.png
+/Users/antho/Documents/gachagame/public/sprites/lumen-lose.png
+/Users/antho/Documents/gachagame/public/sprites/lumen-ult.png
+/Users/antho/Documents/gachagame/public/sprites/lumen-stress.png
+/Users/antho/Documents/gachagame/public/skills/lumen-needle.png
+/Users/antho/Documents/gachagame/public/skills/lumen-stop.png
+/Users/antho/Documents/gachagame/public/skills/lumen-ult.png

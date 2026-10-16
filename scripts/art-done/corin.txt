@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/corin.png
+/Users/antho/Documents/gachagame/public/sprites/corin-attack.png
+/Users/antho/Documents/gachagame/public/sprites/corin-win.png
+/Users/antho/Documents/gachagame/public/sprites/corin-lose.png
+/Users/antho/Documents/gachagame/public/sprites/corin-ult.png
+/Users/antho/Documents/gachagame/public/sprites/corin-stress.png
+/Users/antho/Documents/gachagame/public/skills/corin-tap.png
+/Users/antho/Documents/gachagame/public/skills/corin-banner.png
+/Users/antho/Documents/gachagame/public/skills/corin-ult.png

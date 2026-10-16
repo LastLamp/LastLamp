@@ -1,0 +1,9 @@
+public/sprites/uthred.png
+public/sprites/uthred-attack.png
+public/sprites/uthred-win.png
+public/sprites/uthred-lose.png
+public/sprites/uthred-ult.png
+public/sprites/uthred-stress.png
+public/skills/uthred-step.png
+public/skills/uthred-again.png
+public/skills/uthred-ult.png

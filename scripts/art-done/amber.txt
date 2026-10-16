@@ -1,0 +1,9 @@
+public/sprites/amber.png
+public/sprites/amber-attack.png
+public/sprites/amber-win.png
+public/sprites/amber-lose.png
+public/sprites/amber-ult.png
+public/sprites/amber-stress.png
+public/skills/amber-twin.png
+public/skills/amber-flurry.png
+public/skills/amber-ult.png

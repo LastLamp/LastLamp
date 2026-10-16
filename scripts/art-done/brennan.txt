@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/brennan.png
+/Users/antho/Documents/gachagame/public/sprites/brennan-attack.png
+/Users/antho/Documents/gachagame/public/sprites/brennan-win.png
+/Users/antho/Documents/gachagame/public/sprites/brennan-lose.png
+/Users/antho/Documents/gachagame/public/sprites/brennan-ult.png
+/Users/antho/Documents/gachagame/public/sprites/brennan-stress.png
+/Users/antho/Documents/gachagame/public/skills/brennan-needle.png
+/Users/antho/Documents/gachagame/public/skills/brennan-stop.png
+/Users/antho/Documents/gachagame/public/skills/brennan-ult.png

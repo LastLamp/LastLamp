@@ -1,0 +1,8 @@
+/Users/antho/Documents/gachagame/public/sprites/garrick-attack.png
+/Users/antho/Documents/gachagame/public/sprites/garrick-win.png
+/Users/antho/Documents/gachagame/public/sprites/garrick-lose.png
+/Users/antho/Documents/gachagame/public/sprites/garrick-ult.png
+/Users/antho/Documents/gachagame/public/sprites/garrick-stress.png
+/Users/antho/Documents/gachagame/public/skills/garrick-salve.png
+/Users/antho/Documents/gachagame/public/skills/garrick-bind.png
+/Users/antho/Documents/gachagame/public/skills/garrick-ult.png

@@ -1,0 +1,9 @@
+public/sprites/wystan.png
+public/sprites/wystan-attack.png
+public/sprites/wystan-win.png
+public/sprites/wystan-lose.png
+public/sprites/wystan-ult.png
+public/sprites/wystan-stress.png
+public/skills/wystan-call.png
+public/skills/wystan-pair.png
+public/skills/wystan-ult.png

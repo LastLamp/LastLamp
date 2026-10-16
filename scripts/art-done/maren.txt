@@ -1,0 +1,9 @@
+public/sprites/maren.png
+public/sprites/maren-attack.png
+public/sprites/maren-win.png
+public/sprites/maren-lose.png
+public/sprites/maren-ult.png
+public/sprites/maren-stress.png
+public/skills/maren-call.png
+public/skills/maren-pair.png
+public/skills/maren-ult.png

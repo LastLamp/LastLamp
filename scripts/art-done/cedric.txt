@@ -1,0 +1,9 @@
+/Users/antho/Documents/gachagame/public/sprites/cedric.png
+/Users/antho/Documents/gachagame/public/sprites/cedric-attack.png
+/Users/antho/Documents/gachagame/public/sprites/cedric-win.png
+/Users/antho/Documents/gachagame/public/sprites/cedric-lose.png
+/Users/antho/Documents/gachagame/public/sprites/cedric-ult.png
+/Users/antho/Documents/gachagame/public/sprites/cedric-stress.png
+/Users/antho/Documents/gachagame/public/skills/cedric-tap.png
+/Users/antho/Documents/gachagame/public/skills/cedric-banner.png
+/Users/antho/Documents/gachagame/public/skills/cedric-ult.png

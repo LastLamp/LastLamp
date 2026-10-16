@@ -1,0 +1,9 @@
+public/sprites/rowan2.png
+public/sprites/rowan2-attack.png
+public/sprites/rowan2-win.png
+public/sprites/rowan2-lose.png
+public/sprites/rowan2-ult.png
+public/sprites/rowan2-stress.png
+public/skills/rowan2-mark.png
+public/skills/rowan2-chase.png
+public/skills/rowan2-ult.png

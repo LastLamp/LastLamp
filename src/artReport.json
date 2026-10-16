@@ -1,0 +1,317 @@
+{
+  "paper": [
+    246,
+    234,
+    215
+  ],
+  "skills": {
+    "backbeat": {
+      "fill": 0.832,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "background": {
+      "fill": 0.832,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "barricade": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "block": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "blowout": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "brace": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "bridge": {
+      "fill": 0.832,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "cable": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "chorus-kid": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "closeup": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "cue-tap": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "cue": {
+      "fill": 0.832,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "cut": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "dead-air": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "debut": {
+      "fill": 0.832,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "directors": {
+      "fill": 0.832,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "downbeat": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "first-step": {
+      "fill": 0.832,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "footnote": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "harmony": {
+      "fill": 0.832,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "high-note": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "hold-please": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "hold": {
+      "fill": 0.832,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "last-line": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "lock": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "lullaby": {
+      "fill": 0.832,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "margin": {
+      "fill": 0.832,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "notes": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "off-script": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "patch": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "pyro": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "quiet": {
+      "fill": 0.832,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "rest": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "rig": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "rundown": {
+      "fill": 0.832,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "sandbag": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "scatter": {
+      "fill": 0.832,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "shove": {
+      "fill": 0.832,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "sign-off": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "spark": {
+      "fill": 0.832,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "spot": {
+      "fill": 0.832,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "step-in": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "undertow": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "water": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "white-heat": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    }
+  },
+  "icons": {
+    "camp": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "fight": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "home": {
+      "fill": 0.832,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "party": {
+      "fill": 0.832,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "summon": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    },
+    "waymark": {
+      "fill": 0.834,
+      "paperLeft": 0,
+      "pass": true,
+      "reasons": []
+    }
+  }
+}

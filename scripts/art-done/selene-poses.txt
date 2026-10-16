@@ -1,0 +1,5 @@
+/Users/antho/Documents/gachagame/public/sprites/selene-attack.png 1015483
+/Users/antho/Documents/gachagame/public/sprites/selene-win.png 923802
+/Users/antho/Documents/gachagame/public/sprites/selene-lose.png 1005249
+/Users/antho/Documents/gachagame/public/sprites/selene-ult.png 901553
+/Users/antho/Documents/gachagame/public/sprites/selene-stress.png 606818
