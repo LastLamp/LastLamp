@@ -1,6 +1,7 @@
 import { applyBondStories } from "./bondStories.js";
 import { EXTRA_CAST } from "./cast.js";
 import { GENERATED_CAST } from "./generatedCast.js";
+import { EXTRA_UNITS } from "./extraUnits.js";
 import { LEGENDS } from "./legends.js";
 import { ROSTER } from "./roster.js";
 
@@ -673,6 +674,7 @@ export const CHARACTERS = [
   ...EXTRA_CAST,
   ...GENERATED_CAST,
   ...LEGENDS,
+  ...EXTRA_UNITS,
 ].filter((unit) => ROSTER.has(unit.id)).map((unit) => ({
   ...unit,
   cards: (unit.cards || []).map(priceCard),

@@ -25,6 +25,21 @@ export const ROSTER_IDS = [
   "soren",
   "thalia",
   "willa",
+  "calyx",
+  "halden",
+  "joryn",
+  "kestrel",
+  "linnet",
+  "mirinel",
+  "nymira",
+  "orlath",
+  "ostara",
+  "quillan",
+  "rivenna",
+  "saelith",
+  "selka",
+  "tamsin",
+  "tessara",
 ];
 
 export const ROSTER = new Set(ROSTER_IDS);

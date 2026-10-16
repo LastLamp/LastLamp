@@ -583,5 +583,88 @@ export const PASSIVES = {
     "name": "Second Turn",
     "line": "At 3 stars, refunding AP fills every ult gauge by 8.",
     "refundCharge": 8
+  },
+  "nymira": {
+    "name": "Night Margin",
+    "line": "At 3 stars, Poison, Stun, and Sleep last 1 turn longer.",
+    "extendDebuff": true
+  },
+  "ostara": {
+    "name": "First Light",
+    "line": "At 3 stars, a heal reduces Stress by 8 and also grants 8 Block.",
+    "healCalm": 8,
+    "healBlock": 8
+  },
+  "calyx": {
+    "name": "Last Tide",
+    "line": "At 3 stars, an attack against an enemy with Weak strikes again for 30% of this unit's attack.",
+    "weakFollow": 0.3
+  },
+  "rivenna": {
+    "name": "Second Heat",
+    "line": "At 3 stars, refunding AP fills every ult gauge by 8. This unit's CRIT Rate increases by 20%.",
+    "refundCharge": 8,
+    "crit": 0.2
+  },
+  "orlath": {
+    "name": "Volley",
+    "line": "At 3 stars, an assist inflicts Brand.",
+    "assistBrand": true
+  },
+  "halden": {
+    "name": "The Wall",
+    "line": "At 3 stars, the battle starts with 12 Block, and a card that grants Block inflicts Weak for 2 turns.",
+    "openShield": 12,
+    "blockWeaken": true
+  },
+  "saelith": {
+    "name": "The Order",
+    "line": "At 3 stars, The Order inflicts Exposed before it hits.",
+    "leadVuln": "ego"
+  },
+  "kestrel": {
+    "name": "All of It",
+    "line": "At 3 stars, All of It inflicts Exposed before it hits. This unit's CRIT Rate increases by 20%.",
+    "leadVuln": "ego",
+    "crit": 0.2
+  },
+  "mirinel": {
+    "name": "Close",
+    "line": "At 3 stars, a basic attack against a Branded enemy strikes again for 35% of this unit's attack. This unit's CRIT Rate increases by 15%.",
+    "followBrand": 0.35,
+    "crit": 0.15
+  },
+  "quillan": {
+    "name": "Footnote",
+    "line": "At 3 stars, Stun lasts 1 turn longer and also inflicts Exposed.",
+    "extendDebuff": true,
+    "hexVuln": true
+  },
+  "linnet": {
+    "name": "Stay",
+    "line": "At 3 stars, a heal reduces Stress by 6.",
+    "healCalm": 6
+  },
+  "selka": {
+    "name": "Through",
+    "line": "At 3 stars, an attack against an enemy with Weak strikes again for 25% of this unit's attack.",
+    "weakFollow": 0.25
+  },
+  "tamsin": {
+    "name": "The Line",
+    "line": "At 3 stars, an assist inflicts Brand.",
+    "assistBrand": true
+  },
+  "joryn": {
+    "name": "The Turn",
+    "line": "At 3 stars, refunding AP fills every ult gauge by 8.",
+    "refundCharge": 8
+  },
+  "tessara": {
+    "name": "Stay Back",
+    "line": "At 3 stars, the battle starts with 10 Block. The first time Block breaks, 6 Block returns, and a card that grants Block inflicts Weak.",
+    "openShield": 10,
+    "rebound": 6,
+    "blockWeaken": true
   }
 };
