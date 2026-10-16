@@ -246,16 +246,33 @@ function landDebuff(battle, defender, kind, events, apply, foeId, intent) {
   return true;
 }
 
-function enemyDefense(enemy, scale) {
+function starResist(stars) {
+  const n = Math.max(1, Math.min(5, Number(stars) || 1));
+  return Math.round((0.15 + (n - 1) * 0.08) * 100) / 100;
+}
+
+function enemyDefense(enemy, scale, stars) {
   const base = ENEMY_DEF[enemy.role] || 42;
   const curve = 1 + ((scale?.guard || 1) - 1) * 0.22;
   return {
     def: Math.max(1, Math.round(base * curve)),
-    res: 0.1,
+    res: starResist(stars),
     crit: 0.1,
     critDmg: 1.2,
   };
 }
+
+function rollBossStep(enemy) {
+  const n = enemy.pattern?.length || 1;
+  if (n <= 1) return 0;
+  if (enemy.step == null || enemy.step < 0) return Math.floor(Math.random() * n);
+  const at = ((enemy.step % n) + n) % n;
+  let next = Math.floor(Math.random() * (n - 1));
+  if (next >= at) next += 1;
+  return next;
+}
+
+const FIVE_STAR_BOSS = { maxHp: 12000, atk: 270, def: 175 };
 
 function clone(value) {
   if (typeof structuredClone === "function") return structuredClone(value);
@@ -495,6 +512,7 @@ export function startBattle(save, stageId) {
   if (!stage) return null;
   const party = partyMembers(save);
   const scale = threatScale(stage);
+  const stars = Math.max(1, Math.min(5, Number(stage?.stars) || 1));
   const maxHp = party.reduce((sum, member) => sum + member.maxHp, 0);
   const battle = {
     stageId,
@@ -512,21 +530,26 @@ export function startBattle(save, stageId) {
     hand: [],
     draw: makeDeck(party),
     discard: [],
-    enemies: stage.enemies.slice(0, 3).map((enemy) => ({
-      ...enemy,
-      maxHp: Math.round(enemy.maxHp * scale.hp),
-      atk: Math.max(1, Math.round(enemy.atk * scale.atk)),
-      guard: Math.round((enemy.guard || 0) * scale.guard),
-      ...enemyDefense(enemy, scale),
-      hp: Math.round(enemy.maxHp * scale.hp),
-      shield: 0,
-      weak: 0,
-      vuln: 0,
-      poison: 0,
-      stun: 0,
-      sleep: 0,
-      step: 0,
-    })),
+    enemies: stage.enemies.slice(0, 3).map((enemy) => {
+      const bossWall = stars === 5 && enemy.role === "boss";
+      const maxHp = bossWall ? FIVE_STAR_BOSS.maxHp : Math.round(enemy.maxHp * scale.hp);
+      return {
+        ...enemy,
+        maxHp,
+        atk: bossWall ? FIVE_STAR_BOSS.atk : Math.max(1, Math.round(enemy.atk * scale.atk)),
+        guard: Math.round((enemy.guard || 0) * scale.guard),
+        ...enemyDefense(enemy, scale, stars),
+        ...(bossWall ? { def: FIVE_STAR_BOSS.def } : {}),
+        hp: maxHp,
+        shield: 0,
+        weak: 0,
+        vuln: 0,
+        poison: 0,
+        stun: 0,
+        sleep: 0,
+        step: enemy.role === "boss" ? rollBossStep({ ...enemy, step: -1 }) : 0,
+      };
+    }),
     egoUsed: {},
     energy: Object.fromEntries(party.map((member) => [member.id, member.passive?.energy || 0])),
     result: null,
@@ -562,6 +585,7 @@ function moveName(enemy, fallback) {
 }
 
 export function forecast(enemy, defender) {
+  if (enemy.role === "boss") return [intentInfo(enemy, defender)];
   return enemy.pattern.map((_, index) => intentInfo({ ...enemy, step: enemy.step + index }, defender));
 }
 
@@ -1148,7 +1172,7 @@ export function endTurn(battle) {
       foe.hp = Math.max(0, foe.hp - tick);
       foe.poison -= 1;
       if (tick > 0) foe.sleep = 0;
-      events.push({ text: `-${tick}`, tone: "bad", amount: tick, foeId: foe.id });
+      events.push({ text: `-${tick}`, tone: "hit", amount: tick, foeId: foe.id, target: foe.name });
       pushLog(next, `Poison takes ${tick} from ${foe.name}.`);
     }
     if (foe.hp <= 0) continue;
@@ -1235,7 +1259,7 @@ export function endTurn(battle) {
     if (foe.weak > 0) foe.weak -= 1;
     if (foe.vuln > 0) foe.vuln -= 1;
     if (foe.exposed > 0) foe.exposed -= 1;
-    foe.step += 1;
+    foe.step = foe.role === "boss" ? rollBossStep(foe) : foe.step + 1;
   }
 
   next.shield = 0;

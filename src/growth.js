@@ -198,6 +198,7 @@ export function dailyStages() {
         maxHp: row.maxHp,
         atk: row.atk,
         guard: row.guard,
+        role: row.tier === 5 ? "boss" : "striker",
         pattern: kitForFoe(row.foe, row.element, row.tier === 5 ? "boss" : "striker").map((move) => move.intent),
         kit: kitForFoe(row.foe, row.element, row.tier === 5 ? "boss" : "striker"),
       },

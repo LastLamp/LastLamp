@@ -576,6 +576,7 @@ function Settings({ onClose, onRetreat }) {
             <p>Fire beats wind. Wind beats water. Water beats fire. Earth beats shadow, and shadow beats earth. A weakness hurts more. Hitting into a strong element hurts less.</p>
             <p>The party shares one health bar, the sum of the three health totals. An enemy hits that bar, not one person. The hit is weighed against the sum of their defense. A block or a heal still uses only the caster's own defense or health. You pick which enemy a single-target card hits.</p>
             <p>When an enemy tries to stick a debuff, each person rolls their own resistance. If any of them shrugs it off, it does not land, and that name is called out. A critical hit is called out the same way. There is always a small chance to resist.</p>
+            <p>Foes shrug your debuffs more often on harder stages. A 1-star foe resists 15% of the time, and each star after that adds 8%, up to 47% at 5 stars.</p>
             <p className="icon-line"><ElementMark element="flare" /> Fire</p>
             <p className="icon-line"><ElementMark element="gale" /> Wind</p>
             <p className="icon-line"><ElementMark element="tide" /> Water</p>
@@ -1111,7 +1112,7 @@ function Reveal({ save, mode, index, shock, onAdvance, onSkip, onClose, onAgain 
 
   return (
     <div
-      className={`overlay summon-veil${shock ? " shock" : ""}${mode === "card" ? " can-advance" : ""}${current ? ` reveal-${current.rarity}` : ""}`}
+      className={`overlay summon-veil${shock ? " shock" : ""}${mode === "card" ? " can-advance is-card" : ""}${current ? ` reveal-${current.rarity}` : ""}`}
       style={{
         backgroundImage: `linear-gradient(rgba(28, 18, 16, 0.55), rgba(28, 18, 16, 0.82)), url(${import.meta.env.BASE_URL}backdrops/night.jpg)`,
       }}
@@ -1139,19 +1140,19 @@ function Reveal({ save, mode, index, shock, onAdvance, onSkip, onClose, onAgain 
           <p className="advance-hint">
             {cards.length === 1 ? "Tap anywhere to continue." : `${index + 1} of ${cards.length}. Tap anywhere for the next.`}
           </p>
-          {cards.length > 1 && (
-            <button
-              className="ghost"
-              type="button"
-              onClick={(event) => {
-                event.stopPropagation();
-                onSkip();
-              }}
-            >
-              Skip all
-            </button>
-          )}
         </div>
+      )}
+      {mode === "card" && cards.length > 1 && (
+        <button
+          className="ghost skip-all"
+          type="button"
+          onClick={(event) => {
+            event.stopPropagation();
+            onSkip();
+          }}
+        >
+          Skip all
+        </button>
       )}
       {mode === "summary" && (
         <div className="summary">
@@ -2461,7 +2462,7 @@ function SweepBox({ stageId, save, dispatch }) {
                       {def ? <Portrait c={def} owned bust /> : null}
                     </div>
                     <figcaption>{def?.name?.split(" ")[0] || id}</figcaption>
-                    <XpMeter owned={reward.snap[id]} gain={reward.xp || 0} />
+                    <XpMeter owned={reward.snap[id]} gain={reward.xp || 0} settled />
                   </figure>
                 );
               })}
@@ -3394,12 +3395,12 @@ function BustConfetti() {
   );
 }
 
-function XpMeter({ owned, gain }) {
+function XpMeter({ owned, gain, settled }) {
   const steps = xpSteps(owned, gain);
   const startPct = steps.start.capped ? 100 : Math.min(100, (steps.start.xp / steps.start.need) * 100);
   const endPct = steps.end.capped ? 100 : Math.min(100, (steps.end.xp / Math.max(1, steps.end.need)) * 100);
   const [pct, setPct] = useState(startPct);
-  const [label, setLabel] = useState(steps.start.level);
+  const [label, setLabel] = useState(settled && steps.leveled ? steps.end.level : steps.start.level);
   const [snap, setSnap] = useState(false);
   useEffect(() => {
     if (steps.start.capped) return undefined;
@@ -3741,15 +3742,18 @@ function Inspect({ battle, inspect, onClose }) {
             <MarkList marks={foeMarks(enemy)} />
             <h3>Coming up</h3>
             <ol className="log">
-              {coming.map((step, index) => (
-                <li key={`${step.intent}-${index}`}>
-                  {index === 0 ? "Now" : "After"} · {step.label}
-                  {enemy.kit?.[(enemy.step + index) % enemy.kit.length]?.line
-                    ? ` — ${enemy.kit[(enemy.step + index) % enemy.kit.length].line}`
-                    : ""}
-                </li>
-              ))}
+              {coming.map((step, index) => {
+                const kitAt = enemy.role === "boss" ? enemy.step : enemy.step + index;
+                const line = enemy.kit?.length ? enemy.kit[kitAt % enemy.kit.length]?.line : "";
+                return (
+                  <li key={`${step.intent}-${index}`}>
+                    {index === 0 ? "Now" : "After"} · {step.label}
+                    {line ? ` — ${line}` : ""}
+                  </li>
+                );
+              })}
             </ol>
+            {enemy.role === "boss" && <p className="quiet">They pick the next move after this one.</p>}
           </>
         )}
         <button className="ghost" onClick={onClose}>
@@ -4201,12 +4205,10 @@ function Purse({ kind }) {
 
 function Stars({ copies }) {
   const stars = starsOf(copies);
-  const cap = STAR_STEPS[STAR_STEPS.length - 1];
   return (
     <span className="stars">
       {"★".repeat(stars)}
       {"☆".repeat(5 - stars)}
-      {copies > cap ? ` +${copies - cap}` : ""}
     </span>
   );
 }
@@ -4277,14 +4279,15 @@ function NavIcon({ name }) {
 function ArtIcon({ file, className }) {
   const [ext, setExt] = useState("png");
   const stem = file.replace(/\.jpg$/, "");
-  const bust = stem.endsWith("/jobs") ? "?v=3" : "";
+  const jobs = stem.endsWith("/jobs");
+  const bust = jobs ? "?v=4" : "";
   return (
     <img
       className={className || "nav-icon"}
       src={`${artBase()}${stem}.${ext}${bust}`}
       alt=""
       onError={() => {
-        if (ext === "png") setExt("jpg");
+        if (ext === "png" && !jobs) setExt("jpg");
       }}
     />
   );

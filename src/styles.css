@@ -1188,6 +1188,18 @@ main {
   animation: fill 0.74s ease forwards;
 }
 .reveal-stage { display: grid; justify-items: center; gap: 16px; }
+.overlay.summon-veil.is-card {
+  place-items: center;
+  align-content: center;
+}
+.overlay.summon-veil.is-card .reveal-stage { width: min(440px, 100%); }
+.skip-all {
+  position: absolute;
+  left: 50%;
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  z-index: 4;
+}
 .pull-card.deal { animation: deal 0.35s ease; }
 .pull-card.slam { animation: slam 0.55s cubic-bezier(0.16, 1, 0.3, 1); }
 .pull-card.rarity-SSR {
@@ -2605,7 +2617,7 @@ main {
   100% { transform: translate(-50%, -50%) scale(0.35) rotate(32deg); opacity: 0; }
 }
 .battle-tools { display: flex; flex-direction: column; align-items: flex-end; gap: 0; }
-.tool-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.tool-row { display: flex; gap: 6px; flex-wrap: nowrap; justify-content: flex-end; max-width: 100%; }
 .status-row {
   position: absolute;
   left: 0;
@@ -4514,6 +4526,20 @@ html:has(.shell.is-fight) body {
     align-content: start;
     padding: 12px 12px calc(16px + env(safe-area-inset-bottom));
   }
+  .overlay.summon-veil.is-card {
+    place-items: center;
+    align-content: center;
+  }
+  .overlay.summon-veil.is-card .pull-card {
+    grid-template-columns: 92px minmax(0, 1fr);
+    padding: 12px;
+  }
+  .overlay.summon-veil.is-card .pull-card > .portrait,
+  .overlay.summon-veil.is-card .pull-card > .portrait.is-bust,
+  .overlay.summon-veil.is-card .pull-card > .portrait.is-plate {
+    width: 92px;
+    height: 118px;
+  }
   .summary, .reveal-stage, .charge { width: 100%; }
   .summary-grid { grid-template-columns: 1fr; gap: 8px; }
   .summary .hero-actions {
@@ -4548,6 +4574,9 @@ html:has(.shell.is-fight) body {
   .green-list button { min-width: 0; }
   .battle-vitals { min-width: 0; width: 100%; }
   .battle-vitals .vbar { width: 100%; }
+  .tool-row { gap: 4px; }
+  .battle-tools .ghost,
+  .battle-tools .primary { padding: 6px 8px; font-size: 0.82rem; }
   .battle .foe-figure { margin-top: 8px; }
   .battle-tray {
     display: flex;
