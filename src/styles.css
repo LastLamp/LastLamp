@@ -3355,6 +3355,10 @@ html.tips-off .icon-pop { display: none !important; }
   border-radius: 12px;
   padding: 8px 10px;
 }
+.tower-reset {
+  margin: 0;
+  font-weight: 700;
+}
 .party-page .idol-grid {
   grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
   gap: 12px;

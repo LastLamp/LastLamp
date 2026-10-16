@@ -1,13 +1,15 @@
 import { kitForFoe } from "./foes.js";
 import { FOE_BOOK } from "./foeBook.js";
+import { makeDealer } from "./foeSpread.js";
 
-function hash(text) {
-  let h = 2166136261;
-  for (let i = 0; i < text.length; i += 1) {
-    h ^= text.charCodeAt(i);
-    h = Math.imul(h, 16777619);
-  }
-  return h >>> 0;
+function rng(seed) {
+  let a = seed >>> 0;
+  return () => {
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
 }
 
 export const EVENT_ROADS = [
@@ -42,11 +44,17 @@ export const EVENT_ROADS = [
 ];
 
 export function bondEvents() {
+  const roll = rng(0xe7e7);
+  const strikers = makeDealer(FOE_BOOK.filter((foe) => foe.role === "striker"), roll);
+  const bosses = makeDealer(FOE_BOOK.filter((foe) => foe.role === "boss"), roll);
   const stages = [];
+  let lastElement = null;
   for (const road of EVENT_ROADS) {
     for (let tier = 1; tier <= 5; tier += 1) {
-      const foe = FOE_BOOK[(hash(`${road.lane}:${tier}`) + tier * 13) % FOE_BOOK.length];
       const boss = tier === 5;
+      const avoid = lastElement ? new Set([lastElement]) : new Set();
+      const foe = (boss ? bosses : strikers)(avoid) || FOE_BOOK[0];
+      lastElement = foe.element;
       const kit = boss ? kitForFoe(`${foe.name} Warden`, foe.element, "boss") : foe.kit;
       stages.push({
         id: `bond-${road.lane}-${tier}`,

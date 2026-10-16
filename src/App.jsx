@@ -176,6 +176,11 @@ export default function App() {
   }, [save]);
 
   useEffect(() => {
+    const id = window.setInterval(() => dispatch({ type: "TICK_WEEK" }), 30000);
+    return () => window.clearInterval(id);
+  }, [dispatch]);
+
+  useEffect(() => {
     const next = stageId ? (toughStage(stageId) ? "boss" : "battle") : MUSIC_SCENE[screen] || "home";
     if (!save.sound) {
       stopMusic();
@@ -1856,6 +1861,22 @@ function formatLeft(ms) {
   return `${m}:${String(s).padStart(2, "0")}`;
 }
 
+function towerResetLeft(now = Date.now()) {
+  const d = new Date(now);
+  const next = new Date(d.getFullYear(), d.getMonth() + 1, 1).getTime();
+  const total = Math.max(0, Math.ceil((next - now) / 1000));
+  const days = Math.floor(total / 86400);
+  const h = Math.floor((total % 86400) / 3600);
+  const m = Math.floor((total % 3600) / 60);
+  const s = total % 60;
+  const parts = [];
+  if (days) parts.push(`${days}d`);
+  if (days || h) parts.push(`${h}h`);
+  parts.push(`${m}m`);
+  parts.push(`${s}s`);
+  return parts.join(" ");
+}
+
 function formatDuration(minutes) {
   if (minutes >= 60 && minutes % 60 === 0) {
     const hours = minutes / 60;
@@ -2130,8 +2151,14 @@ function StageBanner({ kicker, title, detail, foe, enemies, open, ready, actionL
 function TowerList({ save, ready, setStageId }) {
   const month = save.towerWeek || monthId();
   const floors = towerFor(month);
+  const [now, setNow] = useState(() => Date.now());
+  useEffect(() => {
+    const id = window.setInterval(() => setNow(Date.now()), 1000);
+    return () => window.clearInterval(id);
+  }, []);
   return (
     <div className="stage-stack">
+      <p className="tower-reset">Time until reset: {towerResetLeft(now)}</p>
       {floors.map((floor) => {
         const open = stageUnlocked(save, floor.id);
         const done = Boolean(save.towerClears?.[floor.id]);

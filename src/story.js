@@ -1,6 +1,7 @@
 import { STAGES } from "./data.js";
 import { kitForFoe, strengthenBoss } from "./foes.js";
 import { FOE_BOOK } from "./foeBook.js";
+import { makeDealer } from "./foeSpread.js";
 
 const PARTS = {
   warmup: 12,
@@ -51,13 +52,14 @@ const BLURBS = [
 
 let cached = null;
 
-function hash(text) {
-  let h = 2166136261;
-  for (let i = 0; i < text.length; i += 1) {
-    h ^= text.charCodeAt(i);
-    h = Math.imul(h, 16777619);
-  }
-  return h >>> 0;
+function rng(seed) {
+  let a = seed >>> 0;
+  return () => {
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
 }
 
 function starsFor(chapterIndex, part, parts) {
@@ -76,6 +78,14 @@ function roleFor(part, parts, index, count) {
 }
 
 function build() {
+  const roll = rng(0x51a7);
+  const dealers = {
+    striker: makeDealer(FOE_BOOK.filter((foe) => foe.role === "striker"), roll),
+    hexer: makeDealer(FOE_BOOK.filter((foe) => foe.role === "hexer"), roll),
+    bulwark: makeDealer(FOE_BOOK.filter((foe) => foe.role === "bulwark"), roll),
+    medic: makeDealer(FOE_BOOK.filter((foe) => foe.role === "medic"), roll),
+  };
+  let lastElement = null;
   const chapters = STAGES.map((stage, chapterIndex) => {
     const parts = PARTS[stage.id] || 12;
     const nodes = [];
@@ -89,11 +99,18 @@ function build() {
         const role = bossStage ? "boss" : roleFor(part, parts, index, count);
         const midBoss = MIDPOINT[stage.id] || [finale.name, finale.element];
         const wanted = role === "skirmish" ? "striker" : role;
-        const poolBook = FOE_BOOK.filter((foe) => foe.role === wanted);
-        const picked = poolBook[hash(`${stage.id}:${part}:${index}`) % Math.max(1, poolBook.length)] || FOE_BOOK[0];
+        const avoidElements = new Set(enemies.map((enemy) => enemy.element));
+        if (lastElement) avoidElements.add(lastElement);
+        const next = part + 1;
+        const nextIsMid = next === Math.ceil(parts / 2) && next !== parts;
+        if (index === count - 1 && nextIsMid) avoidElements.add(midBoss[1]);
+        if (index === count - 1 && next === parts) avoidElements.add(finale.element);
+        const picked = bossStage ? null : dealers[wanted](avoidElements, new Set(enemies.map((enemy) => enemy.art))) || FOE_BOOK[0];
+        if (picked) lastElement = picked.element;
         const name = bossStage ? (mid ? midBoss[0] : finale.name) : picked.name;
         const element = bossStage ? (mid ? midBoss[1] : finale.element) : picked.element;
-        const art = FOE_BOOK.find((foe) => foe.name === name)?.art || picked.art;
+        const art = bossStage ? FOE_BOOK.find((foe) => foe.name === name)?.art || finale.art : picked.art;
+        if (bossStage) lastElement = element;
         const kit = role === "boss" ? strengthenBoss(name, kitForFoe(name, element, role)) : picked.kit;
         const heft = role === "boss" ? (mid ? 1.55 : 1.9) : role === "bulwark" ? 1.25 : role === "hexer" || role === "medic" ? 0.78 : 1;
         const atkMul = role === "hexer" ? 0.8 : role === "boss" ? (mid ? 1.22 : 1.38) : 1;

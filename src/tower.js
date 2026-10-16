@@ -1,5 +1,6 @@
 import { kitForFoe } from "./foes.js";
 import { FOE_BOOK } from "./foeBook.js";
+import { makeDealer } from "./foeSpread.js";
 
 export const TOWER_FLOORS = 150;
 
@@ -97,7 +98,14 @@ function advice(enemies) {
 
 export function buildTower(week) {
   const roll = rng(hash(String(week)));
+  const dealers = {
+    boss: makeDealer(FOE_BOOK.filter((foe) => foe.role === "boss"), roll),
+    striker: makeDealer(FOE_BOOK.filter((foe) => foe.role === "striker"), roll),
+    hexer: makeDealer(FOE_BOOK.filter((foe) => foe.role === "hexer"), roll),
+    bulwark: makeDealer(FOE_BOOK.filter((foe) => foe.role === "bulwark"), roll),
+  };
   const floors = [];
+  let lastElement = null;
   for (let n = 1; n <= TOWER_FLOORS; n += 1) {
     const boss = n % 10 === 0;
     const pair = !boss && (n % 5 === 0 || (n > 36 && n % 4 === 0));
@@ -125,8 +133,10 @@ export function buildTower(week) {
         atk = Math.round(atk * 0.78);
         guard = Math.round(guard * 1.35);
       }
-      const book = FOE_BOOK.filter((foe) => (role === "boss" ? foe.role === "boss" : foe.role === role || foe.role === "striker"));
-      const picked = book[Math.floor(roll() * book.length)] || FOE_BOOK[0];
+      const avoidElements = new Set(enemies.map((enemy) => enemy.element));
+      if (lastElement) avoidElements.add(lastElement);
+      const picked = dealers[role](avoidElements, new Set(enemies.map((enemy) => enemy.art))) || FOE_BOOK[0];
+      lastElement = picked.element;
       const element = picked.element;
       const kit = role === "boss" ? kitForFoe(picked.name, element, role) : picked.kit;
       enemies.push({
