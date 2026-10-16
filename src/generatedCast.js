@@ -3,7 +3,7 @@ export const GENERATED_CAST = [
     "id": "bram",
     "name": "Vaelor",
     "she": false,
-    "title": "Ult nuke",
+    "title": "Berserker",
     "rarity": "SSR",
     "element": "flare",
     "role": "Attacker",
@@ -12,14 +12,14 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 92,
     "atk": 20,
-    "quote": "One opening. Then I spend everything.",
+    "quote": "I will save everything for the last strike.",
     "blurb": "Vaelor leads with an ult. He keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "bram-open",
-        "name": "Vaelor Severing",
+        "name": "Vaelor Cleave",
         "ratio": 0.85
       },
       {
@@ -59,7 +59,7 @@ export const GENERATED_CAST = [
     "id": "nessa",
     "name": "Nessira",
     "she": true,
-    "title": "Second swing",
+    "title": "Assassin",
     "rarity": "SSR",
     "element": "gale",
     "role": "Attacker",
@@ -68,7 +68,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 93,
     "atk": 21,
-    "quote": "Mark them. I will be there.",
+    "quote": "I will mark them, and I will be there for the second strike.",
     "blurb": "Nessira follows through with a second swing. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -83,7 +83,7 @@ export const GENERATED_CAST = [
         "kind": "attack",
         "cost": 1,
         "id": "nessa-chase",
-        "name": "Nessira Follow",
+        "name": "Nessira Pursuit",
         "ratio": 0.7,
         "follow": 0.55,
         "crit": 2
@@ -93,7 +93,7 @@ export const GENERATED_CAST = [
         "cost": 2,
         "once": true,
         "id": "nessa-ult",
-        "name": "Nessira Ending",
+        "name": "Nessira Finisher",
         "ratio": 1.7,
         "follow": 0.8
       }
@@ -117,7 +117,7 @@ export const GENERATED_CAST = [
     "id": "corin",
     "name": "Corivane",
     "she": false,
-    "title": "War banner",
+    "title": "Ruler",
     "rarity": "SSR",
     "element": "tide",
     "role": "Support",
@@ -126,7 +126,7 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 94,
     "atk": 22,
-    "quote": "Stay with me. We do not hold back.",
+    "quote": "Stay with me, and we will not hold back.",
     "blurb": "Corivane fights under a war banner. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -140,7 +140,7 @@ export const GENERATED_CAST = [
         "kind": "skill",
         "cost": 1,
         "id": "corin-banner",
-        "name": "Corivane Standard",
+        "name": "Corivane Banner",
         "might": 2,
         "shield": 8,
         "crit": 2
@@ -174,7 +174,7 @@ export const GENERATED_CAST = [
     "id": "idris",
     "name": "Idrisul",
     "she": false,
-    "title": "Shield wall",
+    "title": "Soldier",
     "rarity": "SSR",
     "element": "stone",
     "role": "Guardian",
@@ -183,7 +183,7 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 121,
     "atk": 13,
-    "quote": "Get behind the shield.",
+    "quote": "Get behind me, and I will take the hit.",
     "blurb": "Idrisul holds a shield wall. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -233,7 +233,7 @@ export const GENERATED_CAST = [
     "id": "willa",
     "name": "Willoweft",
     "she": true,
-    "title": "Hex hand",
+    "title": "Caster",
     "rarity": "SSR",
     "element": "veil",
     "role": "Controller",
@@ -242,7 +242,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 96,
     "atk": 21,
-    "quote": "Poison, or they stand still. Their choice ends there.",
+    "quote": "I will poison them, or I will make them stand still.",
     "blurb": "Willoweft fights with hexes. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -257,7 +257,7 @@ export const GENERATED_CAST = [
         "kind": "skill",
         "cost": 1,
         "id": "willa-stop",
-        "name": "Willoweft Still",
+        "name": "Willoweft Halt",
         "stun": 1,
         "weaken": true,
         "shred": true
@@ -292,7 +292,7 @@ export const GENERATED_CAST = [
     "id": "torin",
     "name": "Torivel",
     "she": false,
-    "title": "Call the line",
+    "title": "Archer",
     "rarity": "SSR",
     "element": "flare",
     "role": "Support",
@@ -301,14 +301,14 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 92,
     "atk": 22,
-    "quote": "Call it. I answer.",
+    "quote": "Call it, and I will answer.",
     "blurb": "Torivel calls allies into the line. He keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "torin-call",
-        "name": "Torivel Beckon",
+        "name": "Torivel Signal",
         "ratio": 0.85,
         "assist": true
       },
@@ -350,7 +350,7 @@ export const GENERATED_CAST = [
     "id": "sela",
     "name": "Selavyn",
     "she": true,
-    "title": "Again",
+    "title": "Rider",
     "rarity": "SSR",
     "element": "gale",
     "role": "Support",
@@ -359,14 +359,14 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 93,
     "atk": 20,
-    "quote": "Again. Before they set their feet.",
+    "quote": "We will go again before they set their feet.",
     "blurb": "Selavyn takes another action. She keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "sela-step",
-        "name": "Selavyn Pace",
+        "name": "Selavyn Quickstep",
         "ratio": 0.95
       },
       {
@@ -407,7 +407,7 @@ export const GENERATED_CAST = [
     "id": "garrick",
     "name": "Garric",
     "she": false,
-    "title": "Field cloth",
+    "title": "Cleric",
     "rarity": "SSR",
     "element": "tide",
     "role": "Healer",
@@ -416,7 +416,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 120,
     "atk": 14,
-    "quote": "The cut can wait. The bleeding cannot.",
+    "quote": "Hold still, and I will close the wound.",
     "blurb": "Garric keeps cloth ready for the wounded. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -441,7 +441,7 @@ export const GENERATED_CAST = [
         "cost": 2,
         "once": true,
         "id": "garrick-ult",
-        "name": "Garricspring",
+        "name": "Garric Wellspring",
         "heal": 16,
         "shield": 10,
         "stress": -10
@@ -466,7 +466,7 @@ export const GENERATED_CAST = [
     "id": "maeve",
     "name": "Maevara",
     "she": true,
-    "title": "Twin cut",
+    "title": "Lancer",
     "rarity": "SSR",
     "element": "stone",
     "role": "Attacker",
@@ -475,7 +475,7 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 95,
     "atk": 22,
-    "quote": "Count the hits. I already did.",
+    "quote": "I will not swing only once.",
     "blurb": "Maevara strikes with twin cuts. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -524,7 +524,7 @@ export const GENERATED_CAST = [
     "id": "holt",
     "name": "Holthis",
     "she": false,
-    "title": "Ult nuke",
+    "title": "Berserker",
     "rarity": "SR",
     "element": "veil",
     "role": "Attacker",
@@ -533,14 +533,14 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 90,
     "atk": 17,
-    "quote": "One opening. Then I spend everything.",
+    "quote": "I will hold this until the road is clear, and then I will spend it.",
     "blurb": "Holthis leads with an ult. He keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "holt-open",
-        "name": "Holthis Severing",
+        "name": "Holthis Cleave",
         "ratio": 0.85
       },
       {
@@ -580,7 +580,7 @@ export const GENERATED_CAST = [
     "id": "lira",
     "name": "Liravel",
     "she": true,
-    "title": "Second swing",
+    "title": "Assassin",
     "rarity": "SR",
     "element": "flare",
     "role": "Attacker",
@@ -589,7 +589,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 86,
     "atk": 18,
-    "quote": "Mark them. I will be there.",
+    "quote": "I will find the opening, and I will take it.",
     "blurb": "Liravel follows through with a second swing. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -605,7 +605,7 @@ export const GENERATED_CAST = [
         "kind": "attack",
         "cost": 1,
         "id": "lira-chase",
-        "name": "Liravel Follow",
+        "name": "Liravel Pursuit",
         "ratio": 0.7,
         "follow": 0.55
       },
@@ -614,7 +614,7 @@ export const GENERATED_CAST = [
         "cost": 2,
         "once": true,
         "id": "lira-ult",
-        "name": "Liravel Ending",
+        "name": "Liravel Finisher",
         "ratio": 1.7,
         "follow": 0.8
       }
@@ -638,7 +638,7 @@ export const GENERATED_CAST = [
     "id": "cedric",
     "name": "Cedrion",
     "she": false,
-    "title": "War banner",
+    "title": "Ruler",
     "rarity": "SR",
     "element": "gale",
     "role": "Support",
@@ -647,7 +647,7 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 87,
     "atk": 19,
-    "quote": "Stay with me. We do not hold back.",
+    "quote": "I will raise our strength, and you will take the ground.",
     "blurb": "Cedrion fights under a war banner. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -661,7 +661,7 @@ export const GENERATED_CAST = [
         "kind": "skill",
         "cost": 1,
         "id": "cedric-banner",
-        "name": "Cedrion Standard",
+        "name": "Cedrion Banner",
         "might": 2,
         "shield": 8,
         "defUp": 2
@@ -695,7 +695,7 @@ export const GENERATED_CAST = [
     "id": "anwen",
     "name": "Anweth",
     "she": true,
-    "title": "Shield wall",
+    "title": "Soldier",
     "rarity": "SR",
     "element": "tide",
     "role": "Guardian",
@@ -704,7 +704,7 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 106,
     "atk": 12,
-    "quote": "Get behind the shield.",
+    "quote": "I will hold the wall, and you will take the opening.",
     "blurb": "Anweth holds a shield wall. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -754,7 +754,7 @@ export const GENERATED_CAST = [
     "id": "brock",
     "name": "Brovarn",
     "she": false,
-    "title": "Hex hand",
+    "title": "Caster",
     "rarity": "SR",
     "element": "stone",
     "role": "Controller",
@@ -763,7 +763,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 89,
     "atk": 18,
-    "quote": "Poison, or they stand still. Their choice ends there.",
+    "quote": "I will take their next step away.",
     "blurb": "Brovarn fights with hexes. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -778,7 +778,7 @@ export const GENERATED_CAST = [
         "kind": "skill",
         "cost": 1,
         "id": "brock-stop",
-        "name": "Brovarn Still",
+        "name": "Brovarn Halt",
         "stun": 1,
         "weaken": true,
         "shred": true
@@ -813,7 +813,7 @@ export const GENERATED_CAST = [
     "id": "ysolde",
     "name": "Ysolthe",
     "she": true,
-    "title": "Call the line",
+    "title": "Archer",
     "rarity": "SR",
     "element": "veil",
     "role": "Support",
@@ -822,14 +822,14 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 90,
     "atk": 19,
-    "quote": "Call it. I answer.",
+    "quote": "Go, and I will be right behind you.",
     "blurb": "Ysolthe calls allies into the line. She keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "ysolde-call",
-        "name": "Ysolthe Beckon",
+        "name": "Ysolthe Signal",
         "ratio": 0.85,
         "assist": true
       },
@@ -871,7 +871,7 @@ export const GENERATED_CAST = [
     "id": "fen",
     "name": "Fenral",
     "she": false,
-    "title": "Again",
+    "title": "Rider",
     "rarity": "SR",
     "element": "flare",
     "role": "Support",
@@ -880,14 +880,14 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 86,
     "atk": 17,
-    "quote": "Again. Before they set their feet.",
+    "quote": "I will give you one more action, so use it.",
     "blurb": "Fenral takes another action. He keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "fen-step",
-        "name": "Fenral Pace",
+        "name": "Fenral Quickstep",
         "ratio": 0.95
       },
       {
@@ -928,7 +928,7 @@ export const GENERATED_CAST = [
     "id": "mira",
     "name": "Mirathen",
     "she": true,
-    "title": "Field cloth",
+    "title": "Cleric",
     "rarity": "SR",
     "element": "gale",
     "role": "Healer",
@@ -937,7 +937,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 105,
     "atk": 13,
-    "quote": "The cut can wait. The bleeding cannot.",
+    "quote": "The cut can wait, but the bleeding cannot.",
     "blurb": "Mirathen keeps cloth ready for the wounded. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -987,7 +987,7 @@ export const GENERATED_CAST = [
     "id": "aldric",
     "name": "Aldrec",
     "she": false,
-    "title": "Twin cut",
+    "title": "Lancer",
     "rarity": "SR",
     "element": "tide",
     "role": "Attacker",
@@ -996,7 +996,7 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 88,
     "atk": 19,
-    "quote": "Count the hits. I already did.",
+    "quote": "I will count the hits, and then I will land them.",
     "blurb": "Aldrec strikes with twin cuts. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -1045,7 +1045,7 @@ export const GENERATED_CAST = [
     "id": "petra",
     "name": "Petraya",
     "she": true,
-    "title": "Ult nuke",
+    "title": "Berserker",
     "rarity": "SR",
     "element": "stone",
     "role": "Attacker",
@@ -1054,14 +1054,14 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 89,
     "atk": 17,
-    "quote": "One opening. Then I spend everything.",
+    "quote": "I will take one opening, and I will not waste it.",
     "blurb": "Petraya leads with an ult. She keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "petra-open",
-        "name": "Petraya Severing",
+        "name": "Petraya Cleave",
         "ratio": 0.85
       },
       {
@@ -1101,7 +1101,7 @@ export const GENERATED_CAST = [
     "id": "jorah",
     "name": "Jorathen",
     "she": false,
-    "title": "Second swing",
+    "title": "Assassin",
     "rarity": "SR",
     "element": "veil",
     "role": "Attacker",
@@ -1110,7 +1110,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 90,
     "atk": 18,
-    "quote": "Mark them. I will be there.",
+    "quote": "I will stay on them until the second hit lands.",
     "blurb": "Jorathen follows through with a second swing. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -1125,7 +1125,7 @@ export const GENERATED_CAST = [
         "kind": "attack",
         "cost": 1,
         "id": "jorah-chase",
-        "name": "Jorathen Follow",
+        "name": "Jorathen Pursuit",
         "ratio": 0.7,
         "follow": 0.55,
         "crit": 2
@@ -1135,7 +1135,7 @@ export const GENERATED_CAST = [
         "cost": 2,
         "once": true,
         "id": "jorah-ult",
-        "name": "Jorathen Ending",
+        "name": "Jorathen Finisher",
         "ratio": 1.7,
         "follow": 0.8
       }
@@ -1159,7 +1159,7 @@ export const GENERATED_CAST = [
     "id": "quill",
     "name": "Quillen",
     "she": false,
-    "title": "War banner",
+    "title": "Ruler",
     "rarity": "SR",
     "element": "flare",
     "role": "Support",
@@ -1168,7 +1168,7 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 86,
     "atk": 19,
-    "quote": "Stay with me. We do not hold back.",
+    "quote": "I will stand with you, and we will hit harder.",
     "blurb": "Quillen fights under a war banner. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -1182,7 +1182,7 @@ export const GENERATED_CAST = [
         "kind": "skill",
         "cost": 1,
         "id": "quill-banner",
-        "name": "Quillen Standard",
+        "name": "Quillen Banner",
         "might": 2,
         "shield": 8,
         "res": 2
@@ -1216,7 +1216,7 @@ export const GENERATED_CAST = [
     "id": "saskia",
     "name": "Saskireth",
     "she": true,
-    "title": "Shield wall",
+    "title": "Soldier",
     "rarity": "SR",
     "element": "gale",
     "role": "Guardian",
@@ -1225,7 +1225,7 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 105,
     "atk": 12,
-    "quote": "Get behind the shield.",
+    "quote": "I will keep the shield up.",
     "blurb": "Saskireth holds a shield wall. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -1275,7 +1275,7 @@ export const GENERATED_CAST = [
     "id": "brennan",
     "name": "Brennvar",
     "she": false,
-    "title": "Hex hand",
+    "title": "Caster",
     "rarity": "SR",
     "element": "tide",
     "role": "Controller",
@@ -1284,7 +1284,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 88,
     "atk": 18,
-    "quote": "Poison, or they stand still. Their choice ends there.",
+    "quote": "I will make the next swing hurt more.",
     "blurb": "Brennvar fights with hexes. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -1299,7 +1299,7 @@ export const GENERATED_CAST = [
         "kind": "skill",
         "cost": 1,
         "id": "brennan-stop",
-        "name": "Brennvar Still",
+        "name": "Brennvar Halt",
         "stun": 1,
         "weaken": true,
         "shred": true
@@ -1334,7 +1334,7 @@ export const GENERATED_CAST = [
     "id": "odette",
     "name": "Odettalune",
     "she": true,
-    "title": "Call the line",
+    "title": "Archer",
     "rarity": "SR",
     "element": "stone",
     "role": "Support",
@@ -1343,14 +1343,14 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 89,
     "atk": 19,
-    "quote": "Call it. I answer.",
+    "quote": "Take the swing, and I will follow it.",
     "blurb": "Odettalune calls allies into the line. She keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "odette-call",
-        "name": "Odettalune Beckon",
+        "name": "Odettalune Signal",
         "ratio": 0.85,
         "assist": true
       },
@@ -1392,7 +1392,7 @@ export const GENERATED_CAST = [
     "id": "harlan",
     "name": "Harlaven",
     "she": false,
-    "title": "Again",
+    "title": "Rider",
     "rarity": "SR",
     "element": "veil",
     "role": "Support",
@@ -1401,14 +1401,14 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 90,
     "atk": 17,
-    "quote": "Again. Before they set their feet.",
+    "quote": "I will not wait for them to recover.",
     "blurb": "Harlaven takes another action. He keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "harlan-step",
-        "name": "Harlaven Pace",
+        "name": "Harlaven Quickstep",
         "ratio": 0.95
       },
       {
@@ -1449,7 +1449,7 @@ export const GENERATED_CAST = [
     "id": "vesna",
     "name": "Vesnyra",
     "she": true,
-    "title": "Field cloth",
+    "title": "Cleric",
     "rarity": "SR",
     "element": "flare",
     "role": "Healer",
@@ -1458,7 +1458,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 104,
     "atk": 13,
-    "quote": "The cut can wait. The bleeding cannot.",
+    "quote": "I will put the health back.",
     "blurb": "Vesnyra keeps cloth ready for the wounded. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -1508,7 +1508,7 @@ export const GENERATED_CAST = [
     "id": "mick",
     "name": "Mickar",
     "she": false,
-    "title": "Twin cut",
+    "title": "Lancer",
     "rarity": "SR",
     "element": "gale",
     "role": "Attacker",
@@ -1517,7 +1517,7 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 87,
     "atk": 19,
-    "quote": "Count the hits. I already did.",
+    "quote": "I will hit them again before the first cut fades.",
     "blurb": "Mickar strikes with twin cuts. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -1566,7 +1566,7 @@ export const GENERATED_CAST = [
     "id": "cora",
     "name": "Coralyth",
     "she": true,
-    "title": "Ult nuke",
+    "title": "Berserker",
     "rarity": "SR",
     "element": "tide",
     "role": "Attacker",
@@ -1575,14 +1575,14 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 88,
     "atk": 17,
-    "quote": "One opening. Then I spend everything.",
+    "quote": "I will end this with the blow I have been saving.",
     "blurb": "Coralyth leads with an ult. She keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "cora-open",
-        "name": "Coralyth Severing",
+        "name": "Coralyth Cleave",
         "ratio": 0.85
       },
       {
@@ -1622,7 +1622,7 @@ export const GENERATED_CAST = [
     "id": "leif",
     "name": "Leivar",
     "she": false,
-    "title": "Second swing",
+    "title": "Assassin",
     "rarity": "SR",
     "element": "stone",
     "role": "Attacker",
@@ -1631,7 +1631,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 89,
     "atk": 18,
-    "quote": "Mark them. I will be there.",
+    "quote": "I will mark the one who has to fall.",
     "blurb": "Leivar follows through with a second swing. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -1646,7 +1646,7 @@ export const GENERATED_CAST = [
         "kind": "attack",
         "cost": 1,
         "id": "leif-chase",
-        "name": "Leivar Follow",
+        "name": "Leivar Pursuit",
         "ratio": 0.7,
         "follow": 0.55
       },
@@ -1655,7 +1655,7 @@ export const GENERATED_CAST = [
         "cost": 2,
         "once": true,
         "id": "leif-ult",
-        "name": "Leivar Ending",
+        "name": "Leivar Finisher",
         "ratio": 1.7,
         "follow": 0.8,
         "critDmg": 2
@@ -1680,7 +1680,7 @@ export const GENERATED_CAST = [
     "id": "thalia",
     "name": "Thaliune",
     "she": true,
-    "title": "War banner",
+    "title": "Ruler",
     "rarity": "SR",
     "element": "veil",
     "role": "Support",
@@ -1689,7 +1689,7 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 90,
     "atk": 19,
-    "quote": "Stay with me. We do not hold back.",
+    "quote": "I will lift the line, and you will carry it forward.",
     "blurb": "Thaliune fights under a war banner. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -1703,7 +1703,7 @@ export const GENERATED_CAST = [
         "kind": "skill",
         "cost": 1,
         "id": "thalia-banner",
-        "name": "Thaliune Standard",
+        "name": "Thaliune Banner",
         "might": 2,
         "shield": 8,
         "defUp": 2
@@ -1737,7 +1737,7 @@ export const GENERATED_CAST = [
     "id": "oswin",
     "name": "Oswiren",
     "she": false,
-    "title": "Shield wall",
+    "title": "Soldier",
     "rarity": "SR",
     "element": "flare",
     "role": "Guardian",
@@ -1746,7 +1746,7 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 104,
     "atk": 12,
-    "quote": "Get behind the shield.",
+    "quote": "Stand behind me, and I will meet what comes.",
     "blurb": "Oswiren holds a shield wall. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -1796,7 +1796,7 @@ export const GENERATED_CAST = [
     "id": "briony",
     "name": "Brioneth",
     "she": true,
-    "title": "Hex hand",
+    "title": "Caster",
     "rarity": "R",
     "element": "gale",
     "role": "Controller",
@@ -1805,7 +1805,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 83,
     "atk": 16,
-    "quote": "Poison, or they stand still. Their choice ends there.",
+    "quote": "I will leave them weak, or I will leave them still.",
     "blurb": "Brioneth fights with hexes. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -1820,7 +1820,7 @@ export const GENERATED_CAST = [
         "kind": "skill",
         "cost": 1,
         "id": "briony-stop",
-        "name": "Brioneth Still",
+        "name": "Brioneth Halt",
         "stun": 1,
         "weaken": true,
         "shred": true
@@ -1855,7 +1855,7 @@ export const GENERATED_CAST = [
     "id": "cassian",
     "name": "Cassivar",
     "she": false,
-    "title": "Call the line",
+    "title": "Archer",
     "rarity": "R",
     "element": "tide",
     "role": "Support",
@@ -1864,14 +1864,14 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 84,
     "atk": 17,
-    "quote": "Call it. I answer.",
+    "quote": "I will call an ally into the same strike.",
     "blurb": "Cassivar calls allies into the line. He keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "cassian-call",
-        "name": "Cassivar Beckon",
+        "name": "Cassivar Signal",
         "ratio": 0.85,
         "assist": true
       },
@@ -1913,7 +1913,7 @@ export const GENERATED_CAST = [
     "id": "elowen",
     "name": "Elowynne",
     "she": true,
-    "title": "Again",
+    "title": "Rider",
     "rarity": "R",
     "element": "stone",
     "role": "Support",
@@ -1922,14 +1922,14 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 85,
     "atk": 15,
-    "quote": "Again. Before they set their feet.",
+    "quote": "I will put us back in motion.",
     "blurb": "Elowynne takes another action. She keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "elowen-step",
-        "name": "Elowynne Pace",
+        "name": "Elowynne Quickstep",
         "ratio": 0.95
       },
       {
@@ -1970,7 +1970,7 @@ export const GENERATED_CAST = [
     "id": "drust",
     "name": "Drustavar",
     "she": false,
-    "title": "Field cloth",
+    "title": "Cleric",
     "rarity": "R",
     "element": "veil",
     "role": "Healer",
@@ -1979,7 +1979,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 100,
     "atk": 12,
-    "quote": "The cut can wait. The bleeding cannot.",
+    "quote": "Sit, and I will see to the bleeding.",
     "blurb": "Drustavar keeps cloth ready for the wounded. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -2029,7 +2029,7 @@ export const GENERATED_CAST = [
     "id": "nin",
     "name": "Ninrael",
     "she": true,
-    "title": "Twin cut",
+    "title": "Lancer",
     "rarity": "R",
     "element": "flare",
     "role": "Attacker",
@@ -2038,7 +2038,7 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 82,
     "atk": 17,
-    "quote": "Count the hits. I already did.",
+    "quote": "I will keep striking until the line breaks.",
     "blurb": "Ninrael strikes with twin cuts. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -2087,7 +2087,7 @@ export const GENERATED_CAST = [
     "id": "peregrine",
     "name": "Perivar",
     "she": false,
-    "title": "Ult nuke",
+    "title": "Berserker",
     "rarity": "R",
     "element": "gale",
     "role": "Attacker",
@@ -2096,14 +2096,14 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 83,
     "atk": 15,
-    "quote": "One opening. Then I spend everything.",
+    "quote": "I will keep my strength for the strike that matters.",
     "blurb": "Perivar leads with an ult. He keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "peregrine-open",
-        "name": "Perivar Severing",
+        "name": "Perivar Cleave",
         "ratio": 0.85
       },
       {
@@ -2143,7 +2143,7 @@ export const GENERATED_CAST = [
     "id": "isola",
     "name": "Isolune",
     "she": true,
-    "title": "Second swing",
+    "title": "Assassin",
     "rarity": "R",
     "element": "tide",
     "role": "Attacker",
@@ -2152,7 +2152,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 84,
     "atk": 16,
-    "quote": "Mark them. I will be there.",
+    "quote": "I will be there when the mark shows.",
     "blurb": "Isolune follows through with a second swing. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -2167,7 +2167,7 @@ export const GENERATED_CAST = [
         "kind": "attack",
         "cost": 1,
         "id": "isola-chase",
-        "name": "Isolune Follow",
+        "name": "Isolune Pursuit",
         "ratio": 0.7,
         "follow": 0.55,
         "critDmg": 2
@@ -2177,7 +2177,7 @@ export const GENERATED_CAST = [
         "cost": 2,
         "once": true,
         "id": "isola-ult",
-        "name": "Isolune Ending",
+        "name": "Isolune Finisher",
         "ratio": 1.7,
         "follow": 0.8
       }
@@ -2201,7 +2201,7 @@ export const GENERATED_CAST = [
     "id": "tam",
     "name": "Tamaros",
     "she": false,
-    "title": "War banner",
+    "title": "Ruler",
     "rarity": "R",
     "element": "stone",
     "role": "Support",
@@ -2210,7 +2210,7 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 85,
     "atk": 17,
-    "quote": "Stay with me. We do not hold back.",
+    "quote": "I will give you the strength, and you will use it.",
     "blurb": "Tamaros fights under a war banner. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -2224,7 +2224,7 @@ export const GENERATED_CAST = [
         "kind": "skill",
         "cost": 1,
         "id": "tam-banner",
-        "name": "Tamaros Standard",
+        "name": "Tamaros Banner",
         "might": 2,
         "shield": 8,
         "res": 2
@@ -2258,7 +2258,7 @@ export const GENERATED_CAST = [
     "id": "rheya",
     "name": "Rheyalis",
     "she": true,
-    "title": "Shield wall",
+    "title": "Soldier",
     "rarity": "R",
     "element": "veil",
     "role": "Guardian",
@@ -2267,7 +2267,7 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 100,
     "atk": 11,
-    "quote": "Get behind the shield.",
+    "quote": "I will take the blow so you do not have to.",
     "blurb": "Rheyalis holds a shield wall. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -2317,7 +2317,7 @@ export const GENERATED_CAST = [
     "id": "col",
     "name": "Colvyn",
     "she": false,
-    "title": "Hex hand",
+    "title": "Caster",
     "rarity": "R",
     "element": "flare",
     "role": "Controller",
@@ -2326,7 +2326,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 82,
     "atk": 16,
-    "quote": "Poison, or they stand still. Their choice ends there.",
+    "quote": "I will decide whether they move or whether they suffer.",
     "blurb": "Colvyn fights with hexes. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -2341,7 +2341,7 @@ export const GENERATED_CAST = [
         "kind": "skill",
         "cost": 1,
         "id": "col-stop",
-        "name": "Colvyn Still",
+        "name": "Colvyn Halt",
         "stun": 1,
         "weaken": true,
         "shred": true
@@ -2376,7 +2376,7 @@ export const GENERATED_CAST = [
     "id": "maren",
     "name": "Marenya",
     "she": true,
-    "title": "Call the line",
+    "title": "Archer",
     "rarity": "R",
     "element": "gale",
     "role": "Support",
@@ -2385,14 +2385,14 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 83,
     "atk": 17,
-    "quote": "Call it. I answer.",
+    "quote": "Say the word, and I will join the attack.",
     "blurb": "Marenya calls allies into the line. She keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "maren-call",
-        "name": "Marenya Beckon",
+        "name": "Marenya Signal",
         "ratio": 0.85,
         "assist": true
       },
@@ -2434,7 +2434,7 @@ export const GENERATED_CAST = [
     "id": "uthred",
     "name": "Uthrael",
     "she": false,
-    "title": "Again",
+    "title": "Rider",
     "rarity": "R",
     "element": "tide",
     "role": "Support",
@@ -2443,14 +2443,14 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 84,
     "atk": 15,
-    "quote": "Again. Before they set their feet.",
+    "quote": "I will take another step before they can.",
     "blurb": "Uthrael takes another action. He keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "uthred-step",
-        "name": "Uthrael Pace",
+        "name": "Uthrael Quickstep",
         "ratio": 0.95
       },
       {
@@ -2491,7 +2491,7 @@ export const GENERATED_CAST = [
     "id": "sylvie",
     "name": "Sylvara",
     "she": true,
-    "title": "Field cloth",
+    "title": "Cleric",
     "rarity": "R",
     "element": "stone",
     "role": "Healer",
@@ -2500,7 +2500,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 99,
     "atk": 12,
-    "quote": "The cut can wait. The bleeding cannot.",
+    "quote": "I will keep you standing.",
     "blurb": "Sylvara keeps cloth ready for the wounded. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -2550,7 +2550,7 @@ export const GENERATED_CAST = [
     "id": "keir",
     "name": "Keirith",
     "she": false,
-    "title": "Twin cut",
+    "title": "Lancer",
     "rarity": "R",
     "element": "veil",
     "role": "Attacker",
@@ -2559,7 +2559,7 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 86,
     "atk": 17,
-    "quote": "Count the hits. I already did.",
+    "quote": "I will put three cuts in before I step back.",
     "blurb": "Keirith strikes with twin cuts. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -2608,7 +2608,7 @@ export const GENERATED_CAST = [
     "id": "daph",
     "name": "Daphira",
     "she": true,
-    "title": "Ult nuke",
+    "title": "Berserker",
     "rarity": "R",
     "element": "flare",
     "role": "Attacker",
@@ -2617,14 +2617,14 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 82,
     "atk": 15,
-    "quote": "One opening. Then I spend everything.",
+    "quote": "I will wait, and then I will put everything into the last hit.",
     "blurb": "Daphira leads with an ult. She keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "daph-open",
-        "name": "Daphira Severing",
+        "name": "Daphira Cleave",
         "ratio": 0.85
       },
       {
@@ -2664,7 +2664,7 @@ export const GENERATED_CAST = [
     "id": "rowan2",
     "name": "Rowevar",
     "she": false,
-    "title": "Second swing",
+    "title": "Assassin",
     "rarity": "R",
     "element": "gale",
     "role": "Attacker",
@@ -2673,7 +2673,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 83,
     "atk": 16,
-    "quote": "Mark them. I will be there.",
+    "quote": "I will not let the first swing be the last.",
     "blurb": "Rowevar follows through with a second swing. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -2688,7 +2688,7 @@ export const GENERATED_CAST = [
         "kind": "attack",
         "cost": 1,
         "id": "rowan2-chase",
-        "name": "Rowevar Follow",
+        "name": "Rowevar Pursuit",
         "ratio": 0.7,
         "follow": 0.55,
         "critDmg": 2
@@ -2698,7 +2698,7 @@ export const GENERATED_CAST = [
         "cost": 2,
         "once": true,
         "id": "rowan2-ult",
-        "name": "Rowevar Ending",
+        "name": "Rowevar Finisher",
         "ratio": 1.7,
         "follow": 0.8
       }
@@ -2722,7 +2722,7 @@ export const GENERATED_CAST = [
     "id": "astra",
     "name": "Astralya",
     "she": true,
-    "title": "War banner",
+    "title": "Ruler",
     "rarity": "R",
     "element": "tide",
     "role": "Support",
@@ -2731,7 +2731,7 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 84,
     "atk": 17,
-    "quote": "Stay with me. We do not hold back.",
+    "quote": "Stay close, and I will make the next blows count.",
     "blurb": "Astralya fights under a war banner. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -2745,7 +2745,7 @@ export const GENERATED_CAST = [
         "kind": "skill",
         "cost": 1,
         "id": "astra-banner",
-        "name": "Astralya Standard",
+        "name": "Astralya Banner",
         "might": 2,
         "shield": 8,
         "crit": 2
@@ -2779,7 +2779,7 @@ export const GENERATED_CAST = [
     "id": "pike",
     "name": "Dorvhal",
     "she": false,
-    "title": "Shield wall",
+    "title": "Soldier",
     "rarity": "R",
     "element": "stone",
     "role": "Guardian",
@@ -2788,7 +2788,7 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 99,
     "atk": 11,
-    "quote": "Get behind the shield.",
+    "quote": "I will not let them through.",
     "blurb": "Dorvhal holds a shield wall. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -2838,7 +2838,7 @@ export const GENERATED_CAST = [
     "id": "lumen",
     "name": "Lumenya",
     "she": true,
-    "title": "Hex hand",
+    "title": "Caster",
     "rarity": "R",
     "element": "veil",
     "role": "Controller",
@@ -2847,7 +2847,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 86,
     "atk": 16,
-    "quote": "Poison, or they stand still. Their choice ends there.",
+    "quote": "I will set the poison, and I will stop the ones who run.",
     "blurb": "Lumenya fights with hexes. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -2862,7 +2862,7 @@ export const GENERATED_CAST = [
         "kind": "skill",
         "cost": 1,
         "id": "lumen-stop",
-        "name": "Lumenya Still",
+        "name": "Lumenya Halt",
         "stun": 1,
         "weaken": true,
         "shred": true,
@@ -2898,7 +2898,7 @@ export const GENERATED_CAST = [
     "id": "bard",
     "name": "Calivar",
     "she": false,
-    "title": "Call the line",
+    "title": "Archer",
     "rarity": "R",
     "element": "flare",
     "role": "Support",
@@ -2907,14 +2907,14 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 82,
     "atk": 17,
-    "quote": "Call it. I answer.",
+    "quote": "I will send someone in with you.",
     "blurb": "Calivar calls allies into the line. He keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "bard-call",
-        "name": "Calivar Beckon",
+        "name": "Calivar Signal",
         "ratio": 0.85,
         "assist": true
       },
@@ -2956,7 +2956,7 @@ export const GENERATED_CAST = [
     "id": "hestia",
     "name": "Hestalyne",
     "she": true,
-    "title": "Again",
+    "title": "Rider",
     "rarity": "R",
     "element": "gale",
     "role": "Support",
@@ -2965,14 +2965,14 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 83,
     "atk": 15,
-    "quote": "Again. Before they set their feet.",
+    "quote": "I will move again before they are ready.",
     "blurb": "Hestalyne takes another action. She keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "hestia-step",
-        "name": "Hestalyne Pace",
+        "name": "Hestalyne Quickstep",
         "ratio": 0.95
       },
       {
@@ -3013,7 +3013,7 @@ export const GENERATED_CAST = [
     "id": "grim",
     "name": "Grimorath",
     "she": false,
-    "title": "Field cloth",
+    "title": "Cleric",
     "rarity": "R",
     "element": "tide",
     "role": "Healer",
@@ -3022,7 +3022,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 98,
     "atk": 12,
-    "quote": "The cut can wait. The bleeding cannot.",
+    "quote": "I will mend what the fight takes.",
     "blurb": "Grimorath keeps cloth ready for the wounded. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -3073,7 +3073,7 @@ export const GENERATED_CAST = [
     "id": "opal",
     "name": "Opalis",
     "she": true,
-    "title": "Twin cut",
+    "title": "Lancer",
     "rarity": "R",
     "element": "stone",
     "role": "Attacker",
@@ -3082,7 +3082,7 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 85,
     "atk": 17,
-    "quote": "Count the hits. I already did.",
+    "quote": "I will not stop at the first blow.",
     "blurb": "Opalis strikes with twin cuts. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -3131,7 +3131,7 @@ export const GENERATED_CAST = [
     "id": "soren2",
     "name": "Sylthea",
     "she": true,
-    "title": "Ult nuke",
+    "title": "Berserker",
     "rarity": "R",
     "element": "veil",
     "role": "Attacker",
@@ -3140,14 +3140,14 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 86,
     "atk": 15,
-    "quote": "One opening. Then I spend everything.",
+    "quote": "I will not spend this early.",
     "blurb": "Sylthea leads with an ult. She keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "soren2-open",
-        "name": "Sylthea Severing",
+        "name": "Sylthea Cleave",
         "ratio": 0.85
       },
       {
@@ -3187,7 +3187,7 @@ export const GENERATED_CAST = [
     "id": "vance",
     "name": "Vancelor",
     "she": false,
-    "title": "Second swing",
+    "title": "Assassin",
     "rarity": "R",
     "element": "flare",
     "role": "Attacker",
@@ -3196,7 +3196,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 82,
     "atk": 16,
-    "quote": "Mark them. I will be there.",
+    "quote": "I will follow the mark, and I will finish it.",
     "blurb": "Vancelor follows through with a second swing. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -3211,7 +3211,7 @@ export const GENERATED_CAST = [
         "kind": "attack",
         "cost": 1,
         "id": "vance-chase",
-        "name": "Vancelor Follow",
+        "name": "Vancelor Pursuit",
         "ratio": 0.7,
         "follow": 0.55,
         "crit": 2
@@ -3221,7 +3221,7 @@ export const GENERATED_CAST = [
         "cost": 2,
         "once": true,
         "id": "vance-ult",
-        "name": "Vancelor Ending",
+        "name": "Vancelor Finisher",
         "ratio": 1.7,
         "follow": 0.8
       }
@@ -3245,7 +3245,7 @@ export const GENERATED_CAST = [
     "id": "nell",
     "name": "Nellixa",
     "she": true,
-    "title": "War banner",
+    "title": "Ruler",
     "rarity": "R",
     "element": "gale",
     "role": "Support",
@@ -3254,7 +3254,7 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 83,
     "atk": 17,
-    "quote": "Stay with me. We do not hold back.",
+    "quote": "I will raise the banner, and you will take the mile.",
     "blurb": "Nellixa fights under a war banner. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -3268,7 +3268,7 @@ export const GENERATED_CAST = [
         "kind": "skill",
         "cost": 1,
         "id": "nell-banner",
-        "name": "Nellixa Standard",
+        "name": "Nellixa Banner",
         "might": 2,
         "shield": 8,
         "res": 2
@@ -3302,7 +3302,7 @@ export const GENERATED_CAST = [
     "id": "orko",
     "name": "Orvath",
     "she": false,
-    "title": "Shield wall",
+    "title": "Soldier",
     "rarity": "R",
     "element": "tide",
     "role": "Guardian",
@@ -3311,7 +3311,7 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 98,
     "atk": 11,
-    "quote": "Get behind the shield.",
+    "quote": "I will hold this ground.",
     "blurb": "Orvath holds a shield wall. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -3361,7 +3361,7 @@ export const GENERATED_CAST = [
     "id": "faye",
     "name": "Fayelin",
     "she": true,
-    "title": "Hex hand",
+    "title": "Caster",
     "rarity": "R",
     "element": "stone",
     "role": "Controller",
@@ -3370,7 +3370,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 85,
     "atk": 16,
-    "quote": "Poison, or they stand still. Their choice ends there.",
+    "quote": "I will take the fight out of their hands.",
     "blurb": "Fayelin fights with hexes. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -3385,7 +3385,7 @@ export const GENERATED_CAST = [
         "kind": "skill",
         "cost": 1,
         "id": "faye-stop",
-        "name": "Fayelin Still",
+        "name": "Fayelin Halt",
         "stun": 1,
         "weaken": true,
         "shred": true,
@@ -3421,7 +3421,7 @@ export const GENERATED_CAST = [
     "id": "jasper",
     "name": "Jaspelune",
     "she": false,
-    "title": "Call the line",
+    "title": "Archer",
     "rarity": "R",
     "element": "veil",
     "role": "Support",
@@ -3430,14 +3430,14 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 86,
     "atk": 17,
-    "quote": "Call it. I answer.",
+    "quote": "I will not let you strike alone.",
     "blurb": "Jaspelune calls allies into the line. He keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "jasper-call",
-        "name": "Jaspelune Beckon",
+        "name": "Jaspelune Signal",
         "ratio": 0.85,
         "assist": true
       },
@@ -3479,7 +3479,7 @@ export const GENERATED_CAST = [
     "id": "rune",
     "name": "Runethar",
     "she": false,
-    "title": "Again",
+    "title": "Rider",
     "rarity": "R",
     "element": "flare",
     "role": "Support",
@@ -3488,14 +3488,14 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 82,
     "atk": 15,
-    "quote": "Again. Before they set their feet.",
+    "quote": "I will return the action, and you will spend it.",
     "blurb": "Runethar takes another action. He keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "rune-step",
-        "name": "Runethar Pace",
+        "name": "Runethar Quickstep",
         "ratio": 0.95
       },
       {
@@ -3536,7 +3536,7 @@ export const GENERATED_CAST = [
     "id": "cress",
     "name": "Cressalyth",
     "she": true,
-    "title": "Field cloth",
+    "title": "Cleric",
     "rarity": "R",
     "element": "gale",
     "role": "Healer",
@@ -3545,7 +3545,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 97,
     "atk": 12,
-    "quote": "The cut can wait. The bleeding cannot.",
+    "quote": "Breathe, and I will do the rest.",
     "blurb": "Cressalyth keeps cloth ready for the wounded. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -3595,7 +3595,7 @@ export const GENERATED_CAST = [
     "id": "hal",
     "name": "Halveric",
     "she": false,
-    "title": "Twin cut",
+    "title": "Lancer",
     "rarity": "R",
     "element": "tide",
     "role": "Attacker",
@@ -3604,7 +3604,7 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 84,
     "atk": 17,
-    "quote": "Count the hits. I already did.",
+    "quote": "I will strike, and I will strike again.",
     "blurb": "Halveric strikes with twin cuts. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -3653,7 +3653,7 @@ export const GENERATED_CAST = [
     "id": "io",
     "name": "Iovara",
     "she": true,
-    "title": "Ult nuke",
+    "title": "Berserker",
     "rarity": "R",
     "element": "stone",
     "role": "Attacker",
@@ -3662,14 +3662,14 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 85,
     "atk": 15,
-    "quote": "One opening. Then I spend everything.",
+    "quote": "I will finish them when the moment comes.",
     "blurb": "Iovara leads with an ult. She keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "io-open",
-        "name": "Iovara Severing",
+        "name": "Iovara Cleave",
         "ratio": 0.85
       },
       {
@@ -3709,7 +3709,7 @@ export const GENERATED_CAST = [
     "id": "mattis",
     "name": "Matthos",
     "she": false,
-    "title": "Second swing",
+    "title": "Assassin",
     "rarity": "R",
     "element": "veil",
     "role": "Attacker",
@@ -3718,7 +3718,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 86,
     "atk": 16,
-    "quote": "Mark them. I will be there.",
+    "quote": "I will wait for the brand, and then I will strike.",
     "blurb": "Matthos follows through with a second swing. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -3733,7 +3733,7 @@ export const GENERATED_CAST = [
         "kind": "attack",
         "cost": 1,
         "id": "mattis-chase",
-        "name": "Matthos Follow",
+        "name": "Matthos Pursuit",
         "ratio": 0.7,
         "follow": 0.55,
         "critDmg": 2
@@ -3743,7 +3743,7 @@ export const GENERATED_CAST = [
         "cost": 2,
         "once": true,
         "id": "mattis-ult",
-        "name": "Matthos Ending",
+        "name": "Matthos Finisher",
         "ratio": 1.7,
         "follow": 0.8
       }
@@ -3767,7 +3767,7 @@ export const GENERATED_CAST = [
     "id": "pearl",
     "name": "Pearlith",
     "she": true,
-    "title": "War banner",
+    "title": "Ruler",
     "rarity": "R",
     "element": "flare",
     "role": "Support",
@@ -3776,7 +3776,7 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 82,
     "atk": 17,
-    "quote": "Stay with me. We do not hold back.",
+    "quote": "I will not let this line fight quietly.",
     "blurb": "Pearlith fights under a war banner. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -3790,7 +3790,7 @@ export const GENERATED_CAST = [
         "kind": "skill",
         "cost": 1,
         "id": "pearl-banner",
-        "name": "Pearlith Standard",
+        "name": "Pearlith Banner",
         "might": 2,
         "shield": 8,
         "crit": 2
@@ -3824,7 +3824,7 @@ export const GENERATED_CAST = [
     "id": "stark",
     "name": "Starkev",
     "she": false,
-    "title": "Shield wall",
+    "title": "Soldier",
     "rarity": "R",
     "element": "gale",
     "role": "Guardian",
@@ -3833,7 +3833,7 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 97,
     "atk": 11,
-    "quote": "Get behind the shield.",
+    "quote": "I will stand in front, and the wall will stay up.",
     "blurb": "Starkev holds a shield wall. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -3883,7 +3883,7 @@ export const GENERATED_CAST = [
     "id": "una",
     "name": "Unavelle",
     "she": true,
-    "title": "Hex hand",
+    "title": "Caster",
     "rarity": "R",
     "element": "tide",
     "role": "Controller",
@@ -3892,7 +3892,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 84,
     "atk": 16,
-    "quote": "Poison, or they stand still. Their choice ends there.",
+    "quote": "I will make them feel the next attack.",
     "blurb": "Unavelle fights with hexes. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -3907,7 +3907,7 @@ export const GENERATED_CAST = [
         "kind": "skill",
         "cost": 1,
         "id": "una-stop",
-        "name": "Unavelle Still",
+        "name": "Unavelle Halt",
         "stun": 1,
         "weaken": true,
         "shred": true
@@ -3942,7 +3942,7 @@ export const GENERATED_CAST = [
     "id": "wystan",
     "name": "Wystavar",
     "she": false,
-    "title": "Call the line",
+    "title": "Archer",
     "rarity": "R",
     "element": "stone",
     "role": "Support",
@@ -3951,14 +3951,14 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 85,
     "atk": 17,
-    "quote": "Call it. I answer.",
+    "quote": "Point at them, and I will bring the next blow.",
     "blurb": "Wystavar calls allies into the line. He keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "wystan-call",
-        "name": "Wystavar Beckon",
+        "name": "Wystavar Signal",
         "ratio": 0.85,
         "assist": true
       },
@@ -4000,7 +4000,7 @@ export const GENERATED_CAST = [
     "id": "yara",
     "name": "Yaralith",
     "she": true,
-    "title": "Again",
+    "title": "Rider",
     "rarity": "R",
     "element": "veil",
     "role": "Support",
@@ -4009,14 +4009,14 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 86,
     "atk": 15,
-    "quote": "Again. Before they set their feet.",
+    "quote": "I will not let this turn end yet.",
     "blurb": "Yaralith takes another action. She keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "yara-step",
-        "name": "Yaralith Pace",
+        "name": "Yaralith Quickstep",
         "ratio": 0.95
       },
       {
@@ -4057,7 +4057,7 @@ export const GENERATED_CAST = [
     "id": "zeno",
     "name": "Zenovar",
     "she": false,
-    "title": "Field cloth",
+    "title": "Cleric",
     "rarity": "R",
     "element": "flare",
     "role": "Healer",
@@ -4066,7 +4066,7 @@ export const GENERATED_CAST = [
     "favorite": "bouquet",
     "maxHp": 96,
     "atk": 12,
-    "quote": "The cut can wait. The bleeding cannot.",
+    "quote": "I will not let this wound finish you.",
     "blurb": "Zenovar keeps cloth ready for the wounded. He keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -4116,7 +4116,7 @@ export const GENERATED_CAST = [
     "id": "amber",
     "name": "Amberis",
     "she": true,
-    "title": "Twin cut",
+    "title": "Lancer",
     "rarity": "R",
     "element": "gale",
     "role": "Attacker",
@@ -4125,7 +4125,7 @@ export const GENERATED_CAST = [
     "favorite": "keepsake",
     "maxHp": 83,
     "atk": 17,
-    "quote": "Count the hits. I already did.",
+    "quote": "I will measure the hits, and I will land every one.",
     "blurb": "Amberis strikes with twin cuts. She keeps to the road and does the work in the open.",
     "cards": [
       {
@@ -4174,7 +4174,7 @@ export const GENERATED_CAST = [
     "id": "beck",
     "name": "Beckoran",
     "she": false,
-    "title": "Ult nuke",
+    "title": "Berserker",
     "rarity": "R",
     "element": "tide",
     "role": "Attacker",
@@ -4183,14 +4183,14 @@ export const GENERATED_CAST = [
     "favorite": "fanmail",
     "maxHp": 84,
     "atk": 15,
-    "quote": "One opening. Then I spend everything.",
+    "quote": "I will carry this to the end, and then I will use all of it.",
     "blurb": "Beckoran leads with an ult. He keeps to the road and does the work in the open.",
     "cards": [
       {
         "kind": "attack",
         "cost": 1,
         "id": "beck-open",
-        "name": "Beckoran Severing",
+        "name": "Beckoran Cleave",
         "ratio": 0.85
       },
       {

@@ -66,8 +66,11 @@ p { margin: 0; }
   height: 100dvh;
   max-height: 100dvh;
   overflow: hidden;
-  background-color: #1a120e;
-  background-image: none;
+  background-color: #e7b07a;
+  background-image: linear-gradient(180deg, #8ec6ef 0%, #d5e6f4 24%, #f6d7a2 54%, #e9b07a 82%, #c9845a 100%);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
   background-attachment: scroll;
 }
 .shell.is-fight main {
@@ -1551,55 +1554,60 @@ main {
   box-shadow: none;
   flex: none;
 }
-.skill-token { width: 64px; height: 64px; overflow: visible; }
-.skill-token.is-dim { animation: none; filter: none; opacity: 0.55; }
-.skill-token:not(.is-dim):not(.ult-token) {
-  animation: skill-glow 1.5s ease-in-out infinite;
+.skill-token.is-burning,
+.skill-token.is-burning:not(.is-dim):not(.ult-token) {
+  overflow: visible;
+  pointer-events: none;
+  opacity: 1;
+  animation: none;
+  filter: none;
+  background: transparent;
 }
-.skill-token:hover .skill-face,
-.skill-token:focus-visible .skill-face {
-  box-shadow: 0 0 0 2px #ffe56a, 0 0 12px rgba(255, 214, 90, 0.95);
-}
-.ult-token.is-ready:hover .ult-dial,
-.ult-token.is-ready:focus-visible .ult-dial {
-  box-shadow: 0 0 0 3px #ffe56a, 0 0 14px rgba(255, 214, 90, 0.95);
-  border-radius: 50%;
-}
-@keyframes skill-glow {
-  0%, 100% { filter: drop-shadow(0 0 3px rgba(150, 255, 214, 0.45)); }
-  50% { filter: drop-shadow(0 0 10px rgba(190, 255, 232, 0.95)); }
-}
-.skill-token.is-burning { overflow: visible; pointer-events: none; opacity: 1; animation: none; }
+.skill-token.is-burning .skill-art { background: transparent; border-color: transparent; }
 .skill-token.is-burning .skill-face {
   animation: paper-burn 420ms linear forwards;
+  background: transparent;
 }
 .skill-token.is-burning .skill-face::before {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
+  left: 10%;
+  right: 10%;
   height: 8px;
   bottom: 0;
   z-index: 4;
-  background: linear-gradient(to top, #1a0c08 0%, #ff7a1a 46%, #fff4c8 100%);
-  box-shadow: 0 -8px 12px rgba(255, 122, 26, 0.9);
+  border-radius: 99px;
+  background: linear-gradient(to top, rgba(26, 12, 8, 0), #ff7a1a 42%, rgba(255, 244, 200, 0));
   animation: char-rise 420ms linear forwards;
   pointer-events: none;
 }
 .skill-token.is-burning::after {
   content: "";
   position: absolute;
-  left: 8%;
-  right: 8%;
-  bottom: 6px;
-  height: 24px;
+  left: 50%;
+  bottom: 8px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(230, 230, 230, 0.75), rgba(80, 80, 80, 0) 72%);
-  filter: blur(1px);
+  background: radial-gradient(circle, rgba(236, 236, 236, 0.72) 0%, rgba(190, 190, 190, 0.22) 38%, rgba(190, 190, 190, 0) 68%);
   opacity: 0;
-  animation: smoke-up 480ms ease-out 160ms forwards;
+  animation: smoke-up 480ms ease-out 140ms forwards;
   pointer-events: none;
   z-index: 5;
+}
+@keyframes paper-burn {
+  0% { filter: none; opacity: 1; transform: translateY(0); }
+  30% { filter: sepia(0.4) saturate(1.4); opacity: 0.9; }
+  100% { filter: sepia(1) brightness(0.45); opacity: 0; transform: translateY(-8px); }
+}
+@keyframes char-rise {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-48px); opacity: 0; }
+}
+@keyframes smoke-up {
+  0% { opacity: 0; transform: translateX(-50%) translateY(6px) scale(0.55); }
+  28% { opacity: 0.7; }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-26px) scale(1.2); }
 }
 @keyframes paper-burn {
   0% { clip-path: inset(0 0 0 0 round 12px); filter: none; opacity: 1; }
@@ -1810,28 +1818,18 @@ main {
     grid-template-areas: "rail top" "rail main";
   }
   .topbar { grid-area: top; }
-  .rail {
-    order: 0;
-    grid-area: rail;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    flex-direction: column;
-    align-items: stretch;
-    border-top: 0;
-    border-right: 1px solid var(--line);
-    padding: 18px 12px;
-    background: transparent;
+  html, body, #root {
+    background-color: var(--bg);
   }
-  main { grid-area: main; width: min(1080px, 100%); justify-self: center; padding: 8px 28px 48px; }
-  .save-note { grid-column: 2; }
-}
-
-@media (max-width: 959px) {
   .shell {
-    height: 100dvh;
-    max-height: 100dvh;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    min-height: 0;
     overflow: hidden;
+    background-attachment: scroll;
   }
   main {
     min-height: 0;
@@ -2031,10 +2029,114 @@ main {
   max-width: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: auto 72px 112px auto;
+  grid-template-rows: auto 72px auto;
   align-content: end;
   justify-items: center;
   gap: 10px;
+  position: relative;
+  padding-left: 68px;
+}
+.ult-stack {
+  position: absolute;
+  left: 4px;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 52px;
+}
+.ult-chip {
+  display: grid;
+  gap: 3px;
+  width: 52px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.ult-plate {
+  display: block;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid #2c241b;
+  background: #f6ead7;
+}
+.ult-chip .skill-art {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.ult-chip .skill-art img,
+.ult-chip .skill-glyph {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+}
+.ult-gauge {
+  display: block;
+  height: 8px;
+  border-radius: 99px;
+  overflow: hidden;
+  background: rgba(26, 18, 12, 0.45);
+  border: 1px solid rgba(255, 250, 243, 0.5);
+}
+.ult-gauge i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #e08a3c, #ffd27a);
+  transition: width 0.35s linear;
+}
+.ult-chip.is-ready .ult-gauge i { background: #ffd27a; }
+.ult-chip.is-ready:hover .ult-plate,
+.ult-chip.is-ready:focus-visible .ult-plate {
+  box-shadow: 0 0 0 2px #ffe56a, 0 0 12px rgba(255, 214, 90, 0.95);
+}
+.ap-readout {
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  margin-top: 8px;
+}
+.ap-readout b {
+  font-family: Syne, sans-serif;
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1;
+  color: rgba(255, 250, 243, 0.45);
+}
+.ap-readout.is-live b {
+  color: #f4fffb;
+  animation: ap-pop 0.28s ease, ap-glow 1.6s ease-in-out 0.28s infinite;
+}
+@keyframes ap-pop {
+  from { transform: scale(1.18); }
+  to { transform: scale(1); }
+}
+@keyframes ap-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 6px rgba(170, 255, 230, 0.75),
+      0 0 16px rgba(70, 210, 180, 0.65),
+      0 1px 0 #1a120c;
+  }
+  50% {
+    text-shadow:
+      0 0 12px rgba(220, 255, 248, 1),
+      0 0 28px rgba(120, 255, 220, 0.95),
+      0 1px 0 #1a120c;
+  }
 }
 .skill-line, .ult-row, .tray-actions { min-width: 0; max-width: 100%; }
 .battle-buffs {
@@ -2047,7 +2149,22 @@ main {
   align-items: center;
 }
 .battle-buffs .pill { max-width: none; white-space: normal; line-height: 1.25; }
-.battle-stage { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+.battle-stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  container-type: size;
+  container-name: stage;
+  overflow: hidden;
+  border-radius: 0;
+  background: transparent;
+}
 .battle-stage > .foe-copy { width: min(440px, 100%); }
 .foe-figure .marks {
   position: absolute;
@@ -2141,9 +2258,9 @@ main {
 }
 .battle .foe.selected { box-shadow: none; }
 .battle .foe-hit {
-  --sprite: min(188px, 52cqi);
-  --sprite-h: calc(var(--sprite) * 1.18);
-  --mark: max(20px, calc(var(--sprite) * 0.16));
+  --sprite: min(72cqi, calc((100cqh - 64px) / 1.05));
+  --sprite-h: calc(var(--sprite) * 1.05);
+  --mark: max(20px, calc(var(--sprite) * 0.14));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2152,7 +2269,7 @@ main {
   width: max-content;
   max-width: 100%;
 }
-.foe-figure { position: relative; display: block; width: var(--sprite); height: var(--sprite-h); }
+.foe-figure { position: relative; display: block; width: var(--sprite); height: var(--sprite-h); flex: none; min-height: var(--sprite-h); }
 .foe-idle { position: relative; display: block; width: 100%; height: 100%; }
 .foe-idle .foe-art { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; visibility: hidden; }
 .foe-idle .foe-art.is-on { opacity: 1; visibility: visible; }
@@ -2167,14 +2284,16 @@ main {
   width: calc(var(--sprite) + 16px);
   max-width: calc(var(--sprite) + 16px);
   display: grid;
+  grid-template-rows: auto auto;
   gap: 4px;
   justify-items: stretch;
+  flex: none;
 }
 .foe-marks {
-  height: 26px;
-  min-height: 26px;
-  max-height: 26px;
-  overflow: hidden;
+  height: auto;
+  min-height: 28px;
+  max-height: none;
+  overflow: visible;
 }
 .foe-mini-hp {
   display: grid;
@@ -2191,13 +2310,13 @@ main {
 }
 .foe-mini .vbar { height: var(--mark); }
 .foe-mini .vbar span { font-size: 0.62rem; }
-.foe-mini .marks { position: static; transform: none; width: auto; justify-content: flex-start; }
+.foe-mini .marks { position: static; transform: none; width: auto; height: auto; min-height: 22px; flex-wrap: nowrap; align-items: center; justify-content: flex-start; overflow: visible; padding-bottom: 6px; }
 .battle .foes-2 .foe-hit {
-  --sprite: min(150px, calc((100cqi - 56px) / 2));
+  --sprite: min(calc((100cqi - 20px) / 2), calc((100cqh - 64px) / 1.05));
 }
 .battle .foes-3 .foe-hit,
 .battle .enemies:not(.foes-1):not(.foes-2) .foe-hit {
-  --sprite: min(120px, calc((100cqi - 72px) / 3));
+  --sprite: min(calc((100cqi - 28px) / 3), calc((100cqh - 64px) / 1.05));
 }
 .foe-figure .stun-badge { left: -4px; top: 4px; }
 .foe-name { display: flex; align-items: center; gap: 8px; }
@@ -2248,15 +2367,22 @@ main {
   z-index: 5;
 }
 .battle .enemies {
+  position: relative;
+  z-index: 1;
   container-type: inline-size;
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: flex-end;
+  flex: 1;
+  min-height: 0;
+  max-height: 100%;
   gap: 8px;
   width: 100%;
   max-width: 100%;
   overflow: hidden;
+  padding-bottom: 36px;
+  box-sizing: border-box;
 }
 .skill-gap { flex: none; width: 64px; height: 64px; }
 .battle .foe { flex: 0 1 auto; max-width: none; min-width: 0; width: auto; }
@@ -3114,9 +3240,12 @@ html.tips-off .icon-pop { display: none !important; }
   text-shadow: none;
 }
 .party-page .idol-tile h3,
+.party-page .idol-tile .card-title,
 .party-page .idol-tile .stars,
 .party-page .idol-tile .meet-line {
   width: 100%;
+  margin-left: 0;
+  margin-right: 0;
   text-align: center;
 }
 .party-page .idol-tile .stars { text-shadow: none; }
@@ -3756,10 +3885,21 @@ button.gift-use {
   background: #fff;
   border-radius: 16px;
 }
-.pull-card .portrait.is-plate {
+.pull-card > .portrait,
+.pull-card > .portrait.is-bust,
+.pull-card > .portrait.is-plate {
   width: 92px;
   height: 92px;
+  max-width: 100%;
+  justify-self: center;
+  overflow: hidden;
   background: #fff;
+}
+.pull-card.compact > .portrait,
+.pull-card.compact > .portrait.is-bust,
+.pull-card.compact > .portrait.is-plate {
+  width: 64px;
+  height: 80px;
 }
 .featured-art::after {
   content: "";
@@ -3839,9 +3979,12 @@ button.gift-use {
 .status-glyph {
   width: 22px;
   height: 22px;
+  display: block;
   image-rendering: pixelated;
   flex: none;
+  background: transparent;
 }
+img.status-glyph { filter: url(#knock-black); }
 .status-ico {
   position: relative;
   width: 22px;
@@ -4053,7 +4196,7 @@ button.gift-use {
     align-items: center;
     width: 100%;
     display: grid;
-    grid-template-rows: auto 64px 100px auto;
+    grid-template-rows: auto 64px auto;
     justify-content: center;
     justify-items: center;
     gap: 8px;
@@ -4100,6 +4243,110 @@ html:has(.shell.is-fight) body {
   .battle { gap: 4px; }
   .battle-tray { gap: 6px; }
   .ap-dial, .ult-dial { width: 68px; height: 68px; }
+  .skill-token, .skill-face, .skill-token .skill-art, .skill-gap { width: 56px; height: 56px; }
+  .hand.skill-row { height: 64px; }
+  .battle .foe-hit {
+    --sprite: min(64cqi, calc((100cqh - 56px) / 1.05));
+    --sprite-h: calc(var(--sprite) * 1.05);
+  }
+  .battle .foes-2 .foe-hit {
+    --sprite: min(calc((100cqi - 16px) / 2), calc((100cqh - 56px) / 1.05));
+  }
+  .battle .foes-3 .foe-hit,
+  .battle .enemies:not(.foes-1):not(.foes-2) .foe-hit {
+    --sprite: min(calc((100cqi - 24px) / 3), calc((100cqh - 56px) / 1.05));
+  }
+  .battle-vitals .vbar { height: 22px; }
+  .battle-buffs { height: auto; min-height: 22px; max-height: none; overflow: visible; }
+  .tray-actions .ghost, .tray-actions .primary { min-height: 44px; }
+}
+
+.sheet-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 720px) and (orientation: portrait) {
+  .shell { overflow: hidden; }
+  main { padding: 8px 12px calc(16px + env(safe-area-inset-bottom)); }
+  .wordmark { height: 44px; }
+  .topbar { padding: 8px 12px 4px; gap: 8px; }
+  .rail {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 2px;
+    padding: 4px 4px calc(4px + env(safe-area-inset-bottom));
+  }
+  .rail button { min-width: 0; min-height: 44px; padding: 4px 0; }
+  .rail button svg, .rail button img { width: 28px; height: 28px; }
+  .panel, .stage { padding: 14px 12px; }
+  .home .party-slots,
+  .party-page .party-slots { gap: 6px; }
+  .home .home-plate { width: min(100%, 96px); margin-bottom: 4px; }
+  .slot { min-height: 0; padding: 8px 4px; }
+  .home .hero-actions { gap: 6px; }
+  .home .hero-actions .ghost,
+  .home .hero-actions .primary { padding: 10px 6px; font-size: 0.82rem; min-height: 44px; }
+  .scene-photo { height: 108px; }
+  .rate-ups { gap: 6px; }
+  .rate-up { padding: 4px 2px; gap: 4px; }
+  .rate-up strong { font-size: 0.78rem; overflow-wrap: anywhere; }
+  .rate-up em { font-size: 0.68rem; overflow-wrap: anywhere; }
+  .call-row { gap: 8px; }
+  .call-row .primary,
+  .call-row .ghost { padding: 10px 8px; font-size: 0.82rem; }
+  .summon-card { padding: 14px 12px; }
+  .overlay.summon-veil {
+    place-items: start center;
+    align-content: start;
+    padding: 12px 12px calc(16px + env(safe-area-inset-bottom));
+  }
+  .summary, .reveal-stage, .charge { width: 100%; }
+  .summary-grid { grid-template-columns: 1fr; gap: 8px; }
+  .summary .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin: 0;
+  }
+  .summary .hero-actions .primary,
+  .summary .hero-actions .ghost { width: 100%; }
+  .pull-card, .pull-card.compact {
+    grid-template-columns: 64px minmax(0, 1fr);
+    min-width: 0;
+    padding: 8px;
+  }
+  .pull-card > .portrait,
+  .pull-card > .portrait.is-bust,
+  .pull-card > .portrait.is-plate,
+  .pull-card.compact > .portrait,
+  .pull-card.compact > .portrait.is-bust,
+  .pull-card.compact > .portrait.is-plate {
+    width: 64px;
+    height: 80px;
+    overflow: hidden;
+  }
+  .pull-card h3, .pull-card .card-title, .pull-card p { overflow-wrap: anywhere; }
+  .party-page .idol-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .filters { gap: 4px; }
+  .filters button { padding: 0 8px; }
+  .stat-board { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .gift-row { grid-template-columns: 1fr; }
+  .green-list button { min-width: 0; }
+  .battle-vitals { min-width: 0; width: 100%; }
+  .battle-vitals .vbar { width: 100%; }
+  .battle .foe-figure { margin-top: 8px; }
+  .battle-tray {
+    grid-template-rows: auto 60px auto;
+    gap: 6px;
+  }
+  .skill-token, .skill-face, .skill-token .skill-art, .skill-gap { width: 56px; height: 56px; }
+  .hand.skill-row { height: 60px; }
+  .ult-row { min-height: 96px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ap-dial, .ult-dial { width: 64px; height: 64px; }
+  .sheet { padding: 14px; }
   .skill-token, .skill-face, .skill-token .skill-art, .skill-gap { width: 56px; height: 56px; }
   .hand.skill-row { height: 64px; }
   .battle .foe-hit {

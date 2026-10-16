@@ -62,7 +62,7 @@ export const CHARACTERS = [
     favorite: "keepsake",
     maxHp: 96,
     atk: 16,
-    quote: "Come by after dark. I talk more easily then.",
+    quote: "Come by after dark, and I'll talk more easily then.",
     blurb: "She spoke for a temple until they asked her to lie. She left. She still answers people after dark.",
     cards: [
       attack({ id: "dead-air", name: "Umbral Cut", ratio: 1, shield: 8, poison: 2 }),
@@ -96,7 +96,7 @@ export const CHARACTERS = [
     favorite: "bouquet",
     maxHp: 84,
     atk: 21,
-    quote: "Keep your eyes on the fight. Don't look away.",
+    quote: "Keep your eyes on the fight, and don't look away.",
     blurb: "A duelist. He set a fire to save a village, and his brother died in it. He doesn't look away from a fight.",
     cards: [
       attack({ id: "spot", name: "Blaze", ratio: 1.3 }),
@@ -131,7 +131,7 @@ export const CHARACTERS = [
     favorite: "fanmail",
     maxHp: 90,
     atk: 15,
-    quote: "I already fixed the spell. It was wrong.",
+    quote: "I already fixed the spell, because it was wrong.",
     blurb: "She copied documents for a court and left with the one page they wanted burned. She corrects people when she cares.",
     cards: [
       attack({ id: "margin", name: "Gale Cut", ratio: 0.95 }),
@@ -165,7 +165,7 @@ export const CHARACTERS = [
     favorite: "keepsake",
     maxHp: 124,
     atk: 13,
-    quote: "Stand behind me. I'll take what comes.",
+    quote: "Stand behind me, and I'll take what comes.",
     blurb: "He guarded a house, then quit when they pointed him at the wrong man. He checks the doors before he checks on his people.",
     cards: [
       attack({ id: "downbeat", name: "Shield Bash", ratio: 0.85, shield: 8 }),
@@ -199,7 +199,7 @@ export const CHARACTERS = [
     favorite: "bouquet",
     maxHp: 104,
     atk: 14,
-    quote: "I meant it. You don't have to applaud.",
+    quote: "I meant it, so you don't have to applaud.",
     blurb: "A coastal court trained him to act kind for nobles. He left. The kindness he shows now is his, and he's clumsy with it.",
     cards: [
       attack({ id: "closeup", name: "Tide Lance", ratio: 1.05 }),
@@ -234,7 +234,7 @@ export const CHARACTERS = [
     favorite: "fanmail",
     maxHp: 86,
     atk: 16,
-    quote: "I can hit the high note. Watch.",
+    quote: "I can hit the high note, if you'll watch.",
     blurb: "She sang on the hills, where dropping a note early was an insult. She remembers how people sound.",
     cards: [
       attack({ id: "harmony", name: "Chorus Gale", ratio: 0.95, aoe: true, weaken: true }),
@@ -268,7 +268,7 @@ export const CHARACTERS = [
     favorite: "bouquet",
     maxHp: 80,
     atk: 18,
-    quote: "If it doesn't catch, it isn't done.",
+    quote: "If it doesn't catch, then it isn't done.",
     blurb: "His father blew glass. Marrec learned fire by standing too close. He pulls other people back and stays in it himself.",
     cards: [
       attack({ id: "spark", name: "Spark", ratio: 1.25 }),
@@ -303,7 +303,7 @@ export const CHARACTERS = [
     favorite: "fanmail",
     maxHp: 102,
     atk: 12,
-    quote: "Breathe. I'll take care of the rest.",
+    quote: "Breathe, and I'll take care of the rest.",
     blurb: "She grew up on a fishing boat. She notices when someone has stopped breathing right.",
     cards: [
       attack({ id: "undertow", name: "Undertow", ratio: 0.9, heal: 10 }),
@@ -337,7 +337,7 @@ export const CHARACTERS = [
     favorite: "keepsake",
     maxHp: 114,
     atk: 12,
-    quote: "Hold still. I need everyone where I can see them.",
+    quote: "Hold still, because I need everyone where I can see them.",
     blurb: "He ran a keep. It fell while he was counting stores. He still thinks a list can keep people alive.",
     cards: [
       skill({ id: "block", name: "Ward", shield: 18 , defUp: 2, res: 2}),
@@ -405,7 +405,7 @@ export const CHARACTERS = [
     favorite: "bouquet",
     maxHp: 88,
     atk: 15,
-    quote: "I practiced where Cael couldn't hear. Did it land?",
+    quote: "I practiced where Caelor couldn't hear, so tell me if it landed.",
     blurb: "He trains under Cael and won't call it that. He practices where Cael can't hear him.",
     cards: [
       attack({ id: "first-step", name: "First Flame", ratio: 1.15, shield: 6 }),
@@ -440,7 +440,7 @@ export const CHARACTERS = [
     favorite: "fanmail",
     maxHp: 78,
     atk: 11,
-    quote: "I labeled the bottles. Two of the labels are guesses.",
+    quote: "I labeled the bottles, though two of the labels are guesses.",
     blurb: "They told her she was only good for carrying water. She still carries it. She also hits harder than that job needs.",
     cards: [
       attack({ id: "cable", name: "Staff Tap", ratio: 1.05, weaken: true }),
@@ -474,7 +474,7 @@ export const CHARACTERS = [
     favorite: "keepsake",
     maxHp: 100,
     atk: 10,
-    quote: "The brace stays up. I'm staying with it.",
+    quote: "The brace stays up, and I'm staying with it.",
     blurb: "A mason. He braces things before they fall, then acts like the brace was always part of the wall.",
     cards: [
       skill({ id: "sandbag", name: "Stonewall", shield: 18 , defUp: 2, res: 2}),
@@ -509,7 +509,7 @@ export const CHARACTERS = [
     favorite: "bouquet",
     maxHp: 90,
     atk: 10,
-    quote: "Sit down. Your hands are shaking.",
+    quote: "Sit down, because your hands are shaking.",
     blurb: "She marched with sellswords as the one who made them sit down. She sees a shake in the hands before the owner does.",
     cards: [
       skill({ id: "rundown", name: "Sit", heal: 12, stress: -10 , crit: 2}),
@@ -579,7 +579,7 @@ export const CHARACTERS = [
     favorite: "bouquet",
     maxHp: 102,
     atk: 13,
-    quote: "Sit. That cut can wait until you breathe.",
+    quote: "Sit, because that cut can wait until you breathe.",
     blurb: "She keeps a hill clinic for travelers who won't go into town. She knows which plants are medicine and which are just stubborn.",
     cards: [
       attack({ id: "root-cut", name: "Thorn", ratio: 1.05, poison: 2 }),
@@ -613,7 +613,7 @@ export const CHARACTERS = [
     favorite: "fanmail",
     maxHp: 90,
     atk: 15,
-    quote: "If you can hear me, you waited too long.",
+    quote: "If you can hear me, then you waited too long.",
     blurb: "He walked the night road for a toll house that stopped paying him. He still walks it. The things in the dark got used to his lamp.",
     cards: [
       attack({ id: "quiet-step", name: "Quiet Step", ratio: 1.05, poison: 2 }),
@@ -648,7 +648,7 @@ export const CHARACTERS = [
     favorite: "keepsake",
     maxHp: 92,
     atk: 19,
-    quote: "The crossing has a price. I set it.",
+    quote: "The crossing has a price, and I set it.",
     blurb: "She runs the only ferry that still crosses after dark. She lost a boat, and the people on it, to a flood she had warned them about.",
     cards: [
       attack({ id: "keel", name: "Keel Cut", ratio: 1.2 }),
@@ -1034,8 +1034,6 @@ export function weaknessOf(element) {
   return Object.keys(ELEMENTS).find((key) => ELEMENTS[key].beats === element) || null;
 }
 
-const GROWTH_LINE = "Scales with level, stars, bond, and ascension";
-
 export const PARTY_BUFFS = {
   crit: 0.2,
   critDmg: 0.5,
@@ -1045,49 +1043,107 @@ export const PARTY_BUFFS = {
 };
 
 function turnPhrase(n) {
-  return `${n} turn${n === 1 ? "" : "s"}`;
+  return `for ${n} turn${n === 1 ? "" : "s"}`;
+}
+
+function joinAnd(parts) {
+  if (parts.length <= 1) return parts[0] || "";
+  if (parts.length === 2) return `${parts[0]} and ${parts[1]}`;
+  return `${parts.slice(0, -1).join(", ")}, and ${parts[parts.length - 1]}`;
+}
+
+const FINITE = {
+  decreasing: "decreases",
+  increasing: "increases",
+  inflicting: "inflicts",
+  stunning: "stuns",
+  putting: "puts",
+  branding: "brands",
+  attacking: "attacks",
+  granting: "grants",
+  healing: "heals",
+  drawing: "draws",
+  recovering: "recovers",
+  calling: "calls",
+  gaining: "gains",
+  consuming: "consumes",
+};
+
+function sentenceLead(phrase) {
+  const space = phrase.indexOf(" ");
+  const word = space === -1 ? phrase : phrase.slice(0, space);
+  const rest = space === -1 ? "" : phrase.slice(space);
+  const finite = FINITE[word] || word;
+  const line = finite + rest;
+  return line.charAt(0).toUpperCase() + line.slice(1);
 }
 
 export function describeCard(card) {
-  const bits = [];
-  if (card.ratio) {
-    const pct = Math.round(card.ratio * 100);
-    const times = card.hits > 1 ? `, ${card.hits} times` : "";
-    bits.push(card.aoe ? `Hit all foes for ${pct}% ATK${times}` : `Deal ${pct}% ATK${times}`);
-  }
-  if (card.shield) bits.push(`Gain block equal to ${card.shield}% of DEF`);
-  if (card.heal) bits.push(`Restore health equal to ${card.heal}% of HP`);
-  if (card.stress) {
-    const calm = card.stress < 0 ? `Calm ${-card.stress} stress` : `Add ${card.stress} stress`;
-    bits.push(`${calm}. ${GROWTH_LINE}`);
-  }
-  if (card.weaken) bits.push("Their next 2 attacks deal 70% damage");
-  if (card.vuln) bits.push("They take 30% more damage for their next 2 actions");
-  if (card.poison) bits.push(`Poison ${card.poison}: ${card.poison * 4} damage when their turn starts, then the stack falls by 1`);
-  if (card.stun) bits.push(card.stun > 1 ? `Stun for ${card.stun} actions` : "Stun: they skip their next action");
-  if (card.sleep) bits.push("Sleep: they skip their next action unless a hit lands");
-  if (card.draw) bits.push(`Draw ${card.draw}`);
-  if (card.brand) bits.push("Brand for 2 actions");
+  const many = Boolean(card.aoe);
+  const enemy = many ? "all enemies" : "the enemy";
+  const their = many ? "their" : "the enemy's";
+  const onHit = [];
+  if (card.weaken) onHit.push(`decreasing ${their} damage dealt to 70% for 2 turns`);
+  if (card.vuln) onHit.push(`increasing damage they take by 30% for 2 turns`);
+  if (card.poison) onHit.push(`inflicting ${card.poison} poison`);
+  if (card.stun) onHit.push(`stunning ${enemy} for ${card.stun > 1 ? card.stun : 1} turn${card.stun > 1 ? "s" : ""}`);
+  if (card.sleep) onHit.push(`putting ${enemy} to sleep until attacked`);
+  if (card.brand) onHit.push(`branding ${enemy} for 2 turns`);
+  if (card.shred) onHit.push(`decreasing ${their} Effect Resistance by ${Math.round(PARTY_BUFFS.shred * 100)}% for 2 turns`);
   if (card.follow) {
     const pct = card.follow === true ? 50 : Math.round(Number(card.follow) * 100);
-    bits.push(`Follow-up: if they are branded, hit again for ${pct}% ATK`);
+    onHit.push(`attacking again for ${pct}% of the caster's Attack when the enemy is branded`);
   }
+
+  const after = [];
+  if (card.shield) after.push(`granting all allies a barrier equal to ${card.shield}% of the caster's Defense`);
+  if (card.heal) after.push(`healing all allies for ${card.heal}% of max Health`);
+  if (typeof card.stress === "number") {
+    after.push(
+      card.stress < 0
+        ? `decreasing Stress of all allies by ${-card.stress}`
+        : `increasing Stress of all allies by ${card.stress}`,
+    );
+  }
+  if (card.might) after.push(`increasing damage dealt by all allies by 30% ${turnPhrase(card.might)}`);
+  if (card.crit) after.push(`increasing Critical Hit Chance of all allies by ${Math.round(PARTY_BUFFS.crit * 100)}% ${turnPhrase(card.crit)}`);
+  if (card.critDmg) after.push(`increasing Critical Hit Damage of all allies by ${Math.round(PARTY_BUFFS.critDmg * 100)}% ${turnPhrase(card.critDmg)}`);
+  if (card.defUp) after.push(`increasing Defense of all allies by ${Math.round(PARTY_BUFFS.def * 100)}% ${turnPhrase(card.defUp)}`);
+  if (card.res) after.push(`increasing Effect Resistance of all allies by ${Math.round(PARTY_BUFFS.res * 100)}% ${turnPhrase(card.res)}`);
+  if (card.draw) after.push(`drawing ${card.draw} ${card.draw === 1 ? "card" : "cards"}`);
+  if (card.again) after.push("recovering 1 AP");
+  if (card.charge) after.push(`increasing the ult gauge of all allies by ${card.charge}`);
+  if (card.assist) after.push("calling one ally to attack the same enemy for 50% of their Attack");
   if (card.kindle) {
     const n = card.kindle === true ? 1 : card.kindle;
-    bits.push(`Kindle ${n}: store ${n} ember${n === 1 ? "" : "s"}. Fan spends each ember for 20% ATK`);
+    after.push(`gaining ${n} Ember${n === 1 ? "" : "s"} for the party`);
   }
-  if (card.fan) bits.push("Fan: each stored ember hits for 20% ATK, then the embers are gone");
-  if (card.might) bits.push(`Might for ${card.might} turn${card.might === 1 ? "" : "s"}: the party deals 30% more damage`);
-  if (card.crit) bits.push(`Crit +${Math.round(PARTY_BUFFS.crit * 100)}% for ${turnPhrase(card.crit)}`);
-  if (card.critDmg) bits.push(`Crit damage +${Math.round(PARTY_BUFFS.critDmg * 100)}% for ${turnPhrase(card.critDmg)}`);
-  if (card.defUp) bits.push(`Defense +${Math.round(PARTY_BUFFS.def * 100)}% for ${turnPhrase(card.defUp)}`);
-  if (card.res) bits.push(`Resistance +${Math.round(PARTY_BUFFS.res * 100)}% for ${turnPhrase(card.res)}`);
-  if (card.shred) bits.push(`Their resistance falls by ${Math.round(PARTY_BUFFS.shred * 100)}% for 2 actions`);
-  if (card.assist) bits.push("An ally also strikes for 50% of their ATK");
-  if (card.again) bits.push(card.cost === 0 ? "Gain 1 AP" : "Refund 1 AP");
-  if (card.charge) bits.push(`Fill every ally's ult gauge by ${card.charge}`);
-  if (card.kind !== "ego" && card.once) bits.push("Once a fight");
-  return `${bits.join(". ")}.`;
+  if (card.fan) after.push("consuming the party's Embers, each dealing damage equal to 20% of the caster's Attack");
+
+  const sentences = [];
+  if (card.ratio) {
+    const pct = Math.round(card.ratio * 100);
+    let line = card.hits > 1
+      ? `Attacks ${enemy} ${card.hits} times, dealing damage equal to ${pct}% of the caster's Attack with each attack`
+      : `Attacks ${enemy}, dealing damage equal to ${pct}% of the caster's Attack`;
+    if (onHit.length) line += `, ${joinAnd(onHit)}`;
+    if (after.length) line += `, before ${joinAnd(after)}`;
+    sentences.push(line);
+  } else {
+    const lead = [...onHit, ...after];
+    if (lead.length) {
+      const [first, ...rest] = lead;
+      let line = sentenceLead(first);
+      if (rest.length) line += `, before ${joinAnd(rest)}`;
+      sentences.push(line);
+    }
+  }
+  if (card.poison) {
+    const tick = card.poison * 4;
+    sentences.push(`At the start of the turn, poison deals ${tick} damage and decreases by 1 stack`);
+  }
+  if (card.kind !== "ego" && card.once) sentences.push("Can only be used once per battle");
+  return `${sentences.join(". ")}.`;
 }
 
 export function freshSave() {

@@ -21,7 +21,7 @@ export const EXTRA_CAST = [
     favorite: "keepsake",
     maxHp: 128,
     atk: 14,
-    quote: "The road holds if someone stands on it.",
+    quote: "The road will hold if someone stands on it.",
     blurb: "He kept a mountain pass through one winter and would not leave the post when the house that hired him fell. He still counts the people who come back down.",
     cards: [
       attack({ id: "rowan-granite", name: "Granite", ratio: 0.9, shield: 10 }),
@@ -47,7 +47,7 @@ export const EXTRA_CAST = [
     favorite: "bouquet",
     maxHp: 102,
     atk: 13,
-    quote: "Drink first. Then tell me what hurts.",
+    quote: "Drink first, and then tell me what hurts.",
     blurb: "She kept a town well after the river turned bitter. She treats the wound before she asks who made it.",
     cards: [
       attack({ id: "selene-spring", name: "Spring", ratio: 0.7, heal: 8 }),
@@ -98,7 +98,7 @@ export const EXTRA_CAST = [
     favorite: "fanmail",
     maxHp: 86,
     atk: 18,
-    quote: "Step in. I'll meet you there.",
+    quote: "Step in, and I'll meet you there.",
     blurb: "She fought exhibition matches until a sponsor told her to lose. She won, and she has been on the road since.",
     cards: [
       attack({ id: "brynn-cross", name: "Crosswind", ratio: 1.2 }),
@@ -123,7 +123,7 @@ export const EXTRA_CAST = [
     favorite: "fanmail",
     maxHp: 92,
     atk: 15,
-    quote: "Fire is a tool. I keep the ledger.",
+    quote: "Fire is a tool, and I keep the ledger.",
     blurb: "He filed burn reports for a kiln town and started setting the controlled burns himself when the office would not. He writes down what the fire takes.",
     cards: [
       attack({ id: "harrow-spark", name: "Spark", ratio: 0.85, stress: 6 }),
@@ -148,7 +148,7 @@ export const EXTRA_CAST = [
     favorite: "bouquet",
     maxHp: 104,
     atk: 12,
-    quote: "Hold the lamp. I'll take the next one.",
+    quote: "Hold the lamp, and I'll take the next one.",
     blurb: "He carries lamps up the tower stairs for people who cannot. He learned the landings by counting, because the dark does not bother him and the people do.",
     cards: [
       attack({ id: "osric-tap", name: "Lantern Tap", ratio: 0.75, shield: 6 }),
@@ -174,7 +174,7 @@ export const EXTRA_CAST = [
     favorite: "bouquet",
     maxHp: 98,
     atk: 11,
-    quote: "Sit down. Bleeding can wait one breath, not two.",
+    quote: "Sit down, because bleeding can wait one breath and not two.",
     blurb: "She dressed wounds on a road crew and stayed when the crew moved on. She keeps the kit packed and the water hot.",
     cards: [
       attack({ id: "tessa-cauter", name: "Cauter", ratio: 0.65, heal: 6 }),
@@ -199,7 +199,7 @@ export const EXTRA_CAST = [
     favorite: "fanmail",
     maxHp: 84,
     atk: 16,
-    quote: "The current does half the work. I do the rest.",
+    quote: "The current does half the work, and I do the rest.",
     blurb: "He fishes the ford with a spear and fights the same way: one committed line, then he gets out of the water.",
     cards: [
       attack({ id: "nico-spear", name: "Spear", ratio: 1.25 }),
@@ -225,7 +225,7 @@ export const EXTRA_CAST = [
     favorite: "keepsake",
     maxHp: 90,
     atk: 12,
-    quote: "Look here. I'll hold the rest of the room.",
+    quote: "Look here, and I'll hold the rest of the room.",
     blurb: "She worked a theater's mirrors and learned which faces people trust. She uses that to get a frightened person through a door, and she tells them when she is doing it.",
     cards: [
       attack({ id: "adel-glass", name: "Glass", ratio: 0.7, shield: 4 }),

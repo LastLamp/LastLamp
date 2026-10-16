@@ -342,7 +342,7 @@ export function pull(state, count) {
   let pity = state.pity;
   let ten = state.ten;
   let guarantee = state.guarantee;
-  const roster = { ...state.roster };
+  const roster = withPartyOwned({ ...state.roster }, state.party);
   const gifts = { ...state.gifts };
   const cards = [];
   for (let i = 0; i < count; i++) {
@@ -613,22 +613,22 @@ function grantBuffs(battle, played, events) {
   if (played.crit) {
     battle.critUp = Math.max(battle.critUp || 0, played.crit);
     battle.critSrc = from;
-    notes.push(`${from}: crit chance +${Math.round(PARTY_BUFFS.crit * 100)}% for ${played.crit} turn${played.crit === 1 ? "" : "s"}`);
+    notes.push(`${from}: CRIT Rate +${Math.round(PARTY_BUFFS.crit * 100)}% for ${played.crit} turn${played.crit === 1 ? "" : "s"}`);
   }
   if (played.critDmg) {
     battle.critDmgUp = Math.max(battle.critDmgUp || 0, played.critDmg);
     battle.critDmgSrc = from;
-    notes.push(`${from}: crit damage +${Math.round(PARTY_BUFFS.critDmg * 100)}% for ${played.critDmg} turn${played.critDmg === 1 ? "" : "s"}`);
+    notes.push(`${from}: CRIT DMG +${Math.round(PARTY_BUFFS.critDmg * 100)}% for ${played.critDmg} turn${played.critDmg === 1 ? "" : "s"}`);
   }
   if (played.defUp) {
     battle.defUp = Math.max(battle.defUp || 0, played.defUp);
     battle.defSrc = from;
-    notes.push(`${from}: defense +${Math.round(PARTY_BUFFS.def * 100)}% for ${played.defUp} turn${played.defUp === 1 ? "" : "s"}`);
+    notes.push(`${from}: DEF +${Math.round(PARTY_BUFFS.def * 100)}% for ${played.defUp} turn${played.defUp === 1 ? "" : "s"}`);
   }
   if (played.res) {
     battle.resUp = Math.max(battle.resUp || 0, played.res);
     battle.resSrc = from;
-    notes.push(`${from}: resistance +${Math.round(PARTY_BUFFS.res * 100)}% for ${played.res} turn${played.res === 1 ? "" : "s"}`);
+    notes.push(`${from}: Resistance +${Math.round(PARTY_BUFFS.res * 100)}% for ${played.res} turn${played.res === 1 ? "" : "s"}`);
   }
   for (const note of notes) {
     events.push({ text: note, tone: "good" });
@@ -1713,20 +1713,30 @@ function livingParty(party, roster) {
   return slots.some(Boolean) ? slots : freshSave().party;
 }
 
+function withPartyOwned(roster, party) {
+  const next = { ...roster };
+  for (const id of party || []) {
+    if (!id || next[id] || !character(id)) continue;
+    next[id] = { copies: 1, rooms: 0, bond: 0, level: 1, xp: 0, skills: {} };
+  }
+  return next;
+}
+
 export function loadSave() {
   try {
     const raw = localStorage.getItem(SAVE_KEY);
     if (!raw) return freshSave();
     const parsed = JSON.parse(raw);
     const base = freshSave();
-    const roster = livingRoster(parsed.roster ?? base.roster);
+    const party = livingParty(parsed.party, livingRoster(parsed.roster ?? base.roster));
+    const roster = withPartyOwned(livingRoster(parsed.roster ?? base.roster), party);
     const errand = parsed.errand?.jobs?.every((job) => character(job?.id)) ? parsed.errand : null;
     return applyWeek({
       ...base,
       ...parsed,
       roster,
       gifts: { ...base.gifts, ...(parsed.gifts ?? {}) },
-      party: livingParty(parsed.party, roster),
+      party,
       errand,
       history: parsed.history ?? [],
       clears: repairStoryClears(parsed.clears ?? {}),

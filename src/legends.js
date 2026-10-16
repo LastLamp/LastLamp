@@ -23,7 +23,7 @@ export const LEGENDS = [
     favorite: "keepsake",
     maxHp: 132,
     atk: 28,
-    quote: "I keep the last light. Spend it when the road closes.",
+    quote: "I keep the last light, and I'll spend it when the road closes.",
     blurb: "Solenya carried a lamp through a fire that should have taken the mile. The flame answered her, and it still does.",
     cards: [
       attack({ id: "solenne-cut", name: "Lamp Cut", ratio: 1.2 }),
@@ -49,7 +49,7 @@ export const LEGENDS = [
     favorite: "fanmail",
     maxHp: 176,
     atk: 18,
-    quote: "Stand behind me. The hit can have my shield.",
+    quote: "Stand behind me, and the hit can have my shield.",
     blurb: "Harreth held a bridge until the stone remembered his name. He still plants his feet the same way.",
     cards: [
       attack({ id: "harren-bastion", name: "Bastion", ratio: 0.7, shield: 30 }),
@@ -76,7 +76,7 @@ export const LEGENDS = [
     favorite: "bouquet",
     maxHp: 148,
     atk: 20,
-    quote: "Drink. Then hit harder than you did.",
+    quote: "Drink, and then hit harder than you did.",
     blurb: "Ilythra keeps a well that should have gone dry. People leave stronger than they arrived.",
     cards: [
       attack({ id: "ilyra-step", name: "Tide Step", ratio: 0.75, heal: 16 }),
@@ -102,7 +102,7 @@ export const LEGENDS = [
     favorite: "fanmail",
     maxHp: 136,
     atk: 24,
-    quote: "They do not get the next step.",
+    quote: "They will not get the next step.",
     blurb: "Maelor cuts the wind out of a charge. Armies arrive late when he is on the road.",
     cards: [
       attack({ id: "mael-shear", name: "Shear", ratio: 1.05, vuln: true }),
@@ -129,7 +129,7 @@ export const LEGENDS = [
     favorite: "keepsake",
     maxHp: 140,
     atk: 22,
-    quote: "Again. I am not finished with you.",
+    quote: "I am not finished with you, so we go again.",
     blurb: "Seraphel sends them in again. The people beside her swing twice, and the gauge climbs while they do.",
     cards: [
       attack({ id: "seraphine-call", name: "Call", ratio: 0.9, assist: true }),
@@ -147,7 +147,7 @@ export const LEGENDS = [
 export const LEGEND_PASSIVES = {
   solenne: {
     name: "Last Light",
-    line: "At 3 stars, Sunfall brands its target. A basic attack against a branded foe strikes again for 40% ATK.",
+    line: "At 3 stars, Sunfall inflicts Brand. A basic attack against a Branded enemy strikes again for 40% ATK.",
     ultBrand: true,
     followBrand: 0.4,
   },

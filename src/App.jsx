@@ -11,6 +11,7 @@ import {
   advantage,
   character,
   pool,
+  freshSave,
   weeklyBanners,
   weaknessOf,
 } from "./data.js";
@@ -281,9 +282,13 @@ export default function App() {
           setSparks((list) => [...list, { id, x: event.clientX, y: event.clientY }].slice(-12));
           window.setTimeout(() => setSparks((list) => list.filter((spark) => spark.id !== id)), 480);
         }}
-        style={stageId
-          ? { "--scene": `url(${sceneArt(resolveStage(save, stageId))})` }
-          : { backgroundImage: `url(${import.meta.env.BASE_URL}backdrops/${PAGE_SCENES[screen] || "road"}.jpg)` }}
+        style={
+          stageId
+            ? { backgroundImage: skyGradient(resolveStage(save, stageId)) }
+            : {
+                backgroundImage: `url("${import.meta.env.BASE_URL}backdrops/${PAGE_SCENES[screen] || "road"}.jpg")`,
+              }
+        }
       >
         {!stageId && <header className="topbar">
           <button className="brand" aria-label="Last Lamp" onClick={() => go("home")}>
@@ -458,6 +463,7 @@ function Settings({ onClose, onRetreat }) {
             <p className="icon-line"><RoleMark role="Guardian" /> Guardian</p>
             <p className="icon-line"><RoleMark role="Controller" /> Controller</p>
             <p className="icon-line"><RoleMark role="Healer" /> Healer</p>
+            <p>The line under a name is their class. Berserker spends the ult on one huge hit. Assassin marks a foe, then hits them again. Lancer hits several times. Archer calls an ally into the attack. Rider refunds an action. Ruler raises the party's damage. Soldier blocks for the party. Caster inflicts Poison, Stun, or Exposed. Cleric restores HP and lowers Stress.</p>
             <p>Fire beats wind. Wind beats water. Water beats fire. Earth beats shadow, and shadow beats earth. A weakness hurts more. Hitting into a strong element hurts less.</p>
             <p>The party shares one health bar, the sum of the three health totals. An enemy hits that bar, not one person. The hit is weighed against the sum of their defense. A block or a heal still uses only the caster's own defense or health. You pick which enemy a single-target card hits.</p>
             <p>When an enemy tries to stick a debuff, each person rolls their own resistance. If any of them shrugs it off, it does not land, and that name is called out. A critical hit is called out the same way. There is always a small chance to resist.</p>
@@ -490,7 +496,7 @@ function Settings({ onClose, onRetreat }) {
           <div className="guide">
             <div className="icon-line"><Purse kind="xp" /> Experience comes from fights and drills. Levels stop at 20, then 40, then 60, then 80. Ascending is what lifts that cap.</div>
             <div className="icon-line"><Purse kind="note" /> Notes raise a skill, including ults. They come from the Notes road. Rank up costs as many notes as the rank it is now, from 1 through 5.</div>
-            <div className="icon-line"><Purse kind="bond" /> Bond points fill from gifts. At {BOND_NEED}, the next story opens and their health, attack, and defense go up. <Purse kind="story" /> The book is how many stories you have opened, out of 3.</div>
+            <div className="icon-line"><Purse kind="bond" /> Bond points fill from gifts. At {BOND_NEED}, the next bond rank opens and their health, attack, and defense go up. <Purse kind="story" /> The book is the bond rank, out of 3.</div>
             <div className="icon-line"><Purse kind="shard" /> Shards come from the Shards road. <Purse kind="ascend" /> Ascending spends shards and marks. Each step adds 15% health, attack, and defense and raises the level cap. There are three steps.</div>
             <div className="icon-line"><Purse kind="keepsake" /> A relic is the best gift. One comes from a duplicate SSR that is already at 5 stars. Stages do not drop relics.</div>
             <p>There are five drills. Beat one and the next opens. You can run a finished drill again. Marks and experience stay the same. The first clear also pays the extra gift.</p>
@@ -518,6 +524,38 @@ function Settings({ onClose, onRetreat }) {
 
 const DRILL_SCENES = { 1: "drill-1", 2: "drill-2", 3: "drill-3", 4: "drill-4", 5: "drill-5" };
 
+const SKIES = [
+  ["#8ec6ef", "#d7e8f6", "#f6d7a2", "#e9b07a"],
+  ["#f2b7c4", "#f8d8b4", "#f6e3a4", "#e8c07a"],
+  ["#6f93d6", "#c4b4de", "#f0c4a4", "#e08a72"],
+  ["#5ea8c8", "#b7dde4", "#dcecc8", "#c8c498"],
+  ["#e8a56c", "#f6d09a", "#f8e6b4", "#d4926a"],
+  ["#8aa4b8", "#d0d8de", "#ead8c0", "#c4b09a"],
+  ["#7dbe9a", "#d4ecc4", "#f4e6b8", "#e0c090"],
+  ["#5c6eaa", "#a898c8", "#e8c0b0", "#d49878"],
+  ["#f0c878", "#f8e4b0", "#d4e4f4", "#9ec0dc"],
+  ["#c8b49a", "#e8dcc8", "#f4ead4", "#d4c0a4"],
+  ["#4e88b0", "#9ec8d8", "#d8e6d0", "#c8b888"],
+  ["#d48a9a", "#f0c4b0", "#f6deb0", "#e0b080"],
+];
+
+function skyKey(stage) {
+  if (!stage) return "road";
+  if (stage.daily) return `drill-${stage.tier}`;
+  if (stage.chapterId) return stage.chapterId;
+  if (stage.number) return `tower-${Math.ceil(stage.number / 10)}`;
+  return stage.id || "road";
+}
+
+function skyGradient(stage) {
+  let hash = 0;
+  const key = skyKey(stage);
+  for (let i = 0; i < key.length; i += 1) hash = (hash * 33 + key.charCodeAt(i)) >>> 0;
+  const stops = SKIES[hash % SKIES.length];
+  const step = 100 / (stops.length - 1);
+  return `linear-gradient(180deg, ${stops.map((color, i) => `${color} ${Math.round(i * step)}%`).join(", ")})`;
+}
+
 const STAGE_ART = Object.values(STAGE_SCENES);
 
 function sceneArt(stage) {
@@ -526,7 +564,7 @@ function sceneArt(stage) {
     : stage?.number
       ? STAGE_ART[(Math.ceil(stage.number / 10) - 1) % STAGE_ART.length] || "road"
       : STAGE_SCENES[stage?.chapterId || stage?.id] || "road";
-  return `${import.meta.env.BASE_URL}backdrops/${name}.jpg`;
+  return `${import.meta.env.BASE_URL}backdrops/${name}.jpg?v=3`;
 }
 
 function SceneFace({ stage }) {
@@ -558,6 +596,7 @@ function KitSheet({ id, save, onClose }) {
               <ElementMark element={kit.element} />
             </p>
             <h2>{kit.name}</h2>
+            <p className="card-title">{kit.title}</p>
             <p className="kit-blurb">{kit.blurb}</p>
             <p className="kit-statline">
               <span>Lv {owned ? owned.level || 1 : "–"}</span>
@@ -732,7 +771,7 @@ function Home() {
           <li>Summon costs 160 marks. The rates are on that screen.</li>
           <li>A fight needs at least one person and one shared health bar. Block if a hit is coming.</li>
           <li>Jobs take time. Collect them when people get back. A matching element pays more.</li>
-          <li>Camp gifts open the next story and raise health, attack, and defense.</li>
+          <li>Camp gifts raise bond. A full bond rank raises health, attack, and defense.</li>
           <li>Drills stay open. Marks and experience stay the same when you run one again.</li>
         </ol>
         <p>Marks only come from playing.</p>
@@ -794,8 +833,20 @@ function Home() {
           <article className="sheet" role="dialog" aria-modal="true" onClick={(event) => event.stopPropagation()}>
             <h2>Erase this save?</h2>
             <p>This deletes the party, marks, summons, and story on this browser. You cannot get them back from here.</p>
-            <div className="hero-actions">
-              <button className="primary" onClick={() => dispatch({ type: "RESET" })}>
+            <div className="hero-actions sheet-actions">
+              <button
+                className="primary"
+                type="button"
+                onClick={() => {
+                  const next = freshSave();
+                  writeSave(next);
+                  writeBattle(null);
+                  clearLinkHash();
+                  dispatch({ type: "REPLACE", state: next });
+                  setAskReset(false);
+                  setStageId(null);
+                }}
+              >
                 Erase it
               </button>
               <button className="ghost" onClick={() => setAskReset(false)}>
@@ -896,13 +947,33 @@ function CallScreen() {
   }, []);
 
   useEffect(() => {
-    if (mode !== "charge") return undefined;
-    const t = setTimeout(() => {
+    const cards = save.reveal?.cards;
+    if (!cards?.length) return undefined;
+    for (const pull of cards) {
+      const img = new Image();
+      img.src = `${import.meta.env.BASE_URL}portraits/${pull.id}.jpg`;
+      img.decode?.().catch(() => {});
+    }
+    return undefined;
+  }, [save.reveal]);
+
+  useEffect(() => {
+    if (mode !== "charge" || !save.reveal?.cards?.length) return undefined;
+    let cancel = false;
+    const first = save.reveal.cards[0];
+    const img = new Image();
+    img.src = `${import.meta.env.BASE_URL}portraits/${first.id}.jpg`;
+    const decoded = img.decode?.().catch(() => {}) ?? Promise.resolve();
+    const min = new Promise((resolve) => window.setTimeout(resolve, 740));
+    Promise.all([decoded, min]).then(() => {
+      if (cancel) return;
       setIndex(0);
       setMode("card");
-    }, 740);
-    return () => clearTimeout(t);
-  }, [mode]);
+    });
+    return () => {
+      cancel = true;
+    };
+  }, [mode, save.reveal]);
 
   useEffect(() => {
     if (mode !== "card" || !save.reveal) return undefined;
@@ -1002,10 +1073,6 @@ function CallScreen() {
 function Reveal({ save, mode, index, shock, onAdvance, onSkip, onClose, onAgain }) {
   const cards = save.reveal.cards;
   const current = cards[index];
-  const newSsr = cards.some((card) => card.rarity === "SSR" && card.isNew);
-  const anySsr = cards.some((card) => card.rarity === "SSR");
-  const anySr = cards.some((card) => card.rarity === "SR");
-  const headline = newSsr ? "Someone new." : anySsr ? "You've met them before." : anySr ? "A strong one." : "Mostly common.";
 
   return (
     <div
@@ -1054,7 +1121,6 @@ function Reveal({ save, mode, index, shock, onAdvance, onSkip, onClose, onAgain 
       {mode === "summary" && (
         <div className="summary">
           <p className="kicker">{cards.length === 1 ? "One summon" : "Ten summons"}</p>
-          <h2>{headline}</h2>
           <div className="summary-grid">
             {cards.map((pull, i) => (
               <PullCard key={`${pull.id}-${i}`} pull={pull} compact />
@@ -1199,6 +1265,7 @@ function Lineup() {
               </p>
               <div className="select-foot">
                 <h3>{c.name}</h3>
+                <p className="card-title">{c.title}</p>
                 {owned ? <Stars copies={owned.copies} /> : <p className="meet-line">Not recruited.</p>}
                 <div className="tile-actions">
                   <button className="ghost" onClick={() => setKitId(c.id)}>
@@ -1287,7 +1354,7 @@ function CountStep({ value, max, onChange, lessLabel, moreLabel }) {
   );
 }
 
-function BondPop({ who, giftName, from, gain, roomsBefore, sound, stories, held, canAgain, batch, onLevel, onRead, onDismiss, onAgain }) {
+function BondPop({ who, giftName, from, gain, roomsBefore, sound, held, canAgain, batch, onLevel, onDismiss, onAgain }) {
   const [shown, setShown] = useState(from);
   const [rooms, setRooms] = useState(roomsBefore);
   const [burst, setBurst] = useState(0);
@@ -1400,7 +1467,6 @@ function BondPop({ who, giftName, from, gain, roomsBefore, sound, stories, held,
           <p className={burst ? "bond-rooms is-pop" : "bond-rooms"}>
             <Purse kind="story" />
             <b>{rooms}/3</b>
-            <span>stories</span>
           </p>
           {line && <p className="camp-cheer" role="status">{line}</p>}
         </div>
@@ -1419,8 +1485,8 @@ function BondPop({ who, giftName, from, gain, roomsBefore, sound, stories, held,
               />
             </div>
           )}
-          <button className="primary" type="button" onClick={stories ? onRead : onDismiss}>
-            {stories ? "Read the story" : "Close"}
+          <button className="primary" type="button" onClick={onDismiss}>
+            Close
           </button>
         </div>
       </article>
@@ -1433,7 +1499,6 @@ function GreenRoom() {
   const { save, dispatch, setGoal, setHuntOpen } = useGame();
   const ownedIds = CHARACTERS.filter((c) => save.roster[c.id]).map((c) => c.id);
   const [selected, setSelected] = useState(ownedIds[0] ?? null);
-  const [queue, setQueue] = useState([]);
   const [rise, setRise] = useState(false);
   const [bloom, setBloom] = useState(false);
   const [bondPop, setBondPop] = useState(null);
@@ -1459,16 +1524,6 @@ function GreenRoom() {
       setRise(false);
     }, 2400);
   }
-
-  useEffect(() => {
-    const storyIndex = queue[0];
-    if (storyIndex == null) return undefined;
-    if (!save.sound || sungStory.current.has(storyIndex)) return undefined;
-    sungStory.current.add(storyIndex);
-    if (storyIndex === 2) playBondMax();
-    else playBond();
-    return undefined;
-  }, [queue, save.sound]);
 
   function train(cardId) {
     const cost = skillCost(skillRank(owned, cardId));
@@ -1515,8 +1570,6 @@ function GreenRoom() {
   }
 
   const stats = unitStats(current, owned);
-  const scene = queue.length ? current.rooms[queue[0]] : null;
-
   return (
     <section className="green relative isolate">
       <div className="camp-picker">
@@ -1562,6 +1615,7 @@ function GreenRoom() {
           <ElementMark element={current.element} />
         </p>
         <h1>{current.name}</h1>
+        <p className="card-title">{current.title}</p>
         <p className="lede kit-blurb">{current.quote}</p>
         <div className="stat-board">
           <div>
@@ -1612,7 +1666,7 @@ function GreenRoom() {
           <Tip label="i" wide>
             <span>Stars come from extra copies: 1, then 4, 9, 16, and 25. Three stars open the passive. Five stars is full. A copy after that is a relic for an SSR, wildflowers for an SR, and a road letter for an R.</span>
             <span>Ascension is paid here with marks and shards, and only once you are at the level cap. The steps raise the cap from 20 to 40, then 60, then 80. There are three steps.</span>
-            <span>Each bond story adds {BOND_STORY_PCT}% health, attack, and defense. Three stories is the full bond. Bond points fill to {BOND_NEED}. At {BOND_NEED}, the next story opens and that bonus is added.</span>
+            <span>Each bond rank adds {BOND_STORY_PCT}% health, attack, and defense. Three ranks is the full bond. Bond points fill to {BOND_NEED}. At {BOND_NEED}, the next rank opens and that bonus is added.</span>
           </Tip>
           Stars, ascension, and bond
         </p>
@@ -1725,20 +1779,6 @@ function GreenRoom() {
             })}
           </div>
         )}
-        <div className="scenes">
-          {current.rooms.map((room, i) => (
-            <article key={room.title} className={i < owned.rooms ? "scene" : "scene dimmed"}>
-              {i < owned.rooms ? (
-                <>
-                  <h3>{room.title}</h3>
-                  <p>{room.body}</p>
-                </>
-              ) : (
-                <p>Not open yet.</p>
-              )}
-            </article>
-          ))}
-        </div>
         </article>
       </div>
       {bondPop && (
@@ -1749,7 +1789,6 @@ function GreenRoom() {
           gain={bondPop.gain}
           roomsBefore={bondPop.roomsBefore}
           sound={save.sound}
-          stories={bondPop.unlocked.length > 0}
           held={save.gifts[bondPop.giftId] || 0}
           canAgain={(save.gifts[bondPop.giftId] || 0) > 0 && (owned.rooms || 0) < 3}
           batch={bondPop.batch || 1}
@@ -1761,34 +1800,8 @@ function GreenRoom() {
             else playBond();
           }}
           onAgain={(count) => offer(bondPop.giftId, count)}
-          onRead={() => {
-            const unlocked = bondPop.unlocked;
-            setBondPop(null);
-            if (unlocked.length) setQueue(unlocked);
-          }}
           onDismiss={() => setBondPop(null)}
         />
-      )}
-      {scene && (
-        <div className="overlay">
-          <article className={`scene-modal${queue[0] === 2 ? " is-complete" : ""}`}>
-            <BondBurst element={current.element} big={queue[0] === 2} />
-            <div className="story-plate">
-              <Portrait c={current} owned bust />
-            </div>
-            <p className="kicker">
-              {queue[0] === 2 ? "Bond complete." : `Story ${queue[0] + 1}. Attack, health, and defense go up.`}
-            </p>
-            <h2>{scene.title}</h2>
-            <p>{scene.body}</p>
-            <button
-              className="primary"
-              onClick={() => setQueue((q) => q.slice(1))}
-            >
-              {queue.length > 1 ? "Next room" : "Stay awhile"}
-            </button>
-          </article>
-        </div>
       )}
     </section>
   );
@@ -2408,57 +2421,10 @@ function ResultSweep({ stageId, save, dispatch }) {
   return <SweepBox stageId={stageId} save={save} dispatch={dispatch} />;
 }
 
-function ApDial({ ap }) {
-  const radius = 15.5;
-  const circ = 2 * Math.PI * radius;
-  const sweep = 84;
-  const dash = circ * (sweep / 360);
+function ApReadout({ ap }) {
   return (
-    <div className={`ap-dial${ap >= 3 ? " is-full" : ""}`} aria-label={`${ap} of 3 AP`}>
-      <svg viewBox="0 0 44 44" aria-hidden="true">
-        {[0, 1, 2].map((step) => (
-          <circle
-            key={step}
-            cx="22"
-            cy="22"
-            r={radius}
-            className={ap > step ? "seg on" : "seg"}
-            strokeDasharray={`${dash} ${circ - dash}`}
-            strokeLinecap="round"
-            transform={`rotate(${-90 + step * 120 + 18} 22 22)`}
-          />
-        ))}
-      </svg>
-      <span className="dial-core">
-        <img className="ap-soul" src={`${import.meta.env.BASE_URL}icons/ap.png`} alt="" />
-        <b>{ap}</b>
-      </span>
-    </div>
-  );
-}
-
-function UltDial({ value, max, label, children }) {
-  const p = Math.max(0, Math.min(1, max > 0 ? value / max : 0));
-  const radius = 15.5;
-  const circ = 2 * Math.PI * radius;
-  const ready = p >= 0.999;
-  return (
-    <div className={`ult-dial${ready ? " is-full" : ""}`} aria-label={label}>
-      <svg viewBox="0 0 44 44" aria-hidden="true">
-        <circle className="track" cx="22" cy="22" r={radius} />
-        {p > 0 && (
-          <circle
-            className="fill"
-            cx="22"
-            cy="22"
-            r={radius}
-            strokeLinecap={ready ? "butt" : "round"}
-            strokeDasharray={`${ready ? circ : circ * p} ${circ}`}
-            transform="rotate(-90 22 22)"
-          />
-        )}
-      </svg>
-      <span className="dial-face">{children}</span>
+    <div className={`ap-readout${ap > 0 ? " is-live" : ""}`} aria-label={`${ap} AP`}>
+      <b key={ap}>{ap}</b>
     </div>
   );
 }
@@ -2494,7 +2460,7 @@ function CastLayer({ fx }) {
   );
 }
 
-function SkillToken({ playable, onPlay, onRead, onLocked, children, className = "" }) {
+function SkillToken({ playable, onPlay, onRead, onLocked, children, className = "", label }) {
   const timer = useRef(0);
   const held = useRef(false);
   function arm() {
@@ -2511,6 +2477,7 @@ function SkillToken({ playable, onPlay, onRead, onLocked, children, className = 
   return (
     <button
       className={className}
+      aria-label={label}
       onPointerDown={arm}
       onPointerUp={disarm}
       onPointerCancel={disarm}
@@ -2665,15 +2632,25 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
     };
   }, [showResult, battle.result, save.sound]);
 
+  const saveNow = useRef(save);
+  saveNow.current = save;
+  const hunted = useRef(null);
+  const toldStock = useRef(false);
+  if (!battle?.result) {
+    hunted.current = goal;
+    toldStock.current = false;
+  }
   useEffect(() => {
-    if (battle?.result !== "win" || !goal) return;
-    const have = stockOf(save, goal.kind);
-    if (have >= goal.need) {
-      setStocked({ ...goal, have });
-      setGoal(null);
-      setHuntOpen(false);
-    }
-  }, [battle?.result, goal, save, setGoal, setHuntOpen, setStocked]);
+    if (battle?.result !== "win" || toldStock.current) return;
+    toldStock.current = true;
+    const wanted = hunted.current;
+    if (!wanted) return;
+    const have = stockOf(saveNow.current, wanted.kind);
+    if (have < wanted.need) return;
+    setStocked({ ...wanted, have });
+    setGoal(null);
+    setHuntOpen(false);
+  }, [battle?.result, setGoal, setHuntOpen, setStocked]);
 
   function leave() {
     window.clearTimeout(ultTimer.current);
@@ -2782,7 +2759,6 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
     const preview = playCard(battle, handIndex, aim);
     if (preview.error) return false;
     if (targetOverride != null) setTarget(aim);
-    setDealt(0);
     remember();
     if (card) {
       setAsh({ uid: card.uid, card, index: handIndex });
@@ -2836,7 +2812,6 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
     const ego = owner?.cards.find((card) => card.kind === "ego");
     if (!owner || !ego) return false;
     ultLock.current = true;
-    setDealt(0);
     const slot = battle.party.findIndex((member) => member.id === memberId);
     setUltShow({
       id: memberId,
@@ -2951,13 +2926,6 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
         </div>
       </div>
 
-      {!save.sawTip && (
-        <p className="tip">
-          Hits that get through raise stress. At 100, the next turn is a mess. Block fades after they swing.
-          <button onClick={() => dispatch({ type: "SAW_TIP" })}>Got it</button>
-        </p>
-      )}
-
       <div className="battle-stage">
         <div className={`enemies foes-${battle.enemies.length}`}>
           {battle.enemies.map((enemy, i) => {
@@ -3028,7 +2996,39 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
       </div>
 
       <div className="battle-tray">
-        <ApDial ap={battle.ap} />
+      <div className="ult-stack">
+        {battle.party.map((member) => {
+          const ego = member.cards.find((card) => card.kind === "ego");
+          if (!ego) return null;
+          const cap = member.ultMax || 100;
+          const energy = battle.energy?.[member.id] || 0;
+          const ready = energy >= cap && !battle.breakdown && !battle.result;
+          const pct = Math.max(0, Math.min(100, cap > 0 ? (energy / cap) * 100 : 0));
+          return (
+            <SkillToken
+              key={member.id}
+              className={`ult-chip${ready ? " is-ready" : ""}`}
+              label={`${member.name}, ult ${energy} of ${cap}`}
+              playable={ready}
+              onPlay={() => beginUlt(member.id)}
+              onLocked={() => {
+                setUltWait(true);
+                window.clearTimeout(ultWaitTimer.current);
+                ultWaitTimer.current = window.setTimeout(() => setUltWait(false), 1100);
+              }}
+              onRead={() => setCardRead({ card: { ...ego, ownerName: member.name, cost: 0, element: member.element }, preview: null, adv: 0, ult: true, energy, cap })}
+            >
+              <span className="ult-plate">
+                <SkillArt card={{ ...ego, element: member.element }} />
+              </span>
+              <span className="ult-gauge" aria-hidden="true">
+                <i style={{ width: `${pct}%` }} />
+              </span>
+            </SkillToken>
+          );
+        })}
+      </div>
+        <ApReadout ap={battle.ap} />
         <div className="skill-line">
         <div className="hand skill-row">
           {laidHand.map((card) => {
@@ -3060,36 +3060,6 @@ function Battle({ stageId, onExit, paused = false, onSettings, onBindLeave }) {
             );
           })}
         </div>
-        </div>
-        <div className="ult-row">
-          {battle.party.map((member) => {
-            const ego = member.cards.find((card) => card.kind === "ego");
-            if (!ego) return null;
-            const cap = member.ultMax || 100;
-            const energy = battle.energy?.[member.id] || 0;
-            const ready = energy >= cap && !battle.breakdown && !battle.result;
-            return (
-              <SkillToken
-                key={member.id}
-                className={`ult-token${ready ? " is-ready" : " is-wait"}`}
-                playable={ready}
-                onPlay={() => beginUlt(member.id)}
-                onLocked={() => {
-                  setUltWait(true);
-                  window.clearTimeout(ultWaitTimer.current);
-                  ultWaitTimer.current = window.setTimeout(() => setUltWait(false), 1100);
-                }}
-                onRead={() => setCardRead({ card: { ...ego, ownerName: member.name, cost: 0, element: member.element }, preview: null, adv: 0, ult: true, energy, cap })}
-              >
-                <UltDial value={energy} max={cap} label={`${member.name} ult ${energy} of ${cap}`}>
-                  <span className="ult-face">
-                    <SkillArt card={{ ...ego, element: member.element }} />
-                  </span>
-                </UltDial>
-                <span>{member.name.split(" ")[0]}</span>
-              </SkillToken>
-            );
-          })}
         </div>
         <div className="tray-actions">
           <button className="ghost" disabled={!past.length} onClick={undo}>Undo</button>
@@ -3438,33 +3408,33 @@ function BattleBuffs({ battle }) {
   if (battle.critUp > 0) {
     chips.push({
       id: "crit",
-      text: `Crit chance +20% · all · ${turns(battle.critUp)}`,
-      title: "Applies to all of your units. Hits crit more often.",
+      text: `Party crit chance +20% · ${turns(battle.critUp)}`,
+      title: "The whole party crits more often, not only the unit who played the skill.",
     });
   }
   if (battle.critDmgUp > 0) {
     chips.push({
       id: "critdmg",
-      text: `Crit damage +50% · all · ${turns(battle.critDmgUp)}`,
-      title: "Applies to all of your units. A critical hit deals more damage. Crit chance stays the same.",
+      text: `Party crit damage +50% · ${turns(battle.critDmgUp)}`,
+      title: "The whole party's critical hits deal more damage. Crit chance stays the same.",
     });
   }
   if (battle.defUp > 0) {
     chips.push({
       id: "def",
-      text: `Defense +30% · all · ${turns(battle.defUp)}`,
-      title: "Applies to all of your units. Incoming hits are softer.",
+      text: `Party defense +30% · ${turns(battle.defUp)}`,
+      title: "The whole party's defense is higher, so incoming hits are softer.",
     });
   }
   if (battle.resUp > 0) {
     chips.push({
       id: "res",
-      text: `Resistance +15% · all · ${turns(battle.resUp)}`,
-      title: "Applies to all of your units. A better chance to shrug a debuff.",
+      text: `Party resistance +15% · ${turns(battle.resUp)}`,
+      title: "The whole party is more likely to resist a debuff.",
     });
   }
   if (battle.might > 0) {
-    chips.push({ id: "might", text: `Might · all · ${turns(battle.might)}`, title: "Applies to all of your units. Hits deal more." });
+    chips.push({ id: "might", text: `Party might · ${turns(battle.might)}`, title: "The whole party's hits deal 30% more damage." });
   }
   return (
     <p className="battle-buffs">
@@ -3484,10 +3454,10 @@ function partyMarks(battle) {
   if ((battle.stun || 0) > 0) marks.push({ id: "stun", label: "Stun", n: battle.stun, kind: "debuff", hint: "Skips the next action" });
   if ((battle.sleep || 0) > 0) marks.push({ id: "sleep", label: "Sleep", n: battle.sleep, kind: "debuff", hint: "Skips until hit or it ends" });
   if (battle.breakdown) marks.push({ id: "break", label: "Lockup", kind: "debuff", hint: "Hits soften and ults stay shut" });
-  if (battle.critUp > 0) marks.push({ id: "crit", label: "Crit chance +20% · all", hint: `Applies to all for ${battle.critUp} turn${battle.critUp === 1 ? "" : "s"}.` });
-  if (battle.critDmgUp > 0) marks.push({ id: "critdmg", label: "Crit damage +50% · all", hint: `Applies to all for ${battle.critDmgUp} turn${battle.critDmgUp === 1 ? "" : "s"}. Critical hits deal more damage.` });
-  if (battle.defUp > 0) marks.push({ id: "def", label: "Defense +30% · all", hint: `Applies to all for ${battle.defUp} turn${battle.defUp === 1 ? "" : "s"}.` });
-  if (battle.resUp > 0) marks.push({ id: "res", label: "Resistance +15% · all", hint: `Applies to all for ${battle.resUp} turn${battle.resUp === 1 ? "" : "s"}.` });
+  if (battle.critUp > 0) marks.push({ id: "crit", label: "Party crit chance +20%", hint: `The whole party, for ${battle.critUp} turn${battle.critUp === 1 ? "" : "s"}.` });
+  if (battle.critDmgUp > 0) marks.push({ id: "critdmg", label: "Party crit damage +50%", hint: `The whole party, for ${battle.critDmgUp} turn${battle.critDmgUp === 1 ? "" : "s"}. Critical hits deal more damage.` });
+  if (battle.defUp > 0) marks.push({ id: "def", label: "Party defense +30%", hint: `The whole party, for ${battle.defUp} turn${battle.defUp === 1 ? "" : "s"}.` });
+  if (battle.resUp > 0) marks.push({ id: "res", label: "Party resistance +15%", hint: `The whole party, for ${battle.resUp} turn${battle.resUp === 1 ? "" : "s"}.` });
   return marks;
 }
 
@@ -3505,6 +3475,14 @@ function foeMarks(enemy) {
 }
 
 function StatusGlyph({ id }) {
+  if (id === "shred") {
+    return (
+      <svg className="status-glyph" viewBox="0 0 16 16" aria-hidden="true">
+        <circle cx="8" cy="8" r="5.2" fill="none" stroke="#e07a58" strokeWidth="2.2" />
+        <path d="M3.2 10.6 12.4 5.2" stroke="#e07a58" strokeWidth="2.2" strokeLinecap="square" />
+      </svg>
+    );
+  }
   return <img className="status-glyph" src={`${import.meta.env.BASE_URL}icons/status-${id}.png`} alt="" />;
 }
 
@@ -3524,16 +3502,12 @@ function StatusMarks({ marks }) {
   if (!marks.length) return null;
   return (
     <span className="marks">
-      {marks.map((mark) =>
-        mark.id === "stun" ? (
-          <StunBadge key={mark.id} turns={mark.n || 1} />
-        ) : (
+      {marks.map((mark) => (
           <span key={mark.id} className={`status-ico status-${mark.id}`} title={markTitle(mark)}>
             <StatusGlyph id={mark.id} />
             {mark.n ? <b>{mark.n}</b> : null}
           </span>
-        ),
-      )}
+        ))}
     </span>
   );
 }
@@ -3586,16 +3560,16 @@ function Inspect({ battle, inspect, onClose }) {
               <span>{ally.title}</span>
             </p>
             <p className="quiet">
-              {`Crit chance is ${critChance}%. Hits start at 15%, and a 3-star passive adds 20% once that unit has the copies.`}
-              {battle.critUp > 0 ? " Crit chance +20% applies to all." : " No crit-chance buff is up."}
-              {battle.critDmgUp > 0 ? " Crit damage +50% applies to all. Critical hits deal more damage." : ""}
+              {`Crit chance is ${critChance}%. A 3-star passive raises only this unit.`}
+              {battle.critUp > 0 ? " A party buff is also up, so the whole party crits 20% more often." : " No party crit buff is up."}
+              {battle.critDmgUp > 0 ? " The whole party's critical hits deal 50% more damage." : ""}
             </p>
             <ul className="stat-list">
               <li>Attack {ally.atk}</li>
-              <li>Defense {ally.def}</li>
+              <li>Defense {Math.round((ally.def || 0) * (battle.defUp > 0 ? 1.3 : 1))}</li>
               <li>Crit chance {critChance}%</li>
               <li>Crit damage {Math.round((ally.critDmg || 1.3) * 100) + (battle.critDmgUp > 0 ? 50 : 0)}%</li>
-              <li>Resistance {Math.round((ally.res || 0) * 100)}% · chance to shrug a debuff</li>
+              <li>Resistance {Math.min(60, Math.round(((ally.res || 0) + (battle.resUp > 0 ? 0.15 : 0)) * 100))}% · chance to resist a debuff</li>
               <li>Health share {ally.maxHp}</li>
               <li>
                 Company {battle.hp}/{battle.maxHp}
@@ -3898,19 +3872,19 @@ function overflowName(rarity) {
 function copyNote(pull) {
   const stars = starsOf(pull.copies);
   const next = nextStarCopies(pull.copies);
-  if (!next) return `Star ${stars} of 5. Another copy is ${overflowName(pull.rarity)}.`;
+  if (!next) return `${stars} stars. Another copy becomes ${overflowName(pull.rarity)}.`;
   const more = next - pull.copies;
-  const rest = `${more} more ${more === 1 ? "copy" : "copies"} for star ${stars + 1}. Each star adds a little health, attack, and defense.`;
-  if (pull.starUp && STAR_STEPS.includes(pull.copies)) return `Now star ${stars} of 5. ${rest}`;
-  return `Star ${stars} of 5. You have ${pull.copies} ${pull.copies === 1 ? "copy" : "copies"}. ${rest}`;
+  const need = `${more} more ${more === 1 ? "copy" : "copies"} to reach ${stars + 1} stars. Each star adds a little health, attack, and defense.`;
+  if (pull.starUp && STAR_STEPS.includes(pull.copies)) return `Raised to ${stars} stars. ${need}`;
+  return `${stars} ${stars === 1 ? "star" : "stars"}. ${need}`;
 }
 
 function shortCopy(pull) {
   const stars = starsOf(pull.copies);
   const next = nextStarCopies(pull.copies);
-  if (!next) return `Star ${stars} of 5. Next copy is ${overflowName(pull.rarity)}.`;
+  if (!next) return `${stars} stars. The next copy becomes ${overflowName(pull.rarity)}.`;
   const more = next - pull.copies;
-  return `Star ${stars} of 5. ${more} more for star ${stars + 1}.`;
+  return `${stars} ${stars === 1 ? "star" : "stars"}. ${more} more ${more === 1 ? "copy" : "copies"} to reach ${stars + 1} stars.`;
 }
 
 function SummonLog({ history, onClose }) {
@@ -4078,8 +4052,8 @@ function ElementMark({ element }) {
 const PURSE_TIP = {
   mark: "Marks. Summons and ascending spend them. Fights, drills, and jobs pay them.",
   note: "Training notes. Rank up costs as many notes as the skill's current rank, from 1 through 5.",
-  bond: `Bond points. Gifts fill this. At ${BOND_NEED}, the next story opens.`,
-  story: "Stories opened, out of 3. Each one raises health, attack, and defense.",
+  bond: `Bond points. Gifts fill this. At ${BOND_NEED}, the next bond rank opens.`,
+  story: "Bond rank, out of 3. Each rank raises health, attack, and defense.",
   shard: "Shards you are holding. Ascending spends them, along with marks.",
   ascend: "Ascension, from 0 to 3. Each step raises the level cap and adds 15% health, attack, and defense.",
   xp: "Experience from fights and drills. It stops at the level cap until you ascend.",
