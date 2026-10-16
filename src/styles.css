@@ -207,7 +207,7 @@ main {
 
 .rail {
   order: 2;
-  position: static;
+  position: relative;
   flex: none;
   align-items: center;
   padding: 8px 12px 10px;
@@ -215,7 +215,7 @@ main {
   background: rgba(244, 231, 210, 0.96);
   border-top: 1px solid var(--line);
   overflow: visible;
-  z-index: 1;
+  z-index: 4;
   justify-content: space-between;
 }
 
@@ -1916,7 +1916,7 @@ main {
     padding-bottom: 28px;
   }
   .rail {
-    position: static;
+    position: relative;
     flex: none;
   }
 }
@@ -1955,7 +1955,7 @@ main {
   .rail {
     order: 0;
     grid-area: rail;
-    position: static;
+    position: relative;
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
