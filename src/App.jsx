@@ -60,8 +60,9 @@ import {
   canSweepStage,
   sweepStage,
   SSR_RATE,
-  SR_RATE,
-  LEGEND_SHARE,
+  LEGEND_RATE,
+  LEGEND_PITY,
+  bannerRates,
 } from "./logic.js";
 import { ASCEND_CAPS, COMBOS, LEVEL_CAP, ascendPrice, dailyCleared, dailyStageById, dailyStages, levelCap, skillCost, skillRank, stageXp, withGrowth, xpSteps, xpToNext } from "./growth.js";
 import { EVENT_ROADS, bondEvents, eventOpen } from "./events.js";
@@ -598,7 +599,8 @@ function Settings({ onClose, onRetreat }) {
           <div className="guide">
             <div className="icon-line"><Purse kind="mark" /> Three heroes are on rate-up. The set changes every Monday at noon Eastern. One summon is 160 marks.</div>
             <p>An SSR starts at 0.8%. From summon 60 the chance climbs, and summon 90 is always an SSR. That count carries across weeks. A ten-pull moves it by 10.</p>
-            <p>Legendary heroes are SSRs. On an off-banner SSR, 15% are legendary. They have higher stats and stronger kits, and they are not on rate-up.</p>
+            <p>Each rate-up hero is four times as likely as any other SSR. If an SSR misses the rate-up, the next SSR is one of them.</p>
+            <p>A legendary is 0.10%. Summon 1500 is a legendary if you have not pulled one. They have higher stats and stronger kits, and they are not on rate-up.</p>
             <p>Stars are extra copies. They are separate from ascending. The second star takes 4 copies, then 9, 16, and 25. A copy after that is a relic for an SSR, wildflowers for an SR, and a road letter for an R.</p>
           </div>
         )}
@@ -906,22 +908,16 @@ function RatesSheet({ save, featuredUnits, onClose }) {
   const featuredIds = featuredUnits.map((unit) => unit.id);
   const legends = ssr.filter((unit) => unit.legend);
   const off = ssr.filter((unit) => !unit.legend && !featuredIds.includes(unit.id));
-  const featuredRate = SSR_RATE * 0.5 / Math.max(1, featuredUnits.length);
-  const lost = SSR_RATE * 0.5;
-  const legendRate = legends.length ? (lost * LEGEND_SHARE) / legends.length : 0;
-  const offRate = off.length ? (lost * (1 - LEGEND_SHARE)) / off.length : 0;
+  const rates = bannerRates();
   const sr = pool("SR");
   const rare = pool("R");
-  const srRate = sr.length ? SR_RATE / sr.length : 0;
-  const rareRate = rare.length ? (1 - SSR_RATE - SR_RATE) / rare.length : 0;
   const chance = nextSsrChance(save.pity);
-  const names = featuredUnits.map((unit) => unit.name).join(", ");
   const groups = [
-    { name: "This week's rate-up", rate: featuredRate, units: featuredUnits },
-    { name: "Legendary SSR", rate: legendRate, units: legends },
-    { name: "Other SSR", rate: offRate, units: off },
-    { name: "SR", rate: srRate, units: sr },
-    { name: "R", rate: rareRate, units: rare },
+    { name: "This week's rate-up", rate: rates.featuredEach, units: featuredUnits },
+    { name: "Legendary SSR", rate: rates.legendEach, units: legends },
+    { name: "Other SSR", rate: rates.offEach, units: off },
+    { name: "SR", rate: rates.srEach, units: sr },
+    { name: "R", rate: rates.rareEach, units: rare },
   ];
   return (
     <div className="sheet-scrim" onClick={onClose}>
@@ -929,11 +925,13 @@ function RatesSheet({ save, featuredUnits, onClose }) {
         <h2>Rates</h2>
         <p>
           SSR starts at {(SSR_RATE * 100).toFixed(1)}%. From summon 60 it climbs. Summon {HARD_PITY} is always an SSR.
-          Half of those are {names}. A miss makes the next SSR one of them. Every 10 summons includes an SR or better.
+          Each rate-up hero is four times as likely as any other SSR. A miss makes the next SSR one of them.
+          A legendary is {(LEGEND_RATE * 100).toFixed(2)}%. Summon {LEGEND_PITY} is one if you have gone that long without one.
+          Every 10 summons includes an SR or better.
         </p>
         <p>
           Now {(chance * 100).toFixed(chance === 1 ? 0 : 1)}% SSR · {save.pity} of {HARD_PITY}
-          {save.guarantee ? " · next SSR is a rate-up" : ""} · SR or better within {Math.max(1, 10 - save.ten)}
+          {save.guarantee ? " · next SSR is a rate-up" : ""} · legendary {save.legendPity || 0} of {LEGEND_PITY} · SR or better within {Math.max(1, 10 - save.ten)}
         </p>
         {groups.map((group) => (
           <section key={group.name}>

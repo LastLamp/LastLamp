@@ -1153,6 +1153,7 @@ export function freshSave() {
     applause: 11200,
     pity: 0,
     ten: 0,
+    legendPity: 0,
     guarantee: false,
     banner: weeklyBanners()[0].id,
     roster: {

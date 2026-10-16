@@ -2,6 +2,7 @@ const FIELDS = [
   "applause",
   "pity",
   "ten",
+  "legendPity",
   "guarantee",
   "banner",
   "roster",

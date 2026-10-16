@@ -19,7 +19,10 @@ export const PULL_COST = 160;
 export const HARD_PITY = 90;
 export const SOFT_PITY = 60;
 export const SSR_RATE = 0.008;
-export const LEGEND_SHARE = 0.15;
+export const LEGEND_RATE = 0.001;
+export const LEGEND_PITY = 1500;
+export const UP_WEIGHT = 4;
+export const STANDARD_WEIGHT = 1;
 export const SR_RATE = 0.13;
 export const HEX_STRESS = 18;
 export const SAVE_KEY = "signal-booth-save-v1";
@@ -292,42 +295,94 @@ function pick(list) {
   return list[Math.floor(Math.random() * list.length)];
 }
 
-function rollOne(progress) {
-  let pity = progress.pity + 1;
-  let ten = progress.ten + 1;
-  let guarantee = progress.guarantee;
-  const ssrP = nextSsrChance(progress.pity);
-  const roll = Math.random();
-  let rarity = "R";
-  if (roll < ssrP) rarity = "SSR";
-  else if (ten >= 10 || roll < ssrP + SR_RATE) rarity = "SR";
-
-  const featuredIds = weeklyBanners()
+function summonGroups() {
+  const upIds = weeklyBanners()
     .map((banner) => banner.featured)
     .filter((id) => {
       const unit = character(id);
       return unit && unit.rarity === "SSR" && unit.legend !== true;
     });
+  const ssr = pool("SSR");
+  const up = upIds.map((id) => ssr.find((unit) => unit.id === id)).filter(Boolean);
+  const legends = ssr.filter((unit) => unit.legend === true);
+  const off = ssr.filter((unit) => unit.legend !== true && !upIds.includes(unit.id));
+  return { up, legends, off };
+}
+
+function pickWeighted(units, weightOf) {
+  const total = units.reduce((sum, unit) => sum + weightOf(unit), 0);
+  let roll = Math.random() * total;
+  for (const unit of units) {
+    roll -= weightOf(unit);
+    if (roll <= 0) return unit;
+  }
+  return units[units.length - 1];
+}
+
+export function bannerRates() {
+  const { up, legends, off } = summonGroups();
+  const ssrWeight = UP_WEIGHT * up.length + STANDARD_WEIGHT * off.length;
+  const sr = pool("SR");
+  const rare = pool("R");
+  const rareLeft = 1 - LEGEND_RATE - SSR_RATE - SR_RATE;
+  return {
+    featuredEach: ssrWeight ? (SSR_RATE * UP_WEIGHT) / ssrWeight : 0,
+    offEach: off.length && ssrWeight ? (SSR_RATE * STANDARD_WEIGHT) / ssrWeight : 0,
+    legendEach: legends.length ? LEGEND_RATE / legends.length : 0,
+    srEach: sr.length ? SR_RATE / sr.length : 0,
+    rareEach: rare.length ? rareLeft / rare.length : 0,
+  };
+}
+
+function rollOne(progress) {
+  let pity = progress.pity + 1;
+  let ten = progress.ten + 1;
+  let guarantee = progress.guarantee;
+  let legendPity = (progress.legendPity || 0) + 1;
+  const { up, legends, off } = summonGroups();
+  const upIds = new Set(up.map((unit) => unit.id));
+
+  if (legends.length && legendPity >= LEGEND_PITY) {
+    return { id: pick(legends).id, rarity: "SSR", pity: 0, ten: 0, guarantee: true, legendPity: 0 };
+  }
+
+  const ssrP = nextSsrChance(progress.pity);
+  const roll = Math.random();
+  let rarity = "R";
   let id;
-  if (rarity === "SSR") {
-    const rateUp = guarantee || Math.random() < 0.5;
-    const win = rateUp && featuredIds.length > 0;
-    const legends = pool("SSR").filter((c) => c.legend === true);
-    const off = pool("SSR").filter((c) => c.legend !== true && !featuredIds.includes(c.id));
-    const plain = pool("SSR").filter((c) => c.legend !== true);
-    if (win) id = featuredIds[Math.floor(Math.random() * featuredIds.length)];
-    else if (legends.length && Math.random() < LEGEND_SHARE) id = pick(legends).id;
-    else id = (off.length ? pick(off) : pick(plain.length ? plain : pool("SSR"))).id;
+  if (legends.length && roll < LEGEND_RATE) {
+    id = pick(legends).id;
+    rarity = "SSR";
+    pity = 0;
+    ten = 0;
+    legendPity = 0;
+    guarantee = true;
+  } else if (roll < LEGEND_RATE + ssrP) {
+    rarity = "SSR";
+    const standard = [...up, ...off];
+    let win = false;
+    if (guarantee && up.length) {
+      id = pick(up).id;
+      win = true;
+    } else if (standard.length) {
+      const chosen = pickWeighted(standard, (unit) => (upIds.has(unit.id) ? UP_WEIGHT : STANDARD_WEIGHT));
+      id = chosen.id;
+      win = upIds.has(id);
+    } else {
+      id = pick(pool("SSR")).id;
+      win = upIds.has(id);
+    }
     pity = 0;
     ten = 0;
     guarantee = !win;
-  } else if (rarity === "SR") {
+  } else if (ten >= 10 || roll < LEGEND_RATE + ssrP + SR_RATE) {
+    rarity = "SR";
     id = pick(pool("SR")).id;
     ten = 0;
   } else {
     id = pick(pool("R")).id;
   }
-  return { id, rarity, pity, ten, guarantee };
+  return { id, rarity, pity, ten, guarantee, legendPity };
 }
 
 function overflowGift(rarity) {
@@ -360,14 +415,16 @@ export function pull(state, count) {
   let pity = state.pity;
   let ten = state.ten;
   let guarantee = state.guarantee;
+  let legendPity = state.legendPity || 0;
   const roster = withPartyOwned({ ...state.roster }, state.party);
   const gifts = { ...state.gifts };
   const cards = [];
   for (let i = 0; i < count; i++) {
-    const rolled = rollOne({ pity, ten, guarantee, banner: state.banner });
+    const rolled = rollOne({ pity, ten, guarantee, legendPity, banner: state.banner });
     pity = rolled.pity;
     ten = rolled.ten;
     guarantee = rolled.guarantee;
+    legendPity = rolled.legendPity;
     const meta = addPull(roster, gifts, rolled.id);
     cards.push({ id: rolled.id, rarity: rolled.rarity, ...meta });
   }
@@ -377,6 +434,7 @@ export function pull(state, count) {
     pity,
     ten,
     guarantee,
+    legendPity,
     roster,
     gifts,
     pulls: state.pulls + count,
